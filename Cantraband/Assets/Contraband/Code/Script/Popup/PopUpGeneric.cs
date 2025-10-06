@@ -13,12 +13,12 @@ public class PopUpGeneric : MonoBehaviour
         public Sprite defaultImage;
         public Sprite OnWarningImage;
         [Space]
-        public Vector2 anchorMin;
-        public Vector2 anchorMax;
+        public Vector2 anchorMinMax;
         public Vector2 anchoredPosition;
     }
 
     [Header("References")]
+    [SerializeField] private RectTransform _rect;
     [SerializeField] private Animator _animator;
     [SerializeField] private Image _frameImage;
     [SerializeField] private List<AngleData> _angleDatas;
@@ -41,6 +41,9 @@ public class PopUpGeneric : MonoBehaviour
     {
         AngleData angleData = FindDataByAngleType(angle);
         _frameImage.sprite = angleData.defaultImage;
+        _rect.anchorMin = angleData.anchorMinMax;
+        _rect.anchorMax = angleData.anchorMinMax;
+        _rect.anchoredPosition = angleData.anchoredPosition;
 
         //Setup warning Image + anchoredPosition
         throw new NotImplementedException();
