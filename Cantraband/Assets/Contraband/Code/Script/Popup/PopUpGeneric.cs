@@ -1,13 +1,30 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using static PopUpManager;
 
-[RequireComponent(typeof(Animator))]
 public class PopUpGeneric : MonoBehaviour
 {
+    [System.Serializable]
+    private struct AngleData
+    {
+        public AngleType type;
+        public Sprite defaultImage;
+        public Sprite OnWarningImage;
+        [Space]
+        public Vector2 anchorMin;
+        public Vector2 anchorMax;
+        public Vector2 anchoredPosition;
+    }
+
+    [Header("References")]
+    [SerializeField] private Animator _animator;
+    [SerializeField] private Image _frameImage;
+    [SerializeField] private List<AngleData> _angleDatas;
+
     [Header("Parameters")]
     [SerializeField] private float _speed = 1f;
-
-    private Animator _animator;
 
     public float Speed 
     { 
@@ -15,17 +32,33 @@ public class PopUpGeneric : MonoBehaviour
         set => _speed = value; 
     }
 
-    public Action OnPhase1Completed;
-
     private void Awake()
     {
-        _animator = GetComponent<Animator>();
         _animator.speed = _speed;
     }
 
-    public void LaunchPhase1Anim()
+    public void SetupPopup(AngleType angle)
     {
-        OnPhase1Completed?.Invoke();
+        AngleData angleData = FindDataByAngleType(angle);
+        _frameImage.sprite = angleData.defaultImage;
+
+        //Setup warning Image + anchoredPosition
+        throw new NotImplementedException();
+    }
+    private AngleData FindDataByAngleType(AngleType angleType)
+    {
+        foreach(AngleData data in _angleDatas)
+        {
+            if(data.type == angleType)
+                return data;
+        }
+        throw new System.Exception($"No angle data with type {angleType}");
+    }
+
+
+    public void LaunchEventInAnim()
+    {
+        PopUpManager.Instance.CheckPlayerCoat?.Invoke();
     }
 
     public void LaunchEndAnim()

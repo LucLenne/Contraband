@@ -81,6 +81,7 @@ namespace AudioManager
                 Destroy(this.gameObject);
                 return;
             }
+            Instance = this;
 
             //Create pool list
             _soundPoolingList = CreateSoundPool();
