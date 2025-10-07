@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
     public bool IsBetweenTransactions { get; private set; }
     public bool IsGameRunning { get; private set; } //AKA pas en game over
 
-    public Action OnValidateTransaction;
+    public Action OnFinishTransaction;
     public Action<Client> onNextClientAction;
     public Action OnGameOver;
 
@@ -106,7 +106,7 @@ public class LevelManager : MonoBehaviour
         ComputeScore(selectedCard);
 
         //Complete transaction
-        OnValidateTransaction?.Invoke();
+        OnFinishTransaction?.Invoke();
         AudioManager.AudioManager.Instance.PlaySound(SOUND_EXIT_CLIENT);
 
         //Activate transaction cooldown
@@ -117,6 +117,22 @@ public class LevelManager : MonoBehaviour
         }
         _isTransitionCoolDownRoutine = StartCoroutine(TransitionCoolDown());
 
+        await WaitSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
+        GiveNextClient();
+    }
+
+    public async void ClientNoMorePatience() //Client leaves when no more patience
+    {
+        //Check if not in game over
+        if (!IsGameRunning) return;
+
+        //Check if there's a client
+        if (!_hasClient) return;
+        _hasClient = false;
+
+        //Complete transaction
+        OnFinishTransaction?.Invoke();
+        AudioManager.AudioManager.Instance.PlaySound(SOUND_EXIT_CLIENT);
         await WaitSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
         GiveNextClient();
     }
@@ -168,11 +184,12 @@ public class LevelManager : MonoBehaviour
         }
 
         //Else remove points
-        score -= _pointWrongGame;
+        score += _pointWrongGame;
+        score = Mathf.Max(score, 0);
         AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_WRONGGAME);
     }
 
-    Client GetRandomClient()
+    private Client GetRandomClient()
     {
         if (_clients.Count == 0)
         {
@@ -211,7 +228,7 @@ public class LevelManager : MonoBehaviour
     }
     #endregion
 
-private async Task WaitSeconds(int seconds)
+    private async Task WaitSeconds(int seconds)
     {
         IsBetweenTransactions = true;
         await Task.Delay(seconds * 1000);

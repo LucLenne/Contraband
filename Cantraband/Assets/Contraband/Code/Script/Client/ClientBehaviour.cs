@@ -1,4 +1,6 @@
+using NaughtyAttributes;
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +14,12 @@ public class ClientBehaviour : MonoBehaviour
     [Header("UI"),SerializeField] private TMP_Text _speechTextMeshPro;
     [SerializeField] private Image _imageGameCard;
 
+    [Header("Patience")]
+    [SerializeField] private float _baseClientPatience;
+    [ReadOnly] public float currentPatientPatience;
+
+    private Coroutine _patienceCoroutine;
+
     private void Awake()
     {
         HideClient();
@@ -20,13 +28,13 @@ public class ClientBehaviour : MonoBehaviour
     private void OnEnable()
     {
         LevelManager.Instance.onNextClientAction += LoadClient;
-        LevelManager.Instance.OnValidateTransaction += HideClient;
+        LevelManager.Instance.OnFinishTransaction += HideClient;
     }
 
     private void OnDisable()
     {
         LevelManager.Instance.onNextClientAction -= LoadClient;
-        LevelManager.Instance.OnValidateTransaction -= HideClient;
+        LevelManager.Instance.OnFinishTransaction -= HideClient;
     }
 
     private void HideClient()
@@ -34,15 +42,32 @@ public class ClientBehaviour : MonoBehaviour
         Debug.LogWarning("A changer pour mettre une anim à la place");
         _spriteRendererClient.enabled = false;
         _canvasObject.SetActive(false);
+
+        if(_patienceCoroutine != null)
+        {
+            StopCoroutine(_patienceCoroutine);
+            _patienceCoroutine = null;
+        }
     }
 
     private void LoadClient(Client client)
     {
         _canvasObject.SetActive(true);
         _spriteRendererClient.enabled = true;
+        
+        //A changer avec l'accélération du rythme
+        currentPatientPatience = _baseClientPatience;
+        _patienceCoroutine = StartCoroutine(PatienceRoutine());
 
         _spriteRendererClient.sprite = client.client;
         _speechTextMeshPro.text = client.text;
         _imageGameCard.sprite = client.clue;
     }
+
+    private IEnumerator PatienceRoutine()
+    {
+        yield return new WaitForSeconds(_baseClientPatience);
+        LevelManager.Instance.ClientNoMorePatience();
+    }
+
 }
