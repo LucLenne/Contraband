@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,10 +13,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private float _transactionCheckCoolDown;
 
     [Header("Score"), NaughtyAttributes.ReadOnly] public int score;
-    [SerializeField] private int pointGoodCategory;
-    [SerializeField] private int pointGoodGame;
-    [SerializeField] private int pointWrongGame;
-    [SerializeField] private int timeBeforeNextClient = 3;
+    [SerializeField] private int _pointGoodCategory = 1;
+    [SerializeField] private int _pointGoodGame = 3;
+    [SerializeField] private int _pointWrongGame = -1;
+    [SerializeField] private int _timeBeforeNextClient = 3;
 
     [Header("Events")]
     public UnityEvent onNextClientEvent;
@@ -27,7 +26,7 @@ public class LevelManager : MonoBehaviour
     private bool _isInTransaction = false;
 
     private Dictionary<int, GameCard> _gameCards;
-    private List<Client> _clients;
+    public List<Client> _clients;
     private Client _currentClient;
 
     public Action<Client> onNextClientAction;
@@ -69,7 +68,7 @@ public class LevelManager : MonoBehaviour
         }
         _isTransitionCoolDownRoutine = StartCoroutine(TransitionCoolDown());
 
-        await WaitSeconds(timeBeforeNextClient);
+        await WaitSeconds(_timeBeforeNextClient);
         NextClient(tag);
     }
 
@@ -97,7 +96,7 @@ public class LevelManager : MonoBehaviour
         //Search favorite came
         if (_currentClient.favoriteCard == gameCard)
         {
-            score += pointGoodGame;
+            score += _pointGoodGame;
             return;
         }
 
@@ -106,13 +105,13 @@ public class LevelManager : MonoBehaviour
         {
             if (_currentClient.genrePreference.Contains(genre))
             {
-                score += pointGoodCategory;
+                score += _pointGoodCategory;
                 return;
             }
         }
 
         //Else remove points
-        score -= pointWrongGame;
+        score -= _pointWrongGame;
     }
 
     Client GetRandomClient()
