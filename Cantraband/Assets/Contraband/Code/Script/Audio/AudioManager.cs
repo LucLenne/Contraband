@@ -172,11 +172,17 @@ namespace AudioManager
             //Get AudioData
             AudioData foundAudioData = new AudioData();
             bool isAudioDataFound = false;
+            bool foundName = false;
             foreach (SoundInfo audio in _soundList)
             {
                 //Find sound info from name
                 if (audio.Name == name)
                 {
+                    //Check if sound has clips
+                    foundName = true;
+                    if (audio.Clips.Count <= 0)
+                        break;
+
                     isAudioDataFound = true;
 
                     //If another audioDataIndex was entered -> get it
@@ -212,7 +218,10 @@ namespace AudioManager
             {
                 clip = null;
                 volume = 0.0f;
-                Debug.LogError("Didn't find " + name);
+
+                //Send error if didn't find name
+                if(!foundName)
+                    Debug.LogError("Didn't find " + name);
             }
 
         }

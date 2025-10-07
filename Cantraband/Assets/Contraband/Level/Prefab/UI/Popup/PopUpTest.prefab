@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 3359401754417638845}
   - component: {fileID: 4732440410464604217}
   - component: {fileID: 812084244466057281}
+  - component: {fileID: 7352960800895879755}
   m_Layer: 5
   m_Name: PopUpTest
   m_TagString: Untagged
@@ -315,7 +316,6 @@ MonoBehaviour:
     OnWarningImage: {fileID: 0}
     anchorMinMax: {x: 1, y: 0}
     anchoredPosition: {x: -250, y: 250}
-  _clip: {fileID: 7400000, guid: aac5d3f41431198418e0e88a822e2220, type: 2}
   _speed: 1
   _warningImageTime: 1
   _minMaxScale: {x: 0, y: 1}
@@ -346,3 +346,18 @@ MonoBehaviour:
   _onCheckPlayerCoat:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7352960800895879755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9190530131139223718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 575d520cd7bb22841951994eb5a88d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioPlaySound
+  _soundName: 
+  _audioDataIndex: -1
+  _playOnEnable: 1

@@ -557,3 +557,5 @@ MonoBehaviour:
   _canvasObject: {fileID: 6353971522729031282}
   _speechTextMeshPro: {fileID: 234160941081179164}
   _imageGameCard: {fileID: 8868706051003184102}
+  _baseClientPatience: 10
+  currentPatientPatience: 0
