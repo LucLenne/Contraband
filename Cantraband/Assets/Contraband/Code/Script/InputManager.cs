@@ -4,15 +4,27 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
+    public static InputManager Instance;
+
     public Action<int> OnReadCard;
     public Action<bool> OnVestChanged;
     public bool DebugGetKeyboardInput = true;
 
+    public bool IsVestOpened { get; private set; }
 
     private void Awake()
     {
-/*        OnReadCard += GetNFCReader;
-        OnVestChanged += GetVestState;*/
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
+        /*        OnReadCard += GetNFCReader;
+                OnVestChanged += GetVestState;*/
+
+        IsVestOpened = false;
     }
 
     private void GetNFCReader(int cardId)
@@ -24,9 +36,10 @@ public class InputManager : MonoBehaviour
     private void SetVestState(bool state)
     {
         Debug.Log("Vest State is: " + state.ToString());
+
+        IsVestOpened = state;
         OnVestChanged?.Invoke(state);
     }
-
 
 
     private void Update()
