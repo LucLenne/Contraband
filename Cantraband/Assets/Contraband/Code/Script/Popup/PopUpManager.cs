@@ -2,6 +2,7 @@ using NaughtyAttributes;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public class PopUpManager : MonoBehaviour
@@ -23,9 +24,12 @@ public class PopUpManager : MonoBehaviour
     [SerializeField] private List<PopUpGeneric> _policePopUps;
     [SerializeField] private List<PopUpGeneric> _feedBackPopUps;
 
+    [Header("Events")]
+    [SerializeField] private UnityEvent _onCheckPlayerCoat;
+
     private Dictionary<AngleType, PopUpGeneric> _occupiedAngles = new Dictionary<AngleType, PopUpGeneric>();
 
-    public Action CheckPlayerCoat;
+    public Action OnCheckPlayerCoat;
 
     private void Awake()
     {
@@ -43,9 +47,13 @@ public class PopUpManager : MonoBehaviour
         _occupiedAngles.Add(AngleType.LowerRight, null);
     }
 
+    #region Spawn popup
     [Button]
     public void SpawnRandomPolicePopup()
     {
+        if (_policePopUps.Count <= 0)
+            throw new System.Exception("Police list is empty");
+
         //Select random police popup
         PopUpGeneric popUpToSpawn = _policePopUps[Random.Range(0, _policePopUps.Count)];
         //Select random unoccupied angle
@@ -56,8 +64,12 @@ public class PopUpManager : MonoBehaviour
         SpawnPopup(popUpToSpawn, angleType);
     }
 
+    [Button]
     public void SpawnRandomFeedbackPopup()
     {
+        if (_feedBackPopUps.Count <= 0)
+            throw new System.Exception("Feed back list is empty");
+
         //Select random police popup
         PopUpGeneric popUpToSpawn = _feedBackPopUps[Random.Range(0, _feedBackPopUps.Count)];
         //Select random unoccupied angle
@@ -91,5 +103,12 @@ public class PopUpManager : MonoBehaviour
         }
         Debug.LogWarning("No angle found");
         return AngleType.None;
+    }
+    #endregion
+
+    public void LaunchCheckPlayerCoat()
+    {
+        _onCheckPlayerCoat?.Invoke();
+        OnCheckPlayerCoat?.Invoke();
     }
 }

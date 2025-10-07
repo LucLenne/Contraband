@@ -1,7 +1,9 @@
+using NaughtyAttributes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using static PopUpManager;
 
@@ -30,9 +32,19 @@ public class PopUpGeneric : MonoBehaviour
     [Header("Warning Image")]
     [SerializeField] private float _warningImageTime;
 
+    [Header("Scale")]
+    [SerializeField, MinMaxSlider(0,10)] private Vector2 _minMaxScale;
+    [SerializeField] private AnimationCurve _scaleCurve;
+
+    [Header("Events")]
+    [SerializeField] private UnityEvent _onCheckPlayerCoat;
+
+    private Vector2 _positionAt1Scale;
+
     private Sprite _defaultFrameImage;
     private Sprite _warningFrameImage;
 
+    private Coroutine _scaleFrameRoutine;
     private Coroutine _warningFrameCoroutine;
 
     public float Speed 
@@ -44,14 +56,17 @@ public class PopUpGeneric : MonoBehaviour
     private void Awake()
     {
         _animator.speed = _speed;
+        _scaleFrameRoutine = StartCoroutine(ScaleRoutine());
     }
 
+    #region setup
     public void SetupPopup(AngleType angle)
     {
         AngleData angleData = FindDataByAngleType(angle);
         _rect.anchorMin = angleData.anchorMinMax;
         _rect.anchorMax = angleData.anchorMinMax;
         _rect.anchoredPosition = angleData.anchoredPosition;
+        _positionAt1Scale = _rect.anchoredPosition;
 
         //Setup images
         _defaultFrameImage = angleData.defaultImage;
@@ -67,12 +82,34 @@ public class PopUpGeneric : MonoBehaviour
         }
         throw new System.Exception($"No angle data with type {angleType}");
     }
+    #endregion
 
+    #region Scale
+    private IEnumerator ScaleRoutine()
+    {
+        float timeElapsed = 0.0f;
+        float progress = 0.0f;
+        float animationLength = _animator.GetCurrentAnimatorClipInfo(0).Length;
 
+        while (timeElapsed <= animationLength)
+        {
+            progress = _scaleCurve.Evaluate(timeElapsed / animationLength);
+            float newScale = Mathf.Lerp(_minMaxScale.x, _minMaxScale.y, progress);
+            _rect.localScale = new Vector2(newScale, newScale);
+            _rect.anchoredPosition = _positionAt1Scale * newScale;
+
+            yield return null;
+            timeElapsed += Time.deltaTime;
+        }
+    }
+    #endregion
+
+    #region Animation events
     public void LaunchEventInAnim()
     {
-        PopUpManager.Instance.CheckPlayerCoat?.Invoke();
-        
+        _onCheckPlayerCoat?.Invoke();
+        PopUpManager.Instance.LaunchCheckPlayerCoat();
+
         _frameImage.sprite = _warningFrameImage;
         _warningFrameCoroutine = StartCoroutine(WarningFrame());
     }
@@ -86,4 +123,5 @@ public class PopUpGeneric : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    #endregion
 }
