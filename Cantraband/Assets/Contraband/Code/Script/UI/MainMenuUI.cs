@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private int _tagStartCard;
-    const string levelGameName = "Game";
+    private const string levelGameName = "Game";
     private void OnEnable()
     {
         InputManager.Instance.OnReadCard += CheckChard;
@@ -31,8 +31,8 @@ public class MainMenuUI : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) 
-        { 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
             StartGame();
         }
     }
