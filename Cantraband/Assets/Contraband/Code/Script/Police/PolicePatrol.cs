@@ -1,0 +1,51 @@
+using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
+
+public class PolicePatrol : MonoBehaviour
+{
+    private const string ANIMATION_LOOKING_PLAYER_BOOL = "Looking";
+    private const string ANIMATION_RESET = "Reset";
+
+    [Header("References")]
+    [SerializeField] private GameObject _animationObject;
+    [SerializeField] private Animator _animator;
+
+    [Header("Parameters")]
+    [SerializeField, Range(0f,1f)] private float _lookingAtPlayerChance;
+
+    private void Awake()
+    {
+        _animationObject.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        PopUpManager.Instance.OnLaunchPolicePatrol += ActivatePatrol;
+    }
+
+    private void OnDisable()
+    {
+        PopUpManager.Instance.OnLaunchPolicePatrol -= ActivatePatrol;
+    }
+
+    private void ActivatePatrol()
+    {
+        _animationObject.SetActive(true);
+
+        bool _isLookingAtPlayer = Random.value >= _lookingAtPlayerChance;
+        _animator.SetBool(ANIMATION_LOOKING_PLAYER_BOOL, _isLookingAtPlayer);
+        _animator.SetTrigger(ANIMATION_RESET);
+    }
+
+    public void LaunchCheckPlayerCoatInAnim()
+    {
+        LevelManager.Instance.CheckPlayerCoat();
+        LevelManager.Instance.CheckPlayerTransaction();
+    }
+
+    public void StopPatrol()
+    {
+        _animationObject.SetActive(false);
+    }
+}

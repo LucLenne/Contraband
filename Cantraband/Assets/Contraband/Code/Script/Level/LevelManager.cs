@@ -7,7 +7,6 @@ using UnityEngine.Events;
 
 public class LevelManager : MonoBehaviour
 {
-
     public static LevelManager Instance { get; private set; }
 
     [Header("Transaction Cooldown")]
@@ -31,6 +30,7 @@ public class LevelManager : MonoBehaviour
     private Client _currentClient;
 
     public bool IsBetweenTransactions { get; private set; }
+    public bool IsGameRunning { get; private set; } //AKA pas en game over
 
     public Action<Client> onNextClientAction;
     public Action OnGameOver;
@@ -46,17 +46,17 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        IsGameRunning = true;
     }
 
     private void OnEnable()
     {
-        PopUpManager.Instance.OnCheckPlayerCoat += CheckPlayerCoat;
         InputManager.Instance.OnReadCard += PlayerGiveCard;
     }
 
     private void OnDisable()
     {
-        PopUpManager.Instance.OnCheckPlayerCoat -= CheckPlayerCoat;
         InputManager.Instance.OnReadCard -= PlayerGiveCard;
     }
 
@@ -67,6 +67,8 @@ public class LevelManager : MonoBehaviour
 
     public async void PlayerGiveCard(int tag)
     {
+        if (!IsGameRunning) return;
+
         if (!InputManager.Instance.IsVestOpened)
         {
             Debug.LogWarning("Open vest first !");
@@ -150,7 +152,7 @@ public class LevelManager : MonoBehaviour
     }
 
     #region Game over
-    private void CheckPlayerCoat()
+    public void CheckPlayerCoat()
     {
         if (!InputManager.Instance.IsVestOpened)
             return;
@@ -158,7 +160,7 @@ public class LevelManager : MonoBehaviour
         LaunchGameOver();
     }
 
-    private void CheckPlayerTransaction()
+    public void CheckPlayerTransaction()
     {
         if (!_isInTransaction)
             return;
@@ -168,7 +170,10 @@ public class LevelManager : MonoBehaviour
 
     private void LaunchGameOver()
     {
+        if (!IsGameRunning) return;
+
         Debug.Log("GAME OVER !");
+        IsGameRunning = false;
         _onGameOver?.Invoke();
         OnGameOver?.Invoke();
     }

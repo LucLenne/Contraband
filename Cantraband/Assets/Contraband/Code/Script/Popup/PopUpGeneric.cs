@@ -126,7 +126,7 @@ public class PopUpGeneric : MonoBehaviour
 
     public void LaunchPolicePatrol()
     {
-        throw new NotImplementedException();
+        PopUpManager.Instance.LaunchPolicePatrol();
     }
 
     public void LaunchEndAnim()

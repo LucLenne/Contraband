@@ -14,6 +14,16 @@ public class PoliceManager : MonoBehaviour
         _infiniteSpawnCoroutine = StartCoroutine(SpawnRoutine());
     }
 
+    private void OnEnable()
+    {
+        LevelManager.Instance.OnGameOver += StopPolice;
+    }
+
+    private void OnDisable()
+    {
+        LevelManager.Instance.OnGameOver -= StopPolice;
+    }
+
     private IEnumerator SpawnRoutine()
     {
         while (true)
@@ -27,5 +37,14 @@ public class PoliceManager : MonoBehaviour
             PopUpManager.Instance.SpawnRandomPolicePopup();
         }
 
+    }
+
+    private void StopPolice()
+    {
+        if (_infiniteSpawnCoroutine != null)
+        {
+            StopCoroutine(_infiniteSpawnCoroutine);
+            _infiniteSpawnCoroutine = null;
+        }
     }
 }

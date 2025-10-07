@@ -26,10 +26,12 @@ public class PopUpManager : MonoBehaviour
 
     [Header("Events")]
     [SerializeField] private UnityEvent _onCheckPlayerCoat;
+    [SerializeField] private UnityEvent _onLaunchPolicePatrol;
 
     private Dictionary<AngleType, PopUpGeneric> _occupiedAngles = new Dictionary<AngleType, PopUpGeneric>();
 
     public Action OnCheckPlayerCoat;
+    public Action OnLaunchPolicePatrol;
 
     private void Awake()
     {
@@ -106,9 +108,18 @@ public class PopUpManager : MonoBehaviour
     }
     #endregion
 
+    #region Launch events
     public void LaunchCheckPlayerCoat()
     {
         _onCheckPlayerCoat?.Invoke();
         OnCheckPlayerCoat?.Invoke();
+        LevelManager.Instance.CheckPlayerCoat();
     }
+
+    public void LaunchPolicePatrol()
+    {
+        _onLaunchPolicePatrol?.Invoke();
+        OnLaunchPolicePatrol?.Invoke();
+    }
+    #endregion
 }
