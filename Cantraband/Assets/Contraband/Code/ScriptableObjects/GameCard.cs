@@ -4,8 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GameCard", menuName = "Scriptable Objects/GameCard")]
 public class GameCard : ScriptableObject
 {
-    public int Tag;
+    public int tag;
     public string Name;
-    public List<GameGenre> Genres;
-    public List<Sprite> HintImages;
+    public List<GameGenre> genres;
+    public List<Sprite> hintImages;
 }
