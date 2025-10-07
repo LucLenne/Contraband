@@ -9,6 +9,12 @@ using Random = UnityEngine.Random;
 
 public class LevelManager : MonoBehaviour
 {
+    private const string SOUND_NEW_CLIENT = "Client_New";
+    private const string SOUND_EXIT_CLIENT = "Client_Exit";
+    private const string SOUND_GIVE_FAVORITEGAME = "Give_FavoriteCard";
+    private const string SOUND_GIVE_GOODCATEGORY = "Give_GoodCategory";
+    private const string SOUND_GIVE_WRONGGAME = "Give_WrongGame";
+
     public static LevelManager Instance { get; private set; }
 
     [Header("Transaction Cooldown")]
@@ -21,7 +27,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField, MinMaxSlider(1,10)] private Vector2 _timeBeforeNextClient = new Vector2(3,5);
 
     [Header("Events")]
-    public UnityEvent onNextClientEvent;
+    public UnityEvent onClientLeaveEvent;
     [SerializeField] private UnityEvent _onGameOver;
 
     private bool _hasClient = false; //est ce que le client existe
@@ -74,6 +80,7 @@ public class LevelManager : MonoBehaviour
     {
         await WaitSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
         GiveNextClient();
+        AudioManager.AudioManager.Instance.PlaySound(SOUND_NEW_CLIENT);
     }
 
     public async void PlayerGiveCard(int tag)
@@ -97,7 +104,10 @@ public class LevelManager : MonoBehaviour
         if (selectedCard == null)
             throw new Exception($"No card with tag {tag}");
         ComputeScore(selectedCard);
+
+        //Complete transaction
         OnValidateTransaction?.Invoke();
+        AudioManager.AudioManager.Instance.PlaySound(SOUND_EXIT_CLIENT);
 
         //Activate transaction cooldown
         if (_isTransitionCoolDownRoutine != null)
@@ -116,7 +126,6 @@ public class LevelManager : MonoBehaviour
         _currentClient = GetRandomClient();
         _hasClient = true;
 
-        onNextClientEvent?.Invoke();
         onNextClientAction?.Invoke(_currentClient);
     }
 
@@ -143,6 +152,7 @@ public class LevelManager : MonoBehaviour
         if (_currentClient.favoriteCard == gameCard)
         {
             score += _pointGoodGame;
+            AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_FAVORITEGAME);
             return;
         }
 
@@ -152,12 +162,14 @@ public class LevelManager : MonoBehaviour
             if (_currentClient.genrePreference.Contains(genre))
             {
                 score += _pointGoodCategory;
+                AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_GOODCATEGORY);
                 return;
             }
         }
 
         //Else remove points
         score -= _pointWrongGame;
+        AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_WRONGGAME);
     }
 
     Client GetRandomClient()

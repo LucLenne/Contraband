@@ -605,6 +605,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6924867612357473924, guid: 7a0bc6b0857c2404ab9243c18675224f, type: 3}
+      propertyPath: _soundList.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924867612357473924, guid: 7a0bc6b0857c2404ab9243c18675224f, type: 3}
+      propertyPath: _soundList.Array.data[0].Name
+      value: Give_FavoriteCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924867612357473924, guid: 7a0bc6b0857c2404ab9243c18675224f, type: 3}
+      propertyPath: _soundList.Array.data[1].Name
+      value: Give_GoodCategory
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924867612357473924, guid: 7a0bc6b0857c2404ab9243c18675224f, type: 3}
+      propertyPath: _soundList.Array.data[2].Name
+      value: Give_WrongGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924867612357473924, guid: 7a0bc6b0857c2404ab9243c18675224f, type: 3}
+      propertyPath: _soundList.Array.data[3].Name
+      value: Client_New
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924867612357473924, guid: 7a0bc6b0857c2404ab9243c18675224f, type: 3}
+      propertyPath: _soundList.Array.data[4].Name
+      value: Client_Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924867612357473924, guid: 7a0bc6b0857c2404ab9243c18675224f, type: 3}
+      propertyPath: _soundList.Array.data[5].Name
+      value: PopUp_Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924867612357473924, guid: 7a0bc6b0857c2404ab9243c18675224f, type: 3}
+      propertyPath: _soundList.Array.data[6].Name
+      value: PopUp_FakeCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924867612357473924, guid: 7a0bc6b0857c2404ab9243c18675224f, type: 3}
+      propertyPath: _soundList.Array.data[7].Name
+      value: PopUp_PolicePatrol
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924867612357473924, guid: 7a0bc6b0857c2404ab9243c18675224f, type: 3}
+      propertyPath: _soundList.Array.data[8].Name
+      value: PopUp_FakePolicePatrol
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924867612357473924, guid: 7a0bc6b0857c2404ab9243c18675224f, type: 3}
+      propertyPath: _soundList.Array.data[9].Name
+      value: PolicePatrol
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924867612357473924, guid: 7a0bc6b0857c2404ab9243c18675224f, type: 3}
+      propertyPath: _soundList.Array.data[0].Clips.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
