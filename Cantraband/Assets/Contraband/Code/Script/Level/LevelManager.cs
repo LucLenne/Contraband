@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,7 +8,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance { get; private set; }
 
-    [Header("Score")] private int _score;
+    [Header("Score"),NaughtyAttributes.ReadOnly] public int score;
     [SerializeField] private int pointGoodCategory;
     [SerializeField] private int pointGoodGame;
     [SerializeField] private int pointWrongGame;
@@ -64,7 +65,7 @@ public class LevelManager : MonoBehaviour
         //Search favorite came
         if (_currentClient.favoriteCard == gameCard)
         {
-            _score += pointGoodGame;
+            score += pointGoodGame;
             return;
         }
 
@@ -73,13 +74,13 @@ public class LevelManager : MonoBehaviour
         {
             if (_currentClient.genrePreference.Contains(genre))
             {
-                _score += pointGoodCategory;
+                score += pointGoodCategory;
                 return;
             }
         }
 
         //Else remove points
-        _score -= pointWrongGame;
+        score -= pointWrongGame;
     }
 
     Client GetRandomClient()
@@ -101,5 +102,10 @@ public class LevelManager : MonoBehaviour
         Debug.Log("GAME OVER !");
         _onGameOver?.Invoke();
         OnGameOver?.Invoke();
+    }
+
+    public void GetScore()
+    {
+
     }
 }
