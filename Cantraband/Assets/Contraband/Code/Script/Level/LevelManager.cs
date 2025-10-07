@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class LevelManager : MonoBehaviour
 {
+
     public static LevelManager Instance { get; private set; }
 
     [Header("Transaction Cooldown")]
@@ -25,7 +26,7 @@ public class LevelManager : MonoBehaviour
     private Coroutine _isTransitionCoolDownRoutine;
     private bool _isInTransaction = false;
 
-    private Dictionary<int, GameCard> _gameCards;
+    public List<GameCard> _gameCards;
     public List<Client> _clients;
     private Client _currentClient;
 
@@ -59,9 +60,25 @@ public class LevelManager : MonoBehaviour
         InputManager.Instance.OnReadCard -= PlayerGiveCard;
     }
 
+    private void Start()
+    {
+        _currentClient = GetRandomClient();
+    }
+
     public async void PlayerGiveCard(int tag)
     {
-        ComputeScore(GetCardGame(tag));
+        if (!InputManager.Instance.IsVestOpened)
+        {
+            Debug.LogWarning("Open vest first !");
+            return;
+        }
+
+        //Get card & compute score
+        GameCard selectedCard = GetCardGame(tag);
+        if (selectedCard == null)
+            throw new Exception($"No card with tag {tag}");
+        ComputeScore(selectedCard);
+
         //Activate transaction cooldown
         if (_isTransitionCoolDownRoutine != null)
         {
@@ -83,7 +100,12 @@ public class LevelManager : MonoBehaviour
 
     private GameCard GetCardGame(int tag)
     {
-        return _gameCards[tag];
+        foreach(GameCard card in _gameCards)
+        {
+            if(card.tag == tag)
+                return card;
+        }
+        return null;
     }
 
     private IEnumerator TransitionCoolDown()

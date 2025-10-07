@@ -124,6 +124,11 @@ public class PopUpGeneric : MonoBehaviour
         _frameImage.sprite = _defaultFrameImage;
     }
 
+    public void LaunchPolicePatrol()
+    {
+        throw new NotImplementedException();
+    }
+
     public void LaunchEndAnim()
     {
         Destroy(gameObject);

@@ -116,7 +116,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PopUpManager
   _parentCanvas: {fileID: 5406154522969647869}
   _policePopUps:
-  - {fileID: 812084244466057281, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
+  - {fileID: 3729727751068807655, guid: fac70e3e53facf44d8d50baedaede6c6, type: 3}
+  - {fileID: 4225362550508829192, guid: 9698a8ec1888bf04786a2c4d23f163a5, type: 3}
+  - {fileID: 5235237444209766481, guid: 834b3e881bc2e544398fb03787b9327c, type: 3}
+  - {fileID: 1448858401093971270, guid: dce4f8aee6314a942a125456b6f5d1a0, type: 3}
   _feedBackPopUps: []
   _onCheckPlayerCoat:
     m_PersistentCalls:
