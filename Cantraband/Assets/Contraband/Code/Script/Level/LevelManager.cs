@@ -29,6 +29,8 @@ public class LevelManager : MonoBehaviour
     public List<Client> _clients;
     private Client _currentClient;
 
+    public bool IsBetweenTransactions { get; private set; }
+
     public Action<Client> onNextClientAction;
     public Action OnGameOver;
 
@@ -152,6 +154,8 @@ public class LevelManager : MonoBehaviour
 
 private async Task WaitSeconds(int seconds)
     {
+        IsBetweenTransactions = true;
         await Task.Delay(seconds * 1000);
+        IsBetweenTransactions = false;
     }
 }

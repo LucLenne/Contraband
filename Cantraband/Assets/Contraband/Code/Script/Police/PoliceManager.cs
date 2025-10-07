@@ -21,8 +21,9 @@ public class PoliceManager : MonoBehaviour
             float _delay = Random.Range(_minMaxDelay.x, _minMaxDelay.y);
             yield return new WaitForSeconds(_delay);
 
-            Debug.LogWarning("Check if is between transactions");
- 
+            if (LevelManager.Instance.IsBetweenTransactions)
+                continue;
+
             PopUpManager.Instance.SpawnRandomPolicePopup();
         }
 
