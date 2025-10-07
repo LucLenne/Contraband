@@ -44,6 +44,7 @@ public class RythmManager : MonoBehaviour
     private float _timeElasped;
 
     //Current values
+    [Space(10)]
     [ReadOnly] public float _currentClientPatience;
     [ReadOnly] public Vector2 _currentPopUpMinMaxDelay;
     [ReadOnly] public float _currentPopUpSpeed;

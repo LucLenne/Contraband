@@ -101,10 +101,29 @@ public class LevelManager : MonoBehaviour
         if (!_hasClient) return;
         _hasClient = false;
 
-        //Get card & compute score
+        //Get card
         GameCard selectedCard = GetCardGame(tag);
         if (selectedCard == null)
             throw new Exception($"No card with tag {tag}");
+
+        //Check police
+        if (_currentClient.isPolice)
+        {
+            if(!selectedCard.genres.Contains(GameGenre.Factice))
+            {
+                LaunchGameOver();
+                return;
+            }
+
+            //Complete (fake) transaction
+            OnFinishTransaction?.Invoke();
+            AudioManager.AudioManager.Instance.PlaySound(SOUND_EXIT_CLIENT);
+            await WaitSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
+            GiveNextClient();
+            return;
+        }
+
+        //compute score
         ComputeScore(selectedCard);
 
         //Complete transaction

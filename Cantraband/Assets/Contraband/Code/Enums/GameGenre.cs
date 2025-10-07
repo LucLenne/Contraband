@@ -5,5 +5,6 @@ public enum GameGenre
     Erotic,
     Woke,
     Humour,
-    Moustache
+    Moustache,
+    Factice
 }
