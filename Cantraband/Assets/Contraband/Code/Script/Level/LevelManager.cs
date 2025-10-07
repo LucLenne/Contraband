@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
     private List<Client> _clients;
     private Client _currentClient;
 
-    public Action onNextClientAction;
+    public Action<Client> onNextClientAction;
     public Action OnGameOver;
 
     void Awake()
@@ -56,13 +56,13 @@ public class LevelManager : MonoBehaviour
         ComputeScore(GetCardGame(tag));
         _currentClient = GetRandomClient();
         onNextClientEvent?.Invoke();
-        onNextClientAction?.Invoke();
+        onNextClientAction?.Invoke(_currentClient);
     }
 
     private void ComputeScore(GameCard gameCard)
     {
         //Search favorite came
-        if (_currentClient.favoriteCard == gameCard) 
+        if (_currentClient.favoriteCard == gameCard)
         {
             _score += pointGoodGame;
             return;
