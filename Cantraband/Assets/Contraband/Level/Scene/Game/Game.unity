@@ -890,6 +890,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2491989948994319524, guid: f912b3a73d0415d42835b0117b6e9e87, type: 3}
       propertyPath: _rythmRules.Array.data[0].NumberOfX
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2491989948994319524, guid: f912b3a73d0415d42835b0117b6e9e87, type: 3}
+      propertyPath: _rythmRules.Array.data[0].ValueAmount
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2491989948994319524, guid: f912b3a73d0415d42835b0117b6e9e87, type: 3}

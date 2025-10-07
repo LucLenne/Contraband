@@ -28,7 +28,7 @@ public class RythmManager : MonoBehaviour
         [Tooltip("De combien augmenter / réduire la valeur")]
         public float ValueAmount;
 
-        public bool WasRuleApplied;
+        [HideInInspector] public bool WasRuleApplied;
     }
 
     public static RythmManager Instance;
@@ -76,10 +76,15 @@ public class RythmManager : MonoBehaviour
         //Check every rule
         foreach (RythmRule rule in _rythmRules)
         {
+            print(_timeElasped % rule.NumberOfX);
             switch (rule.TypeOfChange)
             {
                 case ChangeType.EachXSeconds:
-                    if ((int)(_timeElasped % rule.NumberOfX) != 0)
+                    if (rule.NumberOfX <= 0)
+                        break;
+
+                    float modulo = _timeElasped % rule.NumberOfX;
+                    if (modulo < 0.01f || rule.NumberOfX - modulo < 0.01f)
                     {
                         rule.WasRuleApplied = false;
                         break;
@@ -92,13 +97,19 @@ public class RythmManager : MonoBehaviour
                     break;
 
                 case ChangeType.EachXClient:
-                    if ((int)(LevelManager.Instance.NumberOfClientsEncountered % rule.NumberOfX) != 0)
+                    //Check if isn't at each client
+                    if(rule.NumberOfX <= 2)
+                    {
+                        Debug.LogError("Number of client can't be under 2 - go complaint to GP because");
+                        break;
+                    }    
+
+                    if ((int)(LevelManager.Instance.NumberOfClientsEncountered % (int)rule.NumberOfX) != 0)
                     {
                         rule.WasRuleApplied = false;
                         break;
                     }
-                                            //Check if isn't at each client
-                    if (rule.WasRuleApplied && rule.NumberOfX != 1)
+                    if (rule.WasRuleApplied)
                         break;
 
                     ChangeValue(rule.ValueToIncrease, rule.ValueAmount);
@@ -114,15 +125,19 @@ public class RythmManager : MonoBehaviour
         {
             case ValueToIncrease.ReduceClientPatience:
                 _currentClientPatience -= value;
+                _currentClientPatience = Mathf.Max(0, _currentClientPatience);
                 return;
 
             case ValueToIncrease.ReducePopUpDelay:
                 _currentPopUpMinMaxDelay.x -= value;
                 _currentPopUpMinMaxDelay.y -= value;
+                _currentPopUpMinMaxDelay.x = Mathf.Max(0, _currentPopUpMinMaxDelay.x);
+                _currentPopUpMinMaxDelay.y = Mathf.Max(0, _currentPopUpMinMaxDelay.y);
                 return;
 
             case ValueToIncrease.IncreasePopUpSpeed:
-                _basePopUpSpeed += value;
+                _currentPopUpSpeed += value;
+                _currentPopUpSpeed = Mathf.Max(0, _currentPopUpSpeed);
                 return;
         }
     }

@@ -105,6 +105,7 @@ public class PopUpManager : MonoBehaviour
             if (angleInt == 5)
                 angleInt = 1;
         }
+
         Debug.LogWarning("No angle found");
         return AngleType.None;
     }

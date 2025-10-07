@@ -25,7 +25,8 @@ public class PoliceManager : MonoBehaviour
     {
         while (true)
         {
-            float _delay = Random.Range(RythmManager.Instance.PopUpMinMaxDelay.x, RythmManager.Instance.PopUpMinMaxDelay.y);
+            float _delay = Random.Range(Mathf.Max(RythmManager.Instance.PopUpMinMaxDelay.x,0), 
+                                        Mathf.Max(RythmManager.Instance.PopUpMinMaxDelay.y,0));
             yield return new WaitForSeconds(_delay);
 
             PopUpManager.Instance.SpawnRandomPolicePopup();

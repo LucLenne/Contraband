@@ -56,7 +56,7 @@ public class ClientBehaviour : MonoBehaviour
         _spriteRendererClient.enabled = true;
         
         //A changer avec l'accélération du rythme
-        currentPatientPatience = RythmManager.Instance.ClientPatience;
+        currentPatientPatience = Mathf.Max(RythmManager.Instance.ClientPatience, .1f);
         _patienceCoroutine = StartCoroutine(PatienceRoutine());
 
         _spriteRendererClient.sprite = client.client;
@@ -66,7 +66,7 @@ public class ClientBehaviour : MonoBehaviour
 
     private IEnumerator PatienceRoutine()
     {
-        yield return new WaitForSeconds(_baseClientPatience);
+        yield return new WaitForSeconds(currentPatientPatience);
         LevelManager.Instance.ClientNoMorePatience();
     }
 
