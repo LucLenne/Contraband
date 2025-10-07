@@ -76,7 +76,6 @@ public class RythmManager : MonoBehaviour
         //Check every rule
         foreach (RythmRule rule in _rythmRules)
         {
-            print(_timeElasped % rule.NumberOfX);
             switch (rule.TypeOfChange)
             {
                 case ChangeType.EachXSeconds:
