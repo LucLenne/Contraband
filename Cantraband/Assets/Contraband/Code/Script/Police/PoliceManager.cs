@@ -5,7 +5,7 @@ using UnityEngine;
 public class PoliceManager : MonoBehaviour
 {
     [Header("Parameters")]
-    [SerializeField, MinMaxSlider(0f,10f)] private Vector2 _minMaxDelay;
+    [SerializeField, MinMaxSlider(0f,30f)] private Vector2 _minMaxDelay;
 
     private Coroutine _infiniteSpawnCoroutine;
 
@@ -20,6 +20,9 @@ public class PoliceManager : MonoBehaviour
         {
             float _delay = Random.Range(_minMaxDelay.x, _minMaxDelay.y);
             yield return new WaitForSeconds(_delay);
+
+            Debug.LogWarning("Check if is between transactions");
+ 
             PopUpManager.Instance.SpawnRandomPolicePopup();
         }
 
