@@ -30,6 +30,7 @@ public class LevelManager : MonoBehaviour
     public UnityEvent onClientLeaveEvent;
     [SerializeField] private UnityEvent _onGameOver;
 
+    private int _numberClient = 0; //Nombre de client rencontrés
     private bool _hasClient = false; //est ce que le client existe
 
     private Coroutine _isTransitionCoolDownRoutine;
@@ -39,6 +40,7 @@ public class LevelManager : MonoBehaviour
     public List<Client> _clients;
     private Client _currentClient;
 
+    public int NumberOfClientsEncountered { get => _numberClient; }
     public bool IsBetweenTransactions { get; private set; }
     public bool IsGameRunning { get; private set; } //AKA pas en game over
 
@@ -141,6 +143,7 @@ public class LevelManager : MonoBehaviour
     {
         _currentClient = GetRandomClient();
         _hasClient = true;
+        _numberClient++;
 
         onNextClientAction?.Invoke(_currentClient);
     }

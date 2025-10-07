@@ -61,7 +61,7 @@ public class PopUpGeneric : MonoBehaviour
     }
 
     #region setup
-    public void SetupPopup(AngleType angle)
+    public void SetupPopup(AngleType angle, float speedOverride = -1)
     {
         AngleData angleData = FindDataByAngleType(angle);
         //Setup anchors & positions
@@ -74,6 +74,10 @@ public class PopUpGeneric : MonoBehaviour
         _defaultFrameImage = angleData.defaultImage;
         _frameImage.sprite = _defaultFrameImage;
         _warningFrameImage = angleData.OnWarningImage;
+
+        //Setup speed
+        if(speedOverride != -1)
+            _speed = speedOverride;
     }
     private AngleData FindDataByAngleType(AngleType angleType)
     {

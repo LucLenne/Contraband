@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class PoliceManager : MonoBehaviour
 {
-    [Header("Parameters")]
-    [SerializeField, MinMaxSlider(0f,30f)] private Vector2 _minMaxDelay;
-
     private Coroutine _infiniteSpawnCoroutine;
 
     private void Awake()
@@ -28,7 +25,8 @@ public class PoliceManager : MonoBehaviour
     {
         while (true)
         {
-            float _delay = Random.Range(_minMaxDelay.x, _minMaxDelay.y);
+            float _delay = Random.Range(Mathf.Max(RythmManager.Instance.PopUpMinMaxDelay.x,0), 
+                                        Mathf.Max(RythmManager.Instance.PopUpMinMaxDelay.y,0));
             yield return new WaitForSeconds(_delay);
 
             PopUpManager.Instance.SpawnRandomPolicePopup();
