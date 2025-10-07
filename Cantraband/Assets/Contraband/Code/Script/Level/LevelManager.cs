@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,10 +13,11 @@ public class LevelManager : MonoBehaviour
     [Header("Transaction Cooldown")]
     [SerializeField] private float _transactionCheckCoolDown;
 
-    [Header("Score")] private int _score;
+    [Header("Score"), NaughtyAttributes.ReadOnly] public int score;
     [SerializeField] private int pointGoodCategory;
     [SerializeField] private int pointGoodGame;
     [SerializeField] private int pointWrongGame;
+    [SerializeField] private int timeBeforeNextClient = 3;
 
     [Header("Events")]
     public UnityEvent onNextClientEvent;
@@ -46,30 +49,37 @@ public class LevelManager : MonoBehaviour
     private void OnEnable()
     {
         PopUpManager.Instance.OnCheckPlayerCoat += CheckPlayerCoat;
-        InputManager.Instance.OnReadCard += NextClient;
+        InputManager.Instance.OnReadCard += PlayerGiveCard;
     }
 
     private void OnDisable()
     {
         PopUpManager.Instance.OnCheckPlayerCoat -= CheckPlayerCoat;
-        InputManager.Instance.OnReadCard -= NextClient;
+        InputManager.Instance.OnReadCard -= PlayerGiveCard;
     }
 
-    public void NextClient(int tag)
+    public async void PlayerGiveCard(int tag)
     {
         ComputeScore(GetCardGame(tag));
         //Activate transaction cooldown
-        if(_isTransitionCoolDownRoutine != null)
+        if (_isTransitionCoolDownRoutine != null)
         {
             StopCoroutine(_isTransitionCoolDownRoutine);
             _isTransitionCoolDownRoutine = null;
         }
         _isTransitionCoolDownRoutine = StartCoroutine(TransitionCoolDown());
 
+        await WaitSeconds(timeBeforeNextClient);
+        NextClient(tag);
+    }
+
+    public void NextClient(int tag)
+    {
         _currentClient = GetRandomClient();
         onNextClientEvent?.Invoke();
         onNextClientAction?.Invoke(_currentClient);
     }
+
     private GameCard GetCardGame(int tag)
     {
         return _gameCards[tag];
@@ -87,7 +97,7 @@ public class LevelManager : MonoBehaviour
         //Search favorite came
         if (_currentClient.favoriteCard == gameCard)
         {
-            _score += pointGoodGame;
+            score += pointGoodGame;
             return;
         }
 
@@ -96,13 +106,13 @@ public class LevelManager : MonoBehaviour
         {
             if (_currentClient.genrePreference.Contains(genre))
             {
-                _score += pointGoodCategory;
+                score += pointGoodCategory;
                 return;
             }
         }
 
         //Else remove points
-        _score -= pointWrongGame;
+        score -= pointWrongGame;
     }
 
     Client GetRandomClient()
@@ -140,4 +150,9 @@ public class LevelManager : MonoBehaviour
         OnGameOver?.Invoke();
     }
     #endregion
+
+private async Task WaitSeconds(int seconds)
+    {
+        await Task.Delay(seconds * 1000);
+    }
 }
