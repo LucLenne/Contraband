@@ -45,7 +45,7 @@ public class PopUpGeneric : MonoBehaviour
         _rect.anchorMax = angleData.anchorMinMax;
         _rect.anchoredPosition = angleData.anchoredPosition;
 
-        //Setup warning Image + anchoredPosition
+        //Setup warning Images
         throw new NotImplementedException();
     }
     private AngleData FindDataByAngleType(AngleType angleType)
