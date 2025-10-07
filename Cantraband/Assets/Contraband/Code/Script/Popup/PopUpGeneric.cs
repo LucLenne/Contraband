@@ -33,7 +33,7 @@ public class PopUpGeneric : MonoBehaviour
     [SerializeField] private float _warningImageTime;
 
     [Header("Scale")]
-    [SerializeField, MinMaxSlider(0,10)] private Vector2 _minMaxScale;
+    [SerializeField, MinMaxSlider(0, 10)] private Vector2 _minMaxScale;
     [SerializeField] private AnimationCurve _scaleCurve;
 
     [Header("Events")]
@@ -47,15 +47,16 @@ public class PopUpGeneric : MonoBehaviour
     private Coroutine _scaleFrameRoutine;
     private Coroutine _warningFrameCoroutine;
 
-    public float Speed 
-    { 
-        get => _speed; 
-        set => _speed = value; 
+    public float Speed
+    {
+        get => _speed;
+        set => _speed = value;
     }
 
     private void Awake()
     {
         _animator.speed = _speed;
+
         _scaleFrameRoutine = StartCoroutine(ScaleRoutine());
     }
 
@@ -63,10 +64,11 @@ public class PopUpGeneric : MonoBehaviour
     public void SetupPopup(AngleType angle)
     {
         AngleData angleData = FindDataByAngleType(angle);
+        //Setup anchors & positions
         _rect.anchorMin = angleData.anchorMinMax;
         _rect.anchorMax = angleData.anchorMinMax;
         _rect.anchoredPosition = angleData.anchoredPosition;
-        _positionAt1Scale = _rect.anchoredPosition;
+        _positionAt1Scale = angleData.anchoredPosition;
 
         //Setup images
         _defaultFrameImage = angleData.defaultImage;
@@ -75,9 +77,9 @@ public class PopUpGeneric : MonoBehaviour
     }
     private AngleData FindDataByAngleType(AngleType angleType)
     {
-        foreach(AngleData data in _angleDatas)
+        foreach (AngleData data in _angleDatas)
         {
-            if(data.type == angleType)
+            if (data.type == angleType)
                 return data;
         }
         throw new System.Exception($"No angle data with type {angleType}");
@@ -89,7 +91,10 @@ public class PopUpGeneric : MonoBehaviour
     {
         float timeElapsed = 0.0f;
         float progress = 0.0f;
-        float animationLength = _animator.GetCurrentAnimatorClipInfo(0).Length;
+
+        AnimatorClipInfo[] clipInfos = _animator.GetCurrentAnimatorClipInfo(0);
+        AnimationClip currentClip = clipInfos[0].clip;
+        float animationLength = currentClip.length;
 
         while (timeElapsed <= animationLength)
         {
