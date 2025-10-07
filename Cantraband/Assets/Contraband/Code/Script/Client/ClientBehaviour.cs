@@ -11,8 +11,7 @@ public class ClientBehaviour : MonoBehaviour
     [SerializeField] private SpriteRenderer _spriteRendererClient;
     [SerializeField] private GameObject _canvasObject;
 
-    [Header("UI"),SerializeField] private TMP_Text _speechTextMeshPro;
-    [SerializeField] private Image _imageGameCard;
+    [Header("UI"), SerializeField] private Image _imageGameCard;
 
     [Header("Patience")]
     [SerializeField] private float _baseClientPatience;
@@ -60,8 +59,7 @@ public class ClientBehaviour : MonoBehaviour
         _patienceCoroutine = StartCoroutine(PatienceRoutine());
 
         _spriteRendererClient.sprite = client.client;
-        _speechTextMeshPro.text = client.text;
-        _imageGameCard.sprite = client.clue;
+        _imageGameCard.sprite = client.favoriteCard.hintImage;
     }
 
     private IEnumerator PatienceRoutine()

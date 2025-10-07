@@ -7,5 +7,5 @@ public class GameCard : ScriptableObject
     public int tag;
     public string Name;
     public List<GameGenre> genres;
-    public List<Sprite> hintImages;
+    public Sprite hintImage;
 }
