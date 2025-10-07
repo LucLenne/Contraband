@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,6 +27,14 @@ public class PopUpGeneric : MonoBehaviour
     [Header("Parameters")]
     [SerializeField] private float _speed = 1f;
 
+    [Header("Warning Image")]
+    [SerializeField] private float _warningImageTime;
+
+    private Sprite _defaultFrameImage;
+    private Sprite _warningFrameImage;
+
+    private Coroutine _warningFrameCoroutine;
+
     public float Speed 
     { 
         get => _speed; 
@@ -40,13 +49,14 @@ public class PopUpGeneric : MonoBehaviour
     public void SetupPopup(AngleType angle)
     {
         AngleData angleData = FindDataByAngleType(angle);
-        _frameImage.sprite = angleData.defaultImage;
         _rect.anchorMin = angleData.anchorMinMax;
         _rect.anchorMax = angleData.anchorMinMax;
         _rect.anchoredPosition = angleData.anchoredPosition;
 
-        //Setup warning Images
-        throw new NotImplementedException();
+        //Setup images
+        _defaultFrameImage = angleData.defaultImage;
+        _frameImage.sprite = _defaultFrameImage;
+        _warningFrameImage = angleData.OnWarningImage;
     }
     private AngleData FindDataByAngleType(AngleType angleType)
     {
@@ -62,6 +72,14 @@ public class PopUpGeneric : MonoBehaviour
     public void LaunchEventInAnim()
     {
         PopUpManager.Instance.CheckPlayerCoat?.Invoke();
+        
+        _frameImage.sprite = _warningFrameImage;
+        _warningFrameCoroutine = StartCoroutine(WarningFrame());
+    }
+    private IEnumerator WarningFrame()
+    {
+        yield return new WaitForSeconds(_warningImageTime);
+        _frameImage.sprite = _defaultFrameImage;
     }
 
     public void LaunchEndAnim()

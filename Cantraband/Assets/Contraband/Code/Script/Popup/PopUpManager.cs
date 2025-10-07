@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,10 +18,12 @@ public class PopUpManager : MonoBehaviour
     public static PopUpManager Instance;
 
     [Header("References")]
+    [SerializeField] private Transform _parentCanvas;
+    [Space(5)]
     [SerializeField] private List<PopUpGeneric> _policePopUps;
     [SerializeField] private List<PopUpGeneric> _feedBackPopUps;
 
-    private Dictionary<AngleType, PopUpGeneric> _occupiedAngles;
+    private Dictionary<AngleType, PopUpGeneric> _occupiedAngles = new Dictionary<AngleType, PopUpGeneric>();
 
     public Action CheckPlayerCoat;
 
@@ -32,8 +35,15 @@ public class PopUpManager : MonoBehaviour
             return;
         }
         Instance = this;
+
+        //Init dictionary
+        _occupiedAngles.Add(AngleType.UpperLeft, null);
+        _occupiedAngles.Add(AngleType.UpperRight, null);
+        _occupiedAngles.Add(AngleType.LowerLeft, null);
+        _occupiedAngles.Add(AngleType.LowerRight, null);
     }
 
+    [Button]
     public void SpawnRandomPolicePopup()
     {
         //Select random police popup
@@ -60,7 +70,8 @@ public class PopUpManager : MonoBehaviour
 
     private void SpawnPopup(PopUpGeneric popUpToSpawn, AngleType angle)
     {
-        PopUpGeneric newPopUp = Instantiate(popUpToSpawn);
+        PopUpGeneric newPopUp = Instantiate(popUpToSpawn, _parentCanvas);
+        _occupiedAngles[angle] = newPopUp;
         newPopUp.SetupPopup(angle);
     }
 
@@ -74,9 +85,11 @@ public class PopUpManager : MonoBehaviour
                 return (AngleType)angleInt;    
             }
 
-            angleInt = (angleInt + 1 == 5) ? 1 : angleInt++;
+            angleInt++;
+            if (angleInt == 5)
+                angleInt = 1;
         }
         Debug.LogWarning("No angle found");
-        return (AngleType)angleInt;
+        return AngleType.None;
     }
 }
