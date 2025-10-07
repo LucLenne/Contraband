@@ -554,5 +554,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClientBehaviour
   _spriteRendererClient: {fileID: 7129799993535528004}
+  _canvasObject: {fileID: 6353971522729031282}
   _speechTextMeshPro: {fileID: 234160941081179164}
   _imageGameCard: {fileID: 8868706051003184102}

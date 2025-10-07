@@ -1,9 +1,11 @@
+using NaughtyAttributes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class LevelManager : MonoBehaviour
 {
@@ -16,7 +18,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private int _pointGoodCategory = 1;
     [SerializeField] private int _pointGoodGame = 3;
     [SerializeField] private int _pointWrongGame = -1;
-    [SerializeField] private int _timeBeforeNextClient = 3;
+    [SerializeField, MinMaxSlider(1,10)] private Vector2 _timeBeforeNextClient = new Vector2(3,5);
 
     [Header("Events")]
     public UnityEvent onNextClientEvent;
@@ -32,6 +34,7 @@ public class LevelManager : MonoBehaviour
     public bool IsBetweenTransactions { get; private set; }
     public bool IsGameRunning { get; private set; } //AKA pas en game over
 
+    public Action OnValidateTransaction;
     public Action<Client> onNextClientAction;
     public Action OnGameOver;
 
@@ -62,7 +65,13 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        _currentClient = GetRandomClient();
+        GetFirstClient();
+    }
+
+    private async void GetFirstClient()
+    {
+        await WaitSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
+        GiveNextClient();
     }
 
     public async void PlayerGiveCard(int tag)
@@ -80,6 +89,7 @@ public class LevelManager : MonoBehaviour
         if (selectedCard == null)
             throw new Exception($"No card with tag {tag}");
         ComputeScore(selectedCard);
+        OnValidateTransaction?.Invoke();
 
         //Activate transaction cooldown
         if (_isTransitionCoolDownRoutine != null)
@@ -89,11 +99,11 @@ public class LevelManager : MonoBehaviour
         }
         _isTransitionCoolDownRoutine = StartCoroutine(TransitionCoolDown());
 
-        await WaitSeconds(_timeBeforeNextClient);
-        NextClient(tag);
+        await WaitSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
+        GiveNextClient();
     }
 
-    public void NextClient(int tag)
+    public void GiveNextClient()
     {
         _currentClient = GetRandomClient();
         onNextClientEvent?.Invoke();
