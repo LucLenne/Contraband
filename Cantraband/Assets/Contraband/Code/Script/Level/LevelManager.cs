@@ -1,4 +1,4 @@
-using NaughtyAttributes;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -6,12 +6,22 @@ using UnityEngine.Events;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance { get; private set; }
+
+    [Header("Score")] private int _score;
+    [SerializeField] private int pointGoodCategory;
+    [SerializeField] private int pointGoodGame;
+    [SerializeField] private int pointWrongGame;
+
+    [Header("Events")]
+    public UnityEvent onNextClientEvent;
+    [SerializeField] private UnityEvent _onGameOver;
+
     private Dictionary<int, GameCard> _gameCards;
-    [SerializeField]private List<Client> _clients;
+    private List<Client> _clients;
     private Client _currentClient;
-    [Header("Score")]private int _score;
-    public int pointGoodCategory;
-    public int pointGoodGame;
+
+    public Action<Client> onNextClientAction;
+    public Action OnGameOver;
 
     void Awake()
     {
@@ -26,10 +36,17 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public System.Action onNextClientAction;
-    public UnityEvent onNextClientEvent;
+    private void OnEnable()
+    {
+        PopUpManager.Instance.OnCheckPlayerCoat += CheckPlayerCoat;
+    }
 
-    private GameCard GetCardGame(int tag)
+    private void OnDisable()
+    {
+        PopUpManager.Instance.OnCheckPlayerCoat -= CheckPlayerCoat;
+    }
+
+    GameCard GetCardGame(int tag)
     {
         return _gameCards[tag];
     }
@@ -45,21 +62,19 @@ public class LevelManager : MonoBehaviour
     private void ComputeScore(GameCard gameCard)
     {
         //Search favorite came
-        if (_currentClient.favoriteCard == gameCard) 
+        if (_currentClient.favoriteCard == gameCard)
         {
             _score += pointGoodGame;
+            return;
         }
 
         //Else search good category
         foreach (GameGenre genre in gameCard.genres)
         {
-            foreach (GameGenre genre in gameCard.genres)
+            if (_currentClient.genrePreference.Contains(genre))
             {
-                if (_currentClient.genrePreference.Contains(genre))
-                {
-                    _score += pointGoodCategory;
-                    return;
-                }
+                _score += pointGoodCategory;
+                return;
             }
         }
 
@@ -67,14 +82,14 @@ public class LevelManager : MonoBehaviour
         _score -= pointWrongGame;
     }
 
-    private Client GetRandomClient()
+    Client GetRandomClient()
     {
         if (_clients.Count == 0)
         {
             Debug.LogError("Missing Client");
             return new();
         }
-        int randomIndex = Random.Range(0, _clients.Count);
+        int randomIndex = UnityEngine.Random.Range(0, _clients.Count);
         return _clients[randomIndex];
     }
 
