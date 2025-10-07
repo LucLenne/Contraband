@@ -110,7 +110,7 @@ public class PopUpGeneric : MonoBehaviour
     #endregion
 
     #region Animation events
-    public void LaunchEventInAnim()
+    public void LaunchCheckPlayerCoatInAnim()
     {
         _onCheckPlayerCoat?.Invoke();
         PopUpManager.Instance.LaunchCheckPlayerCoat();
