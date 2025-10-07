@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7352960800895879755, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
+      propertyPath: _soundName
+      value: PopUp_FakePolicePatrol
+      objectReference: {fileID: 0}
     - target: {fileID: 9004432895735161392, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
       propertyPath: m_Controller
       value: 

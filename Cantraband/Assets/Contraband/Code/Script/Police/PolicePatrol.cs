@@ -4,6 +4,7 @@ using Random = UnityEngine.Random;
 
 public class PolicePatrol : MonoBehaviour
 {
+    private const string SOUND_PATROL = "PolicePatrol";
     private const string ANIMATION_LOOKING_PLAYER_BOOL = "Looking";
     private const string ANIMATION_RESET = "Reset";
 
@@ -36,6 +37,8 @@ public class PolicePatrol : MonoBehaviour
         bool _isLookingAtPlayer = Random.value >= _lookingAtPlayerChance;
         _animator.SetBool(ANIMATION_LOOKING_PLAYER_BOOL, _isLookingAtPlayer);
         _animator.SetTrigger(ANIMATION_RESET);
+
+        AudioManager.AudioManager.Instance.PlaySound(SOUND_PATROL);
     }
 
     public void LaunchCheckPlayerCoatInAnim()

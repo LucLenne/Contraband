@@ -9,12 +9,12 @@ public class DisplayScore : MonoBehaviour
 
     private void OnEnable()
     {
-        LevelManager.Instance.OnValidateTransaction += UpdateScore;
+        LevelManager.Instance.OnFinishTransaction += UpdateScore;
     }
 
     private void OnDisable()
     {
-        LevelManager.Instance.OnValidateTransaction -= UpdateScore;
+        LevelManager.Instance.OnFinishTransaction -= UpdateScore;
     }
 
     void UpdateScore()
