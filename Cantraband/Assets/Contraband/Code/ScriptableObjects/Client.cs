@@ -8,6 +8,6 @@ public class Client : ScriptableObject
     public Sprite clue;
     public string text;
     public bool isPolice;
-    public List<GameGenre> themePreference;
+    public List<GameGenre> genrePreference;
     public GameCard favoriteCard;
 }
