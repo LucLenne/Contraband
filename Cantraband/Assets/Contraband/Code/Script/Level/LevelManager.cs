@@ -1,18 +1,18 @@
-using System;
+using NaughtyAttributes;
 using System.Collections.Generic;
-using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance { get; private set; }
+
     private Dictionary<int, GameCard> _gameCards;
-    private List<Client> _clients;
+    [SerializeField]private List<Client> _clients;
     private Client _currentClient;
-    [Header("Score")]private int _score;
-    public int pointGoodCategory;
-    public int pointGoodGame;
+    [ReadOnly] public int score = 0;
+    public int pointGoodCategory = 5;
+    public int pointGoodGame = 10;
 
     void Awake()
     {
@@ -27,10 +27,10 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public System.Action onNextClientAction;
+    public System.Action<Client> onNextClientAction;
     public UnityEvent onNextClientEvent;
 
-    GameCard GetCardGame(int tag)
+    private GameCard GetCardGame(int tag)
     {
         return _gameCards[tag];
     }
@@ -40,14 +40,14 @@ public class LevelManager : MonoBehaviour
         ComputeScore(GetCardGame(tag));
         _currentClient = GetRandomClient();
         onNextClientEvent?.Invoke();
-        onNextClientAction?.Invoke();
+        onNextClientAction?.Invoke(_currentClient);
     }
 
     private void ComputeScore(GameCard gameCard)
     {
         if (_currentClient.favoriteCard == gameCard) 
         {
-            _score += pointGoodGame;
+            score += pointGoodGame;
         }
         else
         {
@@ -55,21 +55,21 @@ public class LevelManager : MonoBehaviour
             {
                 if (_currentClient.genrePreference.Contains(genre))
                 {
-                    _score += pointGoodCategory;
+                    score += pointGoodCategory;
                     return;
                 }
             }
         }
     }
 
-    Client GetRandomClient()
+    private Client GetRandomClient()
     {
         if (_clients.Count == 0)
         {
             Debug.LogError("Missing Client");
             return new();
         }
-        int randomIndex = UnityEngine.Random.Range(0, _clients.Count);
+        int randomIndex = Random.Range(0, _clients.Count);
         return _clients[randomIndex];
     }
 }

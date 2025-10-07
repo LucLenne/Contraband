@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Client", menuName = "Scriptable Objects/Client")]
 public class Client : ScriptableObject
 {
+    public Sprite client;
     public Sprite clue;
     public string text;
     public bool isPolice;
