@@ -24,8 +24,10 @@ public class LevelManager : MonoBehaviour
     public UnityEvent onNextClientEvent;
     [SerializeField] private UnityEvent _onGameOver;
 
+    private bool _hasClient = false; //est ce que le client existe
+
     private Coroutine _isTransitionCoolDownRoutine;
-    private bool _isInTransaction = false;
+    private bool _isRightAfterTransaction = false;
 
     public List<GameCard> _gameCards;
     public List<Client> _clients;
@@ -76,13 +78,19 @@ public class LevelManager : MonoBehaviour
 
     public async void PlayerGiveCard(int tag)
     {
+        //Check if not in game over
         if (!IsGameRunning) return;
 
+        //Check if vest is opened
         if (!InputManager.Instance.IsVestOpened)
         {
             Debug.LogWarning("Open vest first !");
             return;
         }
+
+        //Check if there's a client
+        if (!_hasClient) return;
+        _hasClient = false;
 
         //Get card & compute score
         GameCard selectedCard = GetCardGame(tag);
@@ -106,6 +114,8 @@ public class LevelManager : MonoBehaviour
     public void GiveNextClient()
     {
         _currentClient = GetRandomClient();
+        _hasClient = true;
+
         onNextClientEvent?.Invoke();
         onNextClientAction?.Invoke(_currentClient);
     }
@@ -122,9 +132,9 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator TransitionCoolDown()
     {
-        _isInTransaction = true;
+        _isRightAfterTransaction = true;
         yield return new WaitForSeconds(_transactionCheckCoolDown);
-        _isInTransaction = false;
+        _isRightAfterTransaction = false;
     }
 
     private void ComputeScore(GameCard gameCard)
@@ -172,7 +182,7 @@ public class LevelManager : MonoBehaviour
 
     public void CheckPlayerTransaction()
     {
-        if (!_isInTransaction)
+        if (!_isRightAfterTransaction)
             return;
 
         LaunchGameOver();
