@@ -63,7 +63,8 @@ public class PopUpManager : MonoBehaviour
         if (angleType == AngleType.None)
             return;
 
-        SpawnPopup(popUpToSpawn, angleType);
+        float popUpSpeed = RythmManager.Instance.PopUpSpeed;
+        SpawnPopup(popUpToSpawn, angleType, popUpSpeed);
     }
 
     [Button]
@@ -82,11 +83,12 @@ public class PopUpManager : MonoBehaviour
         SpawnPopup(popUpToSpawn, angleType);
     }
 
-    private void SpawnPopup(PopUpGeneric popUpToSpawn, AngleType angle)
+    private void SpawnPopup(PopUpGeneric popUpToSpawn, AngleType angle, float speed = -1f)
     {
         PopUpGeneric newPopUp = Instantiate(popUpToSpawn, _parentCanvas);
         _occupiedAngles[angle] = newPopUp;
-        newPopUp.SetupPopup(angle);
+        newPopUp.SetupPopup(angle, speed);
+
     }
 
     private AngleType SelectUnoccupiedAngle()
