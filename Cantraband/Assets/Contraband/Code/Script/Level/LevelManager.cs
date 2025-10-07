@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,6 +13,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private int pointGoodCategory;
     [SerializeField] private int pointGoodGame;
     [SerializeField] private int pointWrongGame;
+    [SerializeField] private int timeBeforeNextClient = 3;
 
     [Header("Events")]
     public UnityEvent onNextClientEvent;
@@ -52,7 +54,13 @@ public class LevelManager : MonoBehaviour
         return _gameCards[tag];
     }
 
-    public void NextClient(int tag)
+    public async void PlayerGiveCard(int tag)
+    {
+        await WaitSeconds(timeBeforeNextClient);
+        NextClient(tag);
+    }
+
+    private void NextClient(int tag)
     {
         ComputeScore(GetCardGame(tag));
         _currentClient = GetRandomClient();
@@ -104,8 +112,8 @@ public class LevelManager : MonoBehaviour
         OnGameOver?.Invoke();
     }
 
-    public void GetScore()
+    private async Task WaitSeconds(int seconds)
     {
-
+        await Task.Delay(seconds * 1000);
     }
 }
