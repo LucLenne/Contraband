@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
-    [SerializeField] private int _tagStartCard;
+    [SerializeField] private string _tagStartCard;
     private const string levelGameName = "Game";
     private void OnEnable()
     {
@@ -15,7 +15,7 @@ public class MainMenuUI : MonoBehaviour
         InputManager.Instance.OnReadCard -= CheckChard;
     }
 
-    void CheckChard(int tag)
+    void CheckChard(string tag)
     {
         if (tag == _tagStartCard)
         {

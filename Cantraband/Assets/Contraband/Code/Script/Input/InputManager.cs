@@ -6,9 +6,8 @@ public class InputManager : MonoBehaviour
 {
     public static InputManager Instance;
 
-    public Action<int> OnReadCard;
+    public Action<string> OnReadCard;
     public Action<bool> OnVestChanged;
-    public bool DebugGetKeyboardInput = true;
 
     public bool IsVestOpened { get; private set; }
 
@@ -27,15 +26,15 @@ public class InputManager : MonoBehaviour
         IsVestOpened = false;
     }
 
-    private void GetNFCReader(int cardId)
+    public void ReceiveNFCReader(string cardId)
     {
-        Debug.Log("NFC Value is: " + cardId);
+        Debug.Log("Input NFC Value is: " + cardId);
         OnReadCard?.Invoke(cardId);
     }
 
     private void SetVestState(bool state)
     {
-        Debug.Log("Vest State is: " + state.ToString());
+        Debug.Log("Input Vest State is: " + state.ToString());
 
         IsVestOpened = state;
         OnVestChanged?.Invoke(state);
@@ -44,8 +43,7 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        if (DebugGetKeyboardInput)
-            KeyboardInputJoueur();
+        KeyboardInputJoueur();
     }
 
     private void KeyboardInputJoueur()
@@ -54,17 +52,18 @@ public class InputManager : MonoBehaviour
         {
             SetVestState(true);
         }
-        if (Keyboard.current[Key.C].wasPressedThisFrame)
+        else if(Keyboard.current[Key.O].wasReleasedThisFrame)
         {
             SetVestState(false);
         }
+
         if (Keyboard.current[Key.Digit1].wasPressedThisFrame)
         {
-            GetNFCReader(1);
+            ReceiveNFCReader("Test1");
         }
         if (Keyboard.current[Key.Digit2].wasPressedThisFrame)
         {
-            GetNFCReader(2);
+            ReceiveNFCReader("Test2");
         }
     }
 }
