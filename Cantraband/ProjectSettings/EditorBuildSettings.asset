@@ -9,5 +9,7 @@ EditorBuildSettings:
     path: Assets/Contraband/Level/Scene/Game/Game.unity
     guid: 7de2e3855a0664f4d81a8bd5134c7e03
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: c0be04fdc691a0e4e87afb54523dd660, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    com.unity.localization.settings: {fileID: 11400000, guid: 8786e2b50afc9504a9662dc16795e678, type: 2}
   m_UseUCBPForAssetBundles: 0
