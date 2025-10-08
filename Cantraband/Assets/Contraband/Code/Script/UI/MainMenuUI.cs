@@ -27,13 +27,4 @@ public class MainMenuUI : MonoBehaviour
     {
         SceneManager.LoadScene(levelGameName);
     }
-
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            StartGame();
-        }
-    }
 }

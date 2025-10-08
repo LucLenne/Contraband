@@ -9,7 +9,7 @@ public class GameOver : MonoBehaviour
     [SerializeField] private GameObject _gameOverUI;
     [Space(5)]
     [SerializeField] private int _timeOnSceneGameOver = 3;
-    private const string _nameSceneMainMenu = "Game";
+    private const string _nameSceneMainMenu = "MainMenu";
 
     private void Awake()
     {

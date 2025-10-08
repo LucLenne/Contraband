@@ -161,6 +161,9 @@ namespace AudioManager
         {
             foreach (AudioSource source in _soundPoolingList)
             {
+                if (source == null)
+                    continue;
+
                 if (!source.isPlaying)
                     return source;
             }
