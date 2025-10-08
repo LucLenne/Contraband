@@ -25,15 +25,6 @@ public class MainMenuUI : MonoBehaviour
 
     private void StartGame()
     {
-        SceneManager.LoadScene(levelGameName);
-    }
-
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            StartGame();
-        }
+        LoadingManager.Instance.LoadScene(levelGameName);
     }
 }
