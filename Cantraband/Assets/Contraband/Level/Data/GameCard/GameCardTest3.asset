@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc40bb3058ead224bb891d84844300eb, type: 3}
-  m_Name: GameCardTest2
+  m_Name: GameCardTest3
   m_EditorClassIdentifier: Assembly-CSharp::GameCard
   tag: Test2
   Name: Test game card
-  genres: 04000000
-  hintImage: {fileID: 21300000, guid: a1bd2655f40c0dd48986eef26375e371, type: 3}
-  MeshPrefab: {fileID: 723989339743314472, guid: e507ef7001d037341b61d02a55f1b2aa, type: 3}
+  genres: 01000000
+  hintImage: {fileID: 0}
+  MeshPrefab: {fileID: 723989339743314472, guid: 19732c59111bc1148b863266ee080f2d, type: 3}

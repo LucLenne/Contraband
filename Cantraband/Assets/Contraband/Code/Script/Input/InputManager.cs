@@ -65,5 +65,13 @@ public class InputManager : MonoBehaviour
         {
             ReceiveNFCReader("Test2");
         }
+        if (Keyboard.current[Key.Digit3].wasPressedThisFrame)
+        {
+            ReceiveNFCReader("Test3");
+        }
+        if (Keyboard.current[Key.Digit4].wasPressedThisFrame)
+        {
+            ReceiveNFCReader("Test4");
+        }
     }
 }
