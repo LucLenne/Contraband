@@ -40,9 +40,15 @@ public class LevelManager : MonoBehaviour
     public List<Client> _clients;
     private Client _currentClient;
 
+    private List<GameCard> _gameCardsGiven = new List<GameCard>();
+    private List<int> _pointsAwarded = new List<int>();
+
     public int NumberOfClientsEncountered { get => _numberClient; }
     public bool IsBetweenTransactions { get; private set; }
     public bool IsGameRunning { get; private set; } //AKA pas en game over
+
+    public List<GameCard> GameCardsGiven { get =>  _gameCardsGiven; }
+    public List<int> PointsAwarded { get => _pointsAwarded; }
 
     public Action OnFinishTransaction;
     public Action<Client> onNextClientAction;
@@ -190,6 +196,8 @@ public class LevelManager : MonoBehaviour
         if (_currentClient.favoriteCard == gameCard)
         {
             score += _pointGoodGame;
+            _gameCardsGiven.Add(gameCard);
+            _pointsAwarded.Add(_pointGoodGame);
             AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_FAVORITEGAME);
             return;
         }
@@ -200,6 +208,8 @@ public class LevelManager : MonoBehaviour
             if (_currentClient.genrePreference.Contains(genre))
             {
                 score += _pointGoodCategory;
+                _gameCardsGiven.Add(gameCard);
+                _pointsAwarded.Add(_pointGoodCategory);
                 AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_GOODCATEGORY);
                 return;
             }
@@ -208,6 +218,8 @@ public class LevelManager : MonoBehaviour
         //Else remove points
         score += _pointWrongGame;
         score = Mathf.Max(score, 0);
+        _gameCardsGiven.Add(gameCard);
+        _pointsAwarded.Add(_pointWrongGame);
         AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_WRONGGAME);
     }
 

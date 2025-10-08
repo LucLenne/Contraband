@@ -8,4 +8,6 @@ public class GameCard : ScriptableObject
     public string Name;
     public List<GameGenre> genres;
     public Sprite hintImage;
+
+    public GameObject MeshPrefab;
 }
