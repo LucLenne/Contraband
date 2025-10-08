@@ -54,6 +54,7 @@ public class LevelManager : MonoBehaviour
 
     public Action OnFinishTransaction;
     public Action<Client> onNextClientAction;
+    public Action OnFailedByCop; //Quand donne un "mauvais" jeu au flic infiltré
     public Action OnGameOver;
 
     void Awake()
@@ -119,7 +120,7 @@ public class LevelManager : MonoBehaviour
         {
             if(!selectedCard.genres.Contains(GameGenre.Factice))
             {
-                LaunchGameOver();
+                OnFailedByCop?.Invoke(); //Passe par le flic pour jouer l'anim avant de lancer le game over
                 return;
             }
 
@@ -257,11 +258,10 @@ public class LevelManager : MonoBehaviour
         LaunchGameOver();
     }
 
-    private void LaunchGameOver()
+    public void LaunchGameOver()
     {
         if (!IsGameRunning) return;
 
-        Debug.Log("GAME OVER !");
         IsGameRunning = false;
         _onGameOver?.Invoke();
         OnGameOver?.Invoke();
