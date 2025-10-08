@@ -23,11 +23,13 @@ public class PolicePatrol : MonoBehaviour
     private void OnEnable()
     {
         PopUpManager.Instance.OnLaunchPolicePatrol += ActivatePatrol;
+        LevelManager.Instance.OnGameOver += StopAnimation;
     }
 
     private void OnDisable()
     {
         PopUpManager.Instance.OnLaunchPolicePatrol -= ActivatePatrol;
+        LevelManager.Instance.OnGameOver -= StopAnimation;
     }
 
     private void ActivatePatrol()
@@ -50,5 +52,10 @@ public class PolicePatrol : MonoBehaviour
     public void StopPatrol()
     {
         _animationObject.SetActive(false);
+    }
+
+    private void StopAnimation()
+    {
+        _animator.speed = 0;
     }
 }

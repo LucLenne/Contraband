@@ -98,9 +98,9 @@ public class RythmManager : MonoBehaviour
 
                 case ChangeType.EachXClient:
                     //Check if isn't at each client
-                    if(rule.NumberOfX <= 2)
+                    if(rule.NumberOfX < 2)
                     {
-                        Debug.LogError("Number of client can't be under 2 - go complaint to GP because");
+                        Debug.LogError("Number of client can't be under 2 - go complaint to GP");
                         break;
                     }    
 

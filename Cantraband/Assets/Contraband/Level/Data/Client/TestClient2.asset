@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: TestClient2
   m_EditorClassIdentifier: Assembly-CSharp::Client
   client: {fileID: -2949557052073368641, guid: 970d1755d6eca6045a0af3741f1fa863, type: 3}
-  clue: {fileID: -8708151249000511563, guid: 024e163f6a077c948ab07df041c27c89, type: 3}
-  text: Moustache
-  isPolice: 0
-  genrePreference: 03000000
+  isPolice: 1
+  genrePreference: 04000000
   favoriteCard: {fileID: 11400000, guid: 8753cc5b0c336134aa0bf3be046f0ec9, type: 2}
