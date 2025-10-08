@@ -5,7 +5,10 @@ public class DisplayScore : MonoBehaviour
 {
     [SerializeField]private TMP_Text _scoreText;
 
-
+    private void Start()
+    {
+        UpdateScore();
+    }
 
     private void OnEnable()
     {
