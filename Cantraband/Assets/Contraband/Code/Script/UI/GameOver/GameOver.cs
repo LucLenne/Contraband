@@ -37,6 +37,6 @@ public class GameOver : MonoBehaviour
     private void RestartGame()
     {
         _gameOverScene.OnGameCardSpawnEnded -= RestartGame;
-        SceneManager.LoadScene(_nameSceneMainMenu);
+        LoadingManager.Instance.LoadScene(_nameSceneMainMenu);
     }
 }
