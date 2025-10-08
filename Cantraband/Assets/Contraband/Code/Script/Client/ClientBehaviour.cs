@@ -50,13 +50,12 @@ public class ClientBehaviour : MonoBehaviour
         _newClient = false;
         _canvasObject.SetActive(true);
         _spriteRendererClient.enabled = true;
-        
+        _spriteRendererClient.sprite = client.client;
+        _imageGameCard.sprite = client.favoriteCard.hintImage;
+
         //A changer avec l'accélération du rythme
         currentPatientPatience = Mathf.Max(RythmManager.Instance.ClientPatience, .1f);
         await StartTimerAsync();
-
-        _spriteRendererClient.sprite = client.client;
-        _imageGameCard.sprite = client.favoriteCard.hintImage;
     }
 
 
@@ -71,7 +70,8 @@ public class ClientBehaviour : MonoBehaviour
             await Task.Yield(); // équivalent à coroutine `yield return null`
 
             timeLeft -= Time.deltaTime;
-            _sliderPatience.value = timeLeft;
+            if(_sliderPatience != null)
+                _sliderPatience.value = timeLeft;
         }
         _sliderPatience.value = 0f;
         LevelManager.Instance.ClientNoMorePatience();
