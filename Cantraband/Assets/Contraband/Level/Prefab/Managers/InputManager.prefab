@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1887346407659254258}
   - component: {fileID: 3175002429555411518}
+  - component: {fileID: 693282510328648002}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: Untagged
@@ -44,4 +45,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51dfde35d8fd654c94ddd140989ba27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputManager
-  DebugGetKeyboardInput: 1
+--- !u!114 &693282510328648002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481037512443978318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a172c653b9ed9c848952ad2dcbd35a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArduinoCommunicator
+  portName: COM4
+  portVal: 9600
