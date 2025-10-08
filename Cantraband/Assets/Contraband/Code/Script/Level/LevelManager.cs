@@ -85,7 +85,7 @@ public class LevelManager : MonoBehaviour
         AudioManager.AudioManager.Instance.PlaySound(SOUND_NEW_CLIENT);
     }
 
-    public async void PlayerGiveCard(int tag)
+    public async void PlayerGiveCard(string tag)
     {
         //Check if not in game over
         if (!IsGameRunning) return;
@@ -167,7 +167,7 @@ public class LevelManager : MonoBehaviour
         onNextClientAction?.Invoke(_currentClient);
     }
 
-    private GameCard GetCardGame(int tag)
+    private GameCard GetCardGame(string tag)
     {
         foreach(GameCard card in _gameCards)
         {
