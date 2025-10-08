@@ -26,6 +26,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private int _pointWrongGame = -1;
     [SerializeField, MinMaxSlider(1,10)] private Vector2 _timeBeforeNextClient = new Vector2(3,5);
 
+    [Header("Clients")]
+    [SerializeField] private Transform _clientSpawnPoint;
+
     [Header("Events")]
     public UnityEvent onClientLeaveEvent;
     [SerializeField] private UnityEvent _onGameOver;
@@ -36,9 +39,8 @@ public class LevelManager : MonoBehaviour
     private Coroutine _isTransitionCoolDownRoutine;
     private bool _isRightAfterTransaction = false;
 
-    public List<GameCard> _gameCards;
-    public List<Client> _clients;
     private Client _currentClient;
+    private GameObject _currentClientObject;
 
     private List<GameCard> _gameCardsGiven = new List<GameCard>();
     private List<int> _pointsAwarded = new List<int>();
@@ -166,16 +168,20 @@ public class LevelManager : MonoBehaviour
 
     public void GiveNextClient()
     {
+        //Get next client
         _currentClient = GetRandomClient();
         _hasClient = true;
         _numberClient++;
+
+        //Spawn next client
+        _currentClientObject = Instantiate(_currentClient.clientPrefab, _clientSpawnPoint.position, Quaternion.identity);
 
         onNextClientAction?.Invoke(_currentClient);
     }
 
     private GameCard GetCardGame(string tag)
     {
-        foreach(GameCard card in _gameCards)
+        foreach(GameCard card in DataContainer.GameCards)
         {
             if(card.tag == tag)
                 return card;
@@ -225,13 +231,13 @@ public class LevelManager : MonoBehaviour
 
     private Client GetRandomClient()
     {
-        if (_clients.Count == 0)
+        if (DataContainer.Clients.Count == 0)
         {
             Debug.LogError("Missing Client");
             return new();
         }
-        int randomIndex = UnityEngine.Random.Range(0, _clients.Count);
-        return _clients[randomIndex];
+        int randomIndex = UnityEngine.Random.Range(0, DataContainer.Clients.Count);
+        return DataContainer.Clients[randomIndex];
     }
 
     #region Game over
