@@ -1,0 +1,819 @@
+fileFormatVersion: 2
+guid: 3783237f196efe945a5b0818a4b969e6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1308095121877002253
+    second: BulleMotif_0
+  - first:
+      213: -4085736671219724740
+    second: BulleMotif_1
+  - first:
+      213: -5268168946263092543
+    second: BulleMotif_2
+  - first:
+      213: -2512330888774160148
+    second: BulleMotif_3
+  - first:
+      213: -1366789444728150653
+    second: BulleMotif_4
+  - first:
+      213: 27305226884614389
+    second: BulleMotif_5
+  - first:
+      213: 7991591206837487896
+    second: BulleMotif_6
+  - first:
+      213: -2774225843457347312
+    second: BulleMotif_7
+  - first:
+      213: 1171110093601569404
+    second: BulleMotif_8
+  - first:
+      213: -1780398986641985857
+    second: BulleMotif_9
+  - first:
+      213: -5293763166735543154
+    second: BulleMotif_10
+  - first:
+      213: -4705662143011851155
+    second: BulleMotif_11
+  - first:
+      213: 8013246479194412023
+    second: BulleMotif_12
+  - first:
+      213: -629652518108999200
+    second: BulleMotif_13
+  - first:
+      213: 2345944795649170226
+    second: BulleMotif_14
+  - first:
+      213: 9213057698597469968
+    second: BulleMotif_15
+  - first:
+      213: -7187943336038375
+    second: BulleMotif_16
+  - first:
+      213: -7016089987896713640
+    second: BulleMotif_17
+  - first:
+      213: 9186342049347484356
+    second: BulleMotif_18
+  - first:
+      213: -3742501609234876157
+    second: BulleMotif_19
+  - first:
+      213: -5688552997712044762
+    second: BulleMotif_20
+  - first:
+      213: 1362648406179625958
+    second: BulleMotif_21
+  - first:
+      213: 3552926696301631181
+    second: BulleMotif_22
+  - first:
+      213: 5597099892713268030
+    second: BulleMotif_23
+  - first:
+      213: -572455370072797499
+    second: BulleMotif_24
+  - first:
+      213: 8858315523126514979
+    second: BulleMotif_25
+  - first:
+      213: -2843169656380397047
+    second: BulleMotif_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BulleMotif_0
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 194
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f79910da66b8dde0800000000000000
+      internalID: -1308095121877002253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_1
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 194
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3e492a052c8c47c0800000000000000
+      internalID: -4085736671219724740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 194
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c29e3d5144b3e6b0800000000000000
+      internalID: -5268168946263092543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_3
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 194
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce0ff581e58622dd0800000000000000
+      internalID: -2512330888774160148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_4
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 163
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 385a938dd30380de0800000000000000
+      internalID: -1366789444728150653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_5
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 163
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f808fc85f1016000800000000000000
+      internalID: 27305226884614389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_6
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 163
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8190fa18cd5d7ee60800000000000000
+      internalID: 7991591206837487896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_7
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 163
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 011340a3b48ff79d0800000000000000
+      internalID: -2774225843457347312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_8
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 163
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7afef1ec6e904010800000000000000
+      internalID: 1171110093601569404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_9
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 163
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbe2dbafd80ca47e0800000000000000
+      internalID: -1780398986641985857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_10
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 133
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e845ea98276c886b0800000000000000
+      internalID: -5293763166735543154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_11
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 133
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6476cc663122beb0800000000000000
+      internalID: -4705662143011851155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_12
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 133
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f358028735c43f60800000000000000
+      internalID: 8013246479194412023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_13
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 133
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e1de2eee560347f0800000000000000
+      internalID: -629652518108999200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_14
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 133
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23b585fbc587e8020800000000000000
+      internalID: 2345944795649170226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_15
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 133
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f741cf92b5bdf70800000000000000
+      internalID: 9213057698597469968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_16
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 102
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9103ac68a9676eff0800000000000000
+      internalID: -7187943336038375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_17
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 102
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85edd3f2457d1ae90800000000000000
+      internalID: -7016089987896713640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_18
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 102
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ca379c2c617c7f70800000000000000
+      internalID: 9186342049347484356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_19
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 102
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3093a327d96ff0cc0800000000000000
+      internalID: -3742501609234876157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_20
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 102
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62dd36510333e01b0800000000000000
+      internalID: -5688552997712044762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_21
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 102
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ebb61c718919e210800000000000000
+      internalID: 1362648406179625958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_22
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 75
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc69f0e81088e4130800000000000000
+      internalID: 3552926696301631181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_23
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 75
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e332d8d92b4ecad40800000000000000
+      internalID: 5597099892713268030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_24
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 75
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cecb09bfda3e08f0800000000000000
+      internalID: -572455370072797499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_25
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 75
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 325d840f80f0fea70800000000000000
+      internalID: 8858315523126514979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulleMotif_26
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 44
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ae643e2480b88d0800000000000000
+      internalID: -2843169656380397047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BulleMotif_0: -1308095121877002253
+      BulleMotif_1: -4085736671219724740
+      BulleMotif_10: -5293763166735543154
+      BulleMotif_11: -4705662143011851155
+      BulleMotif_12: 8013246479194412023
+      BulleMotif_13: -629652518108999200
+      BulleMotif_14: 2345944795649170226
+      BulleMotif_15: 9213057698597469968
+      BulleMotif_16: -7187943336038375
+      BulleMotif_17: -7016089987896713640
+      BulleMotif_18: 9186342049347484356
+      BulleMotif_19: -3742501609234876157
+      BulleMotif_2: -5268168946263092543
+      BulleMotif_20: -5688552997712044762
+      BulleMotif_21: 1362648406179625958
+      BulleMotif_22: 3552926696301631181
+      BulleMotif_23: 5597099892713268030
+      BulleMotif_24: -572455370072797499
+      BulleMotif_25: 8858315523126514979
+      BulleMotif_26: -2843169656380397047
+      BulleMotif_3: -2512330888774160148
+      BulleMotif_4: -1366789444728150653
+      BulleMotif_5: 27305226884614389
+      BulleMotif_6: 7991591206837487896
+      BulleMotif_7: -2774225843457347312
+      BulleMotif_8: 1171110093601569404
+      BulleMotif_9: -1780398986641985857
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
