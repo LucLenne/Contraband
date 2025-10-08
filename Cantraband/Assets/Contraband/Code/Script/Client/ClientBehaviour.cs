@@ -1,7 +1,7 @@
 using NaughtyAttributes;
-using System;
 using System.Collections;
-using TMPro;
+using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,12 +12,11 @@ public class ClientBehaviour : MonoBehaviour
     [SerializeField] private GameObject _canvasObject;
 
     [Header("UI"), SerializeField] private Image _imageGameCard;
+    [SerializeField]private Slider _sliderPatience;
 
     [Header("Patience")]
-    [SerializeField] private float _baseClientPatience;
     [ReadOnly] public float currentPatientPatience;
-
-    private Coroutine _patienceCoroutine;
+    private bool _newClient = false;
 
     private void Awake()
     {
@@ -40,31 +39,41 @@ public class ClientBehaviour : MonoBehaviour
     {
         Debug.LogWarning("A changer pour mettre une anim à la place");
         _spriteRendererClient.enabled = false;
+        _newClient = true;
         _canvasObject.SetActive(false);
 
-        if(_patienceCoroutine != null)
-        {
-            StopCoroutine(_patienceCoroutine);
-            _patienceCoroutine = null;
-        }
+        
     }
 
-    private void LoadClient(Client client)
+    private async void LoadClient(Client client)
     {
+        _newClient = false;
         _canvasObject.SetActive(true);
         _spriteRendererClient.enabled = true;
         
         //A changer avec l'accélération du rythme
         currentPatientPatience = Mathf.Max(RythmManager.Instance.ClientPatience, .1f);
-        _patienceCoroutine = StartCoroutine(PatienceRoutine());
+        await StartTimerAsync();
 
         _spriteRendererClient.sprite = client.client;
         _imageGameCard.sprite = client.favoriteCard.hintImage;
     }
 
-    private IEnumerator PatienceRoutine()
+
+    public async Task StartTimerAsync()
     {
-        yield return new WaitForSeconds(currentPatientPatience);
+        float timeLeft =  currentPatientPatience;
+        _sliderPatience.maxValue = timeLeft;
+        _sliderPatience.value = timeLeft;
+
+        while (timeLeft > 0f && !_newClient)
+        {
+            await Task.Yield(); // équivalent à coroutine `yield return null`
+
+            timeLeft -= Time.deltaTime;
+            _sliderPatience.value = timeLeft;
+        }
+        _sliderPatience.value = 0f;
         LevelManager.Instance.ClientNoMorePatience();
     }
 
