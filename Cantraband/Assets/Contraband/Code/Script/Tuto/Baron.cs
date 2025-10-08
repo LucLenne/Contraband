@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
@@ -12,17 +13,12 @@ public class Baron : MonoBehaviour
     
     [Header("Data"),SerializeField] private OrderSpeech _speechBaron;
 
-    private void Start()
-    {
-        SpeechBaron(0);
-    }
-
     private void DisplaySpeech(Speech speech)
     {
         _textSpeech.text = LocalizationSettings.StringDatabase.GetLocalizedString(_tableName, speech.id);
     }
 
-    public async void SpeechBaron( int p)
+    public async Task SpeechBaron( int p)
     {
         if (p > 3 || p < 0) Debug.LogError("Wrong part : " + p + ". Choose Between 0 and 3");
         if (_speechBaron.listSpeech[p].Count == 0) return;
