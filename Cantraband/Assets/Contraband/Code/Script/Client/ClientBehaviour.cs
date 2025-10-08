@@ -1,10 +1,17 @@
 using NaughtyAttributes;
+using System;
+using System.Collections;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ClientBehaviour : MonoBehaviour
 {
+    private const string ANIMATION_TRANSFER_DONE_NAME = "TransferDone";
+    private const string ANIMATION_GAME_OVER_NAME = "GameOver";
+    private const string ANIMATION_TRANSFER_COP_NAME = "TransferCop";
+
     [Header("References")]
     [SerializeField] private Animator _animator;
     [SerializeField] private GameObject _canvasObject;
@@ -14,32 +21,40 @@ public class ClientBehaviour : MonoBehaviour
 
     [Header("Patience")]
     [ReadOnly] public float currentPatientPatience;
+    
     private bool _newClient = false;
-
-    private void Awake()
-    {
-        HideClient();
-    }
+    private Coroutine _newClientCoroutine;
 
     private void OnEnable()
     {
-        LevelManager.Instance.OnFinishTransaction += HideClient;
+        LevelManager.Instance.OnFinishTransaction += LaunchTransferDoneAnim;
+        LevelManager.Instance.OnFailedByCop += LaunchCopAnim;
+        LevelManager.Instance.OnGameOver += LaunchGameOverAnim;
 
         //A changer avec l'accélération du rythme
         currentPatientPatience = Mathf.Max(RythmManager.Instance.ClientPatience, .1f);
-        StartTimerAsync();
+        _newClientCoroutine = StartCoroutine(StartTimerAsync());
     }
 
     private void OnDisable()
     {
-        LevelManager.Instance.OnFinishTransaction -= HideClient;
+        LevelManager.Instance.OnFinishTransaction -= LaunchTransferDoneAnim;
+        LevelManager.Instance.OnFailedByCop -= LaunchCopAnim;
+        LevelManager.Instance.OnGameOver -= LaunchGameOverAnim;
+
+        if( _newClientCoroutine != null)
+        {
+            StopCoroutine(_newClientCoroutine);
+            _newClientCoroutine = null;
+        }
     }
 
-    private void HideClient()
-    {
-    }
 
-    public async void StartTimerAsync()
+    private void LaunchCopAnim() => _animator.SetTrigger(ANIMATION_TRANSFER_COP_NAME);
+    private void LaunchGameOverAnim() => _animator.SetTrigger(ANIMATION_GAME_OVER_NAME);
+    private void LaunchTransferDoneAnim() => _animator.SetTrigger(ANIMATION_TRANSFER_DONE_NAME);
+
+    public IEnumerator StartTimerAsync()
     {
         float timeLeft =  currentPatientPatience;
         _sliderPatience.maxValue = timeLeft;
@@ -47,7 +62,7 @@ public class ClientBehaviour : MonoBehaviour
 
         while (timeLeft > 0f && !_newClient)
         {
-            await Task.Yield(); // équivalent à coroutine `yield return null`
+            yield return null;
 
             timeLeft -= Time.deltaTime;
             if(_sliderPatience != null)
@@ -57,4 +72,8 @@ public class ClientBehaviour : MonoBehaviour
         LevelManager.Instance.ClientNoMorePatience();
     }
 
+    #region Animation methods
+    public void LaunchGameOver() => LevelManager.Instance.LaunchGameOver();
+    public void DestroyObject() => Destroy(gameObject);
+    #endregion
 }

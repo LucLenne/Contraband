@@ -297,23 +297,23 @@ MonoBehaviour:
   _frameImage: {fileID: 4732440410464604217}
   _angleDatas:
   - type: 1
-    defaultImage: {fileID: 0}
-    OnWarningImage: {fileID: 0}
+    defaultImage: {fileID: 3801596107784693524, guid: 6ed07ccbf64788a499e136f2165012dc, type: 3}
+    OnWarningImage: {fileID: -7332921706124610407, guid: edc279b42c880584fa1103e942ce36b0, type: 3}
     anchorMinMax: {x: 0, y: 1}
     anchoredPosition: {x: 250, y: -250}
   - type: 2
-    defaultImage: {fileID: 0}
-    OnWarningImage: {fileID: 0}
+    defaultImage: {fileID: 2157631181777952036, guid: 53f74e97eed212048bd080e8efe4d018, type: 3}
+    OnWarningImage: {fileID: 3159865697742415456, guid: a8dace35ece312843bf53e5cd1e40fd3, type: 3}
     anchorMinMax: {x: 1, y: 1}
     anchoredPosition: {x: -250, y: -250}
   - type: 3
-    defaultImage: {fileID: 0}
-    OnWarningImage: {fileID: 0}
+    defaultImage: {fileID: 7929013968282500299, guid: e466950eb8f1a0a4cba11e9db2f4ad2d, type: 3}
+    OnWarningImage: {fileID: -6940073764726962598, guid: 9a876274588995447a79da89ccefe1fd, type: 3}
     anchorMinMax: {x: 0, y: 0}
     anchoredPosition: {x: 250, y: 250}
   - type: 4
-    defaultImage: {fileID: 0}
-    OnWarningImage: {fileID: 0}
+    defaultImage: {fileID: -3418269067956465802, guid: 2adcd6cf7f391fe4ebaddbae6dd33059, type: 3}
+    OnWarningImage: {fileID: -2825992139010821786, guid: d6203142452ba00428411e92aeec5241, type: 3}
     anchorMinMax: {x: 1, y: 0}
     anchoredPosition: {x: -250, y: 250}
   _speed: 1
