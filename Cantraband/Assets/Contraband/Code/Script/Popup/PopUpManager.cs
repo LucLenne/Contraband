@@ -7,14 +7,14 @@ using Random = UnityEngine.Random;
 
 public class PopUpManager : MonoBehaviour
 {
-    //public enum AngleType
-    //{
-    //    None,
-    //    UpperLeft,
-    //    UpperRight,
-    //    LowerLeft,
-    //    LowerRight,
-    //}
+    public enum AngleType
+    {
+        None,
+        UpperLeft,
+        UpperRight,
+        LowerLeft,
+        LowerRight,
+    }
 
     public static PopUpManager Instance;
 
@@ -28,7 +28,7 @@ public class PopUpManager : MonoBehaviour
     [SerializeField] private UnityEvent _onCheckPlayerCoat;
     [SerializeField] private UnityEvent _onLaunchPolicePatrol;
 
-    //private Dictionary<AngleType, PopUpGeneric> _occupiedAngles = new Dictionary<AngleType, PopUpGeneric>();
+    private Dictionary<AngleType, PopUpGeneric> _occupiedAngles = new Dictionary<AngleType, PopUpGeneric>();
 
     public Action OnCheckPlayerCoat;
     public Action OnLaunchPolicePatrol;
@@ -43,10 +43,10 @@ public class PopUpManager : MonoBehaviour
         Instance = this;
 
         //Init dictionary
-        //_occupiedAngles.Add(AngleType.UpperLeft, null);
-        //_occupiedAngles.Add(AngleType.UpperRight, null);
-        //_occupiedAngles.Add(AngleType.LowerLeft, null);
-        //_occupiedAngles.Add(AngleType.LowerRight, null);
+        _occupiedAngles.Add(AngleType.UpperLeft, null);
+        _occupiedAngles.Add(AngleType.UpperRight, null);
+        _occupiedAngles.Add(AngleType.LowerLeft, null);
+        _occupiedAngles.Add(AngleType.LowerRight, null);
     }
 
     #region Spawn popup
@@ -58,8 +58,13 @@ public class PopUpManager : MonoBehaviour
 
         //Select random police popup
         PopUpGeneric popUpToSpawn = _policePopUps[Random.Range(0, _policePopUps.Count)];
+        //Select random unoccupied angle
+        AngleType angleType = SelectUnoccupiedAngle();
+        if (angleType == AngleType.None)
+            return;
+
         float popUpSpeed = RythmManager.Instance.PopUpSpeed;
-        SpawnPopUp(popUpToSpawn, popUpSpeed);
+        SpawnPopup(popUpToSpawn, angleType, popUpSpeed);
     }
 
     [Button]
@@ -70,77 +75,40 @@ public class PopUpManager : MonoBehaviour
 
         //Select random police popup
         PopUpGeneric popUpToSpawn = _feedBackPopUps[Random.Range(0, _feedBackPopUps.Count)];
+        //Select random unoccupied angle
+        AngleType angleType = SelectUnoccupiedAngle();
+        if (angleType == AngleType.None)
+            return;
 
-        SpawnPopUp(popUpToSpawn);
+        SpawnPopup(popUpToSpawn, angleType);
     }
-    private void SpawnPopUp(PopUpGeneric popup, float speed = 1)
+
+    private void SpawnPopup(PopUpGeneric popUpToSpawn, AngleType angle, float speed = -1f)
     {
-        PopUpGeneric newPopUp = Instantiate(popup, _parentCanvas);
+        PopUpGeneric newPopUp = Instantiate(popUpToSpawn, _parentCanvas);
+        _occupiedAngles[angle] = newPopUp;
+        newPopUp.SetupPopup(angle, speed);
 
     }
 
-    #endregion
+    private AngleType SelectUnoccupiedAngle()
+    {
+        int angleInt = Random.Range(1, 5);
+        for (int i = 0; i < 4; i++)
+        {
+            if (_occupiedAngles[(AngleType)angleInt] == null)
+            {
+                return (AngleType)angleInt;    
+            }
 
-    #region Spawn popup OLD SYSTEM
-    //[Button]
-    //public void SpawnRandomPolicePopup()
-    //{
-    //    if (_policePopUps.Count <= 0)
-    //        throw new System.Exception("Police list is empty");
+            angleInt++;
+            if (angleInt == 5)
+                angleInt = 1;
+        }
 
-    //    //Select random police popup
-    //    PopUpGeneric popUpToSpawn = _policePopUps[Random.Range(0, _policePopUps.Count)];
-    //    //Select random unoccupied angle
-    //    AngleType angleType = SelectUnoccupiedAngle();
-    //    if (angleType == AngleType.None)
-    //        return;
-
-    //    float popUpSpeed = RythmManager.Instance.PopUpSpeed;
-    //    SpawnPopup(popUpToSpawn, angleType, popUpSpeed);
-    //}
-
-    //[Button]
-    //public void SpawnRandomFeedbackPopup()
-    //{
-    //    if (_feedBackPopUps.Count <= 0)
-    //        throw new System.Exception("Feed back list is empty");
-
-    //    //Select random police popup
-    //    PopUpGeneric popUpToSpawn = _feedBackPopUps[Random.Range(0, _feedBackPopUps.Count)];
-    //    //Select random unoccupied angle
-    //    AngleType angleType = SelectUnoccupiedAngle();
-    //    if (angleType == AngleType.None)
-    //        return;
-
-    //    SpawnPopup(popUpToSpawn, angleType);
-    //}
-
-    //private void SpawnPopup(PopUpGeneric popUpToSpawn, AngleType angle, float speed = -1f)
-    //{
-    //    PopUpGeneric newPopUp = Instantiate(popUpToSpawn, _parentCanvas);
-    //    //_occupiedAngles[angle] = newPopUp;
-    //    newPopUp.SetupPopup(angle, speed);
-
-    //}
-
-    //private AngleType SelectUnoccupiedAngle()
-    //{
-    //    int angleInt = Random.Range(1, 5);
-    //    for (int i = 0; i < 4; i++)
-    //    {
-    //        if (_occupiedAngles[(AngleType)angleInt] == null)
-    //        {
-    //            return (AngleType)angleInt;    
-    //        }
-
-    //        angleInt++;
-    //        if (angleInt == 5)
-    //            angleInt = 1;
-    //    }
-
-    //    Debug.LogWarning("No angle found");
-    //    return AngleType.None;
-    //}
+        Debug.LogWarning("No angle found");
+        return AngleType.None;
+    }
     #endregion
 
     #region Launch events

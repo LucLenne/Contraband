@@ -64,7 +64,6 @@ public class ClientBehaviour : MonoBehaviour
 
     private IEnumerator PatienceRoutine()
     {
-        
         yield return new WaitForSeconds(currentPatientPatience);
         LevelManager.Instance.ClientNoMorePatience();
     }

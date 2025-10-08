@@ -24,7 +24,7 @@ public class PopUpGeneric : MonoBehaviour
     [SerializeField] private RectTransform _rect;
     [SerializeField] private Animator _animator;
     [SerializeField] private Image _frameImage;
-    //[SerializeField] private List<AngleData> _angleDatas;
+    [SerializeField] private List<AngleData> _angleDatas;
 
     [Header("Parameters")]
     [SerializeField] private float _speed = 1f;
@@ -71,33 +71,33 @@ public class PopUpGeneric : MonoBehaviour
     }
 
     #region setup
-    //public void SetupPopup(AngleType angle, float speedOverride = -1)
-    //{
-    //    AngleData angleData = FindDataByAngleType(angle);
-    //    //Setup anchors & positions
-    //    _rect.anchorMin = angleData.anchorMinMax;
-    //    _rect.anchorMax = angleData.anchorMinMax;
-    //    _rect.anchoredPosition = angleData.anchoredPosition;
-    //    _positionAt1Scale = angleData.anchoredPosition;
+    public void SetupPopup(AngleType angle, float speedOverride = -1)
+    {
+        AngleData angleData = FindDataByAngleType(angle);
+        //Setup anchors & positions
+        _rect.anchorMin = angleData.anchorMinMax;
+        _rect.anchorMax = angleData.anchorMinMax;
+        _rect.anchoredPosition = angleData.anchoredPosition;
+        _positionAt1Scale = angleData.anchoredPosition;
 
-    //    //Setup images
-    //    _defaultFrameImage = angleData.defaultImage;
-    //    _frameImage.sprite = _defaultFrameImage;
-    //    _warningFrameImage = angleData.OnWarningImage;
+        //Setup images
+        _defaultFrameImage = angleData.defaultImage;
+        _frameImage.sprite = _defaultFrameImage;
+        _warningFrameImage = angleData.OnWarningImage;
 
-    //    //Setup speed
-    //    if(speedOverride != -1)
-    //        _speed = speedOverride;
-    //}
-    //private AngleData FindDataByAngleType(AngleType angleType)
-    //{
-    //    foreach (AngleData data in _angleDatas)
-    //    {
-    //        if (data.type == angleType)
-    //            return data;
-    //    }
-    //    throw new System.Exception($"No angle data with type {angleType}");
-    //}
+        //Setup speed
+        if(speedOverride != -1)
+            _speed = speedOverride;
+    }
+    private AngleData FindDataByAngleType(AngleType angleType)
+    {
+        foreach (AngleData data in _angleDatas)
+        {
+            if (data.type == angleType)
+                return data;
+        }
+        throw new System.Exception($"No angle data with type {angleType}");
+    }
     #endregion
 
     #region Scale
