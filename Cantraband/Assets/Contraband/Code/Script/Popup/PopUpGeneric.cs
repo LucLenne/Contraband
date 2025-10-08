@@ -60,6 +60,16 @@ public class PopUpGeneric : MonoBehaviour
         _scaleFrameRoutine = StartCoroutine(ScaleRoutine());
     }
 
+    private void OnEnable()
+    {
+        LevelManager.Instance.OnGameOver += StopAnimation;
+    }
+
+    private void OnDisable()
+    {
+        LevelManager.Instance.OnGameOver -= StopAnimation;
+    }
+
     #region setup
     public void SetupPopup(AngleType angle, float speedOverride = -1)
     {
@@ -136,6 +146,27 @@ public class PopUpGeneric : MonoBehaviour
     public void LaunchEndAnim()
     {
         Destroy(gameObject);
+    }
+    #endregion
+
+    #region Game over
+    private void StopAnimation()
+    {
+        _animator.speed = 0;
+
+        //Stop coroutine
+        if(_scaleFrameRoutine != null)
+        {
+            StopCoroutine(_scaleFrameRoutine);
+            _scaleFrameRoutine = null;
+        }
+
+        //Stop coroutine
+        if(_warningFrameCoroutine != null)
+        {
+            StopCoroutine(_warningFrameCoroutine);
+            _warningFrameCoroutine = null;
+        }
     }
     #endregion
 }
