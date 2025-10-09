@@ -47,6 +47,10 @@ MonoBehaviour:
   _gameCards:
   - {fileID: 11400000, guid: c3fa129451817494e961b992a49727ae, type: 2}
   - {fileID: 11400000, guid: 8753cc5b0c336134aa0bf3be046f0ec9, type: 2}
+  - {fileID: 11400000, guid: 69964e4a55c0a12438aff5e7aa5d7d13, type: 2}
+  - {fileID: 11400000, guid: 82607456401217a478757a044bbf9686, type: 2}
   _clients:
   - {fileID: 11400000, guid: e2f5d6fd3e0da7b4c9d989e43978ca2e, type: 2}
   - {fileID: 11400000, guid: a2100dff46b9a53439dd382892980a69, type: 2}
+  - {fileID: 11400000, guid: b8906e6d55daedf47af0e87b7cea4753, type: 2}
+  - {fileID: 11400000, guid: 000675e382a34ed479d37e568e032933, type: 2}

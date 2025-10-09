@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class DisplayScore : MonoBehaviour
 {
-    [SerializeField]private TMP_Text _scoreText;
+    [SerializeField] private TMP_Text _scoreText;
+    [SerializeField] private string _scoreAnims = "<+spread><wave><palette><-fade>";
 
     private void Start()
     {
@@ -22,6 +23,6 @@ public class DisplayScore : MonoBehaviour
 
     void UpdateScore()
     {
-        _scoreText.text = LevelManager.Instance.score.ToString();
+        _scoreText.text = _scoreAnims + LevelManager.Instance.score.ToString();
     }
 }

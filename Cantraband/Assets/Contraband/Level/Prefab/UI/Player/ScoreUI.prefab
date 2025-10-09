@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -5.46, y: 0, z: 8.932}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.094, y: 1.2}
+  m_AnchoredPosition: {x: 0.09399414, y: 1.2000122}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6536379399101883994
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &4661438946859661500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 712089990154755505}
   - component: {fileID: 4376135573330829450}
   - component: {fileID: 5108159465307306496}
+  - component: {fileID: 577124921085253376}
   m_Layer: 5
   m_Name: ScoreUI
   m_TagString: Untagged
@@ -375,3 +376,17 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &577124921085253376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5524222489362949151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5663ec86797116c40adfb455493a7e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisplayScore
+  _scoreText: {fileID: 5108159465307306496}
+  _scoreAnims: <+spread><wave><palette><-fade>

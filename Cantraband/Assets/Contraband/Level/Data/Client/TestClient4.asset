@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a064938c570ce4341a12ce6762d74664, type: 3}
+  m_Name: TestClient4
+  m_EditorClassIdentifier: Assembly-CSharp::Client
+  clientPrefab: {fileID: 368926604977074868, guid: 8cf93fb416aae1243af994c97ba19ce9, type: 3}
+  isPolice: 0
+  genrePreference: 02000000
+  favoriteCard: {fileID: 11400000, guid: 82607456401217a478757a044bbf9686, type: 2}

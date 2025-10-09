@@ -7,7 +7,7 @@ public class GameCard : ScriptableObject
     public string tag;
     public string Name;
     public List<GameGenre> genres;
-    public Sprite hintImage;
+    public List<Sprite> hintImage;
 
     public GameObject MeshPrefab;
 }

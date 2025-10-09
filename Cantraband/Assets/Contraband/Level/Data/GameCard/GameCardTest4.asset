@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc40bb3058ead224bb891d84844300eb, type: 3}
+  m_Name: GameCardTest4
+  m_EditorClassIdentifier: Assembly-CSharp::GameCard
+  tag: Test4
+  Name: Test game card
+  genres: 02000000
+  hintImage:
+  - {fileID: 21300000, guid: e6e405c0ec854b7479166de253e21098, type: 3}
+  MeshPrefab: {fileID: 723989339743314472, guid: f91263f35fc526143804da5b08113915, type: 3}

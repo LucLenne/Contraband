@@ -15,5 +15,6 @@ MonoBehaviour:
   tag: Test2
   Name: Test game card
   genres: 04000000
-  hintImage: {fileID: 0}
+  hintImage:
+  - {fileID: 21300000, guid: a1bd2655f40c0dd48986eef26375e371, type: 3}
   MeshPrefab: {fileID: 723989339743314472, guid: e507ef7001d037341b61d02a55f1b2aa, type: 3}

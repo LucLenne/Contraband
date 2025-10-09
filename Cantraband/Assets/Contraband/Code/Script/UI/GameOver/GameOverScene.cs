@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameOverScene : MonoBehaviour
 {
     private const string SCORE_TEXT = "Score\n";
+    private const string SCORE_ANIM = "<+spread><wave><palette><-fade>";
 
     [Header("References")]
     [SerializeField] private Transform _spawnPoint;
@@ -30,15 +31,18 @@ public class GameOverScene : MonoBehaviour
         if (LevelManager.Instance.GameCardsGiven.Count != LevelManager.Instance.PointsAwarded.Count)
             Debug.LogError("number of game cards given isn't the same as poitns awarded");
 
-        for (int i = 0; i < LevelManager.Instance.GameCardsGiven.Count; i++)
+        for (int i = 0; i < LevelManager.Instance.PointsAwarded.Count; i++)
         {
             //Spawn game cards
-            GameObject prefabToSpawn = LevelManager.Instance.GameCardsGiven[i].MeshPrefab;
-            Instantiate(prefabToSpawn, _spawnPoint.transform.position, Quaternion.identity);
+            if(i < LevelManager.Instance.GameCardsGiven.Count)
+            {
+                GameObject prefabToSpawn = LevelManager.Instance.GameCardsGiven[i].MeshPrefab;
+                Instantiate(prefabToSpawn, _spawnPoint.transform.position, Quaternion.identity);
+            }
 
             //Add score to text
             _currentScore += LevelManager.Instance.PointsAwarded[i];
-            _scoreText.text = SCORE_TEXT + _currentScore;
+            _scoreText.text = SCORE_TEXT + SCORE_ANIM + _currentScore;
 
             yield return new WaitForSeconds(_delayBTWspawns);
         }
