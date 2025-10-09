@@ -411,6 +411,32 @@ MonoBehaviour:
   _hintImagePrefab: {fileID: 1337047516737727991, guid: 4e05b075d7ba50542b4a96f65774dfb4, type: 3}
   _hintImageParent: {fileID: 5071732886200226213}
   _sliderPatience: {fileID: 6417617951689618774}
+  _timerRectTransform: {fileID: 1674922073807259697}
+  _timerAnimMaxSpeed: 0.8
+  _timerAnimCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   currentPatientPatience: 0
 --- !u!1 &5202064615980298965
 GameObject:
