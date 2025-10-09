@@ -53,6 +53,7 @@ public class LevelManager : MonoBehaviour
     public List<GameCard> GameCardsGiven { get =>  _gameCardsGiven; }
     public List<int> PointsAwarded { get => _pointsAwarded; }
 
+    public Action<GameReturnedType> OnGameReturned;
     public Action OnFinishTransaction;
     public Action<Client> onNextClientAction;
     public Action OnFailedByCop; //Quand donne un "mauvais" jeu au flic infiltré
@@ -127,7 +128,7 @@ public class LevelManager : MonoBehaviour
 
             //Complete (fake) transaction
             OnFinishTransaction?.Invoke();
-            //PopUpManager.Instance.SpawnRandomFeedbackPopup();
+            OnGameReturned?.Invoke(GameReturnedType.Good);
 
             AudioManager.AudioManager.Instance.PlaySound(SOUND_EXIT_CLIENT);
             yield return new  WaitForSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
@@ -145,18 +146,7 @@ public class LevelManager : MonoBehaviour
         //compute score
         GameReturnedType clientResponse = ComputeScore(selectedCard);
         //Launch popup feedback
-        switch (clientResponse)
-        {
-            case GameReturnedType.Favorite:
-            case GameReturnedType.Good:
-                //PopUpManager.Instance.SpawnRandomFeedbackPopup();
-                break;
-
-            case GameReturnedType.Wrong:
-            default:
-                break;
-
-        }
+        OnGameReturned?.Invoke(clientResponse);
 
         //Complete transaction
         OnFinishTransaction?.Invoke();
@@ -222,7 +212,7 @@ public class LevelManager : MonoBehaviour
         _isRightAfterTransaction = false;
     }
     
-    private enum GameReturnedType { Wrong, Good, Favorite }
+    public enum GameReturnedType { Wrong, Good, Favorite }
     private GameReturnedType ComputeScore(GameCard gameCard) //return what type of game was given
     {
         //Search favorite came
