@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc40bb3058ead224bb891d84844300eb, type: 3}
   m_Name: GameCardTest3
   m_EditorClassIdentifier: Assembly-CSharp::GameCard
-  tag: Test2
+  tag: Test3
   Name: Test game card
   genres: 01000000
   hintImage: {fileID: 0}

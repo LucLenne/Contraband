@@ -126,6 +126,7 @@ public class LevelManager : MonoBehaviour
 
             //Complete (fake) transaction
             OnFinishTransaction?.Invoke();
+            PopUpManager.Instance.SpawnRandomFeedbackPopup();
             AudioManager.AudioManager.Instance.PlaySound(SOUND_EXIT_CLIENT);
             await WaitSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
             GiveNextClient();
@@ -133,7 +134,20 @@ public class LevelManager : MonoBehaviour
         }
 
         //compute score
-        ComputeScore(selectedCard);
+        GameReturnedType clientResponse = ComputeScore(selectedCard);
+        //Launch popup feedback
+        switch (clientResponse)
+        {
+            case GameReturnedType.Favorite:
+            case GameReturnedType.Good:
+                PopUpManager.Instance.SpawnRandomFeedbackPopup();
+                break;
+
+            case GameReturnedType.Wrong:
+            default:
+                break;
+
+        }
 
         //Complete transaction
         OnFinishTransaction?.Invoke();
@@ -196,8 +210,9 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(_transactionCheckCoolDown);
         _isRightAfterTransaction = false;
     }
-
-    private void ComputeScore(GameCard gameCard)
+    
+    private enum GameReturnedType { Wrong, Good, Favorite }
+    private GameReturnedType ComputeScore(GameCard gameCard) //return what type of game was given
     {
         //Search favorite came
         if (_currentClient.favoriteCard == gameCard)
@@ -206,7 +221,7 @@ public class LevelManager : MonoBehaviour
             _gameCardsGiven.Add(gameCard);
             _pointsAwarded.Add(_pointGoodGame);
             AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_FAVORITEGAME);
-            return;
+            return GameReturnedType.Favorite;
         }
 
         //Else search good category
@@ -218,7 +233,7 @@ public class LevelManager : MonoBehaviour
                 _gameCardsGiven.Add(gameCard);
                 _pointsAwarded.Add(_pointGoodCategory);
                 AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_GOODCATEGORY);
-                return;
+                return GameReturnedType.Good;
             }
         }
 
@@ -228,6 +243,7 @@ public class LevelManager : MonoBehaviour
         _gameCardsGiven.Add(gameCard);
         _pointsAwarded.Add(_pointWrongGame);
         AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_WRONGGAME);
+        return GameReturnedType.Wrong;
     }
 
     private Client GetRandomClient()

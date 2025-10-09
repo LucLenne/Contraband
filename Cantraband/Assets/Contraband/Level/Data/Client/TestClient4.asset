@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TestClient4
   m_EditorClassIdentifier: Assembly-CSharp::Client
   clientPrefab: {fileID: 8711197627640830731, guid: af6cf706f82432b4192f6304721f457d, type: 3}
-  isPolice: 1
+  isPolice: 0
   genrePreference: 01000000
   favoriteCard: {fileID: 11400000, guid: 82607456401217a478757a044bbf9686, type: 2}
