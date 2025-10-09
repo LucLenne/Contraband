@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
@@ -5,20 +6,36 @@ using UnityEngine.UI;
 public class ClientTuto : MonoBehaviour
 {
     [Header("UI"), SerializeField] private Image _clueSprite;
-    [SerializeField] private Transform _transformClient;
     [SerializeField] private Slider _sliderPatience;
 
     [Header("Gameplay"), SerializeField] private int _timePatience = 10;
+    public bool activeTimer;
 
     [Header("References"), SerializeField] private GameObject _sliderGO;
 
-    public GameObject InitClient(Client client, GameCard card)
+    private void Start()
     {
-        _clueSprite.sprite = card.hintImage;
-        return Instantiate(client.clientPrefab, _transformClient);
+        UnlockTimer();
     }
 
-    public async void ActiveTimer()
+    public void InitClient(Client client, GameCard card)
+    {
+        _clueSprite.sprite = card.hintImage;
+        if(!activeTimer)
+            _sliderGO.SetActive(false);
+    }
+
+    void UnlockTimer()
+    {
+        
+        if (activeTimer)
+        {
+            ActiveTimer();
+        }
+            
+    }
+
+    private async void ActiveTimer()
     {
         _sliderGO.SetActive(true);
         await StartTimerPatience();
@@ -39,13 +56,6 @@ public class ClientTuto : MonoBehaviour
                 _sliderPatience.value = timeLeft;
         }
         _sliderPatience.value = 0f;
+        TutoManager.Instance.clientEndPatience?.Invoke();
     }
-
-
-
-
-
-
-
-
 }

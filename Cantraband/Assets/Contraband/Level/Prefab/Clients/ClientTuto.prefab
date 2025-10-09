@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4211894297250248421
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2427144329970258086, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2959173702719706863, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+      propertyPath: m_Name
+      value: ClientTuto
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252217379493373929, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 347.10168
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252217379493373929, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 134.27434
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252217379493373929, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252217379493373929, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252217379493373929, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252217379493373929, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252217379493373929, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252217379493373929, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252217379493373929, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252217379493373929, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6657583729199806442, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2959173702719706863, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4336194204551478974}
+  m_SourcePrefab: {fileID: 100100000, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+--- !u!114 &676527948831447832 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3679481689121287677, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+  m_PrefabInstance: {fileID: 4211894297250248421}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007854899771156035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!1 &1396889123961249802 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2959173702719706863, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+  m_PrefabInstance: {fileID: 4211894297250248421}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4336194204551478974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396889123961249802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df46db0d7786b6f488dd218e83d62ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClientTuto
+  _clueSprite: {fileID: 3623069056273210353}
+  _sliderPatience: {fileID: 676527948831447832}
+  _timePatience: 10
+  activeTimer: 0
+  _sliderGO: {fileID: 2007854899771156035}
+--- !u!1 &2007854899771156035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2427144329970258086, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+  m_PrefabInstance: {fileID: 4211894297250248421}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3623069056273210353 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 591129957095697684, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+  m_PrefabInstance: {fileID: 4211894297250248421}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
