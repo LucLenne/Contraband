@@ -54,7 +54,9 @@ MonoBehaviour:
   - Name: Give_WrongGame
     Clips: []
   - Name: Client_New
-    Clips: []
+    Clips:
+    - Clip: {fileID: 8300000, guid: ed1b27170973243498ca0e4599f4a3b4, type: 3}
+      Volume: 1
   - Name: Client_Exit
     Clips: []
   - Name: PopUp_Camera

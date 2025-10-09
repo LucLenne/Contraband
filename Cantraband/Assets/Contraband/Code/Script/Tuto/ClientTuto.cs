@@ -14,7 +14,7 @@ public class ClientTuto : MonoBehaviour
 
     public GameObject InitClient(Client client, GameCard card)
     {
-        _clueSprite.sprite = card.hintImage;
+        //_clueSprite.sprite = card.hintImage;
         return Instantiate(client.clientPrefab, _transformClient);
     }
 
