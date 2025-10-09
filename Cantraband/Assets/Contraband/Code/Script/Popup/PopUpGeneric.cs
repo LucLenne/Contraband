@@ -141,6 +141,8 @@ public class PopUpGeneric : MonoBehaviour
     public void LaunchPolicePatrol()
     {
         PopUpManager.Instance.LaunchPolicePatrol();
+        _frameImage.sprite = _warningFrameImage;
+        _warningFrameCoroutine = StartCoroutine(WarningFrame());
     }
 
     public void LaunchEndAnim()
