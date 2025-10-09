@@ -126,7 +126,8 @@ public class LevelManager : MonoBehaviour
 
             //Complete (fake) transaction
             OnFinishTransaction?.Invoke();
-            PopUpManager.Instance.SpawnRandomFeedbackPopup();
+            //PopUpManager.Instance.SpawnRandomFeedbackPopup();
+
             AudioManager.AudioManager.Instance.PlaySound(SOUND_EXIT_CLIENT);
             await WaitSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
             GiveNextClient();
@@ -140,7 +141,7 @@ public class LevelManager : MonoBehaviour
         {
             case GameReturnedType.Favorite:
             case GameReturnedType.Good:
-                PopUpManager.Instance.SpawnRandomFeedbackPopup();
+                //PopUpManager.Instance.SpawnRandomFeedbackPopup();
                 break;
 
             case GameReturnedType.Wrong:
