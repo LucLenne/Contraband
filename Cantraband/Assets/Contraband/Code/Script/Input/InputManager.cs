@@ -50,11 +50,11 @@ public class InputManager : MonoBehaviour
     {
         if (Keyboard.current[Key.O].wasPressedThisFrame)
         {
-            SetVestState(true);
+            SetVestState(false);
         }
         else if(Keyboard.current[Key.O].wasReleasedThisFrame)
         {
-            SetVestState(false);
+            SetVestState(true);
         }
 
         if (Keyboard.current[Key.Digit1].wasPressedThisFrame)
