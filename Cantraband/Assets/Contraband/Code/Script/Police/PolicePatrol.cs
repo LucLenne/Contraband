@@ -32,7 +32,7 @@ public class PolicePatrol : MonoBehaviour
         LevelManager.Instance.OnGameOver -= StopAnimation;
     }
 
-    private void ActivatePatrol()
+    public void ActivatePatrol()
     {
         _animationObject.SetActive(true);
 

@@ -21,7 +21,6 @@ public class Baron : MonoBehaviour
 
     private void DisplaySpeech(Speech speech)
     {
-        Debug.Log("DisplaySpeech");
         _textSpeech.text = LocalizationSettings.StringDatabase.GetLocalizedString(_tableName, speech.id);
     }
 

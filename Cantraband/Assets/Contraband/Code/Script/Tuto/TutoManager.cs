@@ -74,13 +74,10 @@ public class TutoManager : MonoBehaviour
         _currentClient = Instantiate(_prefabTutoClient, posClient);
         _clientTuto = _currentClient.GetComponent<ClientTuto>();
 
-        if (_activeTimer)
-        {
-            _clientTuto.activeTimer = true;
-        }
-
+        // On ne dépend plus du vieux flag, c'est toujours l'Init qui décide
         _clientTuto.InitClient(_listClient[_currentState], _listGameCard[_currentState]);
     }
+
 
 
     private void DestroyClient()
@@ -95,26 +92,40 @@ public class TutoManager : MonoBehaviour
     {
         DestroyClient();
         SpawnClient();
+
+        // Si on est dans le step 3 on active le timer pour le nouveau client
+        if (stateTuto == StateTuto.third && _clientTuto != null)
+        {
+            _clientTuto.activeTimer = true;
+            _clientTuto.InitTimer(); //déclenche le compte à rebours
+        }
     }
 
 
+
+    void StartPatrol()
+    {
+        _policePatrol.GetComponent<PolicePatrol>().ActivatePatrol();
+    }
+
     private void AddPopUp()
     {
-        _policePatrol.gameObject.SetActive(true);
         _popUp.gameObject.SetActive(true);
+        _policePatrol.gameObject.SetActive(true);
     }
 
     private void AddTimer() => _clientTuto.activeTimer = true;
 
     private async void CheckState()
     {
+        Debug.Log(stateTuto.ToString());
         switch (stateTuto)
         {
             case StateTuto.baron:
-                Debug.Log("in baron");
                 await _baron.SpeechBaron(_currentState);
                 stateTuto = (StateTuto)_currentState;
                 ChangeClient();
+                CheckState();
                 break;
             case StateTuto.first:
                 break;
@@ -122,7 +133,13 @@ public class TutoManager : MonoBehaviour
                 break;
             case StateTuto.third:
                 AddPopUp();
-                AddTimer();
+                StartPatrol();
+
+                if (_clientTuto != null)
+                {
+                    _clientTuto.activeTimer = true;
+                    _clientTuto.InitTimer();
+                }
                 break;
             case StateTuto.end:
                 LoadingManager.Instance.LoadScene(NAME_SCENE_GAME);

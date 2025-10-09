@@ -37,8 +37,17 @@ public class ClientTuto : MonoBehaviour
     public void InitClient(Client client, GameCard card)
     {
         SetupClient(card.hintImage);
-        if(!activeTimer)
+
+        if (!activeTimer)
             _sliderGO.SetActive(false);
+        else
+            ActiveTimer(); // si activeTimer est déjà true (déjà décidé par TutoManager)
+    }
+
+    public void InitTimer()
+    {
+        activeTimer = true;
+        ActiveTimer();
     }
 
     void UnlockTimer()
