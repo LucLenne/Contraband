@@ -412,7 +412,7 @@ MonoBehaviour:
   _hintImageParent: {fileID: 5071732886200226213}
   _sliderPatience: {fileID: 6417617951689618774}
   _timerRectTransform: {fileID: 1674922073807259697}
-  _timerAnimMaxSpeed: 0.8
+  _timerAnimMaxSpeed: 0.5
   _timerAnimCurve:
     serializedVersion: 2
     m_Curve:

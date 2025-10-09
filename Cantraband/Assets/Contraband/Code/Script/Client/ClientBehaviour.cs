@@ -72,8 +72,9 @@ public class ClientBehaviour : MonoBehaviour
         float timeLeft = currentPatientPatience;
         _sliderPatience.maxValue = timeLeft;
         _sliderPatience.value = timeLeft;
-        Vector3 baseScale = _timerRectTransform.localScale;
 
+        Vector3 baseScale = _timerRectTransform.localScale;
+        _timerRectTransform.gameObject.SetActive(true);
         while (timeLeft > 0f && !_newClient)
         {
             yield return null;
@@ -88,6 +89,7 @@ public class ClientBehaviour : MonoBehaviour
             _timerRectTransform.localScale = baseScale * scaleFactor;
         }
         _timerRectTransform.localScale = baseScale;
+        _timerRectTransform.gameObject.SetActive(false);
 
         _sliderPatience.value = 0f;
         LevelManager.Instance.StartClientNoMorePatience();
