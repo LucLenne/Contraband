@@ -107,13 +107,6 @@ public class LevelManager : MonoBehaviour
         //Check if not in game over
         if (!IsGameRunning) yield break;
 
-        //Check if vest is opened
-        if (!InputManager.Instance.IsVestOpened)
-        {
-            Debug.LogWarning("Open vest first !");
-            yield break;
-        }
-
         //Check if there's a client
         if (!_hasClient) yield break;
         _hasClient = false;
@@ -139,6 +132,13 @@ public class LevelManager : MonoBehaviour
             AudioManager.AudioManager.Instance.PlaySound(SOUND_EXIT_CLIENT);
             yield return new  WaitForSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
             GiveNextClient();
+            yield break;
+        }
+
+        //Check if vest is opened
+        if (!InputManager.Instance.IsVestOpened)
+        {
+            Debug.LogWarning("Open vest first !");
             yield break;
         }
 
