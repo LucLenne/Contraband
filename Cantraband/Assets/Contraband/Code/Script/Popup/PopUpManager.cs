@@ -62,8 +62,16 @@ public class PopUpManager : MonoBehaviour
         AngleType angleType = SelectUnoccupiedAngle();
         if (angleType == AngleType.None)
             return;
+        float popUpSpeed;
+        if (RythmManager.Instance == null)
+        {
+            popUpSpeed = 1;
+        }
+        else
+        {
+            popUpSpeed = RythmManager.Instance.PopUpSpeed;
+        }
 
-        float popUpSpeed = RythmManager.Instance.PopUpSpeed;
         SpawnPopup(popUpToSpawn, angleType, popUpSpeed);
     }
 

@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.PackageManager;
 using UnityEngine;
@@ -111,7 +112,15 @@ public class TutoManager : MonoBehaviour
     private void AddPopUp()
     {
         _popUp.gameObject.SetActive(true);
+        StartCoroutine(TimerBetweenPopupPolice());
         _policePatrol.gameObject.SetActive(true);
+    }
+
+    private IEnumerator TimerBetweenPopupPolice()
+    {
+        _popUp.GetComponent<PopUpManager>().SpawnRandomPolicePopup();
+        yield return new WaitForSeconds(5f);
+        StartCoroutine(TimerBetweenPopupPolice());
     }
 
     private void AddTimer() => _clientTuto.activeTimer = true;
