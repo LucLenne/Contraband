@@ -1596,6 +1596,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1380718642}
     m_Modifications:
+    - target: {fileID: 693282510328648002, guid: 7166b74852570844397d54e33b09d46b, type: 3}
+      propertyPath: portName
+      value: COM5
+      objectReference: {fileID: 0}
     - target: {fileID: 1887346407659254258, guid: 7166b74852570844397d54e33b09d46b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

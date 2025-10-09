@@ -80,7 +80,8 @@ public class ClientBehaviour : MonoBehaviour
                 _sliderPatience.value = timeLeft;
         }
         _sliderPatience.value = 0f;
-        LevelManager.Instance.ClientNoMorePatience();
+
+        LevelManager.Instance.StartClientNoMorePatience();
     }
 
     #region Animation methods

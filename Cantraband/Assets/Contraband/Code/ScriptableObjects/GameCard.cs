@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameCard : ScriptableObject
 {
     public string tag;
+    public string DebugKeyboardTag;
     public string Name;
     public List<GameGenre> genres;
     public List<Sprite> hintImage;

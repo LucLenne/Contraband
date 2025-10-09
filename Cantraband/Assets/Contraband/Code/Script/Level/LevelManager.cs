@@ -115,7 +115,7 @@ public class LevelManager : MonoBehaviour
         //Get card
         GameCard selectedCard = GetCardGame(tag);
         if (selectedCard == null)
-            throw new Exception($"No card with tag {tag}");
+            throw new Exception($"No card with tag: {tag}");
 
         //Check police
         if (_currentClient.isPolice)
@@ -164,19 +164,24 @@ public class LevelManager : MonoBehaviour
         GiveNextClient();
     }
 
-    public async void ClientNoMorePatience() //Client leaves when no more patience
+    public void StartClientNoMorePatience()
     {
         //Check if not in game over
         if (!IsGameRunning) return;
 
         //Check if there's a client
         if (!_hasClient) return;
+
+        StartCoroutine(ClientNoMorePatience());
+    }
+    private IEnumerator ClientNoMorePatience() //Client leaves when no more patience
+    {
         _hasClient = false;
 
         //Complete transaction
         OnFinishTransaction?.Invoke();
         AudioManager.AudioManager.Instance.PlaySound(SOUND_EXIT_CLIENT);
-        await WaitSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
+        yield return new WaitForSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
         GiveNextClient();
     }
 
@@ -199,7 +204,7 @@ public class LevelManager : MonoBehaviour
     {
         foreach(GameCard card in DataContainer.GameCards)
         {
-            if(card.tag == tag)
+            if (card.tag == tag || (card.DebugKeyboardTag == tag && card.DebugKeyboardTag != ""))
                 return card;
         }
         return null;

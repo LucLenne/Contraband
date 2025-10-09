@@ -41,7 +41,9 @@ public class ArduinoCommunicator : MonoBehaviour
         {
             receivedStream = inputStream.ReadLine();
             Debug.Log(receivedStream);
-            InputManager.Instance.ReceiveNFCReader(receivedStream);
+
+            if(receivedStream != string.Empty)
+                InputManager.Instance.ReceiveNFCReader(receivedStream);
    
         } else
         {
