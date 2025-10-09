@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 712089990154755505}
   - component: {fileID: 4376135573330829450}
   - component: {fileID: 5108159465307306496}
+  - component: {fileID: 577124921085253376}
   m_Layer: 5
   m_Name: ScoreUI
   m_TagString: Untagged
@@ -375,3 +376,16 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &577124921085253376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5524222489362949151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5663ec86797116c40adfb455493a7e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisplayScore
+  _scoreText: {fileID: 5108159465307306496}
