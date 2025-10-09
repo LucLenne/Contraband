@@ -52,7 +52,7 @@ public class InputManager : MonoBehaviour
         {
             SetVestState(true);
         }
-        else if(Keyboard.current[Key.C].wasReleasedThisFrame)
+        else if(Keyboard.current[Key.O].wasReleasedThisFrame)
         {
             SetVestState(false);
         }
