@@ -1007,7 +1007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1b31eeeb70d80409394a9e5b6672b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuUI
-  _tagStartCard: 1
+  _tagStartCard: Test1
 --- !u!1 &1865065970
 GameObject:
   m_ObjectHideFlags: 0

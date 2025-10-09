@@ -49,6 +49,10 @@ public class ClientBehaviour : MonoBehaviour
         }
     }
 
+    public void SetupClient(Sprite hintImage)
+    {
+        _imageGameCard.sprite = hintImage;
+    }
 
     private void LaunchCopAnim() => _animator.SetTrigger(ANIMATION_TRANSFER_COP_NAME);
     private void LaunchGameOverAnim() => _animator.SetTrigger(ANIMATION_GAME_OVER_NAME);

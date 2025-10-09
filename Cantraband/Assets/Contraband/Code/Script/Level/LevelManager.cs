@@ -190,6 +190,7 @@ public class LevelManager : MonoBehaviour
 
         //Spawn next client
         _currentClientObject = Instantiate(_currentClient.clientPrefab, _clientSpawnPoint.position, Quaternion.identity);
+        _currentClientObject.GetComponent<ClientBehaviour>().SetupClient(_currentClient.favoriteCard.hintImage);
 
         onNextClientAction?.Invoke(_currentClient);
     }
