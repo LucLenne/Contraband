@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameOverScene : MonoBehaviour
 {
     private const string SCORE_TEXT = "Score\n";
+    private const string SCORE_ANIM = "<+spread><wave><palette><-fade>";
 
     [Header("References")]
     [SerializeField] private Transform _spawnPoint;
@@ -41,7 +42,7 @@ public class GameOverScene : MonoBehaviour
 
             //Add score to text
             _currentScore += LevelManager.Instance.PointsAwarded[i];
-            _scoreText.text = SCORE_TEXT + _currentScore;
+            _scoreText.text = SCORE_TEXT + SCORE_ANIM + _currentScore;
 
             yield return new WaitForSeconds(_delayBTWspawns);
         }
