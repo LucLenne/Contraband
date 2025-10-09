@@ -84,12 +84,12 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        GetFirstClient();
+        StartCoroutine(GetFirstClient());
     }
 
-    private async void GetFirstClient()
+    private IEnumerator GetFirstClient()
     {
-        await WaitSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
+        yield return new WaitForSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
         GiveNextClient();
         AudioManager.AudioManager.Instance.PlaySound(SOUND_NEW_CLIENT);
     }
