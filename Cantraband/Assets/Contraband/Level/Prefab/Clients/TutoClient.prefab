@@ -13,12 +13,24 @@ PrefabInstance:
       value: TutoClient
       objectReference: {fileID: 0}
     - target: {fileID: 8252217379493373929, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252217379493373929, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252217379493373929, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252217379493373929, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 370
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8252217379493373929, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 208.12502
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8252217379493373929, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
       propertyPath: m_LocalPosition.z
@@ -52,6 +64,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8252217379493373929, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6657583729199806442, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
     m_RemovedGameObjects: []
@@ -75,11 +91,6 @@ MonoBehaviour:
 --- !u!224 &1526854921004364376 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5071732886200226213, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
-  m_PrefabInstance: {fileID: 6003879147475313661}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2831105641583108396 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8365449307021525713, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
   m_PrefabInstance: {fileID: 6003879147475313661}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &3315730127850340327 stripped
@@ -108,5 +119,5 @@ MonoBehaviour:
   _timePatience: 10
   activeTimer: 0
   _sliderGO: {fileID: 3315730127850340327}
-  _hintImagePrefab: {fileID: 2831105641583108396}
+  _hintImagePrefab: {fileID: 1337047516737727991, guid: 4e05b075d7ba50542b4a96f65774dfb4, type: 3}
   _hintImageParent: {fileID: 1526854921004364376}

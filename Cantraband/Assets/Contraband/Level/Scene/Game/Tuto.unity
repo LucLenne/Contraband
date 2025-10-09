@@ -555,10 +555,10 @@ MonoBehaviour:
   _listGameCard:
   - {fileID: 11400000, guid: c3fa129451817494e961b992a49727ae, type: 2}
   - {fileID: 11400000, guid: 8753cc5b0c336134aa0bf3be046f0ec9, type: 2}
-  - {fileID: 11400000, guid: c3fa129451817494e961b992a49727ae, type: 2}
+  - {fileID: 11400000, guid: 69964e4a55c0a12438aff5e7aa5d7d13, type: 2}
   _popUp: {fileID: 248724761}
   _policePatrol: {fileID: 1172898556}
-  _prefabTutoClient: {fileID: 1396889123961249802, guid: a2e171aa8691f2b4fbb9b900ee05e51f, type: 3}
+  _prefabTutoClient: {fileID: 8809894692128634130, guid: d0a7a59c74b9db54aad59a29b2e064d1, type: 3}
   _baron: {fileID: 1258365405}
   posClient: {fileID: 1691785529}
 --- !u!1001 &468672071
@@ -648,7 +648,7 @@ Transform:
   m_GameObject: {fileID: 812547223}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 111.02325, y: 207.52946, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1285,7 +1285,7 @@ Transform:
   m_GameObject: {fileID: 1691785528}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.9, z: 0}
+  m_LocalPosition: {x: 0, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1301,11 +1301,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3854493025915558942, guid: bc51b06fe56afc84aa0f4ba509cf3923, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 111.02325
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3854493025915558942, guid: bc51b06fe56afc84aa0f4ba509cf3923, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 207.52946
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3854493025915558942, guid: bc51b06fe56afc84aa0f4ba509cf3923, type: 3}
       propertyPath: m_LocalPosition.z

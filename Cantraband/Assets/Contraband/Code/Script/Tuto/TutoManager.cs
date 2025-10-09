@@ -48,8 +48,6 @@ public class TutoManager : MonoBehaviour
             return;
         }
         Instance = this;
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -73,18 +71,19 @@ public class TutoManager : MonoBehaviour
 
     private void SpawnClient()
     {
-        GameObject client = _prefabTutoClient;
-        ClientTuto clientTuto = client.GetComponent<ClientTuto>();
+        _currentClient = Instantiate(_prefabTutoClient, posClient);
+        _clientTuto = _currentClient.GetComponent<ClientTuto>();
+
         if (_activeTimer)
         {
-            clientTuto.activeTimer = true;
+            _clientTuto.activeTimer = true;
         }
-        clientTuto.InitClient(_listClient[_currentState], _listGameCard[_currentState]);
-        _currentClient = Instantiate(client,posClient);
-        _clientTuto = clientTuto;
+
+        _clientTuto.InitClient(_listClient[_currentState], _listGameCard[_currentState]);
     }
 
-    private  void DestroyClient()
+
+    private void DestroyClient()
     {
         if (_currentClient != null)
         {
@@ -137,6 +136,8 @@ public class TutoManager : MonoBehaviour
         {
             _currentState += 1;
             stateTuto = StateTuto.baron;
+            if (_currentState == 3)
+                stateTuto = StateTuto.end;
             CheckState();
         }
     }
