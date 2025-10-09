@@ -25,6 +25,7 @@ public class GDFeedbackScript : MonoBehaviour
     private void OnDisable()
     {
         InputManager.Instance.OnVestChanged -= ChangeManteauImage;
+        LevelManager.Instance.OnGameReturned -= StartFeedbackImage;
     }
 
     private void ChangeManteauImage(bool isOpened) => _manteauImage.sprite = isOpened ? _manteauOpenImage : _manteauCloseImage;
