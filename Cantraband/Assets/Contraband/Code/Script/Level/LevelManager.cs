@@ -136,13 +136,6 @@ public class LevelManager : MonoBehaviour
             yield break;
         }
 
-        //Check if vest is opened
-        if (!InputManager.Instance.IsVestOpened)
-        {
-            Debug.LogWarning("Open vest first !");
-            yield break;
-        }
-
         //compute score
         GameReturnedType clientResponse = ComputeScore(selectedCard);
         //Launch popup feedback
@@ -204,7 +197,7 @@ public class LevelManager : MonoBehaviour
     {
         foreach(GameCard card in DataContainer.GameCards)
         {
-            if (card.tag == tag || (card.DebugKeyboardTag == tag && card.DebugKeyboardTag != ""))
+            if (card.tag == tag || card.DebugKeyboardTag == tag)
                 return card;
         }
         return null;
