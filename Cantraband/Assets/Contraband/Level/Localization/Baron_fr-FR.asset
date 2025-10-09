@@ -22,6 +22,42 @@ MonoBehaviour:
     m_Localized: Bonjour nouveau joueur, tu es la pour vendre des jeux
     m_Metadata:
       m_Items: []
+  - m_Id: 36513198080
+    m_Localized: azerazerazerr
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38593572864
+    m_Localized: tyiutyuityiutyiutyi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41277927424
+    m_Localized: qsdfqsdfqsdfqsdf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 694448500736
+    m_Localized: ghkjghkjghkjghkj
+    m_Metadata:
+      m_Items: []
+  - m_Id: 332024759660544
+    m_Localized: wxcvwxcvwxcvwxcv
+    m_Metadata:
+      m_Items: []
+  - m_Id: 332033311846400
+    m_Localized: bn;,bn;,bn;,bn;,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 332040152756224
+    m_Localized: "&\xE9\"'&\xE9\"'&\xE9\"'&\xE9\"'"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 332047002054656
+    m_Localized: "(-_\xE8(-_\xE8(-_\xE8(-_\xE8"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 332056024002560
+    m_Localized: oplmoplmoplm
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

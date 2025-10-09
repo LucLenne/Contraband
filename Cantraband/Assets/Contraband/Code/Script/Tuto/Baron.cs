@@ -13,9 +13,21 @@ public class Baron : MonoBehaviour
     
     [Header("Data"),SerializeField] private OrderSpeech _speechBaron;
 
+
+    private void Awake()
+    {
+        InitListSpeech();
+    }
+
     private void DisplaySpeech(Speech speech)
     {
+        Debug.Log("DisplaySpeech");
         _textSpeech.text = LocalizationSettings.StringDatabase.GetLocalizedString(_tableName, speech.id);
+    }
+
+    void InitListSpeech()
+    {
+        _speechBaron.listSpeech = new() { _speechBaron.firstPart, _speechBaron.secondPart, _speechBaron.thirdPart, _speechBaron.fourthPart };
     }
 
     public async Task SpeechBaron( int p)
@@ -53,10 +65,6 @@ public class OrderSpeech
     public List<Speech> thirdPart;
     public List<Speech> fourthPart;
 
-    public List<List<Speech>> listSpeech;
 
-    public OrderSpeech() 
-    { 
-        listSpeech = new() { firstPart, secondPart, thirdPart, fourthPart };
-    }
+    public List<List<Speech>> listSpeech;
 }
