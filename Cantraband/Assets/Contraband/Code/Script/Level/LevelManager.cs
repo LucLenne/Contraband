@@ -36,6 +36,7 @@ public class LevelManager : MonoBehaviour
     private int _numberClient = 0; //Nombre de client rencontrés
     private bool _hasClient = false; //est ce que le client existe
 
+    private Coroutine _btwTransactionRoutine;
     private Coroutine _isTransitionCoolDownRoutine;
     private bool _isRightAfterTransaction = false;
 
@@ -74,17 +75,23 @@ public class LevelManager : MonoBehaviour
 
     private void OnEnable()
     {
-        InputManager.Instance.OnReadCard += PlayerGiveCard;
+        InputManager.Instance.OnReadCard += StartPlayerGiveCard;
     }
 
     private void OnDisable()
     {
-        InputManager.Instance.OnReadCard -= PlayerGiveCard;
+        InputManager.Instance.OnReadCard -= StartPlayerGiveCard;
+
+        if(_btwTransactionRoutine != null)
+        {
+            StopCoroutine(_btwTransactionRoutine);
+            _btwTransactionRoutine = null;
+        }
     }
 
     private void Start()
     {
-        StartCoroutine(GetFirstClient());
+        _btwTransactionRoutine = StartCoroutine(GetFirstClient());
     }
 
     private IEnumerator GetFirstClient()
@@ -94,20 +101,21 @@ public class LevelManager : MonoBehaviour
         AudioManager.AudioManager.Instance.PlaySound(SOUND_NEW_CLIENT);
     }
 
-    public async void PlayerGiveCard(string tag)
+    public void StartPlayerGiveCard(string tag) => _btwTransactionRoutine = StartCoroutine(PlayerGiveCard(tag));
+    public IEnumerator PlayerGiveCard(string tag)
     {
         //Check if not in game over
-        if (!IsGameRunning) return;
+        if (!IsGameRunning) yield break;
 
         //Check if vest is opened
         if (!InputManager.Instance.IsVestOpened)
         {
             Debug.LogWarning("Open vest first !");
-            return;
+            yield break;
         }
 
         //Check if there's a client
-        if (!_hasClient) return;
+        if (!_hasClient) yield break;
         _hasClient = false;
 
         //Get card
@@ -121,7 +129,7 @@ public class LevelManager : MonoBehaviour
             if(!selectedCard.genres.Contains(GameGenre.Factice))
             {
                 OnFailedByCop?.Invoke(); //Passe par le flic pour jouer l'anim avant de lancer le game over
-                return;
+                yield break;
             }
 
             //Complete (fake) transaction
@@ -129,9 +137,9 @@ public class LevelManager : MonoBehaviour
             //PopUpManager.Instance.SpawnRandomFeedbackPopup();
 
             AudioManager.AudioManager.Instance.PlaySound(SOUND_EXIT_CLIENT);
-            await WaitSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
+            yield return new  WaitForSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
             GiveNextClient();
-            return;
+            yield break;
         }
 
         //compute score
@@ -162,7 +170,7 @@ public class LevelManager : MonoBehaviour
         }
         _isTransitionCoolDownRoutine = StartCoroutine(TransitionCoolDown());
 
-        await WaitSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
+        yield return new WaitForSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
         GiveNextClient();
     }
 
