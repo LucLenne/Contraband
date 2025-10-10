@@ -9,11 +9,12 @@ using Random = UnityEngine.Random;
 
 public class LevelManager : MonoBehaviour
 {
-    private const string SOUND_NEW_CLIENT = "Client_New";
-    private const string SOUND_EXIT_CLIENT = "Client_Exit";
-    private const string SOUND_GIVE_FAVORITEGAME = "Give_FavoriteCard";
-    private const string SOUND_GIVE_GOODCATEGORY = "Give_GoodCategory";
-    private const string SOUND_GIVE_WRONGGAME = "Give_WrongGame";
+    private const string SOUND_NEW_CLIENT = "FOL_buyers_arrive";
+    private const string SOUND_EXIT_CLIENT = "FOL_departure";
+    private const string SOUND_GIVE_FAVORITEGAME = "SFX_Super_Deal";
+    private const string SOUND_GIVE_GOODCATEGORY = "SFX_Validation_Deal";
+    private const string SOUND_GIVE_WRONGGAME = "SFX_deal_Wrong_Game";
+    private const string SOUND_GIVE_WRONGGAMETOCOP = "SFX_deal_Failed";
 
     public static LevelManager Instance { get; private set; }
 
@@ -123,6 +124,7 @@ public class LevelManager : MonoBehaviour
             if(!selectedCard.genres.Contains(GameGenre.Factice))
             {
                 OnFailedByCop?.Invoke(); //Passe par le flic pour jouer l'anim avant de lancer le game over
+                AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_WRONGGAMETOCOP);
                 yield break;
             }
 

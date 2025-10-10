@@ -45,45 +45,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager.AudioManager
   _soundPrefab: {fileID: 228958404722708413, guid: 2d83b637776927444a705afb536687a1, type: 3}
-  _maxNumberOfSounds: 10
+  _maxNumberOfSounds: 13
   _soundList:
-  - Name: Give_FavoriteCard
+  - Name: SFX_Super_Deal
     Clips:
     - Clip: {fileID: 8300000, guid: 9251f8510de31a94dba46b614e175209, type: 3}
       Volume: 1
-  - Name: Give_GoodCategory
+  - Name: SFX_Validation_Deal
     Clips:
     - Clip: {fileID: 8300000, guid: d176f8ebb2871f145a11b57569915714, type: 3}
       Volume: 1
-  - Name: Give_WrongGame
+  - Name: SFX_deal_Wrong_Game
     Clips:
     - Clip: {fileID: 8300000, guid: cabcdd5a10d1bd645a291e9f459fb081, type: 3}
       Volume: 1
-  - Name: Client_New
+  - Name: SFX_deal_Failed
+    Clips:
+    - Clip: {fileID: 8300000, guid: b2dde6a6e053d0f4ca9e9b618721d4de, type: 3}
+      Volume: 1
+  - Name: SFX_Camera_Moving
+    Clips:
+    - Clip: {fileID: 8300000, guid: e28188c250c04f74ab70e08b42dd19bc, type: 3}
+      Volume: 1
+  - Name: SFX_Camera_spoting
+    Clips:
+    - Clip: {fileID: 8300000, guid: b2dde6a6e053d0f4ca9e9b618721d4de, type: 3}
+      Volume: 1
+  - Name: SFX_Console_Start
+    Clips:
+    - Clip: {fileID: 8300000, guid: b2dde6a6e053d0f4ca9e9b618721d4de, type: 3}
+      Volume: 1
+  - Name: FOL_buyers_arrive
     Clips:
     - Clip: {fileID: 8300000, guid: ed1b27170973243498ca0e4599f4a3b4, type: 3}
       Volume: 1
-  - Name: Client_Exit
+  - Name: FOL_departure
     Clips:
     - Clip: {fileID: 8300000, guid: c472c5434bd8c994da86a4ee20e56290, type: 3}
       Volume: 0
-  - Name: PopUp_Camera
-    Clips:
-    - Clip: {fileID: 8300000, guid: e28188c250c04f74ab70e08b42dd19bc, type: 3}
-      Volume: 1
-  - Name: PopUp_FakeCamera
-    Clips:
-    - Clip: {fileID: 8300000, guid: e28188c250c04f74ab70e08b42dd19bc, type: 3}
-      Volume: 1
-  - Name: PopUp_PolicePatrol
+  - Name: FOL_car_go_foward
     Clips:
     - Clip: {fileID: 8300000, guid: 001a97cb879beb64d8c1854d2046f5ed, type: 3}
       Volume: 1
-  - Name: PopUp_FakePolicePatrol
+  - Name: Fol_walk
     Clips:
-    - Clip: {fileID: 8300000, guid: 001a97cb879beb64d8c1854d2046f5ed, type: 3}
+    - Clip: {fileID: 8300000, guid: b2dde6a6e053d0f4ca9e9b618721d4de, type: 3}
       Volume: 1
-  - Name: PolicePatrol
+  - Name: FOL_car_Stop
     Clips:
     - Clip: {fileID: 8300000, guid: b2dde6a6e053d0f4ca9e9b618721d4de, type: 3}
       Volume: 1

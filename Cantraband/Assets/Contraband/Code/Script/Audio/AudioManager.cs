@@ -235,6 +235,8 @@ namespace AudioManager
                 return;
 
             source.clip = clip;
+            if (clipVolume == 0.0f)
+                Debug.LogWarning($"Clip \"{clip}\" has a volume of 0, you piece of **** define the sound has more than 0 (no hate XOXO)");
             source.volume = clipVolume * _soundVolume;
             source.loop = isLooping;
             source.Play();
