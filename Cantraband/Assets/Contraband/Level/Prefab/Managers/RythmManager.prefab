@@ -46,9 +46,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RythmManager
   _rythmRules:
   - TypeOfChange: 0
-    NumberOfX: 10
+    NumberOfX: 2
     ValueToIncrease: 0
     ValueAmount: 0.1
-  _baseClientPatience: 5
+    WasRuleApplied: 0
+  - TypeOfChange: 1
+    NumberOfX: 4
+    ValueToIncrease: 1
+    ValueAmount: 1
+    WasRuleApplied: 0
+  - TypeOfChange: 0
+    NumberOfX: 20
+    ValueToIncrease: 2
+    ValueAmount: 1.2
+    WasRuleApplied: 0
+  _baseClientPatience: 30
   _basePopUpMinMaxDelay: {x: 7, y: 13}
   _basePopUpSpeed: 1
+  _currentClientPatience: 0
+  _currentPopUpMinMaxDelay: {x: 0, y: 0}
+  _currentPopUpSpeed: 0
