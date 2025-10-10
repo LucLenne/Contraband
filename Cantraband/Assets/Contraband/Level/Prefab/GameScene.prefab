@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1.5762, y: 1, z: 1.5526}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6636228538340239158}
+  m_Father: {fileID: 1546763519960859689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8498497172376488380
 MeshFilter:
@@ -142,7 +142,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6636228538340239158}
+  m_Father: {fileID: 1546763519960859689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1602405316732934507
 MonoBehaviour:
@@ -2691,7 +2691,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1738253301338162299}
-  m_Father: {fileID: 6636228538340239158}
+  m_Father: {fileID: 1546763519960859689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &1595984540921362052
 Grid:
@@ -2881,7 +2881,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6636228538340239158}
+  m_Father: {fileID: 1546763519960859689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4038599662493833909
 GameObject:
@@ -2912,7 +2912,16 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2054541694236363828}
+  - {fileID: 5964198663821626323}
+  - {fileID: 1468797016600887865}
+  - {fileID: 8167918212610985161}
+  - {fileID: 6078011687373400243}
+  - {fileID: 7420584364646476111}
+  - {fileID: 4501349016848132658}
+  - {fileID: 7096832019736640950}
+  - {fileID: 3841279900021759086}
   m_Father: {fileID: 6636228538340239158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &704594548561521213
@@ -2962,7 +2971,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6636228538340239158}
+  m_Father: {fileID: 1546763519960859689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3326,7 +3335,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8137826379601224798}
-  m_Father: {fileID: 6636228538340239158}
+  m_Father: {fileID: 1546763519960859689}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!156049354 &3058030263730774218
 Grid:
@@ -3494,7 +3503,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6636228538340239158}
+  m_Father: {fileID: 1546763519960859689}
   m_LocalEulerAnglesHint: {x: 30, y: -36.457, z: 0}
 --- !u!20 &3402957220830584044
 Camera:
@@ -3621,22 +3630,13 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2542051700027281412}
+  - {fileID: 2195833226983743918}
   - {fileID: 7199176983174699916}
   - {fileID: 8707028062232284226}
   - {fileID: 2023838300815229421}
   - {fileID: 1416164070609672165}
   - {fileID: 1546763519960859689}
-  - {fileID: 2054541694236363828}
-  - {fileID: 5964198663821626323}
-  - {fileID: 1468797016600887865}
-  - {fileID: 8167918212610985161}
-  - {fileID: 6078011687373400243}
-  - {fileID: 7420584364646476111}
-  - {fileID: 4501349016848132658}
-  - {fileID: 3841279900021759086}
-  - {fileID: 7096832019736640950}
   - {fileID: 1402039978527620963}
-  - {fileID: 2195833226983743918}
   - {fileID: 516767323918386487}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5991,7 +5991,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 6636228538340239158}
+    m_TransformParent: {fileID: 1546763519960859689}
     m_Modifications:
     - target: {fileID: 1543885719260816519, guid: 4f4e8c65062dc3d44828613912fa66a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6194,7 +6194,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 6636228538340239158}
+    m_TransformParent: {fileID: 1546763519960859689}
     m_Modifications:
     - target: {fileID: 596164783092235863, guid: b668a298df8570144b449c619d7b2af1, type: 3}
       propertyPath: m_Name
