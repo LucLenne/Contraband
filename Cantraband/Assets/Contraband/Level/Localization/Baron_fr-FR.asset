@@ -19,43 +19,54 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 32696381440
-    m_Localized: Bonjour nouveau joueur, tu es la pour vendre des jeux
+    m_Localized: "Salutation camarade ! Merci de contribuer \xE0 la cause !"
     m_Metadata:
       m_Items: []
   - m_Id: 36513198080
-    m_Localized: azerazerazerr
+    m_Localized: "Ta mission constitera \xE0 dealer des jeux qui ont \xE9t\xE9 interdits
+      par la liste des moeurs gouvernementale."
     m_Metadata:
       m_Items: []
   - m_Id: 38593572864
-    m_Localized: tyiutyuityiutyiutyi
+    m_Localized: "C'est tr\xE8s simple, tout est dans ton manteau, chaque client
+      qui se pr\xE9sentera \xE0 toi te demandera un type de jeu parmi les 4."
     m_Metadata:
       m_Items: []
   - m_Id: 41277927424
-    m_Localized: qsdfqsdfqsdfqsdf
+    m_Localized: Action, Shooter, Horreur et Narratif.
     m_Metadata:
       m_Items: []
   - m_Id: 694448500736
-    m_Localized: ghkjghkjghkjghkj
+    m_Localized: "Fais attention aux patrouilles de polices et aux cam\xE9ras qui
+      ne doivent pas te surprendre le manteau ouvert."
     m_Metadata:
       m_Items: []
-  - m_Id: 332024759660544
-    m_Localized: wxcvwxcvwxcvwxcv
+  - m_Id: 709756467228672
+    m_Localized: Et aux policiers qui ne doivent pas te voir en train de conclure
+      ta transaction.
     m_Metadata:
       m_Items: []
-  - m_Id: 332033311846400
-    m_Localized: bn;,bn;,bn;,bn;,
+  - m_Id: 709756509171712
+    m_Localized: "Parfois des flics sous couvertures viendront se servir, sers-toi
+      des deux FAUX situ\xE9s dans tes poches ext\xE9rieures."
     m_Metadata:
       m_Items: []
-  - m_Id: 332040152756224
-    m_Localized: "&\xE9\"'&\xE9\"'&\xE9\"'&\xE9\"'"
+  - m_Id: 709756509171713
+    m_Localized: Donne lui ce qu'il veut pour qu'il te laisse tranquille.
     m_Metadata:
       m_Items: []
-  - m_Id: 332047002054656
-    m_Localized: "(-_\xE8(-_\xE8(-_\xE8(-_\xE8"
+  - m_Id: 709756509171714
+    m_Localized: Chaque client aura un jeu favori compris dans le genre qu'il demande...
     m_Metadata:
       m_Items: []
-  - m_Id: 332056024002560
-    m_Localized: oplmoplmoplm
+  - m_Id: 709756509171715
+    m_Localized: "Attend un peu pour qu'il te l'indique, un risque \xE0 prendre pour
+      mieux propager nos jeux."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 709756509171716
+    m_Localized: Mais reste assez rapide avant qu'il juge la situation dangeureuse
+      et parte !
     m_Metadata:
       m_Items: []
   references:
