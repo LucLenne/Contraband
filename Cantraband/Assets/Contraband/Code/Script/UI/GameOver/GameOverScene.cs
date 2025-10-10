@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameOverScene : MonoBehaviour
 {
@@ -33,17 +34,16 @@ public class GameOverScene : MonoBehaviour
         if (LevelManager.Instance.GameCardsGiven.Count != LevelManager.Instance.PointsAwarded.Count)
             Debug.LogError("number of game cards given isn't the same as poitns awarded");
 
-        for (int i = 0; i < LevelManager.Instance.PointsAwarded.Count; i++)
+        float _numberOfCartridges = LevelManager.Instance.GameCardsGiven.Count;
+        for (int i = 0; i < LevelManager.Instance.score; i++)
         {
             //Spawn game cards
-            if(i < LevelManager.Instance.GameCardsGiven.Count)
-            {
-                GameObject prefabToSpawn = LevelManager.Instance.GameCardsGiven[i].MeshPrefab;
-                Instantiate(prefabToSpawn, _spawnPoint.transform.position, Quaternion.identity);
-            }
+            int index = (int)(i % _numberOfCartridges);
+            GameObject prefabToSpawn = LevelManager.Instance.GameCardsGiven[index].MeshPrefab;
+            Instantiate(prefabToSpawn, _spawnPoint.transform.position, Random.rotation);
 
             //Add score to text
-            _currentScore += LevelManager.Instance.PointsAwarded[i];
+            _currentScore++;
             _scoreText.text = SCORE_TEXT + SCORE_ANIM + _currentScore;
 
             yield return new WaitForSeconds(_delayBTWspawns);

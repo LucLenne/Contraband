@@ -17,7 +17,8 @@ public class ClientBehaviour : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject _hintImagePrefab;
     [SerializeField] private RectTransform _hintImageParent;
-    [SerializeField] private Slider _sliderPatience;
+    [SerializeField] private Image _sliderImage;
+    [SerializeField] private Gradient _sliderGradient;
 
     [Header("Timer slider")]
     [SerializeField] private RectTransform _timerRectTransform;
@@ -70,8 +71,7 @@ public class ClientBehaviour : MonoBehaviour
     private IEnumerator StartTimerAsync()
     {
         float timeLeft = currentPatientPatience;
-        _sliderPatience.maxValue = timeLeft;
-        _sliderPatience.value = timeLeft;
+        _sliderImage.fillAmount = timeLeft;
 
         Vector3 baseScale = _timerRectTransform.localScale;
         _timerRectTransform.gameObject.SetActive(true);
@@ -80,18 +80,19 @@ public class ClientBehaviour : MonoBehaviour
             yield return null;
 
             timeLeft -= Time.deltaTime;
-            if (_sliderPatience != null)
-                _sliderPatience.value = timeLeft;
 
             float normalizedTime = 1 - (timeLeft / currentPatientPatience); // 0 - 1
             float currentSpeed = _timerAnimCurve.Evaluate(normalizedTime) * _timerAnimMaxSpeed;
             float scaleFactor = 1f + Mathf.Sin(Time.time * currentSpeed * Mathf.PI) * 0.1f;
+
             _timerRectTransform.localScale = baseScale * scaleFactor;
+            _sliderImage.color = _sliderGradient.Evaluate(normalizedTime);
+            _sliderImage.fillAmount = 1 - normalizedTime;
         }
         _timerRectTransform.localScale = baseScale;
         _timerRectTransform.gameObject.SetActive(false);
 
-        _sliderPatience.value = 0f;
+        _sliderImage.fillAmount = 0f;
         LevelManager.Instance.StartClientNoMorePatience();
     }
 

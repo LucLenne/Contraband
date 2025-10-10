@@ -3050,7 +3050,7 @@ MonoBehaviour:
 
     0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 80048544a3705a54a81ca01ce2b8d489, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6686,20 +6686,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 7199176983174699916}
     m_Modifications:
     - target: {fileID: 2491989948994319524, guid: f912b3a73d0415d42835b0117b6e9e87, type: 3}
-      propertyPath: _rythmRules.Array.data[0].NumberOfX
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2491989948994319524, guid: f912b3a73d0415d42835b0117b6e9e87, type: 3}
       propertyPath: _rythmRules.Array.data[0].ValueAmount
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2491989948994319524, guid: f912b3a73d0415d42835b0117b6e9e87, type: 3}
       propertyPath: _rythmRules.Array.data[0].TypeOfChange
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2491989948994319524, guid: f912b3a73d0415d42835b0117b6e9e87, type: 3}
-      propertyPath: _rythmRules.Array.data[0].ValueToIncrease
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4734220747711549358, guid: f912b3a73d0415d42835b0117b6e9e87, type: 3}
       propertyPath: m_Name
