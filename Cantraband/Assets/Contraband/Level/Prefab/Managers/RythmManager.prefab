@@ -49,6 +49,10 @@ MonoBehaviour:
     NumberOfX: 10
     ValueToIncrease: 0
     ValueAmount: 0.1
+    WasRuleApplied: 0
   _baseClientPatience: 5
   _basePopUpMinMaxDelay: {x: 7, y: 13}
   _basePopUpSpeed: 1
+  _currentClientPatience: 0
+  _currentPopUpMinMaxDelay: {x: 0, y: 0}
+  _currentPopUpSpeed: 0

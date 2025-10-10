@@ -1,5 +1,4 @@
 using DG.Tweening;
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,13 +18,15 @@ public class GDFeedbackScript : MonoBehaviour
     private void OnEnable()
     {
         InputManager.Instance.OnVestChanged += ChangeManteauImage;
-        LevelManager.Instance.OnGameReturned += StartFeedbackImage;
+        if (LevelManager.Instance != null)
+            LevelManager.Instance.OnGameReturned += StartFeedbackImage;
     }
 
     private void OnDisable()
     {
         InputManager.Instance.OnVestChanged -= ChangeManteauImage;
-        LevelManager.Instance.OnGameReturned -= StartFeedbackImage;
+        if (LevelManager.Instance != null)
+            LevelManager.Instance.OnGameReturned -= StartFeedbackImage;
     }
 
     private void ChangeManteauImage(bool isOpened) => _manteauImage.sprite = isOpened ? _manteauOpenImage : _manteauCloseImage;
