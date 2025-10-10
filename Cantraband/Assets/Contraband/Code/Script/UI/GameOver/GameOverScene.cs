@@ -10,6 +10,7 @@ public class GameOverScene : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private Transform _spawnPoint;
+    [SerializeField] private GameObject _musicPlayer;
     [SerializeField] private TMP_Text _scoreText;
 
     [Header("Delay")]
@@ -24,6 +25,7 @@ public class GameOverScene : MonoBehaviour
     private void OnEnable()
     {
         _spawnGameCardsCoroutine = StartCoroutine(SpawnCardsRoutine());
+        _musicPlayer.SetActive(true);
     }
 
     private IEnumerator SpawnCardsRoutine()
