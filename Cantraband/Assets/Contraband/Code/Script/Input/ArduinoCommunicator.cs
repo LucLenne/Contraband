@@ -31,7 +31,7 @@ public class ArduinoCommunicator : MonoBehaviour
         }
     }
 
-    private void OnApplicationQuit()
+    private void OnDisable()
     {
         if(isActive)
         {
