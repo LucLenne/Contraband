@@ -1,10 +1,13 @@
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
     public static InputManager Instance;
+
+    [SerializeField] bool _defaultVestOpened;
 
     public Action<string> OnReadCard;
     public Action<bool> OnVestChanged;
@@ -23,7 +26,14 @@ public class InputManager : MonoBehaviour
         /*        OnReadCard += GetNFCReader;
                 OnVestChanged += GetVestState;*/
 
-        IsVestOpened = false;
+        //Set default vest state
+        IsVestOpened = _defaultVestOpened;
+        SendFirstOnVestChanged();
+    }
+    private async void SendFirstOnVestChanged()
+    {
+        await Task.Delay(10);
+        OnVestChanged?.Invoke(_defaultVestOpened);
     }
 
     public void ReceiveNFCReader(string cardId)
