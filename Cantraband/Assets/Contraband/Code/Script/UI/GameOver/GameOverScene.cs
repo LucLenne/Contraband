@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameOverScene : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class GameOverScene : MonoBehaviour
             if(i < LevelManager.Instance.GameCardsGiven.Count)
             {
                 GameObject prefabToSpawn = LevelManager.Instance.GameCardsGiven[i].MeshPrefab;
-                Instantiate(prefabToSpawn, _spawnPoint.transform.position, Quaternion.identity);
+                Instantiate(prefabToSpawn, _spawnPoint.transform.position, Random.rotation);
             }
 
             //Add score to text
