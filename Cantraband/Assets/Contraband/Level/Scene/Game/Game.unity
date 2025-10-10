@@ -6591,6 +6591,28 @@ MonoBehaviour:
   _feedbackImage: {fileID: 4815617}
   _goodCardColor: {r: 0, g: 1, b: 0, a: 0.78431374}
   _badCardColor: {r: 1, g: 0, b: 0, a: 0.78431374}
+--- !u!1 &1881708842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7576848650389954153, guid: 8f5ced737415394468434c5c93d91952, type: 3}
+  m_PrefabInstance: {fileID: 1844992728382041304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1881708846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881708842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41a4fd8670758e4ab1d967fa8ce363f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraMovement
+  _baseRadius: 0.1
+  _angleSpeed: 0.15
+  _radiusVariation: 0.05
+  _noiseScale: 1
+  _noiseOffset: 0
 --- !u!1 &1885426124
 GameObject:
   m_ObjectHideFlags: 0
@@ -6675,7 +6697,7 @@ MonoBehaviour:
   _spawnPoint: {fileID: 1025271712}
   _scoreText: {fileID: 1449132152}
   _delayBTWspawns: 0.5
-  _delayBeforeLoadScene: 3
+  _delayBeforeLoadScene: 4
 --- !u!1001 &1348384906566265452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6858,6 +6880,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7576848650389954153, guid: 8f5ced737415394468434c5c93d91952, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1881708846}
     - targetCorrespondingSourceObject: {fileID: 7875178162021766019, guid: 8f5ced737415394468434c5c93d91952, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1371427599}

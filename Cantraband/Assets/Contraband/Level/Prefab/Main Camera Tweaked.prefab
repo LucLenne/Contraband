@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6308420001243646303}
   - component: {fileID: 7734827412584424515}
   - component: {fileID: 3576832931305558979}
+  - component: {fileID: 7248521741126318326}
   m_Layer: 0
   m_Name: Main Camera Tweaked
   m_TagString: MainCamera
@@ -138,6 +139,23 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &7248521741126318326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7576848650389954153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41a4fd8670758e4ab1d967fa8ce363f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraMovement
+  _baseRadius: 0.1
+  _angleSpeed: 0.15
+  _radiusVariation: 0.05
+  _noiseScale: 1
+  _noiseOffset: 0
 --- !u!1001 &2442001880844040092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -304,3 +322,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DisplayScore
   _scoreText: {fileID: 7422046799411252636}
+  _scoreAnims: <+spread><wave><palette><-fade>
