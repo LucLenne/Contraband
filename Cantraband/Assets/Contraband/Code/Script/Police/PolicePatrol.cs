@@ -23,13 +23,19 @@ public class PolicePatrol : MonoBehaviour
     private void OnEnable()
     {
         PopUpManager.Instance.OnLaunchPolicePatrol += ActivatePatrol;
-        LevelManager.Instance.OnGameOver += StopAnimation;
+        if(LevelManager.Instance != null)
+        {
+            LevelManager.Instance.OnGameOver += StopAnimation;
+        }
+        
     }
 
     private void OnDisable()
     {
+
         PopUpManager.Instance.OnLaunchPolicePatrol -= ActivatePatrol;
-        LevelManager.Instance.OnGameOver -= StopAnimation;
+        if(LevelManager.Instance != null)
+            LevelManager.Instance.OnGameOver -= StopAnimation;
     }
 
     public void ActivatePatrol()
@@ -45,6 +51,8 @@ public class PolicePatrol : MonoBehaviour
 
     public void LaunchCheckPlayerCoatInAnim()
     {
+        if (LevelManager.Instance == null) return;
+
         LevelManager.Instance.CheckPlayerCoat();
         LevelManager.Instance.CheckPlayerTransaction();
     }
