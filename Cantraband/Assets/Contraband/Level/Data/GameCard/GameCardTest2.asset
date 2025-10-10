@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc40bb3058ead224bb891d84844300eb, type: 3}
   m_Name: GameCardTest2
   m_EditorClassIdentifier: Assembly-CSharp::GameCard
-  tag: Test2
+  tag: A3BD1BEE
+  DebugKeyboardTag: Test2
   Name: Test game card
   genres: 04000000
   hintImage:

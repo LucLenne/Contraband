@@ -48,27 +48,43 @@ MonoBehaviour:
   _maxNumberOfSounds: 10
   _soundList:
   - Name: Give_FavoriteCard
-    Clips: []
+    Clips:
+    - Clip: {fileID: 8300000, guid: 9251f8510de31a94dba46b614e175209, type: 3}
+      Volume: 1
   - Name: Give_GoodCategory
-    Clips: []
+    Clips:
+    - Clip: {fileID: 8300000, guid: d176f8ebb2871f145a11b57569915714, type: 3}
+      Volume: 1
   - Name: Give_WrongGame
-    Clips: []
+    Clips:
+    - Clip: {fileID: 8300000, guid: cabcdd5a10d1bd645a291e9f459fb081, type: 3}
+      Volume: 1
   - Name: Client_New
     Clips:
     - Clip: {fileID: 8300000, guid: ed1b27170973243498ca0e4599f4a3b4, type: 3}
       Volume: 1
   - Name: Client_Exit
-    Clips: []
+    Clips:
+    - Clip: {fileID: 8300000, guid: c472c5434bd8c994da86a4ee20e56290, type: 3}
+      Volume: 0
   - Name: PopUp_Camera
-    Clips: []
+    Clips:
+    - Clip: {fileID: 8300000, guid: e28188c250c04f74ab70e08b42dd19bc, type: 3}
+      Volume: 1
   - Name: PopUp_FakeCamera
-    Clips: []
+    Clips:
+    - Clip: {fileID: 8300000, guid: e28188c250c04f74ab70e08b42dd19bc, type: 3}
+      Volume: 1
   - Name: PopUp_PolicePatrol
-    Clips: []
+    Clips:
+    - Clip: {fileID: 8300000, guid: 001a97cb879beb64d8c1854d2046f5ed, type: 3}
+      Volume: 1
   - Name: PopUp_FakePolicePatrol
-    Clips: []
+    Clips:
+    - Clip: {fileID: 8300000, guid: 001a97cb879beb64d8c1854d2046f5ed, type: 3}
+      Volume: 1
   - Name: PolicePatrol
-    Clips: []
-  - Name: PopUp_FeedBack_Client
-    Clips: []
+    Clips:
+    - Clip: {fileID: 8300000, guid: b2dde6a6e053d0f4ca9e9b618721d4de, type: 3}
+      Volume: 1
   _voiceProfileList: []

@@ -53,6 +53,7 @@ public class LevelManager : MonoBehaviour
     public List<GameCard> GameCardsGiven { get =>  _gameCardsGiven; }
     public List<int> PointsAwarded { get => _pointsAwarded; }
 
+    public Action<GameReturnedType> OnGameReturned;
     public Action OnFinishTransaction;
     public Action<Client> onNextClientAction;
     public Action OnFailedByCop; //Quand donne un "mauvais" jeu au flic infiltré
@@ -107,13 +108,6 @@ public class LevelManager : MonoBehaviour
         //Check if not in game over
         if (!IsGameRunning) yield break;
 
-        //Check if vest is opened
-        if (!InputManager.Instance.IsVestOpened)
-        {
-            Debug.LogWarning("Open vest first !");
-            yield break;
-        }
-
         //Check if there's a client
         if (!_hasClient) yield break;
         _hasClient = false;
@@ -121,7 +115,7 @@ public class LevelManager : MonoBehaviour
         //Get card
         GameCard selectedCard = GetCardGame(tag);
         if (selectedCard == null)
-            throw new Exception($"No card with tag {tag}");
+            throw new Exception($"No card with tag: {tag}");
 
         //Check police
         if (_currentClient.isPolice)
@@ -134,7 +128,7 @@ public class LevelManager : MonoBehaviour
 
             //Complete (fake) transaction
             OnFinishTransaction?.Invoke();
-            //PopUpManager.Instance.SpawnRandomFeedbackPopup();
+            OnGameReturned?.Invoke(GameReturnedType.Good);
 
             AudioManager.AudioManager.Instance.PlaySound(SOUND_EXIT_CLIENT);
             yield return new  WaitForSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
@@ -145,18 +139,7 @@ public class LevelManager : MonoBehaviour
         //compute score
         GameReturnedType clientResponse = ComputeScore(selectedCard);
         //Launch popup feedback
-        switch (clientResponse)
-        {
-            case GameReturnedType.Favorite:
-            case GameReturnedType.Good:
-                //PopUpManager.Instance.SpawnRandomFeedbackPopup();
-                break;
-
-            case GameReturnedType.Wrong:
-            default:
-                break;
-
-        }
+        OnGameReturned?.Invoke(clientResponse);
 
         //Complete transaction
         OnFinishTransaction?.Invoke();
@@ -174,19 +157,24 @@ public class LevelManager : MonoBehaviour
         GiveNextClient();
     }
 
-    public async void ClientNoMorePatience() //Client leaves when no more patience
+    public void StartClientNoMorePatience()
     {
         //Check if not in game over
         if (!IsGameRunning) return;
 
         //Check if there's a client
         if (!_hasClient) return;
+
+        StartCoroutine(ClientNoMorePatience());
+    }
+    private IEnumerator ClientNoMorePatience() //Client leaves when no more patience
+    {
         _hasClient = false;
 
         //Complete transaction
         OnFinishTransaction?.Invoke();
         AudioManager.AudioManager.Instance.PlaySound(SOUND_EXIT_CLIENT);
-        await WaitSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
+        yield return new WaitForSeconds((int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y));
         GiveNextClient();
     }
 
@@ -209,7 +197,7 @@ public class LevelManager : MonoBehaviour
     {
         foreach(GameCard card in DataContainer.GameCards)
         {
-            if(card.tag == tag)
+            if (card.tag == tag || card.DebugKeyboardTag == tag)
                 return card;
         }
         return null;
@@ -222,7 +210,7 @@ public class LevelManager : MonoBehaviour
         _isRightAfterTransaction = false;
     }
     
-    private enum GameReturnedType { Wrong, Good, Favorite }
+    public enum GameReturnedType { Wrong, Good, Favorite }
     private GameReturnedType ComputeScore(GameCard gameCard) //return what type of game was given
     {
         //Search favorite came

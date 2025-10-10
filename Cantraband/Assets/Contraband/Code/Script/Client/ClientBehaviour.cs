@@ -1,9 +1,6 @@
-using NaughtyAttributes;
-using System;
+ï»¿using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +19,11 @@ public class ClientBehaviour : MonoBehaviour
     [SerializeField] private RectTransform _hintImageParent;
     [SerializeField] private Slider _sliderPatience;
 
+    [Header("Timer slider")]
+    [SerializeField] private RectTransform _timerRectTransform;
+    [SerializeField] private float _timerAnimMaxSpeed;
+    [SerializeField] private AnimationCurve _timerAnimCurve;
+
     [Header("Patience")]
     [ReadOnly] public float currentPatientPatience;
 
@@ -34,7 +36,7 @@ public class ClientBehaviour : MonoBehaviour
         LevelManager.Instance.OnFailedByCop += LaunchCopAnim;
         LevelManager.Instance.OnGameOver += LaunchGameOverAnim;
 
-        //A changer avec l'accélération du rythme
+        //A changer avec l'accÃ©lÃ©ration du rythme
         currentPatientPatience = Mathf.Max(RythmManager.Instance.ClientPatience, .1f);
         _newClientCoroutine = StartCoroutine(StartTimerAsync());
     }
@@ -65,12 +67,14 @@ public class ClientBehaviour : MonoBehaviour
     private void LaunchGameOverAnim() => _animator.SetTrigger(ANIMATION_GAME_OVER_NAME);
     private void LaunchTransferDoneAnim() => _animator.SetTrigger(ANIMATION_TRANSFER_DONE_NAME);
 
-    public IEnumerator StartTimerAsync()
+    private IEnumerator StartTimerAsync()
     {
         float timeLeft = currentPatientPatience;
         _sliderPatience.maxValue = timeLeft;
         _sliderPatience.value = timeLeft;
 
+        Vector3 baseScale = _timerRectTransform.localScale;
+        _timerRectTransform.gameObject.SetActive(true);
         while (timeLeft > 0f && !_newClient)
         {
             yield return null;
@@ -78,9 +82,17 @@ public class ClientBehaviour : MonoBehaviour
             timeLeft -= Time.deltaTime;
             if (_sliderPatience != null)
                 _sliderPatience.value = timeLeft;
+
+            float normalizedTime = 1 - (timeLeft / currentPatientPatience); // 0 - 1
+            float currentSpeed = _timerAnimCurve.Evaluate(normalizedTime) * _timerAnimMaxSpeed;
+            float scaleFactor = 1f + Mathf.Sin(Time.time * currentSpeed * Mathf.PI) * 0.1f;
+            _timerRectTransform.localScale = baseScale * scaleFactor;
         }
+        _timerRectTransform.localScale = baseScale;
+        _timerRectTransform.gameObject.SetActive(false);
+
         _sliderPatience.value = 0f;
-        LevelManager.Instance.ClientNoMorePatience();
+        LevelManager.Instance.StartClientNoMorePatience();
     }
 
     #region Animation methods
