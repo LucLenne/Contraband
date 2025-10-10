@@ -124,7 +124,9 @@ public class PopUpManager : MonoBehaviour
     {
         _onCheckPlayerCoat?.Invoke();
         OnCheckPlayerCoat?.Invoke();
-        LevelManager.Instance.CheckPlayerCoat();
+
+        if(LevelManager.Instance != null)
+            LevelManager.Instance.CheckPlayerCoat();
     }
 
     public void LaunchPolicePatrol()

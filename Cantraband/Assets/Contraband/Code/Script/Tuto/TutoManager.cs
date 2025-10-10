@@ -2,8 +2,8 @@ using NaughtyAttributes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutoManager : MonoBehaviour
 {
@@ -27,7 +27,7 @@ public class TutoManager : MonoBehaviour
 
     private bool _activePopUp;
     private bool _activeTimer;
-    
+
     private const string NAME_SCENE_GAME = "Game";
 
     public Action clientEndPatience;
@@ -61,7 +61,7 @@ public class TutoManager : MonoBehaviour
     {
         InputManager.Instance.OnReadCard += CheckCard;
         clientEndPatience += ChangeClient;
-        
+
     }
 
     private void OnDisable()
@@ -75,7 +75,6 @@ public class TutoManager : MonoBehaviour
         _currentClient = Instantiate(_prefabTutoClient, posClient);
         _clientTuto = _currentClient.GetComponent<ClientTuto>();
 
-        // On ne dépend plus du vieux flag, c'est toujours l'Init qui décide
         _clientTuto.InitClient(_listClient[_currentState], _listGameCard[_currentState]);
     }
 
@@ -125,21 +124,31 @@ public class TutoManager : MonoBehaviour
 
     private void AddTimer() => _clientTuto.activeTimer = true;
 
-    private async void CheckState()
+    private IEnumerator HandleBaronState()
+    {
+        yield return StartCoroutine(_baron.SpeechBaronCoroutine(_currentState));
+        stateTuto = (StateTuto)_currentState;
+        ChangeClient();
+        CheckState();
+    }
+
+
+    private void CheckState()
     {
         Debug.Log(stateTuto.ToString());
+
         switch (stateTuto)
         {
             case StateTuto.baron:
-                await _baron.SpeechBaron(_currentState);
-                stateTuto = (StateTuto)_currentState;
-                ChangeClient();
-                CheckState();
+                StartCoroutine(HandleBaronState());
                 break;
+
             case StateTuto.first:
                 break;
+
             case StateTuto.second:
                 break;
+
             case StateTuto.third:
                 AddPopUp();
                 StartPatrol();
@@ -150,15 +159,31 @@ public class TutoManager : MonoBehaviour
                     _clientTuto.InitTimer();
                 }
                 break;
+
             case StateTuto.end:
-                LoadingManager.Instance.LoadScene(NAME_SCENE_GAME);
+                if (LoadingManager.Instance != null)
+                {
+                    LoadingManager.Instance.LoadScene(NAME_SCENE_GAME);
+                }
+                else
+                {
+                    SceneManager.LoadScene(NAME_SCENE_GAME);
+                }
+
                 break;
         }
+    }
+    public void CheckPlayerCoat()
+    {
+        if (!InputManager.Instance.IsVestOpened)
+            return;
     }
 
     private void CheckCard(string card)
     {
-        if(card == _listGameCard[(int)stateTuto].tag)
+        Debug.Log(card);
+        Debug.Log("Debug Keyboard Tag : " + _listGameCard[(int)stateTuto].DebugKeyboardTag);
+        if (card == _listGameCard[(int)stateTuto].tag || _listGameCard[(int)stateTuto].DebugKeyboardTag == card)
         {
             _currentState += 1;
             stateTuto = StateTuto.baron;

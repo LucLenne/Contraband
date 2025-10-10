@@ -19,6 +19,8 @@ public class ClientTuto : MonoBehaviour
         UnlockTimer();
     }
 
+
+
     public void SetupClient(List<Sprite> hintImages)
     {
         if (hintImages == null || hintImages.Count == 0)

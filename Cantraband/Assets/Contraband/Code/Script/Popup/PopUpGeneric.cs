@@ -62,12 +62,17 @@ public class PopUpGeneric : MonoBehaviour
 
     private void OnEnable()
     {
-        LevelManager.Instance.OnGameOver += StopAnimation;
+        if (LevelManager.Instance != null) 
+        {
+            LevelManager.Instance.OnGameOver += StopAnimation;
+        }
+        
     }
 
     private void OnDisable()
     {
-        LevelManager.Instance.OnGameOver -= StopAnimation;
+        if(LevelManager.Instance != null)
+            LevelManager.Instance.OnGameOver -= StopAnimation;
     }
 
     #region setup

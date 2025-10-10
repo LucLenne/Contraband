@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TMPro;
@@ -29,16 +30,27 @@ public class Baron : MonoBehaviour
         _speechBaron.listSpeech = new() { _speechBaron.firstPart, _speechBaron.secondPart, _speechBaron.thirdPart, _speechBaron.fourthPart };
     }
 
-    public async Task SpeechBaron( int p)
+
+
+    public IEnumerator SpeechBaronCoroutine(int p)
     {
-        if (p > 3 || p < 0) Debug.LogError("Wrong part : " + p + ". Choose Between 0 and 3");
-        if (_speechBaron.listSpeech[p].Count == 0) return;
+        if (p > 3 || p < 0)
+        {
+            Debug.LogError("Wrong part : " + p + ". Choose between 0 and 3");
+            yield break;
+        }
+
+        if (_speechBaron.listSpeech[p].Count == 0)
+            yield break;
+
         _baron.SetActive(true);
-        foreach (Speech speech in _speechBaron.listSpeech[p]) 
+
+        foreach (Speech speech in _speechBaron.listSpeech[p])
         {
             DisplaySpeech(speech);
-            await Tasks.WaitSeconds(speech.time);
+            yield return new WaitForSeconds(speech.time);
         }
+
         UnloadText();
         _baron.SetActive(false);
     }
