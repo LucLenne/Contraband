@@ -180,6 +180,10 @@ public class LevelManager : MonoBehaviour
 
     public void GiveNextClient()
     {
+        //Check if game is running
+        if (!IsGameRunning)
+            return;
+
         //Get next client
         _currentClient = GetRandomClient();
         _hasClient = true;

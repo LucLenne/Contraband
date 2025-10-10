@@ -3468,6 +3468,32 @@ MonoBehaviour:
   _manteauImage: {fileID: 1152036198116174843}
   _manteauCloseImage: {fileID: 21300000, guid: 705ebdb0c0087764ea1c7b13c4a800ba, type: 3}
   _manteauOpenImage: {fileID: 21300000, guid: 7b9cf3227e5649d4498c52573a501882, type: 3}
+  _manteauScaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0.9274778
+      outSlope: -0.9274778
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.10277784
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _manteauScaleDuration: 0.4
+  _manteauScaleMaxScale: 1.1
   _feedBackFadeImageDuration: 0.5
   _feedbackImage: {fileID: 901257406492916659}
   _goodCardColor: {r: 0, g: 1, b: 0, a: 0.78431374}

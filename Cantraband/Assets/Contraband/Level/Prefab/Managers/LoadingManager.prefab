@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5006779290073141122
 RectTransform:
   m_ObjectHideFlags: 0
@@ -169,8 +169,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Loading...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 80048544a3705a54a81ca01ce2b8d489, type: 2}
+  m_sharedMaterial: {fileID: -4297368524372723315, guid: 80048544a3705a54a81ca01ce2b8d489, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -194,8 +194,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 300
-  m_fontSizeBase: 300
+  m_fontSize: 250
+  m_fontSizeBase: 250
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

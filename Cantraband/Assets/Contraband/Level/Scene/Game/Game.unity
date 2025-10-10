@@ -246,6 +246,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.35
       objectReference: {fileID: 0}
+    - target: {fileID: 7310527768138603848, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310527768138603848, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310527768138603848, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310527768138603848, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310527768138603848, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7583811004547583157, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
