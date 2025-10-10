@@ -659,17 +659,33 @@ MonoBehaviour:
   _baron: {fileID: 2015302127}
   _speechBaron:
     firstPart:
-    - time: 1
-      id: 1
+    - time: 2
+      id: greetings
+    - time: 4
+      id: deal_games
+    - time: 4
+      id: controller
+    - time: 1.3
+      id: type_game
     secondPart:
-    - time: 1
-      id: 4
+    - time: 2.5
+      id: undercover_cop
+    - time: 2.5
+      id: give_game
     thirdPart:
-    - time: 1
-      id: 9
+    - time: 2.5
+      id: police_patrol
+    - time: 2.5
+      id: officers
     fourthPart:
-    - time: 1
-      id: 10
+    - time: 2
+      id: favorite_game
+    - time: 2
+      id: take_time
+    - time: 2
+      id: be_quick
+    - time: 2
+      id: come_on
 --- !u!1 &1490802689
 GameObject:
   m_ObjectHideFlags: 0

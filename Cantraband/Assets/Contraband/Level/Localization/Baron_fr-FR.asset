@@ -29,7 +29,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 38593572864
     m_Localized: "C'est tr\xE8s simple, tout est dans ton manteau, chaque client
-      qui se pr\xE9sentera \xE0 toi te demandera un type de jeu parmi les 4."
+      qui se pr\xE9sentera \xE0 toi te demandera un type de jeu parmi les 4 :"
     m_Metadata:
       m_Items: []
   - m_Id: 41277927424
@@ -67,6 +67,11 @@ MonoBehaviour:
   - m_Id: 709756509171716
     m_Localized: Mais reste assez rapide avant qu'il juge la situation dangeureuse
       et parte !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774898391396352
+    m_Localized: Allez, sur ce, bon courage camarade, va propager ces jeux dans les
+      rues !
     m_Metadata:
       m_Items: []
   references:

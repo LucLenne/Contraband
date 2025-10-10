@@ -19,17 +19,17 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 32696381440
-    m_Localized: Greetings, comrade! Thank you for contributing to the cause!
+    m_Localized: Greetings, comrade! Thank you for contributing to the cause !
     m_Metadata:
       m_Items: []
   - m_Id: 36513198080
-    m_Localized: Your mission will be to deal in games that have been banned by the
-      government's list of immoral items.
+    m_Localized: Your mission is to deal games that have been banned by the government's
+      list of immoral items.
     m_Metadata:
       m_Items: []
   - m_Id: 38593572864
-    m_Localized: It's very simple, everything is in your coat. Each customer who
-      comes to you will ask for one of the four types of games.
+    m_Localized: 'It''s very simple, everything is in your coat. Each customer who
+      comes to you will ask for one of the four types of games :'
     m_Metadata:
       m_Items: []
   - m_Id: 41277927424
@@ -42,8 +42,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 709756467228672
-    m_Localized: And to the police officers who must not see you completing your
-      transaction.
+    m_Localized: The police officers must not see you completing your transaction.
     m_Metadata:
       m_Items: []
   - m_Id: 709756509171712
@@ -62,12 +61,17 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 709756509171715
     m_Localized: "Wait a little while for him to tell you\u2014it's a risk worth
-      taking to better promote our games."
+      taking to better spread our games."
     m_Metadata:
       m_Items: []
   - m_Id: 709756509171716
     m_Localized: But be quick before he judges the situation to be dangerous and
-      leaves!
+      leaves !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774898391396352
+    m_Localized: Come on, on that note, good luck comrade, go spread these games
+      in the streets !
     m_Metadata:
       m_Items: []
   references:
