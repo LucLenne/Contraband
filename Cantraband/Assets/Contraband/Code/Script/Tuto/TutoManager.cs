@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.PackageManager;
 using UnityEngine;
@@ -48,8 +49,6 @@ public class TutoManager : MonoBehaviour
             return;
         }
         Instance = this;
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -73,18 +72,16 @@ public class TutoManager : MonoBehaviour
 
     private void SpawnClient()
     {
-        GameObject client = _prefabTutoClient;
-        ClientTuto clientTuto = client.GetComponent<ClientTuto>();
-        if (_activeTimer)
-        {
-            clientTuto.activeTimer = true;
-        }
-        clientTuto.InitClient(_listClient[_currentState], _listGameCard[_currentState]);
-        _currentClient = Instantiate(client,posClient);
-        _clientTuto = clientTuto;
+        _currentClient = Instantiate(_prefabTutoClient, posClient);
+        _clientTuto = _currentClient.GetComponent<ClientTuto>();
+
+        // On ne dépend plus du vieux flag, c'est toujours l'Init qui décide
+        _clientTuto.InitClient(_listClient[_currentState], _listGameCard[_currentState]);
     }
 
-    private  void DestroyClient()
+
+
+    private void DestroyClient()
     {
         if (_currentClient != null)
         {
@@ -96,26 +93,48 @@ public class TutoManager : MonoBehaviour
     {
         DestroyClient();
         SpawnClient();
+
+        // Si on est dans le step 3 on active le timer pour le nouveau client
+        if (stateTuto == StateTuto.third && _clientTuto != null)
+        {
+            _clientTuto.activeTimer = true;
+            _clientTuto.InitTimer(); //déclenche le compte à rebours
+        }
     }
 
 
+
+    void StartPatrol()
+    {
+        _policePatrol.GetComponent<PolicePatrol>().ActivatePatrol();
+    }
+
     private void AddPopUp()
     {
-        _policePatrol.gameObject.SetActive(true);
         _popUp.gameObject.SetActive(true);
+        StartCoroutine(TimerBetweenPopupPolice());
+        _policePatrol.gameObject.SetActive(true);
+    }
+
+    private IEnumerator TimerBetweenPopupPolice()
+    {
+        _popUp.GetComponent<PopUpManager>().SpawnRandomPolicePopup();
+        yield return new WaitForSeconds(5f);
+        StartCoroutine(TimerBetweenPopupPolice());
     }
 
     private void AddTimer() => _clientTuto.activeTimer = true;
 
     private async void CheckState()
     {
+        Debug.Log(stateTuto.ToString());
         switch (stateTuto)
         {
             case StateTuto.baron:
-                Debug.Log("in baron");
                 await _baron.SpeechBaron(_currentState);
                 stateTuto = (StateTuto)_currentState;
                 ChangeClient();
+                CheckState();
                 break;
             case StateTuto.first:
                 break;
@@ -123,7 +142,13 @@ public class TutoManager : MonoBehaviour
                 break;
             case StateTuto.third:
                 AddPopUp();
-                AddTimer();
+                StartPatrol();
+
+                if (_clientTuto != null)
+                {
+                    _clientTuto.activeTimer = true;
+                    _clientTuto.InitTimer();
+                }
                 break;
             case StateTuto.end:
                 LoadingManager.Instance.LoadScene(NAME_SCENE_GAME);
@@ -137,6 +162,8 @@ public class TutoManager : MonoBehaviour
         {
             _currentState += 1;
             stateTuto = StateTuto.baron;
+            if (_currentState == 3)
+                stateTuto = StateTuto.end;
             CheckState();
         }
     }

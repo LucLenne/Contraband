@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,18 +21,33 @@ public class ClientTuto : MonoBehaviour
 
     public void SetupClient(List<Sprite> hintImages)
     {
+        if (hintImages == null || hintImages.Count == 0)
+        {
+            Debug.LogWarning("No hint images provided for this client.");
+            return;
+        }
+
         foreach (Sprite hintImage in hintImages)
         {
-            Image image = Instantiate(_hintImagePrefab, _hintImageParent).GetComponent<Image>();
-            image.sprite = hintImage;
+            GameObject newGO = Instantiate(_hintImagePrefab, _hintImageParent);
+            newGO.GetComponent<Image>().sprite = hintImage;
         }
     }
 
     public void InitClient(Client client, GameCard card)
     {
         SetupClient(card.hintImage);
-        if(!activeTimer)
+
+        if (!activeTimer)
             _sliderGO.SetActive(false);
+        else
+            ActiveTimer(); // si activeTimer est déjà true (déjà décidé par TutoManager)
+    }
+
+    public void InitTimer()
+    {
+        activeTimer = true;
+        ActiveTimer();
     }
 
     void UnlockTimer()
