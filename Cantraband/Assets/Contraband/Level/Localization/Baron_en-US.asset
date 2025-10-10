@@ -19,19 +19,59 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 32696381440
-    m_Localized: Hello new player you are to sell games
+    m_Localized: Greetings, comrade! Thank you for contributing to the cause !
     m_Metadata:
       m_Items: []
   - m_Id: 36513198080
-    m_Localized: 
+    m_Localized: Your mission is to deal games that have been banned by the government's
+      list of immoral items.
     m_Metadata:
       m_Items: []
   - m_Id: 38593572864
-    m_Localized: 
+    m_Localized: 'It''s very simple, everything is in your coat. Each customer who
+      comes to you will ask for one of the four types of games :'
     m_Metadata:
       m_Items: []
   - m_Id: 41277927424
-    m_Localized: syjdtyjdtyjdtyj
+    m_Localized: Action, Shooter, Horror, and Narrative.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 694448500736
+    m_Localized: Be careful of police patrols and cameras, which should not catch
+      you with your coat open.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 709756467228672
+    m_Localized: The police officers must not see you completing your transaction.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 709756509171712
+    m_Localized: Sometimes undercover cops will come to help themselves, so use the
+      two FAKES in your outer pockets.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 709756509171713
+    m_Localized: Give him what he wants so he'll leave you alone.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 709756509171714
+    m_Localized: Each customer will have a favorite game included in the genre they
+      request...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 709756509171715
+    m_Localized: "Wait a little while for him to tell you\u2014it's a risk worth
+      taking to better spread our games."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 709756509171716
+    m_Localized: But be quick before he judges the situation to be dangerous and
+      leaves !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774898391396352
+    m_Localized: Come on, on that note, good luck comrade, go spread these games
+      in the streets !
     m_Metadata:
       m_Items: []
   references:

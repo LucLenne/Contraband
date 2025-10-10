@@ -1,11 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private string _tagStartCard;
     [SerializeField] private string _tagClavierDebug;
-    private const string levelGameName = "Game";
+    private const string NAME_NEXT_LEVEL = "Tuto";
     private void OnEnable()
     {
         InputManager.Instance.OnReadCard += CheckChard;
@@ -26,6 +25,6 @@ public class MainMenuUI : MonoBehaviour
 
     private void StartGame()
     {
-        LoadingManager.Instance.LoadScene(levelGameName);
+        LoadingManager.Instance.LoadScene(NAME_NEXT_LEVEL);
     }
 }

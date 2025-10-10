@@ -25,13 +25,15 @@ public class GDFeedbackScript : MonoBehaviour
     private void OnEnable()
     {
         InputManager.Instance.OnVestChanged += ChangeManteauImage;
-        LevelManager.Instance.OnGameReturned += StartFeedbackImage;
+        if (LevelManager.Instance != null)
+            LevelManager.Instance.OnGameReturned += StartFeedbackImage;
     }
 
     private void OnDisable()
     {
         InputManager.Instance.OnVestChanged -= ChangeManteauImage;
-        LevelManager.Instance.OnGameReturned -= StartFeedbackImage;
+        if (LevelManager.Instance != null)
+            LevelManager.Instance.OnGameReturned -= StartFeedbackImage;
     }
 
     private void ChangeManteauImage(bool isOpened)

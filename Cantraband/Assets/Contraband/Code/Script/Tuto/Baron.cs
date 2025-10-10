@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
@@ -8,11 +7,11 @@ using UnityEngine.Localization.Settings;
 public class Baron : MonoBehaviour
 {
 
-    [Header("References"),SerializeField] private TMP_Text _textSpeech;
-    private const string _tableName = "Baron"; 
+    [Header("References"), SerializeField] private TMP_Text _textSpeech;
+    private const string _tableName = "Baron";
     [SerializeField] private GameObject _baron;
-    
-    [Header("Data"),SerializeField] private OrderSpeech _speechBaron;
+
+    [Header("Data"), SerializeField] private OrderSpeech _speechBaron;
 
 
     private void Awake()
@@ -64,7 +63,7 @@ public class Baron : MonoBehaviour
 [System.Serializable]
 public class Speech
 {
-    public int time;
+    public float time;
     public string id;
 }
 
