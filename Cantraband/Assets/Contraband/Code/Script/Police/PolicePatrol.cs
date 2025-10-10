@@ -15,27 +15,45 @@ public class PolicePatrol : MonoBehaviour
     [Header("Parameters")]
     [SerializeField, Range(0f,1f)] private float _lookingAtPlayerChance;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource _source;
+    [SerializeField] private AudioClip _clip;
+
     private void Awake()
     {
+        _source.playOnAwake = false;
+        _source.clip = _clip;
+        _source.loop = true;
+        _source.Stop();
+
         _animationObject.SetActive(false);
     }
 
     private void OnEnable()
     {
         PopUpManager.Instance.OnLaunchPolicePatrol += ActivatePatrol;
+        InputManager.Instance.OnVestChanged += CheckPlayHeartBeat;
         if(LevelManager.Instance != null)
         {
             LevelManager.Instance.OnGameOver += StopAnimation;
         }
-        
+
     }
 
     private void OnDisable()
     {
-
         PopUpManager.Instance.OnLaunchPolicePatrol -= ActivatePatrol;
+        InputManager.Instance.OnVestChanged -= CheckPlayHeartBeat;
         if(LevelManager.Instance != null)
             LevelManager.Instance.OnGameOver -= StopAnimation;
+    }
+
+    private void CheckPlayHeartBeat(bool isOpened)
+    {
+        if (!isOpened)
+            _source.Play();
+        else 
+            _source.Stop();
     }
 
     public void ActivatePatrol()

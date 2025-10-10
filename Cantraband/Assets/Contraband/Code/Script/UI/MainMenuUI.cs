@@ -25,6 +25,6 @@ public class MainMenuUI : MonoBehaviour
 
     private void StartGame()
     {
-        LoadingManager.Instance.LoadScene(NAME_NEXT_LEVEL);
+        LoadingManager.Instance.LoadScene(NAME_NEXT_LEVEL, true);
     }
 }

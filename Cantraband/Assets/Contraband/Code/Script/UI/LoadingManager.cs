@@ -11,6 +11,10 @@ public class LoadingManager : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private string _endLoadingTriggerName;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _menuValidationClip;
+
     private string _sceneToLoad;
     private Coroutine _loadingCoroutine;
 
@@ -27,8 +31,15 @@ public class LoadingManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void LoadScene(string scene)
+    public void LoadScene(string scene, bool playMenuValidationSound = false)
     {
+        if (playMenuValidationSound)
+        {
+            _audioSource.clip = _menuValidationClip;
+            _audioSource.volume = 1f;
+            _audioSource.Play();
+        }
+
         _sceneToLoad = scene;
         _loadingCoroutine = StartCoroutine(LoadingRountine());
     }
