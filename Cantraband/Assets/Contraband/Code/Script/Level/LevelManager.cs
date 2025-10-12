@@ -65,6 +65,7 @@ public class LevelManager : MonoBehaviour
     public Action<Client> onNextClientAction;
     public Action OnFailedByCop; //Quand donne un "mauvais" jeu au flic infiltré
     public Action OnGameOver;
+    public Action OutOfPatience; //Quand le client n'a plus de patience
 
     void Awake()
     {
@@ -164,6 +165,7 @@ public class LevelManager : MonoBehaviour
     private IEnumerator ClientNoMorePatience() //Client leaves when no more patience
     {
         _hasClient = false;
+        OutOfPatience?.Invoke();
 
         //Complete transaction
         OnFinishTransaction?.Invoke();
