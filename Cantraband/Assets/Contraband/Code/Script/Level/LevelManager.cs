@@ -307,6 +307,7 @@ public class LevelManager : MonoBehaviour
         IsGameRunning = false;
         _onGameOver?.Invoke();
         OnGameOver?.Invoke();
+        CheckForHighScore();
     }
     #endregion
 

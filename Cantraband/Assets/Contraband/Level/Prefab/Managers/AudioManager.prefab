@@ -82,7 +82,7 @@ MonoBehaviour:
   - Name: FOL_departure
     Clips:
     - Clip: {fileID: 8300000, guid: c472c5434bd8c994da86a4ee20e56290, type: 3}
-      Volume: 0
+      Volume: 1
   - Name: FOL_car_go_foward
     Clips:
     - Clip: {fileID: 8300000, guid: 001a97cb879beb64d8c1854d2046f5ed, type: 3}
