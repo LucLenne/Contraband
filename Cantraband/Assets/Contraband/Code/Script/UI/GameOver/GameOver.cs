@@ -4,9 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-
+    [Header("References")]
     [SerializeField] private GameOverScene _gameOverScene;
     [SerializeField] private GameObject _gameOverUI;
+    [SerializeField] private GameOverHighscore _gameOverHighscore;
     [Space(5)]
     [SerializeField] private int _timeOnSceneGameOver = 3;
     private const string _nameSceneMainMenu = "MainMenu";
@@ -32,6 +33,7 @@ public class GameOver : MonoBehaviour
         _gameOverUI.SetActive(true);
         _gameOverScene.gameObject.SetActive(true);
         _gameOverScene.OnGameCardSpawnEnded += RestartGame;
+        _gameOverHighscore.CheckHighscore();
     }
 
     private void RestartGame()

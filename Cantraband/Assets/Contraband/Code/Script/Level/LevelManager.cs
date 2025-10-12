@@ -307,17 +307,6 @@ public class LevelManager : MonoBehaviour
         IsGameRunning = false;
         _onGameOver?.Invoke();
         OnGameOver?.Invoke();
-        CheckForHighScore();
-    }
-    #endregion
-
-    #region Highscore functions
-    private void CheckForHighScore()
-    {
-        if (HighscoreManager.Instance.CheckNewHighScore(score))
-        {
-            HighscoreManager.Instance.AddHighScore("A", score);
-        }
     }
     #endregion
 
