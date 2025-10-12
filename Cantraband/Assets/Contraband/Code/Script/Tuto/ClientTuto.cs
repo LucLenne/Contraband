@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ClientTuto : MonoBehaviour
 {
-    [ Header("UI"), SerializeField] private Slider _sliderPatience;
+    [ Header("UI"), SerializeField] private Image _imagePatience;
 
     [Header("Gameplay"), SerializeField] private int _timePatience = 10;
     public bool activeTimer;
@@ -71,19 +71,17 @@ public class ClientTuto : MonoBehaviour
     private IEnumerator StartTimerPatience()
     {
         float timeLeft = _timePatience;
-        _sliderPatience.maxValue = timeLeft;
-        _sliderPatience.value = timeLeft;
+        _imagePatience.fillAmount = timeLeft;
 
         while (timeLeft > 0f)
         {
             yield return null; // équivalent de Task.Yield() dans Unity Coroutine
 
             timeLeft -= Time.deltaTime;
-            if (_sliderPatience != null)
-                _sliderPatience.value = timeLeft;
+            _imagePatience.fillAmount = timeLeft;
         }
 
-        _sliderPatience.value = 0f;
+        _imagePatience.fillAmount = 0;
         TutoManager.Instance.clientEndPatience?.Invoke();
     }
 

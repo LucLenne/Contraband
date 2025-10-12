@@ -16,43 +16,51 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 2496d076c17e4064d950072eb719ef58
   m_Entries:
   - m_Id: 32696381440
-    m_Key: 1
+    m_Key: greetings
     m_Metadata:
       m_Items: []
   - m_Id: 36513198080
-    m_Key: 2
+    m_Key: deal_games
     m_Metadata:
       m_Items: []
   - m_Id: 38593572864
-    m_Key: 3
+    m_Key: controller
     m_Metadata:
       m_Items: []
   - m_Id: 41277927424
-    m_Key: 4
+    m_Key: type_game
     m_Metadata:
       m_Items: []
   - m_Id: 694448500736
-    m_Key: 5
+    m_Key: police_patrol
     m_Metadata:
       m_Items: []
-  - m_Id: 332024759660544
-    m_Key: 6
+  - m_Id: 709756467228672
+    m_Key: officers
     m_Metadata:
       m_Items: []
-  - m_Id: 332033311846400
-    m_Key: 7
+  - m_Id: 709756509171712
+    m_Key: undercover_cop
     m_Metadata:
       m_Items: []
-  - m_Id: 332040152756224
-    m_Key: 8
+  - m_Id: 709756509171713
+    m_Key: give_game
     m_Metadata:
       m_Items: []
-  - m_Id: 332047002054656
-    m_Key: 9
+  - m_Id: 709756509171714
+    m_Key: favorite_game
     m_Metadata:
       m_Items: []
-  - m_Id: 332056024002560
-    m_Key: 10
+  - m_Id: 709756509171715
+    m_Key: take_time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 709756509171716
+    m_Key: be_quick
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774898391396352
+    m_Key: come_on
     m_Metadata:
       m_Items: []
   m_Metadata:

@@ -11,6 +11,10 @@ public class TutoManager : MonoBehaviour
 
 
     [Header("GamePlay"), ReadOnly] public StateTuto stateTuto;
+    [SerializeField] private float _timeBetweenClient;
+    [SerializeField] private int _pointGoodCard = 3;
+    [SerializeField] private int _pointGoodTheme = 1;
+    [SerializeField] private int _pointBadCard = -1;
     [Header("Put the card and the client in the right order")]
     [Header("3 Clients"), SerializeField] private List<Client> _listClient;
     [Header("3 GameCards"), SerializeField] private List<GameCard> _listGameCard;
@@ -24,13 +28,12 @@ public class TutoManager : MonoBehaviour
     private GameObject _currentClient;
     private ClientTuto _clientTuto;
     private int _currentState;
-
-    private bool _activePopUp;
-    private bool _activeTimer;
+    [HideInInspector] public int score;
 
     private const string NAME_SCENE_GAME = "Game";
 
     public Action clientEndPatience;
+    public Action onClientLeave;
 
     public enum StateTuto
     {
@@ -78,10 +81,9 @@ public class TutoManager : MonoBehaviour
         _clientTuto.InitClient(_listClient[_currentState], _listGameCard[_currentState]);
     }
 
-
-
     private void DestroyClient()
     {
+
         if (_currentClient != null)
         {
             Destroy(_currentClient);
@@ -90,14 +92,18 @@ public class TutoManager : MonoBehaviour
     }
     private void ChangeClient()
     {
+        StartCoroutine(CoroutineChangeClient());
+    }
+    IEnumerator CoroutineChangeClient()
+    {
         DestroyClient();
+        yield return new WaitForSeconds(_timeBetweenClient);
         SpawnClient();
 
-        // Si on est dans le step 3 on active le timer pour le nouveau client
         if (stateTuto == StateTuto.third && _clientTuto != null)
         {
             _clientTuto.activeTimer = true;
-            _clientTuto.InitTimer(); //déclenche le compte à rebours
+            _clientTuto.InitTimer();
         }
     }
 
@@ -122,8 +128,6 @@ public class TutoManager : MonoBehaviour
         StartCoroutine(TimerBetweenPopupPolice());
     }
 
-    private void AddTimer() => _clientTuto.activeTimer = true;
-
     private IEnumerator HandleBaronState()
     {
         yield return StartCoroutine(_baron.SpeechBaronCoroutine(_currentState));
@@ -135,8 +139,6 @@ public class TutoManager : MonoBehaviour
 
     private void CheckState()
     {
-        Debug.Log(stateTuto.ToString());
-
         switch (stateTuto)
         {
             case StateTuto.baron:
@@ -181,10 +183,10 @@ public class TutoManager : MonoBehaviour
 
     private void CheckCard(string card)
     {
-        Debug.Log(card);
-        Debug.Log("Debug Keyboard Tag : " + _listGameCard[(int)stateTuto].DebugKeyboardTag);
         if (card == _listGameCard[(int)stateTuto].tag || _listGameCard[(int)stateTuto].DebugKeyboardTag == card)
         {
+            score += _pointGoodCard;
+            onClientLeave?.Invoke();
             _currentState += 1;
             stateTuto = StateTuto.baron;
             if (_currentState == 3)

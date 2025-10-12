@@ -13,16 +13,31 @@ public class DisplayScore : MonoBehaviour
 
     private void OnEnable()
     {
-        LevelManager.Instance.OnFinishTransaction += UpdateScore;
+        if (LevelManager.Instance != null)
+            LevelManager.Instance.OnFinishTransaction += UpdateScore;
+
+        if (TutoManager.Instance != null)
+            TutoManager.Instance.onClientLeave += UpdateScore;
+
+
     }
 
     private void OnDisable()
     {
-        LevelManager.Instance.OnFinishTransaction -= UpdateScore;
+        if (LevelManager.Instance != null)
+            LevelManager.Instance.OnFinishTransaction -= UpdateScore;
+
+        if (TutoManager.Instance != null)
+            TutoManager.Instance.onClientLeave -= UpdateScore;
     }
 
     void UpdateScore()
     {
-        _scoreText.text = _scoreAnims + LevelManager.Instance.score.ToString();
+        Debug.Log("Update Score");
+        if (LevelManager.Instance != null)
+            _scoreText.text = _scoreAnims + LevelManager.Instance.score.ToString();
+        if (TutoManager.Instance != null)
+            _scoreText.text = _scoreAnims + TutoManager.Instance.score.ToString();
+
     }
 }
