@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
@@ -11,6 +9,8 @@ public class GameOver : MonoBehaviour
     [Space(5)]
     [SerializeField] private int _timeOnSceneGameOver = 3;
     private const string _nameSceneMainMenu = "MainMenu";
+
+    private bool _isWaitingForSceneRestart;
 
     private void Awake()
     {
@@ -32,13 +32,28 @@ public class GameOver : MonoBehaviour
     {
         _gameOverUI.SetActive(true);
         _gameOverScene.gameObject.SetActive(true);
-        _gameOverScene.OnGameCardSpawnEnded += RestartGame;
-        _gameOverHighscore.CheckHighscore();
+
+        //Check if should restart on highscore or scene
+        if (_gameOverHighscore.CheckHighscore())
+        {
+            _gameOverHighscore.OnRestartGame += RestartGame;
+            _isWaitingForSceneRestart = false;
+        }
+        else
+        {
+            _gameOverScene.OnGameCardSpawnEnded += RestartGame;
+            _isWaitingForSceneRestart = true;
+        }
     }
 
     private void RestartGame()
     {
-        _gameOverScene.OnGameCardSpawnEnded -= RestartGame;
+        //Unbind correct event
+        if(_isWaitingForSceneRestart)
+            _gameOverScene.OnGameCardSpawnEnded -= RestartGame;
+        else
+            _gameOverHighscore.OnRestartGame -= RestartGame;
+
         LoadingManager.Instance.LoadScene(_nameSceneMainMenu);
     }
 }
