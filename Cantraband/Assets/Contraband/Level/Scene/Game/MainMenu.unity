@@ -1424,7 +1424,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 0
+  m_Spacing: 10
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -1840,22 +1840,6 @@ PrefabInstance:
     - target: {fileID: 506412746453378148, guid: 720c63f89105b7f458a59dab4bad6af1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1731209033156622947, guid: 720c63f89105b7f458a59dab4bad6af1, type: 3}
-      propertyPath: _highscoreData.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1731209033156622947, guid: 720c63f89105b7f458a59dab4bad6af1, type: 3}
-      propertyPath: _highscoreData.Array.data[0].Name
-      value: a
-      objectReference: {fileID: 0}
-    - target: {fileID: 1731209033156622947, guid: 720c63f89105b7f458a59dab4bad6af1, type: 3}
-      propertyPath: _highscoreData.Array.data[1].Name
-      value: v
-      objectReference: {fileID: 0}
-    - target: {fileID: 1731209033156622947, guid: 720c63f89105b7f458a59dab4bad6af1, type: 3}
-      propertyPath: _highscoreData.Array.data[0].Score
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6516315471935834186, guid: 720c63f89105b7f458a59dab4bad6af1, type: 3}
       propertyPath: m_Name

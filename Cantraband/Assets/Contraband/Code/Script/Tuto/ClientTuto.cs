@@ -90,6 +90,8 @@ public class ClientTuto : MonoBehaviour
         StartCoroutine(StartTimerAsync());
     }
 
+
+
     private IEnumerator StartTimerAsync()
     {
         float timeLeft = _timePatience;

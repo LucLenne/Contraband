@@ -181,6 +181,7 @@ MonoBehaviour:
   _pointGoodCard: 3
   _pointGoodTheme: 1
   _pointBadCard: -1
+  _timeFade: 2
   _listClient:
   - {fileID: 11400000, guid: 8b4a8ed60d8bb0c4fbb1f2d275d64a98, type: 2}
   - {fileID: 11400000, guid: 8b4a8ed60d8bb0c4fbb1f2d275d64a98, type: 2}
@@ -640,6 +641,7 @@ GameObject:
   - component: {fileID: 1258365402}
   - component: {fileID: 1258365401}
   - component: {fileID: 1258365405}
+  - component: {fileID: 1258365406}
   m_Layer: 5
   m_Name: Baron
   m_TagString: Untagged
@@ -773,6 +775,18 @@ MonoBehaviour:
       id: be_quick
     - time: 2
       id: come_on
+--- !u!225 &1258365406
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258365400}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1490802689
 GameObject:
   m_ObjectHideFlags: 0

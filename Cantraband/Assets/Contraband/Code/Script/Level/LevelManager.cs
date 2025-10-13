@@ -304,6 +304,7 @@ public class LevelManager : MonoBehaviour
     public void LaunchGameOver()
     {
         if (!IsGameRunning) return;
+        Debug.Log("Game over");
 
         IsGameRunning = false;
         _onGameOver?.Invoke();

@@ -86,22 +86,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5071732886200226213, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
   m_PrefabInstance: {fileID: 6003879147475313661}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3315730127850340327 stripped
+--- !u!1 &5070372227887420874 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 9030217245224098842, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1517577745131402807, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
   m_PrefabInstance: {fileID: 6003879147475313661}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &4930478998801755084 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1674922073807259697, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
-  m_PrefabInstance: {fileID: 6003879147475313661}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7246666071041413965 stripped
+--- !u!114 &6133296201194386553 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4018130213851934896, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+  m_CorrespondingSourceObject: {fileID: 454802128994932612, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
   m_PrefabInstance: {fileID: 6003879147475313661}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5070372227887420874}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -110,6 +105,11 @@ MonoBehaviour:
 --- !u!95 &8657415272720164614 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3132043620016899323, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+  m_PrefabInstance: {fileID: 6003879147475313661}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &8772870378043881623 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3093251005576256362, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
   m_PrefabInstance: {fileID: 6003879147475313661}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8809894692128634130 stripped
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df46db0d7786b6f488dd218e83d62ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClientTuto
-  _sliderImage: {fileID: 7246666071041413965}
+  _sliderImage: {fileID: 6133296201194386553}
   _sliderGradient:
     serializedVersion: 2
     key0: {r: 0.058713913, g: 1, b: 0, a: 1}
@@ -162,7 +162,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   _timePatience: 10
   activeTimer: 0
-  _timerRectTransform: {fileID: 4930478998801755084}
+  _timerRectTransform: {fileID: 8772870378043881623}
   _timerAnimMaxSpeed: 0.3
   _timerAnimCurve:
     serializedVersion: 2
@@ -188,7 +188,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _sliderGO: {fileID: 3315730127850340327}
+  _sliderGO: {fileID: 5070372227887420874}
   _hintImagePrefab: {fileID: 1337047516737727991, guid: 4e05b075d7ba50542b4a96f65774dfb4, type: 3}
   _hintImageParent: {fileID: 1526854921004364376}
   _animator: {fileID: 8657415272720164614}
