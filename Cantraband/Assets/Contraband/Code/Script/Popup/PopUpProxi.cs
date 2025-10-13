@@ -8,4 +8,6 @@ public class PopUpProxi : MonoBehaviour
     public void LaunchPolicePatrol() => _popUpScript.LaunchPolicePatrol();
 
     public void LaunchEndAnim() => _popUpScript.LaunchEndAnim();
+
+    public void LaunchTriggerAnimation(string triggerName) => _popUpScript.LaunchTrigger(triggerName);
 }

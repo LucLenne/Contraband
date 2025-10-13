@@ -157,6 +157,8 @@ public class PopUpGeneric : MonoBehaviour
         _frameImage.sprite = _warningFrameImage;
         _warningFrameCoroutine = StartCoroutine(WarningFrame());
     }
+    
+    public void LaunchTrigger(string triggerName) => _animator.SetTrigger(triggerName);
 
     public void LaunchEndAnim()
     {
