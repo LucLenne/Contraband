@@ -66,7 +66,7 @@ public class ClientBehaviour : MonoBehaviour
             GameObject hint = Instantiate(_hintImagePrefab, _hintImageParent);
             Image image = hint.GetComponent<Image>();
             image.sprite = hintImage;
-            hint.GetComponent<SlowRevealImage>()?.CallForReveal( currentPatientPatience ,_hintRevealType);
+            hint.GetComponent<SlowRevealImage>()?.CallForReveal?.Invoke(currentPatientPatience, _hintRevealType);
         }
     }
 
