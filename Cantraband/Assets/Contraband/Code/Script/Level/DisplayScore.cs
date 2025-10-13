@@ -14,7 +14,9 @@ public class DisplayScore : MonoBehaviour
     private void OnEnable()
     {
         if (LevelManager.Instance != null)
+        {
             LevelManager.Instance.OnFinishTransaction += UpdateScore;
+        }
 
         if (TutoManager.Instance != null)
             TutoManager.Instance.onClientLeave += UpdateScore;
@@ -33,7 +35,6 @@ public class DisplayScore : MonoBehaviour
 
     void UpdateScore()
     {
-        Debug.Log("Update Score");
         if (LevelManager.Instance != null)
             _scoreText.text = _scoreAnims + LevelManager.Instance.score.ToString();
         if (TutoManager.Instance != null)

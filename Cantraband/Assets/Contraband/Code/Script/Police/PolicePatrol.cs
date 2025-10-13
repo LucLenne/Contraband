@@ -50,6 +50,9 @@ public class PolicePatrol : MonoBehaviour
 
     private void CheckPlayHeartBeat(bool isOpened)
     {
+        if (!_animationObject.activeSelf)
+            return;
+
         if (!isOpened)
             _source.Play();
         else 

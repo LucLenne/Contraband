@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &286522712 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7040860569373369846, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+  m_PrefabInstance: {fileID: 333908747}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8211b700d078e5744a78dd93ccfbc95a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GDFeedbackScript
 --- !u!1 &289407597
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +176,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TutoManager
   stateTuto: 0
   _timeBetweenClient: 1
+  _timeBetweenPopUpPolice: 5
+  _timeTransitionGameplayBaron: 2
   _pointGoodCard: 3
   _pointGoodTheme: 1
   _pointBadCard: -1
@@ -180,6 +193,7 @@ MonoBehaviour:
   _policePatrol: {fileID: 333908749}
   _prefabTutoClient: {fileID: 8809894692128634130, guid: d0a7a59c74b9db54aad59a29b2e064d1, type: 3}
   _baron: {fileID: 1258365405}
+  _gdFeedBackScript: {fileID: 286522712}
   posClient: {fileID: 333908751}
   score: 0
 --- !u!1001 &333908747
@@ -194,6 +208,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5825462489672616613, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: _source
+      value: 
+      objectReference: {fileID: 333908756}
     - target: {fileID: 6636228538340239158, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.16079
@@ -283,6 +301,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7199176983174699916, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
   m_PrefabInstance: {fileID: 333908747}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &333908756 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7259994703419224894, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+  m_PrefabInstance: {fileID: 333908747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1066487980
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +363,7 @@ GameObject:
   - component: {fileID: 1084122955}
   - component: {fileID: 1084122957}
   - component: {fileID: 1084122956}
+  - component: {fileID: 1084122958}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -465,6 +489,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084122954}
   m_CullTransparentMesh: 1
+--- !u!114 &1084122958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084122954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf9594e2a3b8eb4eaf3cc57f263076f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TMPEffects::TMPEffects.Components.TMPWriter
+  OnTextEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCharacterShown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStopWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWaitStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWaitEnded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinishWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSkipWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnResetWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  keywordDatabase: {fileID: 0}
+  sceneKeywordDatabase: {fileID: 0}
+  database: {fileID: 11400000, guid: 290ad04254a96934aa269d5b8d258008, type: 2}
+  maySkip: 1
+  writeOnStart: 1
+  writeOnNewText: 1
+  useScaledTime: 1
+  delays:
+    delay: 0.035
+    whitespaceDelay: 0
+    whitespaceDelayType: 0
+    linebreakDelay: 0
+    linebreakDelayType: 0
+    punctuationDelay: 0
+    punctuationDelayType: 0
+    visibleDelay: 0
+    visibleDelayType: 0
+  sceneCommands:
+    _serializedList: []
+  useDefaultDatabase: 1
+  useDefaultKeywordDatabase: 0
+  initDatabase: 1
+  eventsEnabled: 0
+  commandsEnabled: 1
 --- !u!1 &1238274065
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,7 +865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2015302128
 MonoBehaviour:
   m_ObjectHideFlags: 0

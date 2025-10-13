@@ -31,8 +31,9 @@ public class Baron : MonoBehaviour
 
 
 
-    public IEnumerator SpeechBaronCoroutine(int p)
+    public IEnumerator SpeechBaronCoroutine(int p, float timeBeforeStartSpeech)
     {
+        yield return new WaitForSeconds(timeBeforeStartSpeech);
         if (p > 3 || p < 0)
         {
             Debug.LogError("Wrong part : " + p + ". Choose between 0 and 3");

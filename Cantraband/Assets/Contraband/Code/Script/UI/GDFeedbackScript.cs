@@ -1,5 +1,4 @@
 using DG.Tweening;
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +14,7 @@ public class GDFeedbackScript : MonoBehaviour
     [SerializeField] private float _manteauScaleMaxScale;
 
     [Header("Feedback")]
+    [SerializeField] private bool _disableScreenEffectMerciBenjamin;
     [SerializeField] private float _feedBackFadeImageDuration;
     [SerializeField] private Image _feedbackImage;
     [SerializeField] private Color _goodCardColor;
@@ -25,22 +25,22 @@ public class GDFeedbackScript : MonoBehaviour
     private void OnEnable()
     {
         InputManager.Instance.OnVestChanged += ChangeManteauImage;
-        if (LevelManager.Instance != null)
+        if (LevelManager.Instance != null && !_disableScreenEffectMerciBenjamin)
             LevelManager.Instance.OnGameReturned += StartFeedbackImage;
     }
 
     private void OnDisable()
     {
         InputManager.Instance.OnVestChanged -= ChangeManteauImage;
-        if (LevelManager.Instance != null)
+        if (LevelManager.Instance != null && !_disableScreenEffectMerciBenjamin)
             LevelManager.Instance.OnGameReturned -= StartFeedbackImage;
     }
 
     private void ChangeManteauImage(bool isOpened)
     {
         _manteauImage.sprite = isOpened ? _manteauOpenImage : _manteauCloseImage;
-        
-        if(_manteauScaleCoroutine != null)
+
+        if (_manteauScaleCoroutine != null)
         {
             StopCoroutine(_manteauScaleCoroutine);
             _manteauScaleCoroutine = null;
@@ -48,7 +48,7 @@ public class GDFeedbackScript : MonoBehaviour
         _manteauScaleCoroutine = StartCoroutine(ManteauScale());
     }
 
-    private void StartFeedbackImage(LevelManager.GameReturnedType type)
+    public void StartFeedbackImage(LevelManager.GameReturnedType type)
     {
         switch (type)
         {
@@ -72,7 +72,7 @@ public class GDFeedbackScript : MonoBehaviour
         while (timeElapsed < _manteauScaleDuration)
         {
             float progress = timeElapsed / _manteauScaleDuration;
-            float newScale = Mathf.Lerp(_manteauScaleMaxScale,1f,_manteauScaleCurve.Evaluate(progress));
+            float newScale = Mathf.Lerp(_manteauScaleMaxScale, 1f, _manteauScaleCurve.Evaluate(progress));
             _manteauImage.transform.localScale = new Vector3(newScale, newScale, newScale);
 
             timeElapsed += Time.deltaTime;
