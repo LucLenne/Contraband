@@ -1510,7 +1510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HighscoreUI
   _parentVerticalGroup: {fileID: 1767055099}
   _highscoreTextPrefab: {fileID: 7225324980416732607, guid: 8f676765e02991a49a97096e0c028cb1, type: 3}
-  _firstHighscoreTextFormat: '{0} - <palette>{1}</palette> : {2}'
+  _firstHighscoreTextFormat: '{0} - <palette> {1} </palette> : {2}'
   _highscoreTextFormat: '{0} - {1} : {2}'
 --- !u!95 &1874698442
 Animator:

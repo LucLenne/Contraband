@@ -5,21 +5,34 @@ using UnityEngine.UI;
 
 public class ClientTuto : MonoBehaviour
 {
-    [ Header("UI"), SerializeField] private Image _imagePatience;
+    [Header("UI"), SerializeField] private Image _imagePatience;
 
     [Header("Gameplay"), SerializeField] private int _timePatience = 10;
     public bool activeTimer;
 
     [Header("References"), SerializeField] private GameObject _sliderGO;
-    [SerializeField]private GameObject _hintImagePrefab;
-    [SerializeField]private Transform _hintImageParent;
+    [SerializeField] private GameObject _hintImagePrefab;
+    [SerializeField] private Transform _hintImageParent;
+    [SerializeField] private Animator _animator;
+
+    private const string ANIMATION_TRANSFER_DONE_NAME = "TransferDone";
+    private const string ANIMATION_GAME_OVER_NAME = "GameOver";
+    private const string ANIMATION_TRANSFER_COP_NAME = "TransferCop";
+    private const string ANIMATION_OUT_OF_PATIENCE = "OutPatience";
 
     private void Start()
     {
         UnlockTimer();
     }
+    public void LaunchCopAnim() => _animator.SetTrigger(ANIMATION_TRANSFER_COP_NAME);
+    private void LaunchGameOverAnim() => _animator.SetTrigger(ANIMATION_GAME_OVER_NAME);
+    public void LaunchTransferDoneAnim() => _animator.SetTrigger(ANIMATION_TRANSFER_DONE_NAME);
+    public void LaunchOutOfPatience() => _animator.SetTrigger(ANIMATION_OUT_OF_PATIENCE);
 
+    public void DestroyObject()
+    {
 
+    }
 
     public void SetupClient(List<Sprite> hintImages)
     {
@@ -54,12 +67,12 @@ public class ClientTuto : MonoBehaviour
 
     void UnlockTimer()
     {
-        
+
         if (activeTimer)
         {
             ActiveTimer();
         }
-            
+
     }
 
     private void ActiveTimer()
