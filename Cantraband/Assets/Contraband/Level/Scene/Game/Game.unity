@@ -127,14 +127,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1602405316732934507, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
-      propertyPath: _numberOfCartridgesToSpawn
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1602405316732934507, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
-      propertyPath: _numberOfCartridgesToSpawnPerScore
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6636228538340239158, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -178,6 +170,14 @@ PrefabInstance:
     - target: {fileID: 7069193175349676906, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_Name
       value: GameScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621955227317119741, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_SpotAngle
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621955227317119741, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
