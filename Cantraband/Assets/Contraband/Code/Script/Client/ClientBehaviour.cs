@@ -20,6 +20,7 @@ public class ClientBehaviour : MonoBehaviour
     [SerializeField] private RectTransform _hintImageParent;
     [SerializeField] private Image _sliderImage;
     [SerializeField] private Gradient _sliderGradient;
+    [SerializeField] private RevealType _hintRevealType;
 
     [Header("Timer slider")]
     [SerializeField] private RectTransform _timerRectTransform;
@@ -62,8 +63,10 @@ public class ClientBehaviour : MonoBehaviour
     {
         foreach (Sprite hintImage in hintImages)
         {
-            Image image = Instantiate(_hintImagePrefab, _hintImageParent).GetComponent<Image>();
+            GameObject hint = Instantiate(_hintImagePrefab, _hintImageParent);
+            Image image = hint.GetComponent<Image>();
             image.sprite = hintImage;
+            hint.GetComponent<SlowRevealImage>()?.CallForReveal( currentPatientPatience ,_hintRevealType);
         }
     }
 
