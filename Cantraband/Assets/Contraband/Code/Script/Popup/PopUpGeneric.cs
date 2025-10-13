@@ -123,7 +123,7 @@ public class PopUpGeneric : MonoBehaviour
         {
             progress = _scaleCurve.Evaluate(timeElapsed / animationLength);
             float newScale = Mathf.Lerp(_minMaxScale.x, _minMaxScale.y, progress);
-            _rect.localScale = new Vector2(newScale, newScale);
+            _rect.localScale = new Vector3(newScale, newScale, newScale);
             _rect.anchoredPosition = _positionAt1Scale * newScale;
 
             yield return null;
