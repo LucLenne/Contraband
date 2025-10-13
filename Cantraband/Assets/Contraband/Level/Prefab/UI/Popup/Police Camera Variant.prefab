@@ -255,6 +255,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2507094080080062450, guid: ab22d7a7453bbd84a88781e95ce61bcf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.792
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507094080080062450, guid: ab22d7a7453bbd84a88781e95ce61bcf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.236
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507094080080062450, guid: ab22d7a7453bbd84a88781e95ce61bcf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820343421200499441, guid: ab22d7a7453bbd84a88781e95ce61bcf, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4189189461277807482, guid: ab22d7a7453bbd84a88781e95ce61bcf, type: 3}
       propertyPath: m_Name
       value: Police Camera Variant
