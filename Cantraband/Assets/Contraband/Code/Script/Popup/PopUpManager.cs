@@ -46,7 +46,6 @@ public class PopUpManager : MonoBehaviour
         _occupiedAngles.Add(AngleType.UpperLeft, null);
         _occupiedAngles.Add(AngleType.UpperRight, null);
         _occupiedAngles.Add(AngleType.LowerLeft, null);
-        _occupiedAngles.Add(AngleType.LowerRight, null);
     }
 
     #region Spawn popup
@@ -104,9 +103,12 @@ public class PopUpManager : MonoBehaviour
         int angleInt = Random.Range(1, 5);
         for (int i = 0; i < 4; i++)
         {
-            if (_occupiedAngles[(AngleType)angleInt] == null)
+            if (_occupiedAngles.ContainsKey((AngleType)angleInt))
             {
-                return (AngleType)angleInt;    
+                if (_occupiedAngles[(AngleType)angleInt] == null)
+                {
+                    return (AngleType)angleInt;
+                }
             }
 
             angleInt++;

@@ -230,7 +230,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -249,7 +249,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 50
-  m_fontSizeBase: 14
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -329,7 +329,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -200, y: 30}
+  m_SizeDelta: {x: -80, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &436235571298213027
 CanvasRenderer:
@@ -3288,7 +3288,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 3402957220830584044}
-  m_PlaneDistance: 1
+  m_PlaneDistance: 0.1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -3991,7 +3991,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 2150773298
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -4010,7 +4010,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 50
-  m_fontSizeBase: 14
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7019,13 +7019,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8892875119267193613}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.45179695, y: -0.5406589, z: 0.30146834, w: 0.6424052}
+  m_LocalRotation: {x: 0.54168385, y: -0.15400167, z: 0.039759625, w: 0.8253977}
   m_LocalPosition: {x: -3.08933, y: -3.57503, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6636228538340239158}
-  m_LocalEulerAnglesHint: {x: 65.02, y: -89.032, z: -13.866}
+  m_LocalEulerAnglesHint: {x: 65.02, y: -30, z: -13.866}
 --- !u!108 &3581276784779940274
 Light:
   m_ObjectHideFlags: 0
@@ -7037,7 +7037,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
+  m_Intensity: 3.67
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7166,6 +7166,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1543885719260816519, guid: 4f4e8c65062dc3d44828613912fa66a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995704710207769119, guid: 4f4e8c65062dc3d44828613912fa66a1, type: 3}
+      propertyPath: Loop
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7899130694203612366, guid: 4f4e8c65062dc3d44828613912fa66a1, type: 3}
@@ -7507,7 +7511,7 @@ PrefabInstance:
     - target: {fileID: 2132893117193921727, guid: 77e0fdb18d9341042b37017d8dddc71a, type: 3}
       propertyPath: _source
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4854720408954807574}
     - target: {fileID: 3543463736093697830, guid: 77e0fdb18d9341042b37017d8dddc71a, type: 3}
       propertyPath: m_Name
       value: PolicePatrol
