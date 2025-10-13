@@ -52,11 +52,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9085843030613913072, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
+      propertyPath: _popUpScript
+      value: 
+      objectReference: {fileID: 4225362550508829192}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
+--- !u!95 &4628886507372035929 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7754643763120136669, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
+  m_PrefabInstance: {fileID: 3144388482478857860}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4664550663590832079 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7717143048284518731, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
@@ -70,6 +79,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 812084244466057281, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 4628886507372035929}
     - target: {fileID: 812084244466057281, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
       propertyPath: _typePopUp
       value: 1
@@ -168,6 +181,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6713605022041664084, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
+    - {fileID: 9004432895735161392, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
+    - {fileID: 7594860540031191769, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6267416411101142515, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
@@ -178,6 +193,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 5471408288504965147}
   m_SourcePrefab: {fileID: 100100000, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
+--- !u!114 &4225362550508829192 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 812084244466057281, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
+  m_PrefabInstance: {fileID: 3595731274717100617}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 507975f5671ab694192e06e839d66927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PopUpGeneric
 --- !u!1 &5075580832356375304 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8617232626813788481, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}

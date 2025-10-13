@@ -323,6 +323,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 19.7719
       objectReference: {fileID: 0}
+    - target: {fileID: 8170741986122617807, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: _policePopUps.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170741986122617807, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: _patrolPolicePopUpReference
+      value: 
+      objectReference: {fileID: 1448858401093971270, guid: dce4f8aee6314a942a125456b6f5d1a0, type: 3}
+    - target: {fileID: 8170741986122617807, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: '_policePopUps.Array.data[0]'
+      value: 
+      objectReference: {fileID: 3729727751068807655, guid: fac70e3e53facf44d8d50baedaede6c6, type: 3}
+    - target: {fileID: 8170741986122617807, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: '_policePopUps.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1448858401093971270, guid: dce4f8aee6314a942a125456b6f5d1a0, type: 3}
+    - target: {fileID: 8170741986122617807, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: '_policePopUps.Array.data[2]'
+      value: 
+      objectReference: {fileID: 3729727751068807655, guid: fac70e3e53facf44d8d50baedaede6c6, type: 3}
+    - target: {fileID: 8170741986122617807, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: '_policePopUps.Array.data[3]'
+      value: 
+      objectReference: {fileID: 4225362550508829192, guid: 9698a8ec1888bf04786a2c4d23f163a5, type: 3}
     - target: {fileID: 8357049019625868075, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_Pivot.x
       value: 0

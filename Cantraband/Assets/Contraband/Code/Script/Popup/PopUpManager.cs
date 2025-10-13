@@ -23,12 +23,13 @@ public class PopUpManager : MonoBehaviour
     [Space(5)]
     [SerializeField] private List<PopUpGeneric> _policePopUps;
     [SerializeField] private List<PopUpGeneric> _feedBackPopUps;
-
-
+    [Space(5)]
+    [SerializeField] private PopUpGeneric _patrolPolicePopUpReference;
 
     [Header("Events")]
     [SerializeField] private UnityEvent _onCheckPlayerCoat;
     [SerializeField] private UnityEvent _onLaunchPolicePatrol;
+
 
     private Dictionary<AngleType, PopUpGeneric> _occupiedAngles = new Dictionary<AngleType, PopUpGeneric>();
 
@@ -107,7 +108,7 @@ public class PopUpManager : MonoBehaviour
         {
             if (_occupiedAngles.ContainsKey((AngleType)angleInt))
             {
-                if (_occupiedAngles[(AngleType)angleInt] == null)
+                if (_occupiedAngles[(AngleType)angleInt] == null && _occupiedAngles[(AngleType)angleInt] != _patrolPolicePopUpReference)
                 {
                     return (AngleType)angleInt;
                 }
@@ -138,5 +139,6 @@ public class PopUpManager : MonoBehaviour
         _onLaunchPolicePatrol?.Invoke();
         OnLaunchPolicePatrol?.Invoke();
     }
+
     #endregion
 }

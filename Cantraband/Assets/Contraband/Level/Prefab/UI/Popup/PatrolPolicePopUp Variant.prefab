@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 3868322348568890424}
     - target: {fileID: 812084244466057281, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
       propertyPath: _typePopUp
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6267416411101142515, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
       propertyPath: m_Pivot.x
