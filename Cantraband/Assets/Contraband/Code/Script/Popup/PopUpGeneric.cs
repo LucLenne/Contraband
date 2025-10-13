@@ -9,6 +9,13 @@ using static PopUpManager;
 
 public class PopUpGeneric : MonoBehaviour
 {
+    private enum TypePopup
+    {
+        Fake,
+        FakeCamera,
+        Real
+    }
+
     private const string CAR_STOP_SOUND = "FOL_car_Stop";
     private const string CAMERA_LOOKING_PLAYER_SOUND = "SFX_Camera_spoting";
 
@@ -28,6 +35,7 @@ public class PopUpGeneric : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Image _frameImage;
     [SerializeField] private List<AngleData> _angleDatas;
+    [SerializeField] private TypePopup _typePopUp;
 
     [Header("Parameters")]
     [SerializeField] private float _speed = 1f;
@@ -135,6 +143,9 @@ public class PopUpGeneric : MonoBehaviour
     #region Animation events
     public void LaunchCheckPlayerCoatInAnim()
     {
+        if (_typePopUp != TypePopup.Real)
+            return;
+
         _onCheckPlayerCoat?.Invoke();
         PopUpManager.Instance.LaunchCheckPlayerCoat();
 
@@ -152,6 +163,9 @@ public class PopUpGeneric : MonoBehaviour
 
     public void LaunchPolicePatrol()
     {
+        if (_typePopUp != TypePopup.Real)
+            return;
+
         AudioManager.AudioManager.Instance.PlaySound(CAR_STOP_SOUND);
         PopUpManager.Instance.LaunchPolicePatrol();
         _frameImage.sprite = _warningFrameImage;
@@ -159,6 +173,13 @@ public class PopUpGeneric : MonoBehaviour
     }
     
     public void LaunchTrigger(string triggerName) => _animator.SetTrigger(triggerName);
+    public void LaunchTriggerFakeCamera(string triggerName)
+    {
+        if (_typePopUp != TypePopup.FakeCamera)
+            return;
+
+        _animator.SetTrigger(triggerName);
+    }
 
     public void LaunchEndAnim()
     {

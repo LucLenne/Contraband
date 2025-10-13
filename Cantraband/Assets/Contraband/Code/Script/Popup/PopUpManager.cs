@@ -24,6 +24,8 @@ public class PopUpManager : MonoBehaviour
     [SerializeField] private List<PopUpGeneric> _policePopUps;
     [SerializeField] private List<PopUpGeneric> _feedBackPopUps;
 
+
+
     [Header("Events")]
     [SerializeField] private UnityEvent _onCheckPlayerCoat;
     [SerializeField] private UnityEvent _onLaunchPolicePatrol;
