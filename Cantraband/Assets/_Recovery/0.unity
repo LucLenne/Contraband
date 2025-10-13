@@ -166,6 +166,7 @@ MonoBehaviour:
   stateTuto: 0
   _timeBetweenClient: 1
   _timeBetweenPopUpPolice: 5
+  _timeBetweenTransitionBaron: 0
   _pointGoodCard: 3
   _pointGoodTheme: 1
   _pointBadCard: -1
@@ -181,6 +182,7 @@ MonoBehaviour:
   _policePatrol: {fileID: 333908749}
   _prefabTutoClient: {fileID: 8809894692128634130, guid: d0a7a59c74b9db54aad59a29b2e064d1, type: 3}
   _baron: {fileID: 1258365405}
+  _gdFeedBackScript: {fileID: 0}
   posClient: {fileID: 333908751}
   score: 0
 --- !u!1001 &333908747

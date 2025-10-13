@@ -1,3 +1,4 @@
+using DG.Tweening;
 using NaughtyAttributes;
 using System;
 using System.Collections;
@@ -12,6 +13,8 @@ public class TutoManager : MonoBehaviour
 
     [Header("GamePlay"), ReadOnly] public StateTuto stateTuto;
     [SerializeField] private float _timeBetweenClient;
+    [SerializeField] private float _timeBetweenPopUpPolice = 5;
+    [SerializeField] private float _timeBetweenTransitionBaron;
     [SerializeField] private int _pointGoodCard = 3;
     [SerializeField] private int _pointGoodTheme = 1;
     [SerializeField] private int _pointBadCard = -1;
@@ -23,6 +26,7 @@ public class TutoManager : MonoBehaviour
     [SerializeField] private GameObject _policePatrol;
     [SerializeField] private GameObject _prefabTutoClient;
     [SerializeField] private Baron _baron;
+    [SerializeField] GDFeedbackScript _gdFeedBackScript;
     public Transform posClient;
 
     private GameObject _currentClient;
@@ -124,34 +128,38 @@ public class TutoManager : MonoBehaviour
     private IEnumerator TimerBetweenPopupPolice()
     {
         _popUp.GetComponent<PopUpManager>().SpawnRandomPolicePopup();
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(_timeBetweenPopUpPolice);
         StartCoroutine(TimerBetweenPopupPolice());
     }
 
     private IEnumerator HandleBaronState()
     {
+
         yield return StartCoroutine(_baron.SpeechBaronCoroutine(_currentState));
         stateTuto = (StateTuto)_currentState;
+        _baron.DOFlip();
         ChangeClient();
         CheckState();
     }
 
 
-    private void CheckState()
+    public IEnumerator CheckState()
     {
         switch (stateTuto)
         {
             case StateTuto.baron:
-                StartCoroutine(HandleBaronState());
+                yield return StartCoroutine(HandleBaronState());
                 break;
 
             case StateTuto.first:
                 break;
 
             case StateTuto.second:
+                _gdFeedBackScript.StartFeedbackImage(LevelManager.GameReturnedType.Favorite);
                 break;
 
             case StateTuto.third:
+                _gdFeedBackScript.StartFeedbackImage(LevelManager.GameReturnedType.Favorite);
                 AddPopUp();
                 StartPatrol();
 
