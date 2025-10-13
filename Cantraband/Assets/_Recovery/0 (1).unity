@@ -119,17 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &286522712 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7040860569373369846, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
-  m_PrefabInstance: {fileID: 333908747}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8211b700d078e5744a78dd93ccfbc95a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GDFeedbackScript
 --- !u!1 &289407597
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +166,7 @@ MonoBehaviour:
   stateTuto: 0
   _timeBetweenClient: 1
   _timeBetweenPopUpPolice: 5
-  _timeTransitionGameplayBaron: 2
+  _timeBetweenTransitionBaron: 0
   _pointGoodCard: 3
   _pointGoodTheme: 1
   _pointBadCard: -1
@@ -193,7 +182,7 @@ MonoBehaviour:
   _policePatrol: {fileID: 333908749}
   _prefabTutoClient: {fileID: 8809894692128634130, guid: d0a7a59c74b9db54aad59a29b2e064d1, type: 3}
   _baron: {fileID: 1258365405}
-  _gdFeedBackScript: {fileID: 286522712}
+  _gdFeedBackScript: {fileID: 0}
   posClient: {fileID: 333908751}
   score: 0
 --- !u!1001 &333908747
@@ -208,10 +197,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5825462489672616613, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
-      propertyPath: _source
-      value: 
-      objectReference: {fileID: 333908756}
     - target: {fileID: 6636228538340239158, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.16079
@@ -299,11 +284,6 @@ Transform:
 --- !u!4 &333908752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7199176983174699916, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
-  m_PrefabInstance: {fileID: 333908747}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &333908756 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 7259994703419224894, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
   m_PrefabInstance: {fileID: 333908747}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1066487980
@@ -410,7 +390,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: ergsergsergesrg
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
