@@ -14,7 +14,9 @@ public class DisplayScore : MonoBehaviour
     private void OnEnable()
     {
         if (LevelManager.Instance != null)
+        {
             LevelManager.Instance.OnFinishTransaction += UpdateScore;
+        }
 
         if (TutoManager.Instance != null)
             TutoManager.Instance.onClientLeave += UpdateScore;

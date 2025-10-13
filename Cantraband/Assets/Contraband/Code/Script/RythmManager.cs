@@ -40,19 +40,31 @@ public class RythmManager : MonoBehaviour
     [SerializeField] private float _baseClientPatience;
     [SerializeField, MinMaxSlider(1f, 20f)] private Vector2 _basePopUpMinMaxDelay;
     [SerializeField] private float _basePopUpSpeed;
-
-    private float _timeElasped;
-
     //Current values
     [Space(10)]
     [ReadOnly] public float _currentClientPatience;
     [ReadOnly] public Vector2 _currentPopUpMinMaxDelay;
     [ReadOnly] public float _currentPopUpSpeed;
 
+    [Header("Clients parameters")]
+    [Tooltip("Delay entre 2 clients")]
+    [SerializeField, MinMaxSlider(1, 10)] private Vector2 _timeBeforeNextClient = new Vector2(3, 5);
+    [Tooltip("Nombre maximal de fois que l'on peut rencontrer le même client ")]
+    [SerializeField] private int _maxNumberOfSameClient = 2;
+
+    private float _timeElasped;
 
     public float ClientPatience { get => _currentClientPatience; }
     public Vector2 PopUpMinMaxDelay { get => _currentPopUpMinMaxDelay; }
     public float PopUpSpeed { get => _currentPopUpSpeed; }
+
+    public int MaxNumberOfSameClient { get => _maxNumberOfSameClient; }
+    public int RandomTimeBeforeNextClient { get => (int)Random.Range(_timeBeforeNextClient.x, _timeBeforeNextClient.y); }
+
+    private void OnValidate()
+    {
+        _maxNumberOfSameClient = Mathf.Max(_maxNumberOfSameClient, 1);
+    }
 
     private void Awake()
     {

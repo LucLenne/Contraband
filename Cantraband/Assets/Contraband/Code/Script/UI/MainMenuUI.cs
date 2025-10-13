@@ -2,9 +2,19 @@ using UnityEngine;
 
 public class MainMenuUI : MonoBehaviour
 {
-    [SerializeField] private string _tagStartCard;
-    [SerializeField] private string _tagClavierDebug;
-    private const string NAME_NEXT_LEVEL = "Tuto";
+    private const string MAIN_MENU_START_SOUND = "SFX_Console_Start";
+
+    [Header("Tutorial")]
+    [SerializeField] private string _tagTutoStartCard;
+    [SerializeField] private string _tagTutoClavierDebug;
+
+    [Header("Game")]
+    [SerializeField] private string _tagGameStartCard;
+    [SerializeField] private string _tagGameClavierDebug;
+
+    private const string NAME_TUTO_LEVEL = "Tuto";
+    private const string NAME_GAME_LEVEL = "Game";
+
     private void OnEnable()
     {
         InputManager.Instance.OnReadCard += CheckChard;
@@ -15,16 +25,19 @@ public class MainMenuUI : MonoBehaviour
         InputManager.Instance.OnReadCard -= CheckChard;
     }
 
-    void CheckChard(string tag)
+    private void Start()
     {
-        if (tag == _tagStartCard || tag == _tagClavierDebug)
-        {
-            StartGame();
-        }
+        AudioManager.AudioManager.Instance.PlaySound(MAIN_MENU_START_SOUND);
     }
 
-    private void StartGame()
+    void CheckChard(string tag)
     {
-        LoadingManager.Instance.LoadScene(NAME_NEXT_LEVEL);
+        if (tag == _tagTutoStartCard || tag == _tagTutoClavierDebug)
+            StartTuto();
+        else if (tag == _tagGameStartCard || tag == _tagGameClavierDebug)
+            StartGame();
     }
+
+    private void StartTuto() => LoadingManager.Instance.LoadScene(NAME_TUTO_LEVEL, true);
+    private void StartGame() => LoadingManager.Instance.LoadScene(NAME_GAME_LEVEL, true);
 }

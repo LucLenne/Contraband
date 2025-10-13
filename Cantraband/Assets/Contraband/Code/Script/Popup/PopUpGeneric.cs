@@ -9,6 +9,9 @@ using static PopUpManager;
 
 public class PopUpGeneric : MonoBehaviour
 {
+    private const string CAR_STOP_SOUND = "FOL_car_Stop";
+    private const string CAMERA_LOOKING_PLAYER_SOUND = "SFX_Camera_spoting";
+
     [System.Serializable]
     private struct AngleData
     {
@@ -28,6 +31,7 @@ public class PopUpGeneric : MonoBehaviour
 
     [Header("Parameters")]
     [SerializeField] private float _speed = 1f;
+    [SerializeField] private bool _playCameraNoise = false;
 
     [Header("Warning Image")]
     [SerializeField] private float _warningImageTime;
@@ -134,6 +138,9 @@ public class PopUpGeneric : MonoBehaviour
         _onCheckPlayerCoat?.Invoke();
         PopUpManager.Instance.LaunchCheckPlayerCoat();
 
+        if (_playCameraNoise)
+            AudioManager.AudioManager.Instance.PlaySound(CAMERA_LOOKING_PLAYER_SOUND);
+
         _frameImage.sprite = _warningFrameImage;
         _warningFrameCoroutine = StartCoroutine(WarningFrame());
     }
@@ -145,6 +152,7 @@ public class PopUpGeneric : MonoBehaviour
 
     public void LaunchPolicePatrol()
     {
+        AudioManager.AudioManager.Instance.PlaySound(CAR_STOP_SOUND);
         PopUpManager.Instance.LaunchPolicePatrol();
         _frameImage.sprite = _warningFrameImage;
         _warningFrameCoroutine = StartCoroutine(WarningFrame());

@@ -9,6 +9,7 @@ public class ClientBehaviour : MonoBehaviour
     private const string ANIMATION_TRANSFER_DONE_NAME = "TransferDone";
     private const string ANIMATION_GAME_OVER_NAME = "GameOver";
     private const string ANIMATION_TRANSFER_COP_NAME = "TransferCop";
+    private const string ANIMATION_OUT_OF_PATIENCE = "OutPatience";
 
     [Header("References")]
     [SerializeField] private Animator _animator;
@@ -36,6 +37,7 @@ public class ClientBehaviour : MonoBehaviour
         LevelManager.Instance.OnFinishTransaction += LaunchTransferDoneAnim;
         LevelManager.Instance.OnFailedByCop += LaunchCopAnim;
         LevelManager.Instance.OnGameOver += LaunchGameOverAnim;
+        LevelManager.Instance.OutOfPatience += LaunchOutOfPatience;
 
         //A changer avec l'accélération du rythme
         currentPatientPatience = Mathf.Max(RythmManager.Instance.ClientPatience, .1f);
@@ -47,6 +49,7 @@ public class ClientBehaviour : MonoBehaviour
         LevelManager.Instance.OnFinishTransaction -= LaunchTransferDoneAnim;
         LevelManager.Instance.OnFailedByCop -= LaunchCopAnim;
         LevelManager.Instance.OnGameOver -= LaunchGameOverAnim;
+        LevelManager.Instance.OutOfPatience -= LaunchOutOfPatience;
 
         if (_newClientCoroutine != null)
         {
@@ -67,6 +70,10 @@ public class ClientBehaviour : MonoBehaviour
     private void LaunchCopAnim() => _animator.SetTrigger(ANIMATION_TRANSFER_COP_NAME);
     private void LaunchGameOverAnim() => _animator.SetTrigger(ANIMATION_GAME_OVER_NAME);
     private void LaunchTransferDoneAnim() => _animator.SetTrigger(ANIMATION_TRANSFER_DONE_NAME);
+    private void LaunchOutOfPatience()
+    {
+        _animator.SetTrigger(ANIMATION_OUT_OF_PATIENCE);
+    }
 
     private IEnumerator StartTimerAsync()
     {
