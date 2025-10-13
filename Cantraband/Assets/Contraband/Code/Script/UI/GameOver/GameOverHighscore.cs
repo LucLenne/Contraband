@@ -11,6 +11,13 @@ public class GameOverHighscore : MonoBehaviour
 
     public bool CheckHighscore()
     {
+        if (HighscoreManager.Instance)
+        {
+            Debug.LogError("No highscore manager found");
+            return false;
+        }
+            
+
         int currentScore = LevelManager.Instance.score;
         if (HighscoreManager.Instance.CheckNewHighScore(currentScore))
         {
