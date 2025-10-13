@@ -530,7 +530,7 @@ MonoBehaviour:
   _spawnPoint: {fileID: 7096832019736640950}
   _musicPlayer: {fileID: 7823198373260081776}
   _scoreText: {fileID: 5471980706421621257}
-  _delayBTWspawns: 0.5
+  _delayBTWspawns: 0.2
   _delayBeforeLoadScene: 4
 --- !u!1 &2339551591609790828
 GameObject:
@@ -4764,6 +4764,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _manteauScaleDuration: 0.4
   _manteauScaleMaxScale: 1.1
+  _disableScreenEffectMerciBenjamin: 1
   _feedBackFadeImageDuration: 0.5
   _feedbackImage: {fileID: 901257406492916659}
   _goodCardColor: {r: 0, g: 1, b: 0, a: 0.78431374}
