@@ -66,15 +66,12 @@ public class SlowRevealImage : MonoBehaviour
 
         while (elapsed < inDuration)
         {
-            Debug.Log("Elapsed: " +  elapsed);
             elapsed += Time.deltaTime;
-                float alpha = Mathf.Clamp01(elapsed / inDuration);
-                Debug.Log("Alpha: " + alpha);
+            float alpha = Mathf.Clamp01(elapsed / inDuration);
             float curvedAlpha = fadeCurve.Evaluate(alpha);
             BaseImage.color = new Color(savedColor.r, savedColor.g, savedColor.b, curvedAlpha);
             yield return null;
         }
-        Debug.Log("Done");
         BaseImage.color = new Color(savedColor.r, savedColor.g, savedColor.b, 1);
     }
 }

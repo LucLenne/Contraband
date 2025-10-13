@@ -1,60 +1,101 @@
-using UnityEngine;
-using System.Collections;
 using System.IO.Ports;
 using System.Linq;
-using Unity.VisualScripting;
+using UnityEngine;
 
 public class ArduinoCommunicator : MonoBehaviour
 {
     private string portNamePrefix = "COM";
-
-    SerialPort inputStream;
-    public int portVal = 9600;
+    private SerialPort inputStream;
+    public int baudRate = 9600;
 
     private string receivedStream;
     private bool isActive = false;
 
-    private Coroutine _COMDetectedCoroutine;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         for (int i = 4; i < 10; i++)
         {
             string portName = portNamePrefix + i.ToString();
-            if (SerialPort.GetPortNames().ToList().Contains(portName))
+            if (SerialPort.GetPortNames().Contains(portName))
             {
-                inputStream = new SerialPort(portName, portVal);
-                inputStream.Open();
-                isActive = true;
+                try
+                {
+                    inputStream = new SerialPort(portName, baudRate);
+                    inputStream.ReadTimeout = 100;
+                    inputStream.Open();
+                    isActive = true;
+                    break;
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogWarning($"[ArduinoCommunicator] Erreur lors de l'ouverture du port {portName} : {e.Message}");
+                }
+            }
+        }
+
+        if (!isActive)
+        {
+            Debug.LogWarning("[ArduinoCommunicator] Aucun port série valide trouvé.");
+        }
+    }
+
+    void Update()
+    {
+        if (isActive && inputStream != null && inputStream.IsOpen)
+        {
+            try
+            {
+                if (inputStream.BytesToRead > 0)
+                {
+                    receivedStream = inputStream.ReadLine();
+
+                    if (!string.IsNullOrEmpty(receivedStream))
+                    {
+                        InputManager.Instance.ReceiveNFCReader(receivedStream);
+                    }
+                }
+            }
+            catch (System.TimeoutException)
+            {
+                // Ignorer, lecture non bloquante
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError($"[ArduinoCommunicator] Erreur de lecture série : {e.Message}");
+            }
+        }
+        else
+        {
+            if (!isActive)
+            {
+                isActive = false; // Ne plus logguer à chaque frame
             }
         }
     }
 
-    private void OnDisable()
+    void OnDisable()
     {
-        if(isActive)
-        {
-            isActive = false;
-            inputStream.Close();
-        }
+        CloseSerialPort();
     }
 
-    // Update is called once per frame
-    void Update()
-    {   
-        if (isActive)
-        {
-            receivedStream = inputStream.ReadLine();
-            Debug.Log(receivedStream);
-
-            if(receivedStream != string.Empty)
-                InputManager.Instance.ReceiveNFCReader(receivedStream);
-   
-        } else
-        {
-            Debug.Log("Input stream closed");
-        }
+    void OnApplicationQuit()
+    {
+        CloseSerialPort();
     }
 
+    private void CloseSerialPort()
+    {
+        if (inputStream != null && inputStream.IsOpen)
+        {
+            try
+            {
+                inputStream.Close();
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning($"[ArduinoCommunicator] Erreur lors de la fermeture du port : {e.Message}");
+            }
+        }
+        isActive = false;
+    }
 }
