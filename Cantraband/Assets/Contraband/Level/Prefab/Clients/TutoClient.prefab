@@ -91,6 +91,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9030217245224098842, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
   m_PrefabInstance: {fileID: 6003879147475313661}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &4930478998801755084 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1674922073807259697, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
+  m_PrefabInstance: {fileID: 6003879147475313661}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7246666071041413965 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4018130213851934896, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
@@ -124,9 +129,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df46db0d7786b6f488dd218e83d62ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClientTuto
-  _imagePatience: {fileID: 7246666071041413965}
+  _sliderImage: {fileID: 7246666071041413965}
+  _sliderGradient:
+    serializedVersion: 2
+    key0: {r: 0.058713913, g: 1, b: 0, a: 1}
+    key1: {r: 1, g: 0.9848485, b: 0, a: 1}
+    key2: {r: 1, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 32768
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
   _timePatience: 10
   activeTimer: 0
+  _timerRectTransform: {fileID: 4930478998801755084}
+  _timerAnimMaxSpeed: 0.3
+  _timerAnimCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _sliderGO: {fileID: 3315730127850340327}
   _hintImagePrefab: {fileID: 1337047516737727991, guid: 4e05b075d7ba50542b4a96f65774dfb4, type: 3}
   _hintImageParent: {fileID: 1526854921004364376}
