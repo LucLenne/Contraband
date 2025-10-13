@@ -70,7 +70,10 @@ public class ClientBehaviour : MonoBehaviour
     private void LaunchCopAnim() => _animator.SetTrigger(ANIMATION_TRANSFER_COP_NAME);
     private void LaunchGameOverAnim() => _animator.SetTrigger(ANIMATION_GAME_OVER_NAME);
     private void LaunchTransferDoneAnim() => _animator.SetTrigger(ANIMATION_TRANSFER_DONE_NAME);
-    private void LaunchOutOfPatience() => _animator.SetTrigger(ANIMATION_OUT_OF_PATIENCE);
+    private void LaunchOutOfPatience()
+    {
+        _animator.SetTrigger(ANIMATION_OUT_OF_PATIENCE);
+    }
 
     private IEnumerator StartTimerAsync()
     {

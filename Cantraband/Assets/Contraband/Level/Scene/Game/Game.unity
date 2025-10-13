@@ -135,9 +135,45 @@ PrefabInstance:
       propertyPath: _numberOfCartridgesToSpawnPerScore
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1872779303625148529, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2520860353195722197, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2520860353195722197, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 2926263836876385441, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: Loop
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581276784779940274, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_Intensity
+      value: 3.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442679050446909882, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8253977
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442679050446909882, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.54168385
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442679050446909882, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.15400167
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442679050446909882, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.039759625
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442679050446909882, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 5825462489672616613, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: _source
@@ -186,6 +222,26 @@ PrefabInstance:
     - target: {fileID: 7069193175349676906, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_Name
       value: GameScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8074448230738625190, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8074448230738625190, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8074448230738625190, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446937774509779756, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446937774509779756, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -4,9 +4,17 @@ public class MainMenuUI : MonoBehaviour
 {
     private const string MAIN_MENU_START_SOUND = "SFX_Console_Start";
 
-    [SerializeField] private string _tagStartCard;
-    [SerializeField] private string _tagClavierDebug;
-    private const string NAME_NEXT_LEVEL = "Tuto";
+    [Header("Tutorial")]
+    [SerializeField] private string _tagTutoStartCard;
+    [SerializeField] private string _tagTutoClavierDebug;
+
+    [Header("Game")]
+    [SerializeField] private string _tagGameStartCard;
+    [SerializeField] private string _tagGameClavierDebug;
+
+    private const string NAME_TUTO_LEVEL = "Tuto";
+    private const string NAME_GAME_LEVEL = "Game";
+
     private void OnEnable()
     {
         InputManager.Instance.OnReadCard += CheckChard;
@@ -24,14 +32,12 @@ public class MainMenuUI : MonoBehaviour
 
     void CheckChard(string tag)
     {
-        if (tag == _tagStartCard || tag == _tagClavierDebug)
-        {
+        if (tag == _tagTutoStartCard || tag == _tagTutoClavierDebug)
+            StartTuto();
+        else if (tag == _tagGameStartCard || tag == _tagGameClavierDebug)
             StartGame();
-        }
     }
 
-    private void StartGame()
-    {
-        LoadingManager.Instance.LoadScene(NAME_NEXT_LEVEL, true);
-    }
+    private void StartTuto() => LoadingManager.Instance.LoadScene(NAME_TUTO_LEVEL, true);
+    private void StartGame() => LoadingManager.Instance.LoadScene(NAME_GAME_LEVEL, true);
 }
