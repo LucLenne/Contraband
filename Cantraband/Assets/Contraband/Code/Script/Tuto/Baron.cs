@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,6 +11,7 @@ public class Baron : MonoBehaviour
     [Header("References"), SerializeField] private TMP_Text _textSpeech;
     private const string _tableName = "Baron";
     [SerializeField] private GameObject _baron;
+    [Header("Gameplay"), SerializeField] private float _timeFade = 1f;
 
     [Header("Data"), SerializeField] private OrderSpeech _speechBaron;
 
@@ -29,7 +31,15 @@ public class Baron : MonoBehaviour
         _speechBaron.listSpeech = new() { _speechBaron.firstPart, _speechBaron.secondPart, _speechBaron.thirdPart, _speechBaron.fourthPart };
     }
 
+    IEnumerator FadeInBaron()
+    {
+        yield return GetComponent<CanvasGroup>().DOFade(1f, _timeFade).WaitForCompletion();
+    }
 
+    IEnumerator FadeOutBaron()
+    {
+        yield return GetComponent<CanvasGroup>().DOFade(0f, _timeFade).WaitForCompletion();
+    }
 
     public IEnumerator SpeechBaronCoroutine(int p, float timeBeforeStartSpeech)
     {
@@ -44,13 +54,14 @@ public class Baron : MonoBehaviour
             yield break;
 
         _baron.SetActive(true);
+        yield return FadeInBaron();
 
         foreach (Speech speech in _speechBaron.listSpeech[p])
         {
             DisplaySpeech(speech);
             yield return new WaitForSeconds(speech.time);
         }
-
+        yield return FadeOutBaron();
         UnloadText();
         _baron.SetActive(false);
     }

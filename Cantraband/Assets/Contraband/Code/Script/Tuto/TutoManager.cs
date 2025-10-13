@@ -85,6 +85,8 @@ public class TutoManager : MonoBehaviour
         _clientTuto.InitClient(_listClient[_currentState], _listGameCard[_currentState]);
     }
 
+
+
     private void DestroyClient()
     {
 
