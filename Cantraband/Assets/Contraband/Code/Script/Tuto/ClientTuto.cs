@@ -29,6 +29,10 @@ public class ClientTuto : MonoBehaviour
     public void LaunchTransferDoneAnim() => _animator.SetTrigger(ANIMATION_TRANSFER_DONE_NAME);
     public void LaunchOutOfPatience() => _animator.SetTrigger(ANIMATION_OUT_OF_PATIENCE);
 
+    public void DestroyObject()
+    {
+
+    }
 
     public void SetupClient(List<Sprite> hintImages)
     {

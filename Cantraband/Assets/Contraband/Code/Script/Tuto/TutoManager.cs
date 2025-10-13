@@ -122,19 +122,20 @@ public class TutoManager : MonoBehaviour
 
     private void CheckCard(string card)
     {
-        if (card == _listGameCard[(int)stateTuto].tag || _listGameCard[(int)stateTuto].DebugKeyboardTag == card)
+        if (stateTuto != StateTuto.baron)
         {
-            score += _pointGoodCard;
-            onClientLeave?.Invoke();
-            _currentState += 1;
-            stateTuto = StateTuto.baron;
-            if (_currentState == 3)
-                stateTuto = StateTuto.end;
-            StartCoroutine(CheckState());
-        }
-        else
-        {
-            _clientTuto.LaunchOutOfPatience();
+            if (card == _listGameCard[(int)stateTuto].tag || _listGameCard[(int)stateTuto].DebugKeyboardTag == card)
+            {
+                score += _pointGoodCard;
+                onClientLeave?.Invoke();
+                _currentState += 1;
+                stateTuto = StateTuto.baron;
+                StartCoroutine(CheckState());
+            }
+            else
+            {
+                _clientTuto.LaunchOutOfPatience();
+            }
         }
     }
 
@@ -163,9 +164,19 @@ public class TutoManager : MonoBehaviour
         _clientTuto.LaunchTransferDoneAnim();
         _gdFeedBackScript.StartFeedbackImage(LevelManager.GameReturnedType.Favorite);
         yield return StartCoroutine(_baron.SpeechBaronCoroutine(_currentState, _timeTransitionGameplayBaron));
-        stateTuto = (StateTuto)_currentState;
-        ChangeClient();
-        StartCoroutine(CheckState());
+        if (_currentState == 3)
+        {
+            stateTuto = StateTuto.end;
+            StartCoroutine(CheckState());
+        }
+        else
+        {
+            stateTuto = (StateTuto)_currentState;
+            ChangeClient();
+            StartCoroutine(CheckState());
+        }
+
+
     }
 
 
