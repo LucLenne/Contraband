@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3144388482478857860
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7430038395820533690}
+    m_Modifications:
+    - target: {fileID: 3654663630801171390, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
+      propertyPath: m_Name
+      value: Police Camera Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717143048284518731, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 843.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717143048284518731, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717143048284518731, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717143048284518731, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717143048284518731, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717143048284518731, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717143048284518731, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717143048284518731, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717143048284518731, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717143048284518731, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
+--- !u!4 &4664550663590832079 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7717143048284518731, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
+  m_PrefabInstance: {fileID: 3144388482478857860}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3595731274717100617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104,8 +166,52 @@ PrefabInstance:
       propertyPath: m_Name
       value: FakeCameraPopUp Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6713605022041664084, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6267416411101142515, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4664550663590832079}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8617232626813788481, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5471408288504965147}
   m_SourcePrefab: {fileID: 100100000, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
+--- !u!1 &5075580832356375304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8617232626813788481, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
+  m_PrefabInstance: {fileID: 3595731274717100617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5471408288504965147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5075580832356375304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 8400000, guid: 5896ae221861e564a871d18406d0fe49, type: 2}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!224 &7430038395820533690 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6267416411101142515, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
+  m_PrefabInstance: {fileID: 3595731274717100617}
+  m_PrefabAsset: {fileID: 0}
