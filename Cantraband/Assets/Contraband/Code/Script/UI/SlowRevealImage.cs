@@ -27,21 +27,16 @@ public class SlowRevealImage : MonoBehaviour
         {
             Destroy(this);
         }
-        else
-        {
-            savedColor = BaseImage.color;
-            BaseImage.color = new Color(savedColor.r, savedColor.g, savedColor.b, 0);
-            if (revealOnAwake)
-            {
-                StartReveal(baseDurationReveal, _revealType);
-            }
-            else
-            {
-                CallForReveal += StartReveal;
-            }
-        }
+        CallForReveal += StartReveal;
+        savedColor = BaseImage.color;
+        BaseImage.color = new Color(savedColor.r, savedColor.g, savedColor.b, 0);
     }
 
+
+    private void OnDisable()
+    {
+        CallForReveal -= StartReveal;
+    }
     public void StartReveal(float inDuration = -1, RevealType inRevealType = default)
     {
         if (inDuration == -1)
