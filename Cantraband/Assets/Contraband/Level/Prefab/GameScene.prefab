@@ -4773,6 +4773,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _manteauScaleDuration: 0.4
   _manteauScaleMaxScale: 1.1
+  _disableScreenEffectMerciBenjamin: 1
   _feedBackFadeImageDuration: 0.5
   _feedbackImage: {fileID: 901257406492916659}
   _goodCardColor: {r: 0, g: 1, b: 0, a: 0.78431374}

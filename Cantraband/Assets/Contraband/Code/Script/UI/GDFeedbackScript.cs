@@ -15,6 +15,7 @@ public class GDFeedbackScript : MonoBehaviour
     [SerializeField] private float _manteauScaleMaxScale;
 
     [Header("Feedback")]
+    [SerializeField] private bool _disableScreenEffectMerciBenjamin;
     [SerializeField] private float _feedBackFadeImageDuration;
     [SerializeField] private Image _feedbackImage;
     [SerializeField] private Color _goodCardColor;
@@ -25,14 +26,14 @@ public class GDFeedbackScript : MonoBehaviour
     private void OnEnable()
     {
         InputManager.Instance.OnVestChanged += ChangeManteauImage;
-        if (LevelManager.Instance != null)
+        if (LevelManager.Instance != null && !_disableScreenEffectMerciBenjamin)
             LevelManager.Instance.OnGameReturned += StartFeedbackImage;
     }
 
     private void OnDisable()
     {
         InputManager.Instance.OnVestChanged -= ChangeManteauImage;
-        if (LevelManager.Instance != null)
+        if (LevelManager.Instance != null && !_disableScreenEffectMerciBenjamin)
             LevelManager.Instance.OnGameReturned -= StartFeedbackImage;
     }
 
