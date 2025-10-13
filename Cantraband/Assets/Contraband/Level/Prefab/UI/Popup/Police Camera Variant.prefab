@@ -270,7 +270,7 @@ PrefabInstance:
     - target: {fileID: 3820343421200499441, guid: ab22d7a7453bbd84a88781e95ce61bcf, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8400000, guid: 5896ae221861e564a871d18406d0fe49, type: 2}
     - target: {fileID: 4189189461277807482, guid: ab22d7a7453bbd84a88781e95ce61bcf, type: 3}
       propertyPath: m_Name
       value: Police Camera Variant
