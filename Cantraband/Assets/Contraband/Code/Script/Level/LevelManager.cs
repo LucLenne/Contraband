@@ -168,7 +168,6 @@ public class LevelManager : MonoBehaviour
         OutOfPatience?.Invoke();
 
         //Complete transaction
-        OnFinishTransaction?.Invoke();
         AudioManager.AudioManager.Instance.PlaySound(SOUND_EXIT_CLIENT);
         yield return new WaitForSeconds(RythmManager.Instance.RandomTimeBeforeNextClient);
         GiveNextClient();
