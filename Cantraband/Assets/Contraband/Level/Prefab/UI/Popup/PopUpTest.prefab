@@ -362,6 +362,9 @@ MonoBehaviour:
     anchorMinMax: {x: 1, y: 0}
     anchoredPosition: {x: -250, y: 250}
   _typePopUp: 0
+  _rawImage: {fileID: 0}
+  _cameraRender: {fileID: 0}
+  _textureResolution: {x: 512, y: 512, z: 16}
   _camDeathTriggerName: CamGameOver
   _speed: 1
   _playCameraNoise: 0

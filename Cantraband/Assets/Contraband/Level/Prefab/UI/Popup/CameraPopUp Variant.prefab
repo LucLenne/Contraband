@@ -166,6 +166,11 @@ PrefabInstance:
       addedObject: {fileID: 3873925270993836317}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
+--- !u!20 &3096859237467935487 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4436488402944090677, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
+  m_PrefabInstance: {fileID: 1687675186628178122}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3287324984034319264 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4248371110268595050, guid: 829152576b3af9f4c92380d39f86e725, type: 3}
@@ -194,9 +199,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9004336991215538455}
     - target: {fileID: 812084244466057281, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
+      propertyPath: _rawImage
+      value: 
+      objectReference: {fileID: 8918426446942985840}
+    - target: {fileID: 812084244466057281, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
       propertyPath: _typePopUp
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 812084244466057281, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
+      propertyPath: _cameraRender
+      value: 
+      objectReference: {fileID: 3096859237467935487}
     - target: {fileID: 812084244466057281, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
       propertyPath: _playCameraNoise
       value: 1
