@@ -67,7 +67,7 @@ public class PolicePatrol : MonoBehaviour
 
         bool _isLookingAtPlayer = Random.value >= _lookingAtPlayerChance;
         if (!_activateFake)
-            _isLookingAtPlayer = false;
+            _isLookingAtPlayer = true;
 
         _animator.SetBool(ANIMATION_LOOKING_PLAYER_BOOL, _isLookingAtPlayer);
         _animator.SetTrigger(ANIMATION_RESET);
