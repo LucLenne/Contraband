@@ -250,6 +250,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1402039978527620963, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402039978527620963, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.99777365
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402039978527620963, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.066691846
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402039978527620963, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 7.648
+      objectReference: {fileID: 0}
     - target: {fileID: 1616554645801477635, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -489,6 +505,14 @@ PrefabInstance:
     - target: {fileID: 2675287330810041261, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139864626496016743, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: field of view
+      value: 81
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139864626496016743, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_FocalLength
+      value: 14.050195
       objectReference: {fileID: 0}
     - target: {fileID: 3139864626496016743, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: near clip plane
@@ -779,6 +803,14 @@ PrefabInstance:
       value: 0.93
       objectReference: {fileID: 0}
     - target: {fileID: 6036313272249683777, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_Range
+      value: 42.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036313272249683777, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_Intensity
+      value: 105.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036313272249683777, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_SpotAngle
       value: 56.516624
       objectReference: {fileID: 0}
@@ -881,7 +913,7 @@ PrefabInstance:
     - target: {fileID: 6674998236249102147, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 80048544a3705a54a81ca01ce2b8d489, type: 2}
+      objectReference: {fileID: 11400000, guid: 0d0e5b6ec4bb84e488f2e6455dba080c, type: 2}
     - target: {fileID: 6674998236249102147, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_fontColor.b
       value: 0
@@ -901,7 +933,7 @@ PrefabInstance:
     - target: {fileID: 6674998236249102147, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -4297368524372723315, guid: 80048544a3705a54a81ca01ce2b8d489, type: 2}
+      objectReference: {fileID: 3623004893100687684, guid: 0d0e5b6ec4bb84e488f2e6455dba080c, type: 2}
     - target: {fileID: 6674998236249102147, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190080
