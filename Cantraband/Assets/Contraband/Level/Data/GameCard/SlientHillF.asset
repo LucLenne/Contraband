@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc40bb3058ead224bb891d84844300eb, type: 3}
   m_Name: SlientHillF
   m_EditorClassIdentifier: Assembly-CSharp::GameCard
-  tag: 
+  tag: D39C23EE
   DebugKeyboardTag: 
   Name: Slient Hill F
   genres: 02000000

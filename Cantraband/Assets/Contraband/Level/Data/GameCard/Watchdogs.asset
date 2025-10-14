@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc40bb3058ead224bb891d84844300eb, type: 3}
   m_Name: Watchdogs
   m_EditorClassIdentifier: Assembly-CSharp::GameCard
-  tag: 
+  tag: 1328EE18
   DebugKeyboardTag: 
   Name: Watchdogs
   genres: 01000000
