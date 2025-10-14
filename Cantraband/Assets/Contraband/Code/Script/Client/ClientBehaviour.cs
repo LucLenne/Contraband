@@ -46,6 +46,10 @@ public class ClientBehaviour : MonoBehaviour
         LevelManager.Instance.OutOfPatience += LaunchOutOfPatience;
         LevelManager.Instance.OnSpottedByCop += DisableClient;
 
+        LevelManager.Instance.OnWrongGameGiven += LaunchWrongGameAnim;
+        LevelManager.Instance.OnGoodCategory += LaunchWrongGameAnim;
+        LevelManager.Instance.OnFavoriteGame += LaunchWrongGameAnim;
+
         //A changer avec l'accélération du rythme
         currentPatientPatience = Mathf.Max(RythmManager.Instance.ClientPatience, .1f);
         _newClientCoroutine = StartCoroutine(StartTimerAsync());
@@ -58,6 +62,10 @@ public class ClientBehaviour : MonoBehaviour
         LevelManager.Instance.OnGameOver -= LaunchGameOverAnim;
         LevelManager.Instance.OutOfPatience -= LaunchOutOfPatience;
         LevelManager.Instance.OnSpottedByCop -= DisableClient;
+
+        LevelManager.Instance.OnWrongGameGiven -= LaunchWrongGameAnim;
+        LevelManager.Instance.OnGoodCategory -= LaunchWrongGameAnim;
+        LevelManager.Instance.OnFavoriteGame -= LaunchWrongGameAnim;
 
         if (_newClientCoroutine != null)
         {

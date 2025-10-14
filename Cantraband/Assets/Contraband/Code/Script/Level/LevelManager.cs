@@ -262,6 +262,7 @@ public class LevelManager : MonoBehaviour
             score += _pointGoodGame;
             _gameCardsGiven.Add(gameCard);
             _pointsAwarded.Add(_pointGoodGame);
+            OnFavoriteGame?.Invoke();
             AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_FAVORITEGAME);
             return GameReturnedType.Favorite;
         }
@@ -274,6 +275,7 @@ public class LevelManager : MonoBehaviour
                 score += _pointGoodCategory;
                 _gameCardsGiven.Add(gameCard);
                 _pointsAwarded.Add(_pointGoodCategory);
+                OnGoodCategory?.Invoke();
                 AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_GOODCATEGORY);
                 return GameReturnedType.Good;
             }
@@ -284,6 +286,7 @@ public class LevelManager : MonoBehaviour
         score = Mathf.Max(score, 0);
         _gameCardsGiven.Add(gameCard);
         _pointsAwarded.Add(_pointWrongGame);
+        OnWrongGameGiven?.Invoke();
         AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_WRONGGAME);
         return GameReturnedType.Wrong;
     }
