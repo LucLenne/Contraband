@@ -68,10 +68,6 @@ public class LevelManager : MonoBehaviour
     public Action OutOfPatience; //Quand le client n'a plus de patience
     public Action OnSpottedByCop;
 
-    public Action OnWrongGameGiven;
-    public Action OnGoodCategory; 
-    public Action OnFavoriteGame;
-
     void Awake()
     {
         if (Instance == null)
@@ -262,7 +258,7 @@ public class LevelManager : MonoBehaviour
             score += _pointGoodGame;
             _gameCardsGiven.Add(gameCard);
             _pointsAwarded.Add(_pointGoodGame);
-            OnFavoriteGame?.Invoke();
+            OnGameReturned?.Invoke(GameReturnedType.Favorite);
             AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_FAVORITEGAME);
             return GameReturnedType.Favorite;
         }
@@ -275,7 +271,7 @@ public class LevelManager : MonoBehaviour
                 score += _pointGoodCategory;
                 _gameCardsGiven.Add(gameCard);
                 _pointsAwarded.Add(_pointGoodCategory);
-                OnGoodCategory?.Invoke();
+                OnGameReturned?.Invoke(GameReturnedType.Good);
                 AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_GOODCATEGORY);
                 return GameReturnedType.Good;
             }
@@ -286,7 +282,7 @@ public class LevelManager : MonoBehaviour
         score = Mathf.Max(score, 0);
         _gameCardsGiven.Add(gameCard);
         _pointsAwarded.Add(_pointWrongGame);
-        OnWrongGameGiven?.Invoke();
+        OnGameReturned?.Invoke(GameReturnedType.Wrong);
         AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_WRONGGAME);
         return GameReturnedType.Wrong;
     }

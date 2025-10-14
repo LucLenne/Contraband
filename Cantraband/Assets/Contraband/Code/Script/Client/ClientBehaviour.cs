@@ -12,9 +12,9 @@ public class ClientBehaviour : MonoBehaviour
     private const string ANIMATION_TRANSFER_COP_NAME = "TransferCop";
     private const string ANIMATION_OUT_OF_PATIENCE = "OutPatience";
 
-    private const string ANIMATION_WRONG_GAME = "";
-    private const string ANIMATION_GOOD_CATEGORY = "";
-    private const string ANIMATION_FAVORITE_GAME = "";
+    private const string ANIMATION_WRONG_GAME = "TransferBadGame";
+    private const string ANIMATION_GOOD_CATEGORY = "TransferCategory";
+    private const string ANIMATION_FAVORITE_GAME = "TransferDone";
 
     [Header("References")]
     [SerializeField] private Animator _animator;
@@ -40,15 +40,12 @@ public class ClientBehaviour : MonoBehaviour
 
     private void OnEnable()
     {
-        LevelManager.Instance.OnFinishTransaction += LaunchTransferDoneAnim;
         LevelManager.Instance.OnFailedByCop += LaunchCopAnim;
         LevelManager.Instance.OnGameOver += LaunchGameOverAnim;
         LevelManager.Instance.OutOfPatience += LaunchOutOfPatience;
         LevelManager.Instance.OnSpottedByCop += DisableClient;
 
-        LevelManager.Instance.OnWrongGameGiven += LaunchWrongGameAnim;
-        LevelManager.Instance.OnGoodCategory += LaunchWrongGameAnim;
-        LevelManager.Instance.OnFavoriteGame += LaunchWrongGameAnim;
+        LevelManager.Instance.OnGameReturned += LaunchGiveCardAnim;
 
         //A changer avec l'accélération du rythme
         currentPatientPatience = Mathf.Max(RythmManager.Instance.ClientPatience, .1f);
@@ -57,15 +54,12 @@ public class ClientBehaviour : MonoBehaviour
 
     private void OnDisable()
     {
-        LevelManager.Instance.OnFinishTransaction -= LaunchTransferDoneAnim;
         LevelManager.Instance.OnFailedByCop -= LaunchCopAnim;
         LevelManager.Instance.OnGameOver -= LaunchGameOverAnim;
         LevelManager.Instance.OutOfPatience -= LaunchOutOfPatience;
         LevelManager.Instance.OnSpottedByCop -= DisableClient;
 
-        LevelManager.Instance.OnWrongGameGiven -= LaunchWrongGameAnim;
-        LevelManager.Instance.OnGoodCategory -= LaunchWrongGameAnim;
-        LevelManager.Instance.OnFavoriteGame -= LaunchWrongGameAnim;
+        LevelManager.Instance.OnGameReturned -= LaunchGiveCardAnim;
 
         if (_newClientCoroutine != null)
         {
@@ -85,9 +79,23 @@ public class ClientBehaviour : MonoBehaviour
         }
     }
 
-    private void LaunchWrongGameAnim() => _animator.SetTrigger(ANIMATION_WRONG_GAME);
-    private void LaunchGoodCategoryAnim() => _animator.SetTrigger(ANIMATION_GOOD_CATEGORY);
-    private void LaunchFavoriteGameAnim() => _animator.SetTrigger(ANIMATION_FAVORITE_GAME);
+    private void LaunchGiveCardAnim(LevelManager.GameReturnedType type)
+    {
+        switch (type)
+        {
+            case LevelManager.GameReturnedType.Wrong:
+                _animator.SetTrigger(ANIMATION_WRONG_GAME);
+                return;
+
+            case LevelManager.GameReturnedType.Good:
+                _animator.SetTrigger(ANIMATION_GOOD_CATEGORY);
+                return;
+
+            case LevelManager.GameReturnedType.Favorite:
+                _animator.SetTrigger(ANIMATION_FAVORITE_GAME);
+                return;
+        }
+    }
     private void LaunchCopAnim() => _animator.SetTrigger(ANIMATION_TRANSFER_COP_NAME);
     private void LaunchGameOverAnim() => _animator.SetTrigger(ANIMATION_GAME_OVER_NAME);
     private void LaunchTransferDoneAnim() => _animator.SetTrigger(ANIMATION_TRANSFER_DONE_NAME);
