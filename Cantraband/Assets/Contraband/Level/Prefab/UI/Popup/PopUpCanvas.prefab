@@ -120,8 +120,8 @@ MonoBehaviour:
   - {fileID: 4225362550508829192, guid: 9698a8ec1888bf04786a2c4d23f163a5, type: 3}
   - {fileID: 5235237444209766481, guid: 834b3e881bc2e544398fb03787b9327c, type: 3}
   - {fileID: 1448858401093971270, guid: dce4f8aee6314a942a125456b6f5d1a0, type: 3}
-  _feedBackPopUps:
-  - {fileID: 1677423809590011122, guid: d20904825ddf65942883eebab875bc68, type: 3}
+  _feedBackPopUps: []
+  _patrolPolicePopUpReference: {fileID: 1448858401093971270, guid: dce4f8aee6314a942a125456b6f5d1a0, type: 3}
   _onCheckPlayerCoat:
     m_PersistentCalls:
       m_Calls: []

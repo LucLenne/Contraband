@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
 public class PopUpManager : MonoBehaviour
@@ -60,6 +61,9 @@ public class PopUpManager : MonoBehaviour
 
         //Select random police popup
         PopUpGeneric popUpToSpawn = _policePopUps[Random.Range(0, _policePopUps.Count)];
+        if (PolicePatrolPopUpExists() && popUpToSpawn == _patrolPolicePopUpReference)
+            return;
+
         //Select random unoccupied angle
         AngleType angleType = SelectUnoccupiedAngle();
         if (angleType == AngleType.None)
@@ -108,7 +112,7 @@ public class PopUpManager : MonoBehaviour
         {
             if (_occupiedAngles.ContainsKey((AngleType)angleInt))
             {
-                if (_occupiedAngles[(AngleType)angleInt] == null && _occupiedAngles[(AngleType)angleInt] != _patrolPolicePopUpReference)
+                if (_occupiedAngles[(AngleType)angleInt] == null)
                 {
                     return (AngleType)angleInt;
                 }
@@ -121,6 +125,16 @@ public class PopUpManager : MonoBehaviour
 
         Debug.LogWarning("No angle found");
         return AngleType.None;
+    }
+
+    private bool PolicePatrolPopUpExists()
+    {
+        for(int i = 1; i < 5; i++)
+        {
+            if (_occupiedAngles[(AngleType)i] == _patrolPolicePopUpReference)
+                return true;
+        }
+        return false;
     }
     #endregion
 
