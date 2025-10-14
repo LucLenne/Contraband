@@ -11,6 +11,7 @@ public class Baron : MonoBehaviour
     [Header("References"), SerializeField] private TMP_Text _textSpeech;
     private const string _tableName = "Baron";
     [SerializeField] private GameObject _baron;
+    [SerializeField] private GameObject _baron3D;
     [Header("Gameplay"), SerializeField] private float _timeFade = 1f;
 
     [Header("Data"), SerializeField] private OrderSpeech _speechBaron;
@@ -33,12 +34,14 @@ public class Baron : MonoBehaviour
 
     IEnumerator FadeInBaron()
     {
+        _baron3D.SetActive(true);
         yield return GetComponent<CanvasGroup>().DOFade(1f, _timeFade).WaitForCompletion();
     }
 
     IEnumerator FadeOutBaron()
     {
         yield return GetComponent<CanvasGroup>().DOFade(0f, _timeFade).WaitForCompletion();
+        _baron3D.SetActive(false);
     }
 
     public IEnumerator SpeechBaronCoroutine(int p, float timeBeforeStartSpeech)
