@@ -73,7 +73,7 @@ MonoBehaviour:
       Volume: 1
   - Name: SFX_Console_Start
     Clips:
-    - Clip: {fileID: 8300000, guid: b2dde6a6e053d0f4ca9e9b618721d4de, type: 3}
+    - Clip: {fileID: 8300000, guid: dfa98aa043f58ec4893e4837d754f667, type: 3}
       Volume: 1
   - Name: FOL_buyers_arrive
     Clips:

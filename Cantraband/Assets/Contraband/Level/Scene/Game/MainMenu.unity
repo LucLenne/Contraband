@@ -840,7 +840,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <+char duration=.5><+move duration=1><wave><palette>CTRLBand
+  m_text: <+char duration=.5><+move duration=1><wave><palette>CTRL+Band
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80048544a3705a54a81ca01ce2b8d489, type: 2}
   m_sharedMaterial: {fileID: -4297368524372723315, guid: 80048544a3705a54a81ca01ce2b8d489, type: 2}
@@ -1666,6 +1666,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2995704710207769119, guid: 4f4e8c65062dc3d44828613912fa66a1, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 91bf6516ef92d484aa59894397ac0c7d, type: 3}
     - target: {fileID: 7899130694203612366, guid: 4f4e8c65062dc3d44828613912fa66a1, type: 3}
       propertyPath: m_Name
       value: MusicPlayer
