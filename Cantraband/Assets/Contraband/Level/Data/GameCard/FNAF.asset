@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc40bb3058ead224bb891d84844300eb, type: 3}
   m_Name: FNAF
   m_EditorClassIdentifier: Assembly-CSharp::GameCard
-  tag: 
+  tag: E3DD5E18
   DebugKeyboardTag: 
   Name: "Five Night At Freddy\u2019s"
   genres: 02000000

@@ -7,6 +7,7 @@ public class PolicePatrol : MonoBehaviour
     private const string SOUND_PATROL = "Fol_walk";
     private const string ANIMATION_LOOKING_PLAYER_BOOL = "Looking";
     private const string ANIMATION_RESET = "Reset";
+    private const string ANIMATION_SPOTTED = "PlayerSpotted";
 
     [Header("References")]
     [SerializeField] private GameObject _animationObject;
@@ -72,10 +73,11 @@ public class PolicePatrol : MonoBehaviour
 
     public void LaunchCheckPlayerCoatInAnim()
     {
-        if (LevelManager.Instance == null) return;
+        if (LevelManager.Instance == null) 
+            return;
 
-        LevelManager.Instance.CheckPlayerCoat();
-        LevelManager.Instance.CheckPlayerTransaction();
+        if(LevelManager.Instance.CheckPlayerCoat(false) || LevelManager.Instance.CheckPlayerTransaction(false))
+            _animator.SetTrigger(ANIMATION_SPOTTED);
     }
 
     public void StopPatrol()

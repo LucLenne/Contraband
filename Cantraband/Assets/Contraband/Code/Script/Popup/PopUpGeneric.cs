@@ -38,6 +38,11 @@ public class PopUpGeneric : MonoBehaviour
     [SerializeField] private List<AngleData> _angleDatas;
     [SerializeField] private TypePopup _typePopUp;
 
+    [Header("Render Texture")]
+    [SerializeField] private RawImage _rawImage;
+    [SerializeField] private Camera _cameraRender;
+    [SerializeField] private Vector3Int _textureResolution = new Vector3Int(512,512,16);
+
     [Header("Animations")]
     [SerializeField] private string _camDeathTriggerName;
 
@@ -54,6 +59,8 @@ public class PopUpGeneric : MonoBehaviour
 
     [Header("Events")]
     [SerializeField] private UnityEvent _onCheckPlayerCoat;
+
+    private RenderTexture _camRenderTexture;
 
     private Vector2 _positionAt1Scale;
 
@@ -73,6 +80,11 @@ public class PopUpGeneric : MonoBehaviour
     {
         _animator.speed = _speed;
 
+        //Setup render texture
+        _camRenderTexture = new RenderTexture(_textureResolution.x, _textureResolution.y, _textureResolution.z);
+        _cameraRender.targetTexture = _camRenderTexture;
+        _rawImage.texture = _camRenderTexture;
+
         _scaleFrameRoutine = StartCoroutine(ScaleRoutine());
     }
 
@@ -81,7 +93,6 @@ public class PopUpGeneric : MonoBehaviour
         if (LevelManager.Instance != null) 
         {
             LevelManager.Instance.OnGameOver += StopAnimation;
-            LevelManager.Instance.OnGameOver += LaunchCamDeath;
 
         }
 
@@ -92,7 +103,6 @@ public class PopUpGeneric : MonoBehaviour
         if(LevelManager.Instance != null)
         {
             LevelManager.Instance.OnGameOver -= StopAnimation;
-            LevelManager.Instance.OnGameOver -= LaunchCamDeath;
 
         }
     }
@@ -156,14 +166,18 @@ public class PopUpGeneric : MonoBehaviour
         if (_typePopUp != TypePopup.RealCamera)
             return;
 
-        _onCheckPlayerCoat?.Invoke();
-        PopUpManager.Instance.LaunchCheckPlayerCoat();
-
         if (_playCameraNoise)
             AudioManager.AudioManager.Instance.PlaySound(CAMERA_LOOKING_PLAYER_SOUND);
 
         _frameImage.sprite = _warningFrameImage;
         _warningFrameCoroutine = StartCoroutine(WarningFrame());
+
+        _onCheckPlayerCoat?.Invoke();
+        
+        if (PopUpManager.Instance.LaunchCheckPlayerCoat())
+        {
+            LaunchCamDeath();
+        }
     }
     private IEnumerator WarningFrame()
     {

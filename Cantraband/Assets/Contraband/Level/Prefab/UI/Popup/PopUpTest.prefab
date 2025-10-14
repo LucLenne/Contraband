@@ -362,6 +362,9 @@ MonoBehaviour:
     anchorMinMax: {x: 1, y: 0}
     anchoredPosition: {x: -250, y: 250}
   _typePopUp: 0
+  _rawImage: {fileID: 0}
+  _cameraRender: {fileID: 0}
+  _textureResolution: {x: 512, y: 512, z: 16}
   _camDeathTriggerName: CamGameOver
   _speed: 1
   _playCameraNoise: 0
@@ -373,8 +376,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -382,11 +385,11 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: -0.12793194
-      outSlope: -0.12793194
+      inSlope: -0.3204193
+      outSlope: -0.3204193
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.1861111
+      inWeight: 0.15277773
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

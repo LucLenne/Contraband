@@ -7,4 +7,12 @@ public class PolicePatrolProxi : MonoBehaviour
 
     public void LaunchCheckPlayerCoatInAnim() => _policePatrol.LaunchCheckPlayerCoatInAnim();
     public void LaunchStopPatrol() => _policePatrol.StopPatrol();
+
+    public void LaunchGameOver()
+    {
+        if (LevelManager.Instance == null)
+            return;
+
+        LevelManager.Instance.LaunchGameOver();
+    }
 }

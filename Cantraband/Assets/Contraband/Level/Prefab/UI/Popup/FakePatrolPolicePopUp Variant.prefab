@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: _animator
       value: 
       objectReference: {fileID: 282366678344456979}
+    - target: {fileID: 812084244466057281, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
+      propertyPath: _rawImage
+      value: 
+      objectReference: {fileID: 4881928934043142308}
+    - target: {fileID: 812084244466057281, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
+      propertyPath: _cameraRender
+      value: 
+      objectReference: {fileID: 6189281965104355579}
     - target: {fileID: 6267416411101142515, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -219,7 +227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7173609807527074191, guid: ab22d7a7453bbd84a88781e95ce61bcf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 350.185
+      value: -16615.2
       objectReference: {fileID: 0}
     - target: {fileID: 7173609807527074191, guid: ab22d7a7453bbd84a88781e95ce61bcf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -286,5 +294,10 @@ Transform:
 --- !u!95 &282366678344456979 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7136802164030963993, guid: ab22d7a7453bbd84a88781e95ce61bcf, type: 3}
+  m_PrefabInstance: {fileID: 6980624768897571338}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &6189281965104355579 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3820343421200499441, guid: ab22d7a7453bbd84a88781e95ce61bcf, type: 3}
   m_PrefabInstance: {fileID: 6980624768897571338}
   m_PrefabAsset: {fileID: 0}

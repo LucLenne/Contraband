@@ -13,9 +13,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3868322348568890424}
     - target: {fileID: 812084244466057281, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
+      propertyPath: _rawImage
+      value: 
+      objectReference: {fileID: 327495477259495251}
+    - target: {fileID: 812084244466057281, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
       propertyPath: _typePopUp
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 812084244466057281, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
+      propertyPath: _cameraRender
+      value: 
+      objectReference: {fileID: 7178913137343680464}
     - target: {fileID: 6267416411101142515, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -228,7 +236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7173609807527074191, guid: ab22d7a7453bbd84a88781e95ce61bcf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 52.56953
+      value: -1154.56
       objectReference: {fileID: 0}
     - target: {fileID: 7173609807527074191, guid: ab22d7a7453bbd84a88781e95ce61bcf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -295,5 +303,10 @@ Transform:
 --- !u!95 &3868322348568890424 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7136802164030963993, guid: ab22d7a7453bbd84a88781e95ce61bcf, type: 3}
+  m_PrefabInstance: {fileID: 6243125356801903905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &7178913137343680464 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3820343421200499441, guid: ab22d7a7453bbd84a88781e95ce61bcf, type: 3}
   m_PrefabInstance: {fileID: 6243125356801903905}
   m_PrefabAsset: {fileID: 0}

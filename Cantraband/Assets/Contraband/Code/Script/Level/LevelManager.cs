@@ -285,20 +285,26 @@ public class LevelManager : MonoBehaviour
     #endregion
 
     #region Game over
-    public void CheckPlayerCoat()
+    public bool CheckPlayerCoat(bool launchGameOver = true)
     {
         if (!InputManager.Instance.IsVestOpened)
-            return;
+            return false;
 
-        LaunchGameOver();
+        if(launchGameOver)
+            LaunchGameOver();
+
+        return true;
     }
 
-    public void CheckPlayerTransaction()
+    public bool CheckPlayerTransaction(bool launchGameOver = true)
     {
         if (!_isRightAfterTransaction)
-            return;
+            return false;
 
-        LaunchGameOver();
+        if (launchGameOver)
+            LaunchGameOver();
+
+        return true;
     }
 
     public void LaunchGameOver()
