@@ -131,8 +131,12 @@ public class PopUpManager : MonoBehaviour
     {
         for(int i = 1; i < 5; i++)
         {
-            if (_occupiedAngles[(AngleType)i] == _patrolPolicePopUpReference)
-                return true;
+            if (_occupiedAngles.ContainsKey((AngleType)i))
+            {
+                if (_occupiedAngles[(AngleType)i] == _patrolPolicePopUpReference)
+                    return true;
+            }
+
         }
         return false;
     }

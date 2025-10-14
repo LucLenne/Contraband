@@ -8,6 +8,7 @@ public class ClientTuto : MonoBehaviour
     [Header("UI")]
     [SerializeField] private Image _sliderImage;
     [SerializeField] private Gradient _sliderGradient;
+    [SerializeField] private RevealType _hintRevealType;
 
     [Header("Gameplay"), SerializeField] private int _timePatience = 10;
     public bool activeTimer;
@@ -21,6 +22,7 @@ public class ClientTuto : MonoBehaviour
     [SerializeField] private GameObject _hintImagePrefab;
     [SerializeField] private Transform _hintImageParent;
     [SerializeField] private Animator _animator;
+
 
     private const string ANIMATION_TRANSFER_DONE_NAME = "TransferDone";
     private const string ANIMATION_GAME_OVER_NAME = "GameOver";
@@ -45,16 +47,18 @@ public class ClientTuto : MonoBehaviour
 
     public void SetupClient(List<Sprite> hintImages)
     {
-        if (hintImages == null || hintImages.Count == 0)
-        {
-            Debug.LogWarning("No hint images provided for this client.");
-            return;
-        }
-
         foreach (Sprite hintImage in hintImages)
         {
-            GameObject newGO = Instantiate(_hintImagePrefab, _hintImageParent);
-            newGO.GetComponent<Image>().sprite = hintImage;
+            GameObject hint = Instantiate(_hintImagePrefab, _hintImageParent);
+            Image image = hint.GetComponent<Image>();
+            image.sprite = hintImage;
+
+            Color c = image.color;
+            c.a = 0;
+            image.color = c;
+
+            hint.GetComponent<SlowRevealImage>()?.CallForReveal?.Invoke(_timePatience, _hintRevealType);
+
         }
     }
 
@@ -76,18 +80,32 @@ public class ClientTuto : MonoBehaviour
 
     void UnlockTimer()
     {
-
         if (activeTimer)
         {
             ActiveTimer();
         }
-
     }
 
     private void ActiveTimer()
     {
         _sliderGO.SetActive(true);
-        StartCoroutine(StartTimerAsync());
+
+        if (TutoManager.Instance.timerCoroutine != null)
+        {
+            StopCoroutine(TutoManager.Instance.timerCoroutine);
+        }
+
+        TutoManager.Instance.timerCoroutine = StartCoroutine(StartTimerAsync());
+    }
+
+    public void StopTimer()
+    {
+        if (TutoManager.Instance.timerCoroutine != null)
+        {
+            StopCoroutine(TutoManager.Instance.timerCoroutine);
+            TutoManager.Instance.timerCoroutine = null;
+        }
+        activeTimer = false;
     }
 
 
@@ -117,7 +135,6 @@ public class ClientTuto : MonoBehaviour
         _timerRectTransform.gameObject.SetActive(false);
 
         _sliderImage.fillAmount = 0f;
-        LevelManager.Instance.StartClientNoMorePatience();
+        TutoManager.Instance.clientEndPatience?.Invoke();
     }
-
 }

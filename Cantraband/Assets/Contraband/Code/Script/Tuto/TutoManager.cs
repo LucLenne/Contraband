@@ -11,7 +11,7 @@ public class TutoManager : MonoBehaviour
 
 
     [Header("GamePlay"), ReadOnly] public StateTuto stateTuto;
-    [SerializeField] private float _timeBetweenClient;
+    [SerializeField] private float _timeBeforeDestroyClient = 1f;
     [SerializeField] private float _timeBetweenPopUpPolice = 5;
     [SerializeField] private float _timeTransitionGameplayBaron = 2f;
     [SerializeField] private int _pointGoodCard = 3;
@@ -31,6 +31,8 @@ public class TutoManager : MonoBehaviour
     private GameObject _currentClient;
     private ClientTuto _clientTuto;
     private int _currentState;
+    private bool _isHandlingOutOfPatience = false;
+    public Coroutine timerCoroutine;
     [HideInInspector] public int score;
 
     private const string NAME_SCENE_GAME = "Game";
@@ -60,21 +62,20 @@ public class TutoManager : MonoBehaviour
     private void Start()
     {
         stateTuto = StateTuto.baron;
-        SpawnClient();
         StartCoroutine(CheckState());
     }
 
     private void OnEnable()
     {
         InputManager.Instance.OnReadCard += CheckCard;
-        clientEndPatience += ChangeClient;
+        clientEndPatience += ClientOutOfPatience;
 
     }
 
     private void OnDisable()
     {
         InputManager.Instance.OnReadCard -= CheckCard;
-        clientEndPatience -= ChangeClient;
+        clientEndPatience -= ClientOutOfPatience;
     }
 
     private void SpawnClient()
@@ -85,24 +86,44 @@ public class TutoManager : MonoBehaviour
         _clientTuto.InitClient(_listClient[_currentState], _listGameCard[_currentState]);
     }
 
-
-
     private void DestroyClient()
     {
+        if (_clientTuto != null)
+        {
+            _clientTuto.StopTimer();
+        }
+        StartCoroutine(CoroutineDestroyClient());
+    }
 
+    private IEnumerator CoroutineDestroyClient()
+    {
+        yield return new WaitForSeconds(_timeBeforeDestroyClient);
         if (_currentClient != null)
         {
             Destroy(_currentClient);
             _clientTuto = null;
         }
     }
-    private void ChangeClient()
+
+    private IEnumerator CoroutineOutOfPatience()
     {
-        StartCoroutine(CoroutineChangeClient());
+        _clientTuto.LaunchOutOfPatience();
+        yield return new WaitForSeconds(2f);
+        yield return StartCoroutine(CoroutineDestroyClient());
+        SpawnClient();
+        _clientTuto.activeTimer = true;
+        _clientTuto.InitTimer();
+        _isHandlingOutOfPatience = false;
     }
 
 
+    private void ClientOutOfPatience()
+    {
+        if (_isHandlingOutOfPatience) return;
 
+        _isHandlingOutOfPatience = true;
+        StartCoroutine(CoroutineOutOfPatience());
+    }
 
     void StartPatrol()
     {
@@ -116,18 +137,13 @@ public class TutoManager : MonoBehaviour
         _policePatrol.gameObject.SetActive(true);
     }
 
-    public void CheckPlayerCoat()
-    {
-        if (!InputManager.Instance.IsVestOpened)
-            return;
-    }
-
     private void CheckCard(string card)
     {
-        if (stateTuto != StateTuto.baron)
+        if (stateTuto != StateTuto.baron && _clientTuto != null)
         {
             if (card == _listGameCard[(int)stateTuto].tag || _listGameCard[(int)stateTuto].DebugKeyboardTag == card)
             {
+                _clientTuto.LaunchTransferDoneAnim();
                 score += _pointGoodCard;
                 onClientLeave?.Invoke();
                 _currentState += 1;
@@ -136,21 +152,9 @@ public class TutoManager : MonoBehaviour
             }
             else
             {
-                _clientTuto.LaunchOutOfPatience();
+                _gdFeedBackScript.StartFeedbackImage(LevelManager.GameReturnedType.Wrong);
+                //_clientTuto.LaunchOutOfPatience();
             }
-        }
-    }
-
-    IEnumerator CoroutineChangeClient()
-    {
-        DestroyClient();
-        yield return new WaitForSeconds(_timeBetweenClient);
-        SpawnClient();
-
-        if (stateTuto == StateTuto.third && _clientTuto != null)
-        {
-            _clientTuto.activeTimer = true;
-            _clientTuto.InitTimer();
         }
     }
 
@@ -163,22 +167,18 @@ public class TutoManager : MonoBehaviour
 
     private IEnumerator HandleBaronState()
     {
-        _clientTuto.LaunchTransferDoneAnim();
         _gdFeedBackScript.StartFeedbackImage(LevelManager.GameReturnedType.Favorite);
         yield return StartCoroutine(_baron.SpeechBaronCoroutine(_currentState, _timeTransitionGameplayBaron));
         if (_currentState == 3)
         {
             stateTuto = StateTuto.end;
-            StartCoroutine(CheckState());
         }
         else
         {
             stateTuto = (StateTuto)_currentState;
-            ChangeClient();
-            StartCoroutine(CheckState());
+            SpawnClient();
         }
-
-
+        StartCoroutine(CheckState());
     }
 
 
@@ -187,6 +187,11 @@ public class TutoManager : MonoBehaviour
         switch (stateTuto)
         {
             case StateTuto.baron:
+                DestroyClient();
+                if (_currentState == 3)
+                {
+                    PopUpManager.Instance.gameObject.SetActive(false);
+                }
                 yield return StartCoroutine(HandleBaronState());
                 break;
 
@@ -200,7 +205,6 @@ public class TutoManager : MonoBehaviour
             case StateTuto.third:
                 AddPopUp();
                 StartPatrol();
-
                 if (_clientTuto != null)
                 {
                     _clientTuto.activeTimer = true;

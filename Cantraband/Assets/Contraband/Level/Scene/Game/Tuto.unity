@@ -175,13 +175,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutoManager
   stateTuto: 0
-  _timeBetweenClient: 1
+  _timeBeforeDestroyClient: 2
   _timeBetweenPopUpPolice: 5
   _timeTransitionGameplayBaron: 2
   _pointGoodCard: 3
   _pointGoodTheme: 1
   _pointBadCard: -1
-  _timeFade: 2
   _listClient:
   - {fileID: 11400000, guid: 8b4a8ed60d8bb0c4fbb1f2d275d64a98, type: 2}
   - {fileID: 11400000, guid: 8b4a8ed60d8bb0c4fbb1f2d275d64a98, type: 2}
@@ -215,11 +214,11 @@ PrefabInstance:
       objectReference: {fileID: 333908756}
     - target: {fileID: 6636228538340239158, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.16079
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6636228538340239158, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.70111
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6636228538340239158, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -746,34 +745,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Baron
   _textSpeech: {fileID: 1084122956}
   _baron: {fileID: 2015302127}
+  _timeFade: 1
   _speechBaron:
     firstPart:
     - time: 2
       id: greetings
     - time: 4
       id: deal_games
-    - time: 4
+    - time: 5
       id: controller
-    - time: 1.3
+    - time: 3
       id: type_game
     secondPart:
-    - time: 2.5
+    - time: 6
       id: undercover_cop
-    - time: 2.5
+    - time: 4.5
       id: give_game
     thirdPart:
-    - time: 2.5
+    - time: 5
       id: police_patrol
-    - time: 2.5
+    - time: 3.5
       id: officers
     fourthPart:
-    - time: 2
+    - time: 4
       id: favorite_game
-    - time: 2
+    - time: 4
       id: take_time
-    - time: 2
+    - time: 4
       id: be_quick
-    - time: 2
+    - time: 4
       id: come_on
 --- !u!225 &1258365406
 CanvasGroup:
