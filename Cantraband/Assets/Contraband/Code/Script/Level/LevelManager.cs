@@ -68,6 +68,10 @@ public class LevelManager : MonoBehaviour
     public Action OutOfPatience; //Quand le client n'a plus de patience
     public Action OnSpottedByCop;
 
+    public Action OnWrongGameGiven;
+    public Action OnGoodCategory; 
+    public Action OnFavoriteGame;
+
     void Awake()
     {
         if (Instance == null)

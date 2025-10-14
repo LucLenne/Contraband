@@ -12,6 +12,10 @@ public class ClientBehaviour : MonoBehaviour
     private const string ANIMATION_TRANSFER_COP_NAME = "TransferCop";
     private const string ANIMATION_OUT_OF_PATIENCE = "OutPatience";
 
+    private const string ANIMATION_WRONG_GAME = "";
+    private const string ANIMATION_GOOD_CATEGORY = "";
+    private const string ANIMATION_FAVORITE_GAME = "";
+
     [Header("References")]
     [SerializeField] private Animator _animator;
     [SerializeField] private GameObject _canvasObject;
@@ -73,6 +77,9 @@ public class ClientBehaviour : MonoBehaviour
         }
     }
 
+    private void LaunchWrongGameAnim() => _animator.SetTrigger(ANIMATION_WRONG_GAME);
+    private void LaunchGoodCategoryAnim() => _animator.SetTrigger(ANIMATION_GOOD_CATEGORY);
+    private void LaunchFavoriteGameAnim() => _animator.SetTrigger(ANIMATION_FAVORITE_GAME);
     private void LaunchCopAnim() => _animator.SetTrigger(ANIMATION_TRANSFER_COP_NAME);
     private void LaunchGameOverAnim() => _animator.SetTrigger(ANIMATION_GAME_OVER_NAME);
     private void LaunchTransferDoneAnim() => _animator.SetTrigger(ANIMATION_TRANSFER_DONE_NAME);
