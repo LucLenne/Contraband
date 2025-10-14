@@ -877,6 +877,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 312342235}
     m_Modifications:
+    - target: {fileID: -9156651087102146943, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -9093557935322921117, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8740191926552778772, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2563
@@ -1025,6 +1033,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b46ad2575a93a84e8699d337fe7c3c4, type: 2}
+    - target: {fileID: -4914342790109827437, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4326597950509219366, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 0
@@ -1157,6 +1169,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b46ad2575a93a84e8699d337fe7c3c4, type: 2}
+    - target: {fileID: 1838073187317612585, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2339202418217292488, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2369679811164773592, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 0
@@ -1173,6 +1193,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b46ad2575a93a84e8699d337fe7c3c4, type: 2}
+    - target: {fileID: 3346433609907850657, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3557672952503815175, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 0
@@ -1189,6 +1213,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b46ad2575a93a84e8699d337fe7c3c4, type: 2}
+    - target: {fileID: 4370974316835659259, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4705753613214662595, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 0
@@ -1205,6 +1233,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b46ad2575a93a84e8699d337fe7c3c4, type: 2}
+    - target: {fileID: 5664498178181332252, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017164787367928909, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6129900207774332685, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1229,6 +1265,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b46ad2575a93a84e8699d337fe7c3c4, type: 2}
+    - target: {fileID: 6816092807456865664, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925606526288370335, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138273657911188131, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7425485593120710464, guid: 3f8e7a4689f995042a64ed9009f5a392, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 0
