@@ -22,7 +22,7 @@ public class ClientTuto : MonoBehaviour
     [SerializeField] private GameObject _hintImagePrefab;
     [SerializeField] private Transform _hintImageParent;
     [SerializeField] private Animator _animator;
-    private bool _isHandlingOutOfPatience = false;
+
 
     private const string ANIMATION_TRANSFER_DONE_NAME = "TransferDone";
     private const string ANIMATION_GAME_OVER_NAME = "GameOver";

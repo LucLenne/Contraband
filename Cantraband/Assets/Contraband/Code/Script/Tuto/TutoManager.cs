@@ -188,6 +188,10 @@ public class TutoManager : MonoBehaviour
         {
             case StateTuto.baron:
                 DestroyClient();
+                if (_currentState == 3)
+                {
+                    PopUpManager.Instance.gameObject.SetActive(false);
+                }
                 yield return StartCoroutine(HandleBaronState());
                 break;
 
