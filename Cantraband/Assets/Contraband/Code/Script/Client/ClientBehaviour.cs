@@ -1,4 +1,5 @@
 ﻿using NaughtyAttributes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,6 +40,7 @@ public class ClientBehaviour : MonoBehaviour
         LevelManager.Instance.OnFailedByCop += LaunchCopAnim;
         LevelManager.Instance.OnGameOver += LaunchGameOverAnim;
         LevelManager.Instance.OutOfPatience += LaunchOutOfPatience;
+        LevelManager.Instance.OnSpottedByCop += DisableClient;
 
         //A changer avec l'accélération du rythme
         currentPatientPatience = Mathf.Max(RythmManager.Instance.ClientPatience, .1f);
@@ -51,6 +53,7 @@ public class ClientBehaviour : MonoBehaviour
         LevelManager.Instance.OnFailedByCop -= LaunchCopAnim;
         LevelManager.Instance.OnGameOver -= LaunchGameOverAnim;
         LevelManager.Instance.OutOfPatience -= LaunchOutOfPatience;
+        LevelManager.Instance.OnSpottedByCop -= DisableClient;
 
         if (_newClientCoroutine != null)
         {
@@ -73,10 +76,8 @@ public class ClientBehaviour : MonoBehaviour
     private void LaunchCopAnim() => _animator.SetTrigger(ANIMATION_TRANSFER_COP_NAME);
     private void LaunchGameOverAnim() => _animator.SetTrigger(ANIMATION_GAME_OVER_NAME);
     private void LaunchTransferDoneAnim() => _animator.SetTrigger(ANIMATION_TRANSFER_DONE_NAME);
-    private void LaunchOutOfPatience()
-    {
-        _animator.SetTrigger(ANIMATION_OUT_OF_PATIENCE);
-    }
+    private void LaunchOutOfPatience() => _animator.SetTrigger(ANIMATION_OUT_OF_PATIENCE);
+    private void DisableClient() => gameObject.SetActive(false);
 
     private IEnumerator StartTimerAsync()
     {

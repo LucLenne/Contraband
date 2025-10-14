@@ -4735,6 +4735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8211b700d078e5744a78dd93ccfbc95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GDFeedbackScript
+  _disableManteau: 0
   _manteauImage: {fileID: 1152036198116174843}
   _manteauCloseImage: {fileID: 21300000, guid: 705ebdb0c0087764ea1c7b13c4a800ba, type: 3}
   _manteauOpenImage: {fileID: 21300000, guid: 7b9cf3227e5649d4498c52573a501882, type: 3}
@@ -7484,10 +7485,6 @@ PrefabInstance:
     - target: {fileID: 2322715993924695112, guid: 224b059831473de45a4f796c6eb43de2, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7440111871632043901, guid: 224b059831473de45a4f796c6eb43de2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -190,6 +190,8 @@ public class TutoManager : MonoBehaviour
                 DestroyClient();
                 if (_currentState == 3)
                 {
+                    _policePatrol.gameObject.SetActive(false);
+                    _popUp.gameObject.SetActive(false);
                     PopUpManager.Instance.gameObject.SetActive(false);
                 }
                 yield return StartCoroutine(HandleBaronState());
