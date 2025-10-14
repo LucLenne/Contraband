@@ -73,19 +73,21 @@ MonoBehaviour:
       Volume: 1
   - Name: SFX_Console_Start
     Clips:
-    - Clip: {fileID: 8300000, guid: b2dde6a6e053d0f4ca9e9b618721d4de, type: 3}
+    - Clip: {fileID: 8300000, guid: dfa98aa043f58ec4893e4837d754f667, type: 3}
       Volume: 1
   - Name: FOL_buyers_arrive
     Clips:
-    - Clip: {fileID: 8300000, guid: ed1b27170973243498ca0e4599f4a3b4, type: 3}
+    - Clip: {fileID: 8300000, guid: b72d5a4c508a41e4b89a9f50b390a26e, type: 3}
       Volume: 1
   - Name: FOL_departure
     Clips:
-    - Clip: {fileID: 8300000, guid: c472c5434bd8c994da86a4ee20e56290, type: 3}
+    - Clip: {fileID: 8300000, guid: 961e9baa055b89845a8b4a21ba0580f3, type: 3}
       Volume: 1
   - Name: FOL_car_go_foward
     Clips:
-    - Clip: {fileID: 8300000, guid: 001a97cb879beb64d8c1854d2046f5ed, type: 3}
+    - Clip: {fileID: 8300000, guid: 370dd9df2da166e4a90f82b1b44307bb, type: 3}
+      Volume: 1
+    - Clip: {fileID: 8300000, guid: 170809ae7113b31409eea98f930fd8b4, type: 3}
       Volume: 1
   - Name: Fol_walk
     Clips:
@@ -93,6 +95,8 @@ MonoBehaviour:
       Volume: 1
   - Name: FOL_car_Stop
     Clips:
-    - Clip: {fileID: 8300000, guid: b2dde6a6e053d0f4ca9e9b618721d4de, type: 3}
+    - Clip: {fileID: 8300000, guid: d41b218d28a8877418b52bfa13f3df06, type: 3}
+      Volume: 1
+    - Clip: {fileID: 8300000, guid: 5c54f7992b131264faf835907125fc82, type: 3}
       Volume: 1
   _voiceProfileList: []

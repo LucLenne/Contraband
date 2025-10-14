@@ -9,6 +9,14 @@ using static PopUpManager;
 
 public class PopUpGeneric : MonoBehaviour
 {
+    private enum TypePopup
+    {
+        FakePatrol,
+        FakeCamera,
+        RealCamera,
+        RealPatrol
+    }
+
     private const string CAR_STOP_SOUND = "FOL_car_Stop";
     private const string CAMERA_LOOKING_PLAYER_SOUND = "SFX_Camera_spoting";
 
@@ -28,6 +36,10 @@ public class PopUpGeneric : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Image _frameImage;
     [SerializeField] private List<AngleData> _angleDatas;
+    [SerializeField] private TypePopup _typePopUp;
+
+    [Header("Animations")]
+    [SerializeField] private string _camDeathTriggerName;
 
     [Header("Parameters")]
     [SerializeField] private float _speed = 1f;
@@ -69,14 +81,20 @@ public class PopUpGeneric : MonoBehaviour
         if (LevelManager.Instance != null) 
         {
             LevelManager.Instance.OnGameOver += StopAnimation;
+            LevelManager.Instance.OnGameOver += LaunchCamDeath;
+
         }
-        
+
     }
 
     private void OnDisable()
     {
         if(LevelManager.Instance != null)
+        {
             LevelManager.Instance.OnGameOver -= StopAnimation;
+            LevelManager.Instance.OnGameOver -= LaunchCamDeath;
+
+        }
     }
 
     #region setup
@@ -123,7 +141,7 @@ public class PopUpGeneric : MonoBehaviour
         {
             progress = _scaleCurve.Evaluate(timeElapsed / animationLength);
             float newScale = Mathf.Lerp(_minMaxScale.x, _minMaxScale.y, progress);
-            _rect.localScale = new Vector2(newScale, newScale);
+            _rect.localScale = new Vector3(newScale, newScale, newScale);
             _rect.anchoredPosition = _positionAt1Scale * newScale;
 
             yield return null;
@@ -135,6 +153,9 @@ public class PopUpGeneric : MonoBehaviour
     #region Animation events
     public void LaunchCheckPlayerCoatInAnim()
     {
+        if (_typePopUp != TypePopup.RealCamera)
+            return;
+
         _onCheckPlayerCoat?.Invoke();
         PopUpManager.Instance.LaunchCheckPlayerCoat();
 
@@ -152,16 +173,50 @@ public class PopUpGeneric : MonoBehaviour
 
     public void LaunchPolicePatrol()
     {
+        if (_typePopUp != TypePopup.RealPatrol)
+            return;
+
         AudioManager.AudioManager.Instance.PlaySound(CAR_STOP_SOUND);
         PopUpManager.Instance.LaunchPolicePatrol();
         _frameImage.sprite = _warningFrameImage;
         _warningFrameCoroutine = StartCoroutine(WarningFrame());
     }
 
+    public void LaunchTrigger(string triggerName) 
+    { 
+        _animator.SetTrigger(triggerName); 
+    }
+
+    public void LaunchTriggerPolicePatrol(string triggerName)
+    {
+        if (_typePopUp != TypePopup.RealPatrol)
+            return;
+
+        _animator.SetTrigger(triggerName);
+    }
+
+    public void LaunchTriggerFakeCamera(string triggerName)
+    {
+        if (_typePopUp != TypePopup.FakeCamera)
+            return;
+
+        _animator.SetTrigger(triggerName);
+    }
+
     public void LaunchEndAnim()
     {
         Destroy(gameObject);
     }
+
+
+    private void LaunchCamDeath()
+    {
+        if(_typePopUp != TypePopup.RealCamera)
+            return;
+
+        _animator.SetTrigger(_camDeathTriggerName);
+    }
+
     #endregion
 
     #region Game over
