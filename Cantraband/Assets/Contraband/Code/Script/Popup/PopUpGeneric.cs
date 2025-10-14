@@ -25,7 +25,7 @@ public class PopUpGeneric : MonoBehaviour
     {
         public AngleType type;
         public Sprite defaultImage;
-        public Sprite OnWarningImage;
+        public Sprite maskImage;
         [Space]
         public Vector2 anchorMinMax;
         public Vector2 anchoredPosition;
@@ -35,6 +35,7 @@ public class PopUpGeneric : MonoBehaviour
     [SerializeField] private RectTransform _rect;
     [SerializeField] private Animator _animator;
     [SerializeField] private Image _frameImage;
+    [SerializeField] private Image _maskImage;
     [SerializeField] private List<AngleData> _angleDatas;
     [SerializeField] private TypePopup _typePopUp;
 
@@ -63,9 +64,6 @@ public class PopUpGeneric : MonoBehaviour
     private RenderTexture _camRenderTexture;
 
     private Vector2 _positionAt1Scale;
-
-    private Sprite _defaultFrameImage;
-    private Sprite _warningFrameImage;
 
     private Coroutine _scaleFrameRoutine;
     private Coroutine _warningFrameCoroutine;
@@ -118,12 +116,11 @@ public class PopUpGeneric : MonoBehaviour
         _positionAt1Scale = angleData.anchoredPosition;
 
         //Setup images
-        _defaultFrameImage = angleData.defaultImage;
-        _frameImage.sprite = _defaultFrameImage;
-        _warningFrameImage = angleData.OnWarningImage;
+        _frameImage.sprite = angleData.defaultImage;
+        _maskImage.sprite = angleData.maskImage;
 
         //Setup speed
-        if(speedOverride != -1)
+        if (speedOverride != -1)
             _speed = speedOverride;
     }
     private AngleData FindDataByAngleType(AngleType angleType)
@@ -169,8 +166,8 @@ public class PopUpGeneric : MonoBehaviour
         if (_playCameraNoise)
             AudioManager.AudioManager.Instance.PlaySound(CAMERA_LOOKING_PLAYER_SOUND);
 
-        _frameImage.sprite = _warningFrameImage;
-        _warningFrameCoroutine = StartCoroutine(WarningFrame());
+        //_frameImage.sprite = _warningFrameImage;
+        //_warningFrameCoroutine = StartCoroutine(WarningFrame());
 
         _onCheckPlayerCoat?.Invoke();
         
@@ -178,11 +175,6 @@ public class PopUpGeneric : MonoBehaviour
         {
             LaunchCamDeath();
         }
-    }
-    private IEnumerator WarningFrame()
-    {
-        yield return new WaitForSeconds(_warningImageTime);
-        _frameImage.sprite = _defaultFrameImage;
     }
 
     public void LaunchPolicePatrol()
@@ -192,8 +184,8 @@ public class PopUpGeneric : MonoBehaviour
 
         AudioManager.AudioManager.Instance.PlaySound(CAR_STOP_SOUND);
         PopUpManager.Instance.LaunchPolicePatrol();
-        _frameImage.sprite = _warningFrameImage;
-        _warningFrameCoroutine = StartCoroutine(WarningFrame());
+        //_frameImage.sprite = _warningFrameImage;
+        //_warningFrameCoroutine = StartCoroutine(WarningFrame());
     }
 
     public void LaunchTrigger(string triggerName) 

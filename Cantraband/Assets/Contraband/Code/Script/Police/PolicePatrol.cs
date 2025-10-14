@@ -14,6 +14,7 @@ public class PolicePatrol : MonoBehaviour
     [SerializeField] private Animator _animator;
 
     [Header("Parameters")]
+    [SerializeField] private bool _activateFake;
     [SerializeField, Range(0f,1f)] private float _lookingAtPlayerChance;
 
     [Header("Audio")]
@@ -65,6 +66,9 @@ public class PolicePatrol : MonoBehaviour
         _animationObject.SetActive(true);
 
         bool _isLookingAtPlayer = Random.value >= _lookingAtPlayerChance;
+        if (!_activateFake)
+            _isLookingAtPlayer = true;
+
         _animator.SetBool(ANIMATION_LOOKING_PLAYER_BOOL, _isLookingAtPlayer);
         _animator.SetTrigger(ANIMATION_RESET);
 
