@@ -93,7 +93,6 @@ public class PopUpGeneric : MonoBehaviour
         if (LevelManager.Instance != null) 
         {
             LevelManager.Instance.OnGameOver += StopAnimation;
-            LevelManager.Instance.OnGameOver += LaunchCamDeath;
 
         }
 
@@ -104,7 +103,6 @@ public class PopUpGeneric : MonoBehaviour
         if(LevelManager.Instance != null)
         {
             LevelManager.Instance.OnGameOver -= StopAnimation;
-            LevelManager.Instance.OnGameOver -= LaunchCamDeath;
 
         }
     }
@@ -168,14 +166,18 @@ public class PopUpGeneric : MonoBehaviour
         if (_typePopUp != TypePopup.RealCamera)
             return;
 
-        _onCheckPlayerCoat?.Invoke();
-        PopUpManager.Instance.LaunchCheckPlayerCoat();
-
         if (_playCameraNoise)
             AudioManager.AudioManager.Instance.PlaySound(CAMERA_LOOKING_PLAYER_SOUND);
 
         _frameImage.sprite = _warningFrameImage;
         _warningFrameCoroutine = StartCoroutine(WarningFrame());
+
+        _onCheckPlayerCoat?.Invoke();
+        
+        if (PopUpManager.Instance.LaunchCheckPlayerCoat())
+        {
+            LaunchCamDeath();
+        }
     }
     private IEnumerator WarningFrame()
     {

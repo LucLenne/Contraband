@@ -143,15 +143,16 @@ public class PopUpManager : MonoBehaviour
     #endregion
 
     #region Launch events
-    public void LaunchCheckPlayerCoat()
+    public bool LaunchCheckPlayerCoat()
     {
         _onCheckPlayerCoat?.Invoke();
         OnCheckPlayerCoat?.Invoke();
 
         if(LevelManager.Instance != null)
         {
-            LevelManager.Instance.CheckPlayerCoat();
+            return LevelManager.Instance.CheckPlayerCoat();
         }
+        return false;
     }
 
     public void LaunchPolicePatrol()
