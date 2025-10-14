@@ -66,6 +66,7 @@ public class LevelManager : MonoBehaviour
     public Action OnFailedByCop; //Quand donne un "mauvais" jeu au flic infiltré
     public Action OnGameOver;
     public Action OutOfPatience; //Quand le client n'a plus de patience
+    public Action OnSpottedByCop;
 
     void Awake()
     {
