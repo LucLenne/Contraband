@@ -523,6 +523,14 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 8707028062232284226, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.113
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707028062232284226, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.172
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1857252907475984944, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
     - {fileID: 6394641766568129882, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
