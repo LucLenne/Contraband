@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GDFeedbackScript : MonoBehaviour
 {
     [Header("Manteau")]
+    [SerializeField] private bool _disableManteau;
     [SerializeField] private Image _manteauImage;
     [SerializeField] private Sprite _manteauCloseImage;
     [SerializeField] private Sprite _manteauOpenImage;
@@ -24,14 +25,19 @@ public class GDFeedbackScript : MonoBehaviour
 
     private void OnEnable()
     {
-        InputManager.Instance.OnVestChanged += ChangeManteauImage;
+        if (_disableManteau)
+            _manteauImage.enabled = false;
+
+        if (!_disableManteau)
+            InputManager.Instance.OnVestChanged += ChangeManteauImage;
         if (LevelManager.Instance != null && !_disableScreenEffectMerciBenjamin)
             LevelManager.Instance.OnGameReturned += StartFeedbackImage;
     }
 
     private void OnDisable()
     {
-        InputManager.Instance.OnVestChanged -= ChangeManteauImage;
+        if (!_disableManteau)
+            InputManager.Instance.OnVestChanged -= ChangeManteauImage;
         if (LevelManager.Instance != null && !_disableScreenEffectMerciBenjamin)
             LevelManager.Instance.OnGameReturned -= StartFeedbackImage;
     }

@@ -25,7 +25,7 @@ public class PopUpManager : MonoBehaviour
     [SerializeField] private List<PopUpGeneric> _policePopUps;
     [SerializeField] private List<PopUpGeneric> _feedBackPopUps;
     [Space(5)]
-    [SerializeField] private PopUpGeneric _patrolPolicePopUpReference;
+    [SerializeField] private List<PopUpGeneric> _patrolPolicePopUpReferenceList;
 
     [Header("Events")]
     [SerializeField] private UnityEvent _onCheckPlayerCoat;
@@ -61,7 +61,7 @@ public class PopUpManager : MonoBehaviour
 
         //Select random police popup
         PopUpGeneric popUpToSpawn = _policePopUps[Random.Range(0, _policePopUps.Count)];
-        if (PolicePatrolPopUpExists() && popUpToSpawn == _patrolPolicePopUpReference)
+        if (PolicePatrolPopUpExists() && _patrolPolicePopUpReferenceList.Contains(popUpToSpawn))
             return;
 
         //Select random unoccupied angle
@@ -133,7 +133,7 @@ public class PopUpManager : MonoBehaviour
         {
             if (_occupiedAngles.ContainsKey((AngleType)i))
             {
-                if (_occupiedAngles[(AngleType)i] == _patrolPolicePopUpReference)
+                if (_patrolPolicePopUpReferenceList.Contains(_occupiedAngles[(AngleType)i]))
                     return true;
             }
 
@@ -143,15 +143,16 @@ public class PopUpManager : MonoBehaviour
     #endregion
 
     #region Launch events
-    public void LaunchCheckPlayerCoat()
+    public bool LaunchCheckPlayerCoat()
     {
         _onCheckPlayerCoat?.Invoke();
         OnCheckPlayerCoat?.Invoke();
 
         if(LevelManager.Instance != null)
         {
-            LevelManager.Instance.CheckPlayerCoat();
+            return LevelManager.Instance.CheckPlayerCoat();
         }
+        return false;
     }
 
     public void LaunchPolicePatrol()

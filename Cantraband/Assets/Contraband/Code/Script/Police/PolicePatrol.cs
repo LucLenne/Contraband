@@ -77,7 +77,11 @@ public class PolicePatrol : MonoBehaviour
             return;
 
         if(LevelManager.Instance.CheckPlayerCoat(false) || LevelManager.Instance.CheckPlayerTransaction(false))
+        {
+            LevelManager.Instance.OnSpottedByCop?.Invoke();
+
             _animator.SetTrigger(ANIMATION_SPOTTED);
+        }
     }
 
     public void StopPatrol()

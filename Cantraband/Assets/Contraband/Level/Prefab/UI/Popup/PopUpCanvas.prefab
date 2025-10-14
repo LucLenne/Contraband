@@ -121,7 +121,9 @@ MonoBehaviour:
   - {fileID: 5235237444209766481, guid: 834b3e881bc2e544398fb03787b9327c, type: 3}
   - {fileID: 1448858401093971270, guid: dce4f8aee6314a942a125456b6f5d1a0, type: 3}
   _feedBackPopUps: []
-  _patrolPolicePopUpReference: {fileID: 1448858401093971270, guid: dce4f8aee6314a942a125456b6f5d1a0, type: 3}
+  _patrolPolicePopUpReferenceList:
+  - {fileID: 5235237444209766481, guid: 834b3e881bc2e544398fb03787b9327c, type: 3}
+  - {fileID: 1448858401093971270, guid: dce4f8aee6314a942a125456b6f5d1a0, type: 3}
   _onCheckPlayerCoat:
     m_PersistentCalls:
       m_Calls: []
