@@ -49,11 +49,11 @@ MonoBehaviour:
   _soundList:
   - Name: SFX_Super_Deal
     Clips:
-    - Clip: {fileID: 8300000, guid: 9251f8510de31a94dba46b614e175209, type: 3}
+    - Clip: {fileID: 8300000, guid: 0ee1d3396c440c6458ca81be9e7449ab, type: 3}
       Volume: 1
   - Name: SFX_Validation_Deal
     Clips:
-    - Clip: {fileID: 8300000, guid: 21388ac3c8c13aa4dab6d0e94c105648, type: 3}
+    - Clip: {fileID: 8300000, guid: bc68a4499fd716e46a23d803eacb665e, type: 3}
       Volume: 1
   - Name: SFX_deal_Wrong_Game
     Clips:
@@ -100,6 +100,12 @@ MonoBehaviour:
     - Clip: {fileID: 8300000, guid: 6e858358d47cf8b479b2717cc19b8179, type: 3}
       Volume: 1
   - Name: FOL_car_Stop
+    Clips:
+    - Clip: {fileID: 8300000, guid: d41b218d28a8877418b52bfa13f3df06, type: 3}
+      Volume: 1
+    - Clip: {fileID: 8300000, guid: 5c54f7992b131264faf835907125fc82, type: 3}
+      Volume: 1
+  - Name: Baron_Talking
     Clips:
     - Clip: {fileID: 8300000, guid: d41b218d28a8877418b52bfa13f3df06, type: 3}
       Volume: 1
