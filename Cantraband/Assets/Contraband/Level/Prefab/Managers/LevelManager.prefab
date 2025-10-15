@@ -44,16 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b88f5a852926df34e9a3136f4beb800c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
-  _transactionCheckCoolDown: 0.1
+  _transactionCheckCoolDown: 0.5
   score: 0
   _pointGoodCategory: 1
   _pointGoodGame: 3
   _pointWrongGame: -1
-  _timeBeforeNextClient: 3
-  onNextClientEvent:
+  _clientSpawnPoint: {fileID: 0}
+  onClientLeaveEvent:
     m_PersistentCalls:
       m_Calls: []
   _onGameOver:
     m_PersistentCalls:
       m_Calls: []
-  _clients: []

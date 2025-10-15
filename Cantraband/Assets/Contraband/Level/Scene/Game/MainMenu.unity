@@ -574,8 +574,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: <+fade><grow>Put the "start card" on the Reader
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 80048544a3705a54a81ca01ce2b8d489, type: 2}
-  m_sharedMaterial: {fileID: -4297368524372723315, guid: 80048544a3705a54a81ca01ce2b8d489, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 41caed59ee9085a469ba4015087f9d54, type: 2}
+  m_sharedMaterial: {fileID: 1353070023950343907, guid: 41caed59ee9085a469ba4015087f9d54, type: 2}
   m_fontSharedMaterials:
   - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
@@ -600,7 +600,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 105.8
+  m_fontSize: 100.45
   m_fontSizeBase: 76.9
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -610,7 +610,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 34.7
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -843,8 +843,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: <+char duration=.5><+move duration=1><wave><palette>CTRL+Band
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 80048544a3705a54a81ca01ce2b8d489, type: 2}
-  m_sharedMaterial: {fileID: -4297368524372723315, guid: 80048544a3705a54a81ca01ce2b8d489, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0d0e5b6ec4bb84e488f2e6455dba080c, type: 2}
+  m_sharedMaterial: {fileID: 3623004893100687684, guid: 0d0e5b6ec4bb84e488f2e6455dba080c, type: 2}
   m_fontSharedMaterials:
   - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
@@ -869,8 +869,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 200
+  m_fontSizeBase: 200
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

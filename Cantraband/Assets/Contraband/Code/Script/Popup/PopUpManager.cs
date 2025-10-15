@@ -34,6 +34,10 @@ public class PopUpManager : MonoBehaviour
 
     private Dictionary<AngleType, PopUpGeneric> _occupiedAngles = new Dictionary<AngleType, PopUpGeneric>();
 
+    public Action<AngleType> OnNewPopup;
+    public Action<AngleType, float> OnUpdateProgress;
+    public Action<AngleType> OnLeavePopup;
+
     public Action OnCheckPlayerCoat;
     public Action OnLaunchPolicePatrol;
 
@@ -78,6 +82,7 @@ public class PopUpManager : MonoBehaviour
             popUpSpeed = RythmManager.Instance.PopUpSpeed;
         }
 
+        OnNewPopup?.Invoke(angleType);
         SpawnPopup(popUpToSpawn, angleType, popUpSpeed);
     }
 

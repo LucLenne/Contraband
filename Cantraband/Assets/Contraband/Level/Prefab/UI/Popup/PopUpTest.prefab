@@ -343,29 +343,29 @@ MonoBehaviour:
   _maskImage: {fileID: 5740003472899339833}
   _angleDatas:
   - type: 1
-    defaultImage: {fileID: 3801596107784693524, guid: 6ed07ccbf64788a499e136f2165012dc, type: 3}
-    maskImage: {fileID: 0}
+    defaultImage: {fileID: 21300000, guid: 62a30f7420bac624ab0080ec0c0cf223, type: 3}
+    maskImage: {fileID: 21300000, guid: 62a30f7420bac624ab0080ec0c0cf223, type: 3}
     anchorMinMax: {x: 0, y: 1}
-    anchoredPosition: {x: 250, y: -250}
+    anchoredPosition: {x: 200, y: -200}
   - type: 2
-    defaultImage: {fileID: 2157631181777952036, guid: 53f74e97eed212048bd080e8efe4d018, type: 3}
-    maskImage: {fileID: 0}
+    defaultImage: {fileID: 21300000, guid: 7613a1193b3363b4fad1c15f072d455c, type: 3}
+    maskImage: {fileID: 21300000, guid: 7613a1193b3363b4fad1c15f072d455c, type: 3}
     anchorMinMax: {x: 1, y: 1}
-    anchoredPosition: {x: -250, y: -250}
+    anchoredPosition: {x: -200, y: -200}
   - type: 3
-    defaultImage: {fileID: 7929013968282500299, guid: e466950eb8f1a0a4cba11e9db2f4ad2d, type: 3}
-    maskImage: {fileID: 0}
+    defaultImage: {fileID: 21300000, guid: 5cad1750a24dd1049b9dc737a5e8bf7a, type: 3}
+    maskImage: {fileID: 21300000, guid: 5cad1750a24dd1049b9dc737a5e8bf7a, type: 3}
     anchorMinMax: {x: 0, y: 0}
-    anchoredPosition: {x: 250, y: 250}
+    anchoredPosition: {x: 200, y: 200}
   - type: 4
     defaultImage: {fileID: -3418269067956465802, guid: 2adcd6cf7f391fe4ebaddbae6dd33059, type: 3}
     maskImage: {fileID: 0}
     anchorMinMax: {x: 1, y: 0}
-    anchoredPosition: {x: -250, y: 250}
+    anchoredPosition: {x: -200, y: 200}
   _typePopUp: 0
   _rawImage: {fileID: 0}
   _cameraRender: {fileID: 0}
-  _textureResolution: {x: 512, y: 512, z: 16}
+  _textureResolution: {x: 256, y: 256, z: 16}
   _camDeathTriggerName: CamGameOver
   _speed: 1
   _playCameraNoise: 0

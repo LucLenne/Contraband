@@ -8066,6 +8066,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5406154522969647869, guid: 6439bfd38bd0c194398e2799909aaf75, type: 3}
   m_PrefabInstance: {fileID: 6273684514046094096}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8170741986122617807 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2771073148360292575, guid: 6439bfd38bd0c194398e2799909aaf75, type: 3}
+  m_PrefabInstance: {fileID: 6273684514046094096}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f27846a5f7b154085e61b58e92ae5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PopUpManager
 --- !u!1001 &6555822856272388200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8286,6 +8297,14 @@ PrefabInstance:
       propertyPath: m_ClearFlags
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7248521741126318326, guid: 8f5ced737415394468434c5c93d91952, type: 3}
+      propertyPath: _parentCamera
+      value: 
+      objectReference: {fileID: 3800540867016938819}
+    - target: {fileID: 7248521741126318326, guid: 8f5ced737415394468434c5c93d91952, type: 3}
+      propertyPath: _popUpManager
+      value: 
+      objectReference: {fileID: 8170741986122617807}
     - target: {fileID: 7576848650389954153, guid: 8f5ced737415394468434c5c93d91952, type: 3}
       propertyPath: m_Name
       value: Main Camera Tweaked
