@@ -172,9 +172,29 @@ PrefabInstance:
       value: GameScene
       objectReference: {fileID: 0}
     - target: {fileID: 7695789209829910962, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: _soundList.Array.data[0].Clips.Array.data[0].Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0ee1d3396c440c6458ca81be9e7449ab, type: 3}
+    - target: {fileID: 7695789209829910962, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: _soundList.Array.data[1].Clips.Array.data[0].Clip
       value: 
-      objectReference: {fileID: 8300000, guid: 21388ac3c8c13aa4dab6d0e94c105648, type: 3}
+      objectReference: {fileID: 8300000, guid: bc68a4499fd716e46a23d803eacb665e, type: 3}
+    - target: {fileID: 7695789209829910962, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: _soundList.Array.data[2].Clips.Array.data[0].Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: ef3bdff0e9684444ab7fe5291c75d181, type: 3}
+    - target: {fileID: 7695789209829910962, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: _soundList.Array.data[3].Clips.Array.data[0].Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: cd529e9147368ee48ab57d1443015f53, type: 3}
+    - target: {fileID: 7695789209829910962, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: _soundList.Array.data[4].Clips.Array.data[0].Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 522d1b5254a284d4ab532ad59cfbb314, type: 3}
+    - target: {fileID: 7695789209829910962, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: _soundList.Array.data[5].Clips.Array.data[0].Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 814ac2f3f76e0d949996499c1926bb71, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
