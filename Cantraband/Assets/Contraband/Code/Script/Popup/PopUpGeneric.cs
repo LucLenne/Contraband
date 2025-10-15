@@ -2,6 +2,7 @@ using NaughtyAttributes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -61,6 +62,7 @@ public class PopUpGeneric : MonoBehaviour
     [Header("Events")]
     [SerializeField] private UnityEvent _onCheckPlayerCoat;
 
+    private AngleType _type;
     private RenderTexture _camRenderTexture;
 
     private Vector2 _positionAt1Scale;
@@ -80,6 +82,8 @@ public class PopUpGeneric : MonoBehaviour
 
         //Setup render texture
         _camRenderTexture = new RenderTexture(_textureResolution.x, _textureResolution.y, _textureResolution.z);
+        _camRenderTexture.anisoLevel = 0;
+        _camRenderTexture.antiAliasing = 1;
         _cameraRender.targetTexture = _camRenderTexture;
         _rawImage.texture = _camRenderTexture;
 
@@ -101,13 +105,16 @@ public class PopUpGeneric : MonoBehaviour
         if(LevelManager.Instance != null)
         {
             LevelManager.Instance.OnGameOver -= StopAnimation;
-
         }
+
+        if (PopUpManager.Instance != null)
+            PopUpManager.Instance.OnLeavePopup?.Invoke(_type);
     }
 
     #region setup
     public void SetupPopup(AngleType angle, float speedOverride = -1)
     {
+        _type = angle;
         AngleData angleData = FindDataByAngleType(angle);
         //Setup anchors & positions
         _rect.anchorMin = angleData.anchorMinMax;
@@ -147,6 +154,8 @@ public class PopUpGeneric : MonoBehaviour
         while (timeElapsed <= animationLength)
         {
             progress = _scaleCurve.Evaluate(timeElapsed / animationLength);
+            PopUpManager.Instance.OnUpdateProgress?.Invoke(_type, progress);
+
             float newScale = Mathf.Lerp(_minMaxScale.x, _minMaxScale.y, progress);
             _rect.localScale = new Vector3(newScale, newScale, newScale);
             _rect.anchoredPosition = _positionAt1Scale * newScale;

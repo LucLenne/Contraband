@@ -151,11 +151,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41a4fd8670758e4ab1d967fa8ce363f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraMovement
+  _popUpManager: {fileID: 0}
   _baseRadius: 0.1
   _angleSpeed: 0.15
   _radiusVariation: 0.05
   _noiseScale: 1
   _noiseOffset: 0
+  _parentCamera: {fileID: 0}
+  _mostLeftXPosition: 0.1
+  _mostRightXPosition: -0.1
+  _widthWhenBothSize: 0.8
+  _rectLerpSpeed: 8
+  _parentCameraColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1001 &2442001880844040092
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -20,22 +20,6 @@ PrefabInstance:
       propertyPath: _cameraRender
       value: 
       objectReference: {fileID: 6189281965104355579}
-    - target: {fileID: 812084244466057281, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
-      propertyPath: _angleDatas.Array.data[0].defaultImage
-      value: 
-      objectReference: {fileID: -3763836963777541609, guid: d847b9a07e0a6e140bb4070b4138dbed, type: 3}
-    - target: {fileID: 812084244466057281, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
-      propertyPath: _angleDatas.Array.data[1].defaultImage
-      value: 
-      objectReference: {fileID: -3763836963777541609, guid: d847b9a07e0a6e140bb4070b4138dbed, type: 3}
-    - target: {fileID: 812084244466057281, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
-      propertyPath: _angleDatas.Array.data[2].defaultImage
-      value: 
-      objectReference: {fileID: -3763836963777541609, guid: d847b9a07e0a6e140bb4070b4138dbed, type: 3}
-    - target: {fileID: 812084244466057281, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
-      propertyPath: _angleDatas.Array.data[3].defaultImage
-      value: 
-      objectReference: {fileID: -3763836963777541609, guid: d847b9a07e0a6e140bb4070b4138dbed, type: 3}
     - target: {fileID: 2134525340564260294, guid: 35ca84ca6299eb543b6da792a555152f, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.85
