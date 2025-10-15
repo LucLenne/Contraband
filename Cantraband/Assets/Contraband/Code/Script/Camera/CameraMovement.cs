@@ -209,7 +209,7 @@ public class CameraMovement : MonoBehaviour
             _targetRect = new Rect(0f, 0f, 1f, 1f);
         }
     }
-
+    
     private Rect LerpRect(Rect a, Rect b, float t)
     {
         return new Rect(
