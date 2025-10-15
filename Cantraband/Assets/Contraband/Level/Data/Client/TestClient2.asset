@@ -15,4 +15,4 @@ MonoBehaviour:
   clientPrefab: {fileID: 4667121725411411750, guid: 2c3f01c1cf79b984ba87a4f60f605527, type: 3}
   isPolice: 1
   genrePreference: 04000000
-  favoriteCard: {fileID: 11400000, guid: 8753cc5b0c336134aa0bf3be046f0ec9, type: 2}
+  favoriteCard: {fileID: 11400000, guid: 1df5c7ca09ebed34e81ada5a6f2f7d66, type: 2}

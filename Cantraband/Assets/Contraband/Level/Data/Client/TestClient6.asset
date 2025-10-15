@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a064938c570ce4341a12ce6762d74664, type: 3}
   m_Name: TestClient6
   m_EditorClassIdentifier: Assembly-CSharp::Client
-  clientPrefab: {fileID: 368926604977074868, guid: 61a83f400786adf48ad871eca1c31ebb, type: 3}
-  isPolice: 0
-  genrePreference: 02000000
-  favoriteCard: {fileID: 11400000, guid: 82607456401217a478757a044bbf9686, type: 2}
+  clientPrefab: {fileID: 4667121725411411750, guid: 2b89850a0c5aaf144bad961ba79f7224, type: 3}
+  isPolice: 1
+  genrePreference: 04000000
+  favoriteCard: {fileID: 11400000, guid: d2a1bffbc38a25c4881dd5ec3683e812, type: 2}
