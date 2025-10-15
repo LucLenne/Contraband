@@ -48,9 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PolicePatrol
   _animationObject: {fileID: 4040974048526572928}
   _animator: {fileID: 4629933340537671990}
+  _activateFake: 0
   _lookingAtPlayerChance: 0.5
   _source: {fileID: 2990692586587528484}
-  _clip: {fileID: 8300000, guid: ed1b27170973243498ca0e4599f4a3b4, type: 3}
+  _clip: {fileID: 8300000, guid: 021d0c46408bb504b9dccfaead7ef1bc, type: 3}
 --- !u!82 &2990692586587528484
 AudioSource:
   m_ObjectHideFlags: 0
