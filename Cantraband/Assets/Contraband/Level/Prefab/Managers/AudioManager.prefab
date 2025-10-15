@@ -105,4 +105,10 @@ MonoBehaviour:
       Volume: 1
     - Clip: {fileID: 8300000, guid: 5c54f7992b131264faf835907125fc82, type: 3}
       Volume: 1
+  - Name: Baron_Talking
+    Clips:
+    - Clip: {fileID: 8300000, guid: d41b218d28a8877418b52bfa13f3df06, type: 3}
+      Volume: 1
+    - Clip: {fileID: 8300000, guid: 5c54f7992b131264faf835907125fc82, type: 3}
+      Volume: 1
   _voiceProfileList: []
