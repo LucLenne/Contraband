@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameScene
       objectReference: {fileID: 0}
+    - target: {fileID: 7695789209829910962, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: _soundList.Array.data[1].Clips.Array.data[0].Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 21388ac3c8c13aa4dab6d0e94c105648, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

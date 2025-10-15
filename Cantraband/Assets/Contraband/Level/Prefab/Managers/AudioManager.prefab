@@ -53,7 +53,7 @@ MonoBehaviour:
       Volume: 1
   - Name: SFX_Validation_Deal
     Clips:
-    - Clip: {fileID: 8300000, guid: d176f8ebb2871f145a11b57569915714, type: 3}
+    - Clip: {fileID: 8300000, guid: 21388ac3c8c13aa4dab6d0e94c105648, type: 3}
       Volume: 1
   - Name: SFX_deal_Wrong_Game
     Clips:
@@ -91,7 +91,13 @@ MonoBehaviour:
       Volume: 1
   - Name: Fol_walk
     Clips:
-    - Clip: {fileID: 8300000, guid: b2dde6a6e053d0f4ca9e9b618721d4de, type: 3}
+    - Clip: {fileID: 8300000, guid: 68c357d4ce636654e8885bfeec7e0574, type: 3}
+      Volume: 1
+    - Clip: {fileID: 8300000, guid: 0ae06b7624a3c5641b41b16fc2852112, type: 3}
+      Volume: 1
+    - Clip: {fileID: 8300000, guid: dfb11cbb0c1cfad42b36a1b429960ddd, type: 3}
+      Volume: 1
+    - Clip: {fileID: 8300000, guid: 6e858358d47cf8b479b2717cc19b8179, type: 3}
       Volume: 1
   - Name: FOL_car_Stop
     Clips:
