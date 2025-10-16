@@ -1,11 +1,19 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class GameOverScene : MonoBehaviour
 {
+    [System.Serializable]  
+    private struct SoundStruct
+    {
+        public AudioClip clip;
+        public float delay;
+    }
+
     private const string SCORE_TEXT = "Score\n";
     private const string SCORE_ANIM = "<+spread><wave><palette><-fade>";
 
@@ -17,6 +25,10 @@ public class GameOverScene : MonoBehaviour
     [Header("Delay")]
     [SerializeField] private float _delayBTWspawns;
     [SerializeField] private float _delayBeforeLoadScene;
+
+    [Header("Sounds")]
+    [SerializeField] private AudioSource _source;
+    [SerializeField] private List<SoundStruct> _notes;
 
     private int _currentScore;
     private Coroutine _spawnGameCardsCoroutine;
@@ -39,14 +51,19 @@ public class GameOverScene : MonoBehaviour
         {
             //Spawn game cards
             int index = (int)(i % _numberOfCartridges);
+            int soundIndex = (int)(i % _notes.Count);
             GameObject prefabToSpawn = LevelManager.Instance.GameCardsGiven[index].MeshPrefab;
             Instantiate(prefabToSpawn, _spawnPoint.transform.position, Random.rotation);
+
+            SoundStruct currentNote = _notes[soundIndex];
+            _source.clip = currentNote.clip;
+            _source.Play();
 
             //Add score to text
             _currentScore++;
             _scoreText.text = SCORE_TEXT + SCORE_ANIM + _currentScore;
 
-            yield return new WaitForSeconds(_delayBTWspawns);
+            yield return new WaitForSeconds(currentNote.delay);
         }
 
         yield return new WaitForSeconds(_delayBeforeLoadScene);

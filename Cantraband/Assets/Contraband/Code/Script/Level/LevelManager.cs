@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour
     [Header("Transaction Cooldown")]
     [SerializeField] private float _transactionCheckCoolDown;
 
-    [Header("Score"), NaughtyAttributes.ReadOnly] public int score;
+    [Header("Score")] public int score;
     [SerializeField] private int _pointGoodCategory = 1;
     [SerializeField] private int _pointGoodGame = 3;
     [SerializeField] private int _pointWrongGame = -1;
@@ -313,6 +313,7 @@ public class LevelManager : MonoBehaviour
         return true;
     }
 
+    [Button]
     public void LaunchGameOver()
     {
         if (!IsGameRunning) return;

@@ -4045,7 +4045,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
     - time: 0.75
-      value: {fileID: 0}
+      value: {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     attribute: 'm_Materials.Array.data[2]'
     path: MESH_Chara/tete
     classID: 137
@@ -4056,7 +4056,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
     - time: 0.75
-      value: {fileID: 0}
+      value: {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     attribute: 'm_Materials.Array.data[2]'
     path: MESH_Chara/main
     classID: 137
@@ -4067,7 +4067,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
     - time: 0.75
-      value: {fileID: 0}
+      value: {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     attribute: 'm_Materials.Array.data[2]'
     path: MESH_Chara/hand_right_thumbsup
     classID: 137
@@ -4078,7 +4078,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
     - time: 0.75
-      value: {fileID: 0}
+      value: {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     attribute: 'm_Materials.Array.data[2]'
     path: MESH_Chara/hand_right.001
     classID: 137
@@ -4089,7 +4089,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
     - time: 0.75
-      value: {fileID: 0}
+      value: {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     attribute: 'm_Materials.Array.data[2]'
     path: MESH_Chara/Corps Chara 3
     classID: 137
@@ -4100,7 +4100,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
     - time: 0.75
-      value: {fileID: 0}
+      value: {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     attribute: 'm_Materials.Array.data[2]'
     path: MESH_Chara/corps Chara 2
     classID: 137
@@ -4111,7 +4111,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
     - time: 0.75
-      value: {fileID: 0}
+      value: {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     attribute: 'm_Materials.Array.data[2]'
     path: MESH_Chara/Corps Chara 1
     classID: 137
@@ -4122,7 +4122,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
     - time: 0.75
-      value: {fileID: 0}
+      value: {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     attribute: 'm_Materials.Array.data[2]'
     path: MESH_Chara/chapeau 5
     classID: 137
@@ -4133,7 +4133,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
     - time: 0.75
-      value: {fileID: 0}
+      value: {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     attribute: 'm_Materials.Array.data[2]'
     path: MESH_Chara/Chapeau 4
     classID: 137
@@ -4144,7 +4144,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
     - time: 0.75
-      value: {fileID: 0}
+      value: {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     attribute: 'm_Materials.Array.data[2]'
     path: MESH_Chara/chapeau 3
     classID: 137
@@ -4155,7 +4155,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
     - time: 0.75
-      value: {fileID: 0}
+      value: {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     attribute: 'm_Materials.Array.data[2]'
     path: MESH_Chara/Chapeau 2
     classID: 137
@@ -4166,7 +4166,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
     - time: 0.75
-      value: {fileID: 0}
+      value: {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     attribute: 'm_Materials.Array.data[2]'
     path: MESH_Chara/chapeau 1
     classID: 137
@@ -4177,7 +4177,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
     - time: 0.75
-      value: {fileID: 0}
+      value: {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     attribute: 'm_Materials.Array.data[2]'
     path: MESH_Chara/arm3_right
     classID: 137
@@ -4188,7 +4188,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
     - time: 0.75
-      value: {fileID: 0}
+      value: {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     attribute: 'm_Materials.Array.data[2]'
     path: MESH_Chara/arm3
     classID: 137
@@ -4199,7 +4199,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
     - time: 0.75
-      value: {fileID: 0}
+      value: {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     attribute: 'm_Materials.Array.data[2]'
     path: MESH_Chara/Arm2_right
     classID: 137
@@ -4210,7 +4210,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
     - time: 0.75
-      value: {fileID: 0}
+      value: {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     attribute: 'm_Materials.Array.data[2]'
     path: MESH_Chara/Arm2
     classID: 137
@@ -4221,7 +4221,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
     - time: 0.75
-      value: {fileID: 0}
+      value: {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     attribute: 'm_Materials.Array.data[2]'
     path: MESH_Chara/Arm1_Right
     classID: 137
@@ -4232,7 +4232,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
     - time: 0.75
-      value: {fileID: 0}
+      value: {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     attribute: 'm_Materials.Array.data[2]'
     path: MESH_Chara/Arm1
     classID: 137
@@ -5318,41 +5318,41 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
     - {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
-    - {fileID: 0}
+    - {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     - {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
-    - {fileID: 0}
+    - {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     - {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
-    - {fileID: 0}
+    - {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     - {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
-    - {fileID: 0}
+    - {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     - {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
-    - {fileID: 0}
+    - {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     - {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
-    - {fileID: 0}
+    - {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     - {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
-    - {fileID: 0}
+    - {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     - {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
-    - {fileID: 0}
+    - {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     - {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
-    - {fileID: 0}
+    - {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     - {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
-    - {fileID: 0}
+    - {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     - {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
-    - {fileID: 0}
+    - {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     - {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
-    - {fileID: 0}
+    - {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     - {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
-    - {fileID: 0}
+    - {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     - {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
-    - {fileID: 0}
+    - {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     - {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
-    - {fileID: 0}
+    - {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     - {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
-    - {fileID: 0}
+    - {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     - {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
-    - {fileID: 0}
+    - {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
     - {fileID: 2100000, guid: 077498e2247d0164a93af889a7743920, type: 2}
-    - {fileID: 0}
+    - {fileID: 2100000, guid: 310aedc6fc10fb546be8db66f953820c, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
