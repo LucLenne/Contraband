@@ -7,6 +7,8 @@ using UnityEngine.Localization.Settings;
 
 public class Baron : MonoBehaviour
 {
+    private const string SOUND_BARON_TALKING = "Baron_Talking";
+
 
     [Header("References"), SerializeField] private TMP_Text _textSpeech;
     private const string _tableName = "Baron";
@@ -61,6 +63,7 @@ public class Baron : MonoBehaviour
 
         foreach (Speech speech in _speechBaron.listSpeech[p])
         {
+            AudioManager.AudioManager.Instance.PlaySound(SOUND_BARON_TALKING);
             DisplaySpeech(speech);
             yield return new WaitForSeconds(speech.time);
         }

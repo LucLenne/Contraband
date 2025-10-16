@@ -16,6 +16,8 @@ public class LevelManager : MonoBehaviour
     private const string SOUND_GIVE_WRONGGAME = "SFX_deal_Wrong_Game";
     private const string SOUND_GIVE_WRONGGAMETOCOP = "SFX_deal_Failed";
 
+    private const int SOUND_WAIT_DELAY = 500;
+
     public static LevelManager Instance { get; private set; }
 
     [Header("Transaction Cooldown")]
@@ -204,7 +206,7 @@ public class LevelManager : MonoBehaviour
             //Complete (fake) transaction
             OnFinishTransaction?.Invoke();
             OnGameReturned?.Invoke(GameReturnedType.Good);
-
+            AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_GOODCATEGORY, SOUND_WAIT_DELAY);
             AudioManager.AudioManager.Instance.PlaySound(SOUND_EXIT_CLIENT);
             yield return new WaitForSeconds(RythmManager.Instance.RandomTimeBeforeNextClient);
             GiveNextClient();
@@ -259,7 +261,7 @@ public class LevelManager : MonoBehaviour
             _gameCardsGiven.Add(gameCard);
             _pointsAwarded.Add(_pointGoodGame);
             OnGameReturned?.Invoke(GameReturnedType.Favorite);
-            AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_FAVORITEGAME);
+            AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_FAVORITEGAME, SOUND_WAIT_DELAY);
             return GameReturnedType.Favorite;
         }
 
@@ -272,7 +274,7 @@ public class LevelManager : MonoBehaviour
                 _gameCardsGiven.Add(gameCard);
                 _pointsAwarded.Add(_pointGoodCategory);
                 OnGameReturned?.Invoke(GameReturnedType.Good);
-                AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_GOODCATEGORY);
+                AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_GOODCATEGORY, SOUND_WAIT_DELAY);
                 return GameReturnedType.Good;
             }
         }
@@ -283,7 +285,7 @@ public class LevelManager : MonoBehaviour
         _gameCardsGiven.Add(gameCard);
         _pointsAwarded.Add(_pointWrongGame);
         OnGameReturned?.Invoke(GameReturnedType.Wrong);
-        AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_WRONGGAME);
+        AudioManager.AudioManager.Instance.PlaySound(SOUND_GIVE_WRONGGAME, SOUND_WAIT_DELAY);
         return GameReturnedType.Wrong;
     }
     #endregion
@@ -322,10 +324,14 @@ public class LevelManager : MonoBehaviour
     }
     #endregion
 
+    private async void cutAllsounds()
+    {
+        await WaitSeconds(500);
+        AudioManager.AudioManager.Instance.CutAllSounds();
+    }
+
     private async Task WaitSeconds(int seconds)
     {
-        IsBetweenTransactions = true;
         await Task.Delay(seconds * 1000);
-        IsBetweenTransactions = false;
     }
 }

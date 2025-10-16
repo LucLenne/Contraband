@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a064938c570ce4341a12ce6762d74664, type: 3}
-  m_Name: TestClient2
+  m_Name: TestClient 1
   m_EditorClassIdentifier: Assembly-CSharp::Client
-  clientPrefab: {fileID: 4667121725411411750, guid: 2c3f01c1cf79b984ba87a4f60f605527, type: 3}
-  isPolice: 1
-  genrePreference: 04000000
-  favoriteCard: {fileID: 11400000, guid: 1df5c7ca09ebed34e81ada5a6f2f7d66, type: 2}
+  clientPrefab: {fileID: 6570414610078852145, guid: 5e111b2e2701eae4c9bfd00c94d69269, type: 3}
+  isPolice: 0
+  genrePreference: 03000000
+  favoriteCard: {fileID: 11400000, guid: 47b417742ad245e42af2cc2ba455b2b0, type: 2}

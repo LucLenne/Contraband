@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -123,6 +124,11 @@ namespace AudioManager
         #endregion
 
         #region Play sound functions
+        public async void PlaySound(string soundName, int waitTime)
+        {
+            await Task.Delay(waitTime);
+            PlaySound(soundName);
+        }
         public AudioSource PlaySound(string soundName, int soundIndex = -1, bool isLooping = false) // -1 == random
         {
             //Find the sound to play
@@ -270,6 +276,18 @@ namespace AudioManager
                 }
             }
             throw new Exception($"Can't find profile with index {voiceProfile}");
+        }
+        #endregion
+
+        #region Game over functions
+        public void CutAllSounds()
+        {
+            _soundVolume = 0.0f;
+            foreach(AudioSource source in _soundPoolingList)
+            {
+                if(!source.isPlaying)
+                    source.Stop();
+            }
         }
         #endregion
     }
