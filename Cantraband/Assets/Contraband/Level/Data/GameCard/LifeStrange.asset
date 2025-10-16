@@ -16,5 +16,7 @@ MonoBehaviour:
   DebugKeyboardTag: 
   Name: 'Life Is Strange  '
   genres: 03000000
-  hintImage: []
-  MeshPrefab: {fileID: 0}
+  hintImage:
+  - {fileID: -4000922747543542270, guid: 83bb7139f221b0844b351230a1472004, type: 3}
+  - {fileID: -2763746003560075829, guid: 4d0cf401a15eab6448950e447dd75bf6, type: 3}
+  MeshPrefab: {fileID: 723989339743314472, guid: 19732c59111bc1148b863266ee080f2d, type: 3}

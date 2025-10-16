@@ -16,5 +16,7 @@ MonoBehaviour:
   DebugKeyboardTag: 
   Name: Piku Niku
   genres: 03000000
-  hintImage: []
-  MeshPrefab: {fileID: 0}
+  hintImage:
+  - {fileID: -4000922747543542270, guid: 83bb7139f221b0844b351230a1472004, type: 3}
+  - {fileID: 4580894097363493816, guid: 3851cdc44aa96e9448a5fcd015dca096, type: 3}
+  MeshPrefab: {fileID: 723989339743314472, guid: 19732c59111bc1148b863266ee080f2d, type: 3}

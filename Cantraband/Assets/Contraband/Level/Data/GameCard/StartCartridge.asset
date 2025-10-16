@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc40bb3058ead224bb891d84844300eb, type: 3}
   m_Name: StartCartridge
   m_EditorClassIdentifier: Assembly-CSharp::GameCard
-  tag: 
+  tag: E3DD5E18
   DebugKeyboardTag: Test1
   Name: Start Cartridge
   genres: 

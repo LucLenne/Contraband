@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51dfde35d8fd654c94ddd140989ba27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputManager
+  _defaultVestOpened: 0
 --- !u!114 &693282510328648002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,5 +58,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a172c653b9ed9c848952ad2dcbd35a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArduinoCommunicator
-  portName: COM4
-  portVal: 9600
+  DebugMode: 1
+  DebugLED: 0
+  baudRate: 9600
