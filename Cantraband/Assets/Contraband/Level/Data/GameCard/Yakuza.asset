@@ -16,5 +16,7 @@ MonoBehaviour:
   DebugKeyboardTag: 
   Name: Yakuza
   genres: 00000000
-  hintImage: []
-  MeshPrefab: {fileID: 0}
+  hintImage:
+  - {fileID: -835042727849021145, guid: 2ebcc43d7acdff549820baccf152f9e7, type: 3}
+  - {fileID: 5006151384470567113, guid: d481a15325daaaa45bc9634435627026, type: 3}
+  MeshPrefab: {fileID: 723989339743314472, guid: e507ef7001d037341b61d02a55f1b2aa, type: 3}

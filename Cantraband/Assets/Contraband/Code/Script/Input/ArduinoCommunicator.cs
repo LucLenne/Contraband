@@ -7,6 +7,7 @@ public class ArduinoCommunicator : MonoBehaviour
 {
 
     public bool DebugMode = true;
+    public bool DebugLED = true;
     private string portNamePrefix = "COM";
     private SerialPort inputStream;
     public int baudRate = 9600;
@@ -17,18 +18,25 @@ public class ArduinoCommunicator : MonoBehaviour
     // Setup
     private void OnEnable()
     {
-        LevelManager.Instance.OnGameReturned += CallLed;
-        LevelManager.Instance.OnReceiveCartridge += Wait;
-        LevelManager.Instance.OnFailedByCop += Failed;
-        LevelManager.Instance.OutOfPatience += Failed;
+        if(LevelManager.Instance != null)
+        {
+            LevelManager.Instance.OnGameReturned += CallLed;
+            LevelManager.Instance.OnReceiveCartridge += Wait;
+            LevelManager.Instance.OnFailedByCop += Failed;
+            LevelManager.Instance.OutOfPatience += Failed;
+        }
     }
 
     void OnDisable()
     {
-        LevelManager.Instance.OnGameReturned -= CallLed;
-        LevelManager.Instance.OnReceiveCartridge -= Wait;
-        LevelManager.Instance.OnFailedByCop -= Failed;
-        LevelManager.Instance.OutOfPatience -= Failed;
+        if (LevelManager.Instance != null)
+        {
+            LevelManager.Instance.OnGameReturned -= CallLed;
+            LevelManager.Instance.OnReceiveCartridge -= Wait;
+            LevelManager.Instance.OnFailedByCop -= Failed;
+            LevelManager.Instance.OutOfPatience -= Failed;
+        }
+
         CloseSerialPort();
     }
 
@@ -63,7 +71,7 @@ public class ArduinoCommunicator : MonoBehaviour
     // RFID Reading
     void Update()
     {
-        if(DebugMode)
+        if(DebugLED)
             DebugInputs();
         if (isActive && inputStream != null && inputStream.IsOpen)
         {
@@ -132,17 +140,20 @@ public class ArduinoCommunicator : MonoBehaviour
     private void Failed() // red
     {
         Debug.Log("LED FAIL -------------3---------------");
-        inputStream.Write("3");
+        if(inputStream != null)
+            inputStream.Write("3");
     }
     private void Mid() // yellow
     {
         Debug.Log("LED MID -------------2---------------");
-        inputStream.Write("2");
+        if (inputStream != null)
+            inputStream.Write("2");
     }
     private void Correct() // green
     {
         Debug.Log("LED CORRECT -------------1---------------");
-        inputStream.Write("1");
+        if (inputStream != null)
+            inputStream.Write("1");
     }
 
     private void CallLed(LevelManager.GameReturnedType type)

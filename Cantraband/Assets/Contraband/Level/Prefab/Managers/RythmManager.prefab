@@ -61,8 +61,10 @@ MonoBehaviour:
     ValueAmount: 1.2
     WasRuleApplied: 0
   _baseClientPatience: 30
-  _basePopUpMinMaxDelay: {x: 7, y: 13}
+  _basePopUpMinMaxDelay: {x: 12, y: 16}
   _basePopUpSpeed: 1
   _currentClientPatience: 0
   _currentPopUpMinMaxDelay: {x: 0, y: 0}
   _currentPopUpSpeed: 0
+  _timeBeforeNextClient: {x: 3, y: 5}
+  _maxNumberOfSameClient: 2

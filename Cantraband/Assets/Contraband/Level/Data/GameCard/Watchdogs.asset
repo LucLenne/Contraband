@@ -16,5 +16,7 @@ MonoBehaviour:
   DebugKeyboardTag: 
   Name: Watchdogs
   genres: 01000000
-  hintImage: []
-  MeshPrefab: {fileID: 0}
+  hintImage:
+  - {fileID: -6197962616157080590, guid: 0a59114421ade6640ab2c85c5195dc90, type: 3}
+  - {fileID: -1237370366769625415, guid: aad0edfd5a4b24a41a146cd4a6f85b72, type: 3}
+  MeshPrefab: {fileID: 5347139737832769095, guid: b1c2a9910f23faf47a462fccd61983c5, type: 3}

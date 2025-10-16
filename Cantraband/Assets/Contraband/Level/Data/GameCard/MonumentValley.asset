@@ -16,5 +16,7 @@ MonoBehaviour:
   DebugKeyboardTag: 
   Name: Monument Valley
   genres: 03000000
-  hintImage: []
-  MeshPrefab: {fileID: 0}
+  hintImage:
+  - {fileID: -4000922747543542270, guid: 83bb7139f221b0844b351230a1472004, type: 3}
+  - {fileID: -422564743718088608, guid: bd6b7883bc45bcb4196b238165e9f11a, type: 3}
+  MeshPrefab: {fileID: 723989339743314472, guid: 19732c59111bc1148b863266ee080f2d, type: 3}

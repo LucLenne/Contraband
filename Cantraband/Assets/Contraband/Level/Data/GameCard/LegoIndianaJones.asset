@@ -16,5 +16,7 @@ MonoBehaviour:
   DebugKeyboardTag: 
   Name: Lego Indiana Jones
   genres: 00000000
-  hintImage: []
-  MeshPrefab: {fileID: 0}
+  hintImage:
+  - {fileID: -835042727849021145, guid: 2ebcc43d7acdff549820baccf152f9e7, type: 3}
+  - {fileID: 3515605284888187835, guid: 7aa57919d575a5243aef40a076b0b62a, type: 3}
+  MeshPrefab: {fileID: 723989339743314472, guid: e507ef7001d037341b61d02a55f1b2aa, type: 3}

@@ -15,7 +15,7 @@ MonoBehaviour:
   tag: 53861AEE
   DebugKeyboardTag: Test3
   Name: Test game card
-  genres: 02000000
+  genres: 00000000
   hintImage:
   - {fileID: 21300000, guid: 11bd37a6c61f7d045a964603d0b2cf2f, type: 3}
   - {fileID: 21300000, guid: e6e405c0ec854b7479166de253e21098, type: 3}
