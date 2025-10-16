@@ -142,12 +142,17 @@ public class TutoManager : MonoBehaviour
         {
             if (card == _listClient[(int)stateTuto].favoriteCard.tag || _listClient[(int)stateTuto].favoriteCard.DebugKeyboardTag == card)
             {
+                _gdFeedBackScript.StartFeedbackImage(LevelManager.GameReturnedType.Favorite);
                 _clientTuto.LaunchTransferDoneAnim();
                 score += _pointGoodCard;
                 onClientLeave?.Invoke();
                 _currentState += 1;
                 stateTuto = StateTuto.baron;
                 StartCoroutine(CheckState());
+            }
+            else
+            {
+                _gdFeedBackScript.StartFeedbackImage(LevelManager.GameReturnedType.Wrong);
             }
         }
     }

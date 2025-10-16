@@ -403,6 +403,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7040860569373369846, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: _disableScreenEffectMerciBenjamin
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7069193175349676906, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_Name
       value: GameScene
