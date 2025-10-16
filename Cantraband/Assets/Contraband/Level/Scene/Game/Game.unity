@@ -401,14 +401,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6036313272249683777, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
-      propertyPath: m_SpotAngle
-      value: 52.734936
-      objectReference: {fileID: 0}
-    - target: {fileID: 6036313272249683777, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
-      propertyPath: m_InnerSpotAngle
-      value: 52.734936
-      objectReference: {fileID: 0}
     - target: {fileID: 6636228538340239158, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

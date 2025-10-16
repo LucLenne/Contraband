@@ -3101,6 +3101,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 6615853586485549576, guid: 224b059831473de45a4f796c6eb43de2, type: 3}
+      propertyPath: m_SpotAngle
+      value: 52.734936
+      objectReference: {fileID: 0}
+    - target: {fileID: 6615853586485549576, guid: 224b059831473de45a4f796c6eb43de2, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 52.734936
+      objectReference: {fileID: 0}
     - target: {fileID: 6650427691100876356, guid: 224b059831473de45a4f796c6eb43de2, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.152
