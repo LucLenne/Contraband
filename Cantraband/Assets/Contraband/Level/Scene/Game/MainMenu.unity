@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Best dealer :'
+  m_text: 'Best dealers :'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80048544a3705a54a81ca01ce2b8d489, type: 2}
   m_sharedMaterial: {fileID: -4297368524372723315, guid: 80048544a3705a54a81ca01ce2b8d489, type: 2}
