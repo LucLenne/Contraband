@@ -257,7 +257,7 @@ MonoBehaviour:
   _pointGoodTheme: 1
   _pointBadCard: -1
   _listClient:
-  - {fileID: 11400000, guid: a4bd27759e2f0a547a9f769efbaa7837, type: 2}
+  - {fileID: 11400000, guid: b20a9a1653c3fb24c87875d55992ff59, type: 2}
   - {fileID: 11400000, guid: 9f2cc26e2194fe34fbbef8a711671387, type: 2}
   - {fileID: 11400000, guid: 27b2df6aeac0c8746952ef04686cf365, type: 2}
   _popUp: {fileID: 333908750}
@@ -358,6 +358,10 @@ PrefabInstance:
     - target: {fileID: 290118836070345457, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901257406492916659, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_Sprite
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5825462489672616613, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: _source

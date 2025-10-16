@@ -138,11 +138,14 @@ public class TutoManager : MonoBehaviour
 
     private void CheckCard(string card)
     {
+        Debug.Log("card input");
         if (stateTuto != StateTuto.baron && _clientTuto != null)
         {
-            if (card == _listClient[(int)stateTuto].favoriteCard.tag || _listClient[(int)stateTuto].favoriteCard.DebugKeyboardTag == card)
+            Debug.Log("client tuto not null & state != baron");
+            if (card == _listClient[(int)stateTuto].favoriteCard.tag || card == _listClient[(int)stateTuto].favoriteCard.DebugKeyboardTag)
             {
-                _gdFeedBackScript.StartFeedbackImage(LevelManager.GameReturnedType.Favorite);
+                Debug.Log("good card");
+                _gdFeedBackScript.StartFeedbackImage(LevelManager.GameReturnedType.Good);
                 _clientTuto.LaunchTransferDoneAnim();
                 score += _pointGoodCard;
                 onClientLeave?.Invoke();
@@ -153,6 +156,7 @@ public class TutoManager : MonoBehaviour
             else
             {
                 _gdFeedBackScript.StartFeedbackImage(LevelManager.GameReturnedType.Wrong);
+                Debug.Log("bad card");
             }
         }
     }

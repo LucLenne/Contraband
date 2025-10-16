@@ -56,9 +56,8 @@ public class GDFeedbackScript : MonoBehaviour
 
     public void StartFeedbackImage(LevelManager.GameReturnedType type)
     {
-        if (!_disableScreenEffectMerciBenjamin)
-            return;
-
+        /*if (!_disableScreenEffectMerciBenjamin)
+            return;*/
 
         switch (type)
         {
