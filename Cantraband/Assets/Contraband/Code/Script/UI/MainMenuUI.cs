@@ -12,8 +12,13 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private string _tagGameStartCard;
     [SerializeField] private string _tagGameClavierDebug;
 
+    [Header("Creadits")]
+    [SerializeField] private string _tagCreditsStartCard;
+    [SerializeField] private string _tagCreditsClavierDebug;
+
     private const string NAME_TUTO_LEVEL = "Tuto";
     private const string NAME_GAME_LEVEL = "Game";
+    private const string NAME_CREDITS_LEVEL = "Credits";
 
     private void OnEnable()
     {
@@ -36,8 +41,11 @@ public class MainMenuUI : MonoBehaviour
             StartTuto();
         else if (tag == _tagGameStartCard || tag == _tagGameClavierDebug)
             StartGame();
+        else if (tag == _tagCreditsStartCard || tag == _tagCreditsClavierDebug)
+            StartCredits();
     }
 
     private void StartTuto() => LoadingManager.Instance.LoadScene(NAME_TUTO_LEVEL, true);
     private void StartGame() => LoadingManager.Instance.LoadScene(NAME_GAME_LEVEL, true);
+    private void StartCredits() => LoadingManager.Instance.LoadScene(NAME_CREDITS_LEVEL, true);
 }
