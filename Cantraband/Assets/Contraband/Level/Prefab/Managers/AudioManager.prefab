@@ -65,7 +65,7 @@ MonoBehaviour:
       Volume: 1
   - Name: SFX_Camera_Moving
     Clips:
-    - Clip: {fileID: 8300000, guid: 522d1b5254a284d4ab532ad59cfbb314, type: 3}
+    - Clip: {fileID: 8300000, guid: 7f132e104fd6d234393c3165d4e9b198, type: 3}
       Volume: 1
   - Name: SFX_Camera_spoting
     Clips:
