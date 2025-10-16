@@ -397,7 +397,7 @@ MonoBehaviour:
   _animator: {fileID: 8971359223732660055}
   _endLoadingTriggerName: EndLoading
   _audioSource: {fileID: 7978111989031206737}
-  _menuValidationClip: {fileID: 8300000, guid: e28188c250c04f74ab70e08b42dd19bc, type: 3}
+  _menuValidationClip: {fileID: 8300000, guid: bc68a4499fd716e46a23d803eacb665e, type: 3}
 --- !u!82 &7978111989031206737
 AudioSource:
   m_ObjectHideFlags: 0

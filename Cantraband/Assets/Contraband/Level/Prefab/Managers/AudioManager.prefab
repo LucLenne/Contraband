@@ -57,19 +57,19 @@ MonoBehaviour:
       Volume: 1
   - Name: SFX_deal_Wrong_Game
     Clips:
-    - Clip: {fileID: 8300000, guid: cabcdd5a10d1bd645a291e9f459fb081, type: 3}
+    - Clip: {fileID: 8300000, guid: ef3bdff0e9684444ab7fe5291c75d181, type: 3}
       Volume: 1
   - Name: SFX_deal_Failed
     Clips:
-    - Clip: {fileID: 8300000, guid: b2dde6a6e053d0f4ca9e9b618721d4de, type: 3}
+    - Clip: {fileID: 8300000, guid: cd529e9147368ee48ab57d1443015f53, type: 3}
       Volume: 1
   - Name: SFX_Camera_Moving
     Clips:
-    - Clip: {fileID: 8300000, guid: e28188c250c04f74ab70e08b42dd19bc, type: 3}
+    - Clip: {fileID: 8300000, guid: 522d1b5254a284d4ab532ad59cfbb314, type: 3}
       Volume: 1
   - Name: SFX_Camera_spoting
     Clips:
-    - Clip: {fileID: 8300000, guid: b2dde6a6e053d0f4ca9e9b618721d4de, type: 3}
+    - Clip: {fileID: 8300000, guid: 814ac2f3f76e0d949996499c1926bb71, type: 3}
       Volume: 1
   - Name: SFX_Console_Start
     Clips:
@@ -107,8 +107,8 @@ MonoBehaviour:
       Volume: 1
   - Name: Baron_Talking
     Clips:
-    - Clip: {fileID: 8300000, guid: d41b218d28a8877418b52bfa13f3df06, type: 3}
+    - Clip: {fileID: 8300000, guid: 5acf7152cdf93f043a3780f7c76fa997, type: 3}
       Volume: 1
-    - Clip: {fileID: 8300000, guid: 5c54f7992b131264faf835907125fc82, type: 3}
+    - Clip: {fileID: 8300000, guid: 0f32217dceaa73548b0a5705b4118fca, type: 3}
       Volume: 1
   _voiceProfileList: []
