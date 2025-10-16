@@ -19,7 +19,6 @@ public class TutoManager : MonoBehaviour
     [SerializeField] private int _pointBadCard = -1;
     [Header("Put the card and the client in the right order")]
     [Header("3 Clients"), SerializeField] private List<Client> _listClient;
-    [Header("3 GameCards"), SerializeField] private List<GameCard> _listGameCard;
 
     [Header("References"), SerializeField] private GameObject _popUp;
     [SerializeField] private GameObject _policePatrol;
@@ -83,7 +82,7 @@ public class TutoManager : MonoBehaviour
         _currentClient = Instantiate(_prefabTutoClient, posClient);
         _clientTuto = _currentClient.GetComponent<ClientTuto>();
 
-        _clientTuto.InitClient(_listClient[_currentState], _listGameCard[_currentState]);
+        _clientTuto.InitClient(_listClient[_currentState], _listClient[_currentState].favoriteCard);
     }
 
     private void DestroyClient()
@@ -141,14 +140,19 @@ public class TutoManager : MonoBehaviour
     {
         if (stateTuto != StateTuto.baron && _clientTuto != null)
         {
-            if (card == _listGameCard[(int)stateTuto].tag || _listGameCard[(int)stateTuto].DebugKeyboardTag == card)
+            if (card == _listClient[(int)stateTuto].favoriteCard.tag || _listClient[(int)stateTuto].favoriteCard.DebugKeyboardTag == card)
             {
+                _gdFeedBackScript.StartFeedbackImage(LevelManager.GameReturnedType.Favorite);
                 _clientTuto.LaunchTransferDoneAnim();
                 score += _pointGoodCard;
                 onClientLeave?.Invoke();
                 _currentState += 1;
                 stateTuto = StateTuto.baron;
                 StartCoroutine(CheckState());
+            }
+            else
+            {
+                _gdFeedBackScript.StartFeedbackImage(LevelManager.GameReturnedType.Wrong);
             }
         }
     }
