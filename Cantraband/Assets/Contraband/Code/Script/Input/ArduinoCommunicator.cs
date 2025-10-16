@@ -1,15 +1,36 @@
 using System.IO.Ports;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ArduinoCommunicator : MonoBehaviour
 {
+
+    public bool DebugMode = true;
     private string portNamePrefix = "COM";
     private SerialPort inputStream;
     public int baudRate = 9600;
 
     private string receivedStream;
     private bool isActive = false;
+
+    // Setup
+    private void OnEnable()
+    {
+        LevelManager.Instance.OnGameReturned += CallLed;
+        LevelManager.Instance.OnReceiveCartridge += Wait;
+        LevelManager.Instance.OnFailedByCop += Failed;
+        LevelManager.Instance.OutOfPatience += Failed;
+    }
+
+    void OnDisable()
+    {
+        LevelManager.Instance.OnGameReturned -= CallLed;
+        LevelManager.Instance.OnReceiveCartridge -= Wait;
+        LevelManager.Instance.OnFailedByCop -= Failed;
+        LevelManager.Instance.OutOfPatience -= Failed;
+        CloseSerialPort();
+    }
 
     void Start()
     {
@@ -39,8 +60,11 @@ public class ArduinoCommunicator : MonoBehaviour
         }
     }
 
+    // RFID Reading
     void Update()
     {
+        if(DebugMode)
+            DebugInputs();
         if (isActive && inputStream != null && inputStream.IsOpen)
         {
             try
@@ -73,11 +97,8 @@ public class ArduinoCommunicator : MonoBehaviour
         }
     }
 
-    void OnDisable()
-    {
-        CloseSerialPort();
-    }
 
+    // Quit app
     void OnApplicationQuit()
     {
         CloseSerialPort();
@@ -97,5 +118,76 @@ public class ArduinoCommunicator : MonoBehaviour
             }
         }
         isActive = false;
+    }
+
+    // Led stuff
+
+    private void Wait() // yellow? (maybe blinking)
+    {
+        //Debug.Log("LED WAIT -------------4---------------");
+        //inputStream.Write("4");
+
+    }
+
+    private void Failed() // red
+    {
+        Debug.Log("LED FAIL -------------3---------------");
+        inputStream.Write("3");
+    }
+    private void Mid() // yellow
+    {
+        Debug.Log("LED MID -------------2---------------");
+        inputStream.Write("2");
+    }
+    private void Correct() // green
+    {
+        Debug.Log("LED CORRECT -------------1---------------");
+        inputStream.Write("1");
+    }
+
+    private void CallLed(LevelManager.GameReturnedType type)
+    {
+        switch (type)
+        {
+            case LevelManager.GameReturnedType.Wrong:
+                Failed();
+                return;
+            case LevelManager.GameReturnedType.Good:
+                Mid();
+                return;
+            case LevelManager.GameReturnedType.Favorite:
+                Correct();
+                return;
+
+
+        }
+    }
+
+
+    private void DebugInputs()
+    {
+        if (inputStream.IsOpen)
+        {
+            if ((Keyboard.current[Key.Digit3].IsPressed()))
+            {
+                Failed();
+                Debug.Log(3);
+            }
+            if ((Keyboard.current[Key.Digit2].IsPressed()))
+            {
+                Mid();
+                Debug.Log(2);
+            }
+            if (Keyboard.current[Key.Digit1].IsPressed())
+            {
+                Correct();
+                Debug.Log(1);
+            }
+            if ((Keyboard.current[Key.Digit0].IsPressed()))
+            {
+                Wait();
+                Debug.Log(0);
+            }
+        }
     }
 }

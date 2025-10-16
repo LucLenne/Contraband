@@ -63,6 +63,9 @@ public class LevelManager : MonoBehaviour
 
     //Actions
     public Action<GameReturnedType> OnGameReturned;
+    public Action OnReceiveCartridge;
+
+
     public Action OnFinishTransaction;
     public Action<Client> onNextClientAction;
     public Action OnFailedByCop; //Quand donne un "mauvais" jeu au flic infiltré
@@ -193,6 +196,7 @@ public class LevelManager : MonoBehaviour
         if (selectedCard == null)
             throw new Exception($"No card with tag: {tag}");
 
+        OnReceiveCartridge?.Invoke();
         //Check police
         if (_currentClient.isPolice)
         {
