@@ -150,11 +150,6 @@ public class TutoManager : MonoBehaviour
                 stateTuto = StateTuto.baron;
                 StartCoroutine(CheckState());
             }
-            else
-            {
-                _gdFeedBackScript.StartFeedbackImage(LevelManager.GameReturnedType.Wrong);
-                //_clientTuto.LaunchOutOfPatience();
-            }
         }
     }
 
@@ -167,7 +162,6 @@ public class TutoManager : MonoBehaviour
 
     private IEnumerator HandleBaronState()
     {
-        _gdFeedBackScript.StartFeedbackImage(LevelManager.GameReturnedType.Favorite);
         yield return StartCoroutine(_baron.SpeechBaronCoroutine(_currentState, _timeTransitionGameplayBaron));
         if (_currentState == 3)
         {
