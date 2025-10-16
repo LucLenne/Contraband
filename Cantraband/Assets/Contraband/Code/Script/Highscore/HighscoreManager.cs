@@ -51,8 +51,14 @@ public class HighscoreManager : MonoBehaviour
         int index = 0;
         if(HighscoreData.Count != 0)
         {
-            while (HighscoreData[index].Score >= score && index < HighscoreData.Count)
-                index++;
+            while (index < HighscoreData.Count)
+            {
+                if(HighscoreData[index].Score >= score)
+                    index++;
+                else
+                    break;
+            }
+                
         }
 
         //Add highscore
