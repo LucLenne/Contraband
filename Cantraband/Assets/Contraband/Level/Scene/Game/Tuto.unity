@@ -257,13 +257,9 @@ MonoBehaviour:
   _pointGoodTheme: 1
   _pointBadCard: -1
   _listClient:
-  - {fileID: 11400000, guid: 8b4a8ed60d8bb0c4fbb1f2d275d64a98, type: 2}
-  - {fileID: 11400000, guid: 8b4a8ed60d8bb0c4fbb1f2d275d64a98, type: 2}
-  - {fileID: 11400000, guid: 8b4a8ed60d8bb0c4fbb1f2d275d64a98, type: 2}
-  _listGameCard:
-  - {fileID: 11400000, guid: c3fa129451817494e961b992a49727ae, type: 2}
-  - {fileID: 11400000, guid: 8753cc5b0c336134aa0bf3be046f0ec9, type: 2}
-  - {fileID: 11400000, guid: 69964e4a55c0a12438aff5e7aa5d7d13, type: 2}
+  - {fileID: 11400000, guid: a4bd27759e2f0a547a9f769efbaa7837, type: 2}
+  - {fileID: 11400000, guid: 9f2cc26e2194fe34fbbef8a711671387, type: 2}
+  - {fileID: 11400000, guid: 27b2df6aeac0c8746952ef04686cf365, type: 2}
   _popUp: {fileID: 333908750}
   _policePatrol: {fileID: 333908749}
   _prefabTutoClient: {fileID: 8809894692128634130, guid: d0a7a59c74b9db54aad59a29b2e064d1, type: 3}
@@ -830,32 +826,32 @@ MonoBehaviour:
   _timeFade: 1
   _speechBaron:
     firstPart:
-    - time: 2
-      id: greetings
-    - time: 4
-      id: deal_games
-    - time: 5
-      id: controller
     - time: 3
+      id: greetings
+    - time: 5
+      id: deal_games
+    - time: 6
+      id: controller
+    - time: 4
       id: type_game
     secondPart:
     - time: 6
       id: undercover_cop
-    - time: 4.5
+    - time: 5
       id: give_game
     thirdPart:
-    - time: 5
+    - time: 6
       id: police_patrol
-    - time: 3.5
+    - time: 4
       id: officers
     fourthPart:
-    - time: 4
+    - time: 5
       id: favorite_game
-    - time: 4
+    - time: 5
       id: take_time
-    - time: 4
+    - time: 5
       id: be_quick
-    - time: 4
+    - time: 5
       id: come_on
 --- !u!225 &1258365406
 CanvasGroup:
