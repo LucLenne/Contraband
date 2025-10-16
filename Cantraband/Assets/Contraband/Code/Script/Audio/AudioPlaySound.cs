@@ -11,17 +11,18 @@ public class AudioPlaySound : MonoBehaviour
 
     private void OnEnable()
     {
-        if (_playOnEnable)
-        {
-            PlaySound();
-        }
+        AudioManager.AudioManager.Instance.PlaySound(_soundName);
+        //if (_playOnEnable)
+        //{
+        //    PlaySound();
+        //}
     }
 
     public void PlaySound()
     {
         if (AudioManager.AudioManager.Instance)
         {
-            AudioManager.AudioManager.Instance.PlaySound(_soundName, _audioDataIndex);
+            AudioManager.AudioManager.Instance.PlaySound(_soundName);
         }
     }
 }
