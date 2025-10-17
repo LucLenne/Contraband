@@ -33,7 +33,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 41277927424
-    m_Localized: Action, Shooter, Horror, and Narrative.
+    m_Localized: <color=#d30059>Action</color>, <color=#00d5be>Shooter</color>, <color=#5a20b9>Horror</color>,
+      and <color=#fff845>Narrative</color>.
     m_Metadata:
       m_Items: []
   - m_Id: 694448500736
