@@ -17,6 +17,6 @@ MonoBehaviour:
   Name: Lethal company
   genres: 02000000
   hintImage:
-  - {fileID: -2690848475378233158, guid: 36ca7ddfd3bf69e4cb246229cec102b4, type: 3}
-  - {fileID: -4107627983377593529, guid: b962711ebb6de7f4e9f2761bdaa517f2, type: 3}
+  - {fileID: 21300000, guid: 36ca7ddfd3bf69e4cb246229cec102b4, type: 3}
+  - {fileID: 21300000, guid: b962711ebb6de7f4e9f2761bdaa517f2, type: 3}
   MeshPrefab: {fileID: 723989339743314472, guid: f91263f35fc526143804da5b08113915, type: 3}

@@ -17,6 +17,6 @@ MonoBehaviour:
   Name: Halo
   genres: 0400000001000000
   hintImage:
-  - {fileID: -835042727849021145, guid: 2ebcc43d7acdff549820baccf152f9e7, type: 3}
-  - {fileID: -5928834478482849971, guid: 6ae8725205d22284fb642c118ccf050f, type: 3}
+  - {fileID: 21300000, guid: 2ebcc43d7acdff549820baccf152f9e7, type: 3}
+  - {fileID: 21300000, guid: 6ae8725205d22284fb642c118ccf050f, type: 3}
   MeshPrefab: {fileID: 5347139737832769095, guid: b1c2a9910f23faf47a462fccd61983c5, type: 3}

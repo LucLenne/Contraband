@@ -17,6 +17,6 @@ MonoBehaviour:
   Name: Expedition 33
   genres: 0000000004000000
   hintImage:
-  - {fileID: -835042727849021145, guid: 2ebcc43d7acdff549820baccf152f9e7, type: 3}
-  - {fileID: 5386127016842652327, guid: 2014f49dd50a28f4ea6c3e78317be456, type: 3}
+  - {fileID: 21300000, guid: 2ebcc43d7acdff549820baccf152f9e7, type: 3}
+  - {fileID: 21300000, guid: 2014f49dd50a28f4ea6c3e78317be456, type: 3}
   MeshPrefab: {fileID: 723989339743314472, guid: e507ef7001d037341b61d02a55f1b2aa, type: 3}
