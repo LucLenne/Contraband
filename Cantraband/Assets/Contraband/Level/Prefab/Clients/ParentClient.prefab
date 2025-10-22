@@ -316,7 +316,7 @@ MonoBehaviour:
     m_ColorSpace: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
-  _hintRevealType: 0
+  _hintRevealType: 1
   _timerRectTransform: {fileID: 3093251005576256362}
   _timerAnimMaxSpeed: 0.3
   _timerAnimCurve:
@@ -875,8 +875,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Game\n Over"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 80048544a3705a54a81ca01ce2b8d489, type: 2}
-  m_sharedMaterial: {fileID: -4297368524372723315, guid: 80048544a3705a54a81ca01ce2b8d489, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0d0e5b6ec4bb84e488f2e6455dba080c, type: 2}
+  m_sharedMaterial: {fileID: 3623004893100687684, guid: 0d0e5b6ec4bb84e488f2e6455dba080c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
