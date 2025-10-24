@@ -27,6 +27,10 @@ public class TutoManager : MonoBehaviour
     [SerializeField] GDFeedbackScript _gdFeedBackScript;
     public Transform posClient;
 
+    [Header("Debug")]
+    [SerializeField] private string _debugCard; //Une carte débug sur le clavier qui valide pour TOUT les tuto clients
+
+
     private GameObject _currentClient;
     private ClientTuto _clientTuto;
     private int _currentState;
@@ -142,7 +146,7 @@ public class TutoManager : MonoBehaviour
         if (stateTuto != StateTuto.baron && _clientTuto != null)
         {
             Debug.Log("client tuto not null & state != baron");
-            if (card == _listClient[(int)stateTuto].favoriteCard.tag || card == _listClient[(int)stateTuto].favoriteCard.DebugKeyboardTag)
+            if (card == _listClient[(int)stateTuto].favoriteCard.tag || card == _listClient[(int)stateTuto].favoriteCard.DebugKeyboardTag || card == _debugCard)
             {
                 Debug.Log("good card");
                 _gdFeedBackScript.StartFeedbackImage(LevelManager.GameReturnedType.Good);

@@ -251,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TutoManager
   stateTuto: 0
   _timeBeforeDestroyClient: 2
-  _timeBetweenPopUpPolice: 5
+  _timeBetweenPopUpPolice: 20
   _timeTransitionGameplayBaron: 2
   _pointGoodCard: 3
   _pointGoodTheme: 1
@@ -266,6 +266,7 @@ MonoBehaviour:
   _baron: {fileID: 1258365405}
   _gdFeedBackScript: {fileID: 286522712}
   posClient: {fileID: 333908751}
+  _debugCard: Test1
   score: 0
 --- !u!1 &295287473
 GameObject:
@@ -834,32 +835,32 @@ MonoBehaviour:
   _timeFade: 1
   _speechBaron:
     firstPart:
-    - time: 3
-      id: greetings
-    - time: 5
-      id: deal_games
-    - time: 6
-      id: controller
     - time: 4
+      id: greetings
+    - time: 6
+      id: deal_games
+    - time: 7
+      id: controller
+    - time: 5
       id: type_game
     secondPart:
-    - time: 6
+    - time: 7
       id: undercover_cop
-    - time: 5
+    - time: 6
       id: give_game
     thirdPart:
-    - time: 6
+    - time: 7
       id: police_patrol
-    - time: 4
+    - time: 5
       id: officers
     fourthPart:
-    - time: 5
+    - time: 6
       id: favorite_game
-    - time: 5
+    - time: 6
       id: take_time
-    - time: 5
+    - time: 6
       id: be_quick
-    - time: 5
+    - time: 6
       id: come_on
 --- !u!225 &1258365406
 CanvasGroup:
