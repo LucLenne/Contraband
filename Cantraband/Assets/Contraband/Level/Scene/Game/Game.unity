@@ -405,6 +405,14 @@ PrefabInstance:
       propertyPath: _notes.Array.data[10].clip
       value: 
       objectReference: {fileID: 8300000, guid: 21f703cc978f56f418054378a21fba5b, type: 3}
+    - target: {fileID: 5232662967035546115, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: _rythmRules.Array.data[1].NumberOfX
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5232662967035546115, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: _rythmRules.Array.data[1].ValueAmount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5700243556232171369, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_IsActive
       value: 1
