@@ -316,7 +316,7 @@ MonoBehaviour:
     m_ColorSpace: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
-  _hintRevealType: 1
+  _hintRevealType: 0
   _timerRectTransform: {fileID: 3093251005576256362}
   _timerAnimMaxSpeed: 0.3
   _timerAnimCurve:
@@ -344,6 +344,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   currentPatientPatience: 0
+  _secondHintPatienceRatio: 0.1
 --- !u!1 &3462060607256801407
 GameObject:
   m_ObjectHideFlags: 0
