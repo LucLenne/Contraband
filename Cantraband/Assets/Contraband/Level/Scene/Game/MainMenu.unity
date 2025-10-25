@@ -2117,6 +2117,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1731209033156622947, guid: 720c63f89105b7f458a59dab4bad6af1, type: 3}
+      propertyPath: _highscoreData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731209033156622947, guid: 720c63f89105b7f458a59dab4bad6af1, type: 3}
+      propertyPath: _highscoreData.Array.data[0].Name
+      value: mmmmmmmmmm
+      objectReference: {fileID: 0}
     - target: {fileID: 6516315471935834186, guid: 720c63f89105b7f458a59dab4bad6af1, type: 3}
       propertyPath: m_Name
       value: HighScoreManager

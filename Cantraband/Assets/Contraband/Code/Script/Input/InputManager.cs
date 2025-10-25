@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,6 +9,10 @@ public class InputManager : MonoBehaviour
     public static InputManager Instance;
 
     [SerializeField] bool _defaultVestOpened;
+    [Space]
+    [SerializeField] private float _openVestDelay = .2f;
+
+    private Coroutine _openVestCoroutine;
 
     public Action<string> OnReadCard;
     public Action<bool> OnVestChanged;
@@ -30,6 +35,12 @@ public class InputManager : MonoBehaviour
         IsVestOpened = _defaultVestOpened;
         SendFirstOnVestChanged();
     }
+
+    private void OnDisable()
+    {
+        StopOpenVestCoroutine();
+    }
+
     private async void SendFirstOnVestChanged()
     {
         await Task.Delay(10);
@@ -42,12 +53,24 @@ public class InputManager : MonoBehaviour
         OnReadCard?.Invoke(cardId);
     }
 
-    private void SetVestState(bool state)
+    private IEnumerator SetVestState(bool state)
     {
         Debug.Log("Input Vest State is: " + state.ToString());
 
-        IsVestOpened = state;
-        OnVestChanged?.Invoke(state);
+        //Si fermé -> alors maintient
+        if(!state)
+        {
+            IsVestOpened = false;
+            OnVestChanged?.Invoke(false);
+            yield break;
+        }
+
+        //Sinon, delai puis ouvre
+        //Vu que c'est une coroutine, elle s'arrêtera si le joueur la referme
+        yield return new WaitForSeconds(_openVestDelay);
+
+        IsVestOpened = true;
+        OnVestChanged?.Invoke(true);
     }
 
 
@@ -60,11 +83,13 @@ public class InputManager : MonoBehaviour
     {
         if (Keyboard.current[Key.O].wasPressedThisFrame)
         {
-            SetVestState(false);
+            StopOpenVestCoroutine();
+            _openVestCoroutine = StartCoroutine(SetVestState(false));
         }
         else if(Keyboard.current[Key.O].wasReleasedThisFrame)
         {
-            SetVestState(true);
+            StopOpenVestCoroutine();
+            _openVestCoroutine = StartCoroutine(SetVestState(true));
         }
 
         if (Keyboard.current[Key.Digit1].wasPressedThisFrame)
@@ -82,6 +107,15 @@ public class InputManager : MonoBehaviour
         if (Keyboard.current[Key.Digit4].wasPressedThisFrame)
         {
             ReceiveNFCReader("Test4");
+        }
+    }
+
+    private void StopOpenVestCoroutine()
+    {
+        if (_openVestCoroutine != null)
+        {
+            StopCoroutine(_openVestCoroutine);
+            _openVestCoroutine = null;
         }
     }
 }

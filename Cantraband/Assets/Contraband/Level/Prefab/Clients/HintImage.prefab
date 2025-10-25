@@ -89,8 +89,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlowRevealImage
   BaseImage: {fileID: 4356946682362342331}
-  _revealType: 1
-  baseDurationReveal: 1
+  _revealType: 0
+  baseDurationReveal: 10
   revealOnAwake: 0
   fadeCurve:
     serializedVersion: 2

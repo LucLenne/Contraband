@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,6 +35,7 @@ public class ClientBehaviour : MonoBehaviour
 
     [Header("Patience")]
     [ReadOnly] public float currentPatientPatience;
+    [SerializeField, Range(0,1)] private float _secondHintPatienceRatio = .5f;
 
     private bool _newClient = false;
     private Coroutine _newClientCoroutine;
@@ -70,13 +72,31 @@ public class ClientBehaviour : MonoBehaviour
 
     public void SetupClient(List<Sprite> hintImages)
     {
+        bool isFirstLaunched = false;
         foreach (Sprite hintImage in hintImages)
         {
             GameObject hint = Instantiate(_hintImagePrefab, _hintImageParent);
             Image image = hint.GetComponent<Image>();
             image.sprite = hintImage;
-            hint.GetComponent<SlowRevealImage>()?.CallForReveal?.Invoke(currentPatientPatience, _hintRevealType);
+
+            SlowRevealImage slowRevealImage = hint.GetComponent<SlowRevealImage>();
+            //Quick fix pour que le second reveal soit lancé aec un delay
+            if(isFirstLaunched)
+            {
+                waitforSecondImage(slowRevealImage, (int)currentPatientPatience);
+            }
+            else
+            {
+                isFirstLaunched = true;
+                slowRevealImage.CallForReveal?.Invoke(currentPatientPatience, _hintRevealType);
+            }
         }
+    }
+    private async void waitforSecondImage(SlowRevealImage slowRevealImage, int patientPatience)
+    {
+        int secondsToWait = Mathf.RoundToInt(patientPatience * _secondHintPatienceRatio);
+        await Task.Delay(secondsToWait * 1000);
+        slowRevealImage.CallForReveal?.Invoke(patientPatience * (1 - _secondHintPatienceRatio), _hintRevealType);
     }
 
     private void LaunchGiveCardAnim(LevelManager.GameReturnedType type)
