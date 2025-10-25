@@ -38,7 +38,7 @@ public class RythmManager : MonoBehaviour
 
     [Header("Base Values")]
     [SerializeField] private float _baseClientPatience;
-    [SerializeField, MinMaxSlider(1f, 20f)] private Vector2 _basePopUpMinMaxDelay;
+    [SerializeField, MinMaxSlider(1f, 60f)] private Vector2 _basePopUpMinMaxDelay;
     [SerializeField] private float _basePopUpSpeed;
     //Current values
     [Space(10)]

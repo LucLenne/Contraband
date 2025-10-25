@@ -56,12 +56,12 @@ MonoBehaviour:
     ValueAmount: 1
     WasRuleApplied: 0
   - TypeOfChange: 0
-    NumberOfX: 20
+    NumberOfX: 75
     ValueToIncrease: 2
     ValueAmount: 1.2
     WasRuleApplied: 0
-  _baseClientPatience: 30
-  _basePopUpMinMaxDelay: {x: 12, y: 16}
+  _baseClientPatience: 45
+  _basePopUpMinMaxDelay: {x: 20, y: 30}
   _basePopUpSpeed: 1
   _currentClientPatience: 0
   _currentPopUpMinMaxDelay: {x: 0, y: 0}
