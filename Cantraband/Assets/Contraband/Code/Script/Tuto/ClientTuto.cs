@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +23,9 @@ public class ClientTuto : MonoBehaviour
     [SerializeField] private GameObject _hintImagePrefab;
     [SerializeField] private Transform _hintImageParent;
     [SerializeField] private Animator _animator;
+
+    [Header("Debug")]
+    [SerializeField, Range(0, 1)] private float _secondHintPatienceRatio = .4f;
 
     private const string ANIMATION_TRANSFER_DONE_NAME = "TransferDone";
     private const string ANIMATION_GAME_OVER_NAME = "GameOver";
@@ -46,6 +50,7 @@ public class ClientTuto : MonoBehaviour
 
     public void SetupClient(List<Sprite> hintImages)
     {
+        bool isFirstLaunched = false;
         foreach (Sprite hintImage in hintImages)
         {
             GameObject hint = Instantiate(_hintImagePrefab, _hintImageParent);
@@ -56,11 +61,25 @@ public class ClientTuto : MonoBehaviour
             c.a = 0;
             image.color = c;
 
-            hint.GetComponent<SlowRevealImage>()?.CallForReveal?.Invoke(_timePatience, _hintRevealType);
-
+            SlowRevealImage slowRevealImage = hint.GetComponent<SlowRevealImage>();
+            //Quick fix pour que le second reveal soit lancé aec un delay
+            if (isFirstLaunched)
+            {
+                waitforSecondImage(slowRevealImage, (int)_timePatience);
+            }
+            else
+            {
+                isFirstLaunched = true;
+                slowRevealImage.CallForReveal?.Invoke(_timePatience, _hintRevealType);
+            }
         }
     }
-
+    private async void waitforSecondImage(SlowRevealImage slowRevealImage, int patientPatience)
+    {
+        int secondsToWait = Mathf.RoundToInt(patientPatience * _secondHintPatienceRatio);
+        await Task.Delay(secondsToWait * 1000);
+        slowRevealImage.CallForReveal?.Invoke(patientPatience * (1 - _secondHintPatienceRatio), _hintRevealType);
+    }
     public void InitClient(Client client, GameCard card)
     {
         SetupClient(card.hintImage);
