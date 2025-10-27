@@ -33405,6 +33405,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 4.8333335
+    functionName: LaunchTriggerCameraPatrol
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 5.0333333
     functionName: LaunchTriggerPolicePatrol
     data: OpenDoor
@@ -33413,7 +33420,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 10.6
-    functionName: LaunchCheckPlayerCoatInAnim
+    functionName: LaunchTriggerCameraPatrol
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
