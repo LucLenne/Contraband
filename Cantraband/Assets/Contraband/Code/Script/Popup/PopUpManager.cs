@@ -26,8 +26,6 @@ public class PopUpManager : MonoBehaviour
     [SerializeField] private List<PopUpGeneric> _feedBackPopUps;
     [Space(5)]
     [SerializeField] private List<PopUpGeneric> _patrolPolicePopUpReferenceList;
-    [Space(5)]
-    [SerializeField] private GameObject _cameraPatrol;
 
     [Header("Events")]
     [SerializeField] private UnityEvent _onCheckPlayerCoat;
@@ -166,11 +164,6 @@ public class PopUpManager : MonoBehaviour
     {
         _onLaunchPolicePatrol?.Invoke();
         OnLaunchPolicePatrol?.Invoke();
-    }
-
-    public void LaunchCameraPatrol()
-    {
-        _cameraPatrol.SetActive(true);
     }
 
     #endregion

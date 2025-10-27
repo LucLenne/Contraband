@@ -232,14 +232,6 @@ public class PopUpGeneric : MonoBehaviour
         _animator.SetTrigger(_camDeathTriggerName);
     }
 
-    public void LaunchCameraPatrol()
-    {
-        if (_typePopUp != TypePopup.RealCamera)
-            return;
-
-        PopUpManager.Instance.LaunchCameraPatrol();
-    }
-
     #endregion
 
     #region Game over
