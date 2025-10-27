@@ -12,6 +12,7 @@ public class PopUpProxi : MonoBehaviour
     public void LaunchTriggerAnimation(string triggerName) => _popUpScript.LaunchTrigger(triggerName);
     public void LaunchTriggerPolicePatrol(string triggerName) => _popUpScript.LaunchTriggerPolicePatrol(triggerName);
     public void LaunchTriggerFakeCameraAnimation(string triggerName) => _popUpScript.LaunchTriggerFakeCamera(triggerName);
+    public void LaunchTriggerCameraPatrol() => _popUpScript.LaunchCameraPatrol();
 
     public void LaunchGameOver()
     {
