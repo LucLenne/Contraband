@@ -1328,7 +1328,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1449164671}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 661694c278373d349b125b21c4082cf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c36a2db4d1e38f4491200fe2fc730df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraPatrolAnim
   _animator: {fileID: 1449164673}
