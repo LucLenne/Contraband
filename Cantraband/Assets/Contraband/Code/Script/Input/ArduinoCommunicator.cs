@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class ArduinoCommunicator : MonoBehaviour
 {
 
+    public static ArduinoCommunicator Instance;
+
     public bool DebugMode = true;
     public bool DebugLED = true;
     private string portNamePrefix = "COM";
@@ -14,6 +16,18 @@ public class ArduinoCommunicator : MonoBehaviour
 
     private string receivedStream;
     private bool isActive = false;
+
+
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
 
     // Setup
     private void OnEnable()
