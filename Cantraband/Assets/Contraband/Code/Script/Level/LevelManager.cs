@@ -31,9 +31,13 @@ public class LevelManager : MonoBehaviour
     [Header("Clients")]
     [SerializeField] private Transform _clientSpawnPoint;
 
+    [Header("Timer")]
+    [SerializeField] private float _gameTimer;
+
     [Header("Events")]
     public UnityEvent onClientLeaveEvent;
     [SerializeField] private UnityEvent _onGameOver;
+    [SerializeField] private UnityEvent _onGameEnded;
 
     //Clients fields
     private int _numberClient = 0; //Nombre de client rencontrés
@@ -44,6 +48,8 @@ public class LevelManager : MonoBehaviour
     private int _lastClient;
     private int _currentNumberOfEncounteredSameClients;
 
+    //Timer fields
+    private Coroutine _timerRoutine;
 
     //Transactions fields
     private Coroutine _btwTransactionRoutine;
@@ -60,6 +66,8 @@ public class LevelManager : MonoBehaviour
     public bool IsGameRunning { get; private set; } //AKA pas en game over
     public List<GameCard> GameCardsGiven { get => _gameCardsGiven; }
     public List<int> PointsAwarded { get => _pointsAwarded; }
+    public float RemainingTime { get; private set; }
+    public float GameTime { get => _gameTimer; }
 
     //Actions
     public Action<GameReturnedType> OnGameReturned;
@@ -72,6 +80,7 @@ public class LevelManager : MonoBehaviour
     public Action OnGameOver;
     public Action OutOfPatience; //Quand le client n'a plus de patience
     public Action OnSpottedByCop;
+    public Action OnTimerFinished;
 
     void Awake()
     {
@@ -106,6 +115,9 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        RemainingTime = _gameTimer;
+        _timerRoutine = StartCoroutine(StartTimer());
+
         _btwTransactionRoutine = StartCoroutine(GetFirstClient());
     }
 
@@ -327,6 +339,21 @@ public class LevelManager : MonoBehaviour
         _onGameOver?.Invoke();
         OnGameOver?.Invoke();
     }
+    #endregion
+
+    #region Timer
+
+    private IEnumerator StartTimer()
+    {
+        while (RemainingTime > 0)
+        {
+            RemainingTime -= Time.deltaTime;
+            yield return null;
+        }
+        OnTimerFinished?.Invoke();
+        _onGameEnded?.Invoke();
+    }
+
     #endregion
 
     private async void cutAllsounds()
