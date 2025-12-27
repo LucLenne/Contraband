@@ -50,9 +50,13 @@ MonoBehaviour:
   _pointGoodGame: 3
   _pointWrongGame: -1
   _clientSpawnPoint: {fileID: 0}
+  _gameTimer: 60
   onClientLeaveEvent:
     m_PersistentCalls:
       m_Calls: []
   _onGameOver:
+    m_PersistentCalls:
+      m_Calls: []
+  _onGameEnded:
     m_PersistentCalls:
       m_Calls: []
