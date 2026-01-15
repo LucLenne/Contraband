@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
+using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 public class InputManager : MonoBehaviour
 {
@@ -81,32 +83,51 @@ public class InputManager : MonoBehaviour
 
     private void KeyboardInputJoueur()
     {
-        if (Keyboard.current[Key.O].wasPressedThisFrame)
-        {
-            StopOpenVestCoroutine();
-            _openVestCoroutine = StartCoroutine(SetVestState(false));
-        }
-        else if(Keyboard.current[Key.O].wasReleasedThisFrame)
-        {
-            StopOpenVestCoroutine();
-            _openVestCoroutine = StartCoroutine(SetVestState(true));
-        }
+        //if (Input.inputString != "") Debug.Log(Input.inputString);
 
-        if (Keyboard.current[Key.Digit1].wasPressedThisFrame)
+        if (Joystick.current != null)
         {
-            ReceiveNFCReader("Test1");
+            var buttons = Joystick.current.allControls.OfType<ButtonControl>().ToArray();
+            if (buttons.Length > 0 && buttons[0].wasPressedThisFrame)
+            {
+                StopOpenVestCoroutine();
+                _openVestCoroutine = StartCoroutine(SetVestState(false));
+            } else if (buttons.Length > 0 && buttons[0].wasReleasedThisFrame)
+            {
+                StopOpenVestCoroutine();
+                _openVestCoroutine = StartCoroutine(SetVestState(true));
+            }
+
         }
-        if (Keyboard.current[Key.Digit2].wasPressedThisFrame)
+        if (Keyboard.current != null)
         {
-            ReceiveNFCReader("Test2");
-        }
-        if (Keyboard.current[Key.Digit3].wasPressedThisFrame)
-        {
-            ReceiveNFCReader("Test3");
-        }
-        if (Keyboard.current[Key.Digit4].wasPressedThisFrame)
-        {
-            ReceiveNFCReader("Test4");
+            if (Keyboard.current[Key.O].wasPressedThisFrame)
+            {
+                StopOpenVestCoroutine();
+                _openVestCoroutine = StartCoroutine(SetVestState(false));
+            }
+            else if (Keyboard.current[Key.O].wasReleasedThisFrame)
+            {
+                StopOpenVestCoroutine();
+                _openVestCoroutine = StartCoroutine(SetVestState(true));
+            }
+
+            if (Keyboard.current[Key.Digit1].wasPressedThisFrame)
+            {
+                ReceiveNFCReader("Test1");
+            }
+            if (Keyboard.current[Key.Digit2].wasPressedThisFrame)
+            {
+                ReceiveNFCReader("Test2");
+            }
+            if (Keyboard.current[Key.Digit3].wasPressedThisFrame)
+            {
+                ReceiveNFCReader("Test3");
+            }
+            if (Keyboard.current[Key.Digit4].wasPressedThisFrame)
+            {
+                ReceiveNFCReader("Test4");
+            }
         }
     }
 
