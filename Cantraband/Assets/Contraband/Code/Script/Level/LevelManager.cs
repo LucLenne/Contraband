@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
 public class LevelManager : MonoBehaviour
@@ -32,6 +33,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Transform _clientSpawnPoint;
 
     [Header("Timer")]
+    [SerializeField] private bool _activateGameTimer = true;
     [SerializeField] private float _gameTimer;
 
     [Header("Events")]
@@ -64,6 +66,7 @@ public class LevelManager : MonoBehaviour
     public int NumberOfClientsEncountered { get => _numberClient; }
     public bool IsBetweenTransactions { get; private set; }
     public bool IsGameRunning { get; private set; } //AKA pas en game over
+    public bool IsGameTimerActive { get => _activateGameTimer; }
     public List<GameCard> GameCardsGiven { get => _gameCardsGiven; }
     public List<int> PointsAwarded { get => _pointsAwarded; }
     public float RemainingTime { get; private set; }
@@ -81,6 +84,8 @@ public class LevelManager : MonoBehaviour
     public Action OutOfPatience; //Quand le client n'a plus de patience
     public Action OnSpottedByCop;
     public Action OnTimerFinished;
+
+    public Action OnDebugStopTimer;
 
     void Awake()
     {
@@ -115,10 +120,27 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        RemainingTime = _gameTimer;
-        _timerRoutine = StartCoroutine(StartTimer());
+        if(_activateGameTimer)
+        {
+            RemainingTime = _gameTimer;
+            _timerRoutine = StartCoroutine(StartTimer());
+        }
 
         _btwTransactionRoutine = StartCoroutine(GetFirstClient());
+    }
+
+    private void Update()
+    {
+        if (Keyboard.current[Key.F5].wasPressedThisFrame)
+        {
+            _activateGameTimer = false;
+            OnDebugStopTimer?.Invoke();
+            if(_timerRoutine != null)
+            {
+                StopCoroutine(_timerRoutine);
+                _timerRoutine = null;
+            }
+        }
     }
 
     #region Clients functions

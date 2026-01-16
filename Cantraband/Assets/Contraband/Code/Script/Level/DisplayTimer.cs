@@ -20,9 +20,29 @@ public class DisplayTimer : MonoBehaviour
         _defaultFontSize = _timerText.fontSize;
     }
 
+    private void OnEnable()
+    {
+        LevelManager.Instance.OnDebugStopTimer += DebugStopTimer;
+    }
+
+    private void OnDisable()
+    {
+        LevelManager.Instance.OnDebugStopTimer -= DebugStopTimer;
+    }
+
+    private void Start()
+    {
+        //Desactive le texte si le timer est inactive
+        if (!LevelManager.Instance.IsGameTimerActive)
+            _timerText.text = "";
+    }
+
+    //Methode de debug au cas ou les GD veulent pas du timer finalement
+    private void DebugStopTimer() => _timerText.text = "";
+
     void Update()
     {
-        if (LevelManager.Instance != null)
+        if (LevelManager.Instance != null && LevelManager.Instance.IsGameTimerActive)
         {
             _timerText.text = _textAnims + ((int)LevelManager.Instance.RemainingTime).ToString();
             float progress = (LevelManager.Instance.GameTime - LevelManager.Instance.RemainingTime) / LevelManager.Instance.GameTime;
