@@ -1578,7 +1578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuUI
   _tagTutoStartCard: 03C42519
   _tagTutoClavierDebug: Test1
-  _tagGameStartCard: E3DD5E18
+  _tagGameStartCard: A3BD1BEE
   _tagGameClavierDebug: Test2
   _tagCreditsStartCard: 53861AEE
   _tagCreditsClavierDebug: Test3

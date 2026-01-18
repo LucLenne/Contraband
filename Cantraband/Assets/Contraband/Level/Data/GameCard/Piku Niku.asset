@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc40bb3058ead224bb891d84844300eb, type: 3}
   m_Name: Piku Niku
   m_EditorClassIdentifier: Assembly-CSharp::GameCard
-  tag: A3BD1BEE
-  DebugKeyboardTag: 
+  tag: 53FBA518
+  DebugKeyboardTag: Test1
   Name: Piku Niku
   genres: 03000000
   hintImage:

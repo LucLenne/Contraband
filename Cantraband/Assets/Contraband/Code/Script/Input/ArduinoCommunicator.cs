@@ -56,7 +56,7 @@ public class ArduinoCommunicator : MonoBehaviour
 
     void Start()
     {
-        for (int i = 4; i < 10; i++)
+        for (int i = 1; i < 10; i++)
         {
             string portName = portNamePrefix + i.ToString();
             if (SerialPort.GetPortNames().Contains(portName))
