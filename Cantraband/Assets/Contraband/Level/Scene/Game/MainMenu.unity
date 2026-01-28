@@ -1833,7 +1833,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<+fade><grow>Diversiteam -- 2025 '
+  m_text: '<+fade><grow>French coat -- 2025 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 41caed59ee9085a469ba4015087f9d54, type: 2}
   m_sharedMaterial: {fileID: 1353070023950343907, guid: 41caed59ee9085a469ba4015087f9d54, type: 2}
