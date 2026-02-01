@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: GameCardTest2
   m_EditorClassIdentifier: Assembly-CSharp::GameCard
   tag: A3BD1BEE
-  DebugKeyboardTag: Test1
+  DebugKeyboardTag: Test2
   Name: Start Game
-  genres: 
+  genres: 04000000
   hintImage:
   - {fileID: -5712856699938560267, guid: ef6fa7cb874f0da4987c4cf5084dc92f, type: 3}
   MeshPrefab: {fileID: 723989339743314472, guid: e507ef7001d037341b61d02a55f1b2aa, type: 3}
