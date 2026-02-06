@@ -212,6 +212,15 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(RythmManager.Instance.RandomTimeBeforeNextClient);
         GiveNextClient();
     }
+
+    private void KillCurrentClient()
+    {
+        if (_currentClientObject)
+        {
+            _currentClient = null;
+            Destroy(_currentClientObject);
+        }
+    }
     #endregion
 
     #region Transactions functions
@@ -352,10 +361,13 @@ public class LevelManager : MonoBehaviour
     }
 
     [Button]
-    public void LaunchGameOver()
+    public void LaunchGameOver(bool despawnClient = false)
     {
         if (!IsGameRunning) return;
         Debug.Log("Game over");
+
+        if (despawnClient)
+            KillCurrentClient();
 
         IsGameRunning = false;
         _onGameOver?.Invoke();
