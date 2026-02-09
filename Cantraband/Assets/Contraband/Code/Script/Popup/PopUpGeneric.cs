@@ -190,6 +190,9 @@ public class PopUpGeneric : MonoBehaviour
     {
         if (_typePopUp != TypePopup.RealPatrol)
             return;
+        
+        if (!InputManager.Instance.IsVestOpened)
+            return;
 
         AudioManager.AudioManager.Instance.PlaySound(CAR_STOP_SOUND);
         PopUpManager.Instance.LaunchPolicePatrol();
@@ -205,6 +208,9 @@ public class PopUpGeneric : MonoBehaviour
     public void LaunchTriggerPolicePatrol(string triggerName)
     {
         if (_typePopUp != TypePopup.RealPatrol)
+            return;
+
+        if (!InputManager.Instance.IsVestOpened)
             return;
 
         _animator.SetTrigger(triggerName);
