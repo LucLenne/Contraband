@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
 public class LevelManager : MonoBehaviour
@@ -31,9 +32,14 @@ public class LevelManager : MonoBehaviour
     [Header("Clients")]
     [SerializeField] private Transform _clientSpawnPoint;
 
+    [Header("Timer")]
+    [SerializeField] private bool _activateGameTimer = true;
+    [SerializeField] private float _gameTimer;
+
     [Header("Events")]
     public UnityEvent onClientLeaveEvent;
     [SerializeField] private UnityEvent _onGameOver;
+    [SerializeField] private UnityEvent _onGameEnded;
 
     //Clients fields
     private int _numberClient = 0; //Nombre de client rencontrés
@@ -44,6 +50,8 @@ public class LevelManager : MonoBehaviour
     private int _lastClient;
     private int _currentNumberOfEncounteredSameClients;
 
+    //Timer fields
+    private Coroutine _timerRoutine;
 
     //Transactions fields
     private Coroutine _btwTransactionRoutine;
@@ -58,8 +66,11 @@ public class LevelManager : MonoBehaviour
     public int NumberOfClientsEncountered { get => _numberClient; }
     public bool IsBetweenTransactions { get; private set; }
     public bool IsGameRunning { get; private set; } //AKA pas en game over
+    public bool IsGameTimerActive { get => _activateGameTimer; }
     public List<GameCard> GameCardsGiven { get => _gameCardsGiven; }
     public List<int> PointsAwarded { get => _pointsAwarded; }
+    public float RemainingTime { get; private set; }
+    public float GameTime { get => _gameTimer; }
 
     //Actions
     public Action<GameReturnedType> OnGameReturned;
@@ -72,6 +83,9 @@ public class LevelManager : MonoBehaviour
     public Action OnGameOver;
     public Action OutOfPatience; //Quand le client n'a plus de patience
     public Action OnSpottedByCop;
+    public Action OnTimerFinished;
+
+    public Action OnDebugStopTimer;
 
     void Awake()
     {
@@ -106,7 +120,27 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        if(_activateGameTimer)
+        {
+            RemainingTime = _gameTimer;
+            _timerRoutine = StartCoroutine(StartTimer());
+        }
+
         _btwTransactionRoutine = StartCoroutine(GetFirstClient());
+    }
+
+    private void Update()
+    {
+        if (Keyboard.current[Key.F5].wasPressedThisFrame)
+        {
+            _activateGameTimer = false;
+            OnDebugStopTimer?.Invoke();
+            if(_timerRoutine != null)
+            {
+                StopCoroutine(_timerRoutine);
+                _timerRoutine = null;
+            }
+        }
     }
 
     #region Clients functions
@@ -177,6 +211,15 @@ public class LevelManager : MonoBehaviour
         AudioManager.AudioManager.Instance.PlaySound(SOUND_EXIT_CLIENT);
         yield return new WaitForSeconds(RythmManager.Instance.RandomTimeBeforeNextClient);
         GiveNextClient();
+    }
+
+    private void KillCurrentClient()
+    {
+        if (_currentClientObject)
+        {
+            _currentClient = null;
+            Destroy(_currentClientObject);
+        }
     }
     #endregion
 
@@ -318,15 +361,33 @@ public class LevelManager : MonoBehaviour
     }
 
     [Button]
-    public void LaunchGameOver()
+    public void LaunchGameOver(bool despawnClient = false)
     {
         if (!IsGameRunning) return;
         Debug.Log("Game over");
+
+        if (despawnClient)
+            KillCurrentClient();
 
         IsGameRunning = false;
         _onGameOver?.Invoke();
         OnGameOver?.Invoke();
     }
+    #endregion
+
+    #region Timer
+
+    private IEnumerator StartTimer()
+    {
+        while (RemainingTime > 0)
+        {
+            RemainingTime -= Time.deltaTime;
+            yield return null;
+        }
+        OnTimerFinished?.Invoke();
+        _onGameEnded?.Invoke();
+    }
+
     #endregion
 
     private async void cutAllsounds()

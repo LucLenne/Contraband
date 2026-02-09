@@ -1578,7 +1578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuUI
   _tagTutoStartCard: 03C42519
   _tagTutoClavierDebug: Test1
-  _tagGameStartCard: E3DD5E18
+  _tagGameStartCard: A3BD1BEE
   _tagGameClavierDebug: Test2
   _tagCreditsStartCard: 53861AEE
   _tagCreditsClavierDebug: Test3
@@ -1833,7 +1833,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<+fade><grow>Diversiteam -- 2025 '
+  m_text: '<+fade><grow>French coat -- 2025 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 41caed59ee9085a469ba4015087f9d54, type: 2}
   m_sharedMaterial: {fileID: 1353070023950343907, guid: 41caed59ee9085a469ba4015087f9d54, type: 2}
@@ -2325,14 +2325,6 @@ PrefabInstance:
     - target: {fileID: 506412746453378148, guid: 720c63f89105b7f458a59dab4bad6af1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1731209033156622947, guid: 720c63f89105b7f458a59dab4bad6af1, type: 3}
-      propertyPath: _highscoreData.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1731209033156622947, guid: 720c63f89105b7f458a59dab4bad6af1, type: 3}
-      propertyPath: _highscoreData.Array.data[0].Name
-      value: mmmmmmmmmm
       objectReference: {fileID: 0}
     - target: {fileID: 6516315471935834186, guid: 720c63f89105b7f458a59dab4bad6af1, type: 3}
       propertyPath: m_Name

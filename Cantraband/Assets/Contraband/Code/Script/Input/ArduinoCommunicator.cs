@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class ArduinoCommunicator : MonoBehaviour
 {
 
+    public static ArduinoCommunicator Instance;
+
     public bool DebugMode = true;
     public bool DebugLED = true;
     private string portNamePrefix = "COM";
@@ -14,6 +16,18 @@ public class ArduinoCommunicator : MonoBehaviour
 
     private string receivedStream;
     private bool isActive = false;
+
+
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
 
     // Setup
     private void OnEnable()
@@ -42,7 +56,7 @@ public class ArduinoCommunicator : MonoBehaviour
 
     void Start()
     {
-        for (int i = 4; i < 10; i++)
+        for (int i = 1; i < 10; i++)
         {
             string portName = portNamePrefix + i.ToString();
             if (SerialPort.GetPortNames().Contains(portName))
@@ -64,7 +78,7 @@ public class ArduinoCommunicator : MonoBehaviour
 
         if (!isActive)
         {
-            Debug.LogWarning("[ArduinoCommunicator] Aucun port série valide trouvé.");
+            Debug.LogWarning("[ArduinoCommunicator] Aucun port sï¿½rie valide trouvï¿½.");
         }
     }
 
@@ -93,14 +107,14 @@ public class ArduinoCommunicator : MonoBehaviour
             }
             catch (System.Exception e)
             {
-                Debug.LogError($"[ArduinoCommunicator] Erreur de lecture série : {e.Message}");
+                Debug.LogError($"[ArduinoCommunicator] Erreur de lecture sï¿½rie : {e.Message}");
             }
         }
         else
         {
             if (!isActive)
             {
-                isActive = false; // Ne plus logguer à chaque frame
+                isActive = false; // Ne plus logguer ï¿½ chaque frame
             }
         }
     }
@@ -141,19 +155,46 @@ public class ArduinoCommunicator : MonoBehaviour
     {
         Debug.Log("LED FAIL -------------3---------------");
         if(inputStream != null)
-            inputStream.Write("3");
+        {
+            try
+            {
+                inputStream.Write("3");
+            }
+            catch
+            {
+                Debug.Log("Fail to write");
+            }
+        }
     }
     private void Mid() // yellow
     {
         Debug.Log("LED MID -------------2---------------");
         if (inputStream != null)
-            inputStream.Write("2");
+        {
+            try
+            {
+                inputStream.Write("2");
+            }
+            catch
+            {
+                Debug.Log("Fail to write");
+            }
+        }
     }
     private void Correct() // green
     {
         Debug.Log("LED CORRECT -------------1---------------");
         if (inputStream != null)
-            inputStream.Write("1");
+        {
+            try
+            {
+                inputStream.Write("1");
+            }
+            catch
+            {
+                Debug.Log("Fail to write");
+            }
+        }
     }
 
     private void CallLed(LevelManager.GameReturnedType type)

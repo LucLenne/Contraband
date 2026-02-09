@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameCard
   tag: A3BD1BEE
   DebugKeyboardTag: Test2
-  Name: Test game card
+  Name: Start Game
   genres: 04000000
   hintImage:
   - {fileID: -5712856699938560267, guid: ef6fa7cb874f0da4987c4cf5084dc92f, type: 3}

@@ -13,6 +13,6 @@ public class PolicePatrolProxi : MonoBehaviour
         if (LevelManager.Instance == null)
             return;
 
-        LevelManager.Instance.LaunchGameOver();
+        LevelManager.Instance.LaunchGameOver(true);
     }
 }
