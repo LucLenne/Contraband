@@ -15,6 +15,13 @@ public class SlowRevealImage : MonoBehaviour
     public bool revealOnAwake = false;
     [SerializeField] private AnimationCurve fadeCurve = AnimationCurve.Linear(0, 0, 1, 1);
 
+    [Header("FadeInOut")]
+    [SerializeField] private float _fadeInOutSpeed;
+    [Tooltip("Idéalement laisser a 1, car va osciller entre 0 et l'amplitude")]
+    [SerializeField] private float _fadeInOutAmplitude;
+    [Tooltip("De combien ajouter le sinus (sachant qu'à 0, la moitié du sin est en dessous de 0 donc on le voit pas 50% du temps) (si c'est pas clair pingez moi ou utiliser GeoGebra pour visualiser)")]
+    [SerializeField] private float _fadeInOutOffset;
+
     //Events
     public System.Action<float, RevealType> CallForReveal;
 
@@ -44,10 +51,13 @@ public class SlowRevealImage : MonoBehaviour
 
         StopAllCoroutines(); // Stop any existing fade
 
-        switch (_revealType)
+        switch (inRevealType)
         {
             case RevealType.Fade:
                 StartCoroutine(SmoothFadeReveal(inDuration));
+                break;
+            case RevealType.FadeInOutSin:
+                StartCoroutine(FadeInOutReveal());
                 break;
             default:
                 BaseImage.color = new Color(1, 1, 1, 1);
@@ -69,9 +79,22 @@ public class SlowRevealImage : MonoBehaviour
         }
         BaseImage.color = new Color(savedColor.r, savedColor.g, savedColor.b, 1);
     }
+
+    private IEnumerator FadeInOutReveal()
+    {
+        float elapsed = 0.0f;
+        while(true)
+        {
+            elapsed += Time.deltaTime;
+            float alpha = (Mathf.Sin(elapsed * _fadeInOutSpeed) * _fadeInOutAmplitude) + _fadeInOutOffset;
+            BaseImage.color = new Color(savedColor.r, savedColor.g, savedColor.b, alpha);
+            yield return null;
+        }
+    }
 }
 public enum RevealType
 {
     Fade,
     None,
+    FadeInOutSin,
 }

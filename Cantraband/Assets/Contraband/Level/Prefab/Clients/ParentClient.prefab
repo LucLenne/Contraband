@@ -317,6 +317,7 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   _hintRevealType: 0
+  _gameHintRevealType: 2
   _timerRectTransform: {fileID: 3093251005576256362}
   _timerAnimMaxSpeed: 0.3
   _timerAnimCurve:

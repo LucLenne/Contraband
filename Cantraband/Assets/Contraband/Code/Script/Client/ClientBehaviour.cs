@@ -27,6 +27,7 @@ public class ClientBehaviour : MonoBehaviour
     [SerializeField] private Image _sliderImage;
     [SerializeField] private Gradient _sliderGradient;
     [SerializeField] private RevealType _hintRevealType;
+    [SerializeField] private RevealType _gameHintRevealType;
 
     [Header("Timer slider")]
     [SerializeField] private RectTransform _timerRectTransform;
@@ -80,10 +81,10 @@ public class ClientBehaviour : MonoBehaviour
             image.sprite = hintImage;
 
             SlowRevealImage slowRevealImage = hint.GetComponent<SlowRevealImage>();
-            //Quick fix pour que le second reveal soit lancé aec un delay
+            //Quick fix pour que le second reveal soit lancé differament
             if(isFirstLaunched)
             {
-                waitforSecondImage(slowRevealImage, (int)currentPatientPatience);
+                slowRevealImage.CallForReveal?.Invoke(currentPatientPatience, _gameHintRevealType);
             }
             else
             {
