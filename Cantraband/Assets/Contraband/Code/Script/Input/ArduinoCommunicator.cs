@@ -90,14 +90,10 @@ public class ArduinoCommunicator : MonoBehaviour
         {
             try
             {
-                if (inputStream.BytesToRead > 0)
+                receivedStream = inputStream.ReadLine();
+                if (!string.IsNullOrEmpty(receivedStream))
                 {
-                    receivedStream = inputStream.ReadLine();
-
-                    if (!string.IsNullOrEmpty(receivedStream))
-                    {
-                        InputManager.Instance.ReceiveNFCReader(receivedStream);
-                    }
+                    InputManager.Instance.ReceiveNFCReader(receivedStream);
                 }
             }
             catch (System.TimeoutException)
@@ -106,7 +102,7 @@ public class ArduinoCommunicator : MonoBehaviour
             }
             catch (System.Exception e)
             {
-                Debug.LogError($"[ArduinoCommunicator] Erreur de lecture s�rie : {e.Message}");
+                Debug.LogError($"[ArduinoCommunicator] Erreur de lecture série : {e.Message}");
             }
         }
         else
