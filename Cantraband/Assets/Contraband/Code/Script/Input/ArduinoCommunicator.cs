@@ -56,29 +56,28 @@ public class ArduinoCommunicator : MonoBehaviour
 
     void Start()
     {
-        for (int i = 1; i < 10; i++)
+        foreach (string portName in SerialPort.GetPortNames())
         {
-            string portName = portNamePrefix + i.ToString();
-            if (SerialPort.GetPortNames().Contains(portName))
+            try
             {
-                try
-                {
-                    inputStream = new SerialPort(portName, baudRate);
-                    inputStream.ReadTimeout = 100;
-                    inputStream.Open();
-                    isActive = true;
-                    break;
-                }
-                catch (System.Exception e)
-                {
-                    Debug.LogWarning($"[ArduinoCommunicator] Erreur lors de l'ouverture du port {portName} : {e.Message}");
-                }
+                inputStream = new SerialPort(portName, baudRate);
+                inputStream.ReadTimeout = 100;
+                inputStream.Open();
+                isActive = true;
+                break;
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning($"[ArduinoCommunicator] Erreur lors de l'ouverture du port {portName} : {e.Message}");
             }
         }
 
         if (!isActive)
         {
-            Debug.LogWarning("[ArduinoCommunicator] Aucun port s�rie valide trouv�.");
+            Debug.LogWarning("[ArduinoCommunicator] Aucun port série valide trouvé.");
+        } else
+        {
+            Debug.Log("[ArduinoCommunicator] Found communication port: " + inputStream.PortName);
         }
     }
 
