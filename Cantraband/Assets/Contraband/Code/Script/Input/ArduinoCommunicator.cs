@@ -63,8 +63,21 @@ public class ArduinoCommunicator : MonoBehaviour
                 inputStream = new SerialPort(portName, baudRate);
                 inputStream.ReadTimeout = 100;
                 inputStream.Open();
-                isActive = true;
-                break;
+
+                // Handshake pour verif que le port est occupé par arduino
+                System.Threading.Thread.Sleep(100);
+                inputStream.WriteLine("CTRL_BAND_67");
+                string response = inputStream.ReadLine();
+                if (response.Contains("ARDUINO_READY"))
+                {
+                    isActive = true;
+                    break;
+                }
+                else
+                {
+                    inputStream.Close();
+                }
+
             }
             catch (System.Exception e)
             {

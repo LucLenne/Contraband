@@ -146,6 +146,12 @@ void RNCPRead() {
 }
 
 void loop() {
+  if (Serial.available()) {
+    String msg = Serial.readStringUntil('\n');
+    if (msg == "CTRL_BAND_67") {
+      Serial.println("ARDUINO_READY");
+    }
+  }
   // rncp
   RNCPRead();
   Serial.println("");
