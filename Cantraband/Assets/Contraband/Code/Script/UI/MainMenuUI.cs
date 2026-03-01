@@ -20,6 +20,8 @@ public class MainMenuUI : MonoBehaviour
     private const string NAME_GAME_LEVEL = "Game";
     private const string NAME_CREDITS_LEVEL = "Credits";
 
+    [SerializeField] AudioSource BGM_Player;
+
     private void OnEnable()
     {
         InputManager.Instance.OnReadCard += CheckChard;
@@ -33,7 +35,17 @@ public class MainMenuUI : MonoBehaviour
     private void Start()
     {
         AudioManager.AudioManager.Instance.PlaySound(MAIN_MENU_START_SOUND);
+        Invoke("StartBGM", 2);
     }
+
+   private void StartBGM()
+    {
+        if(BGM_Player != null)
+        {
+            BGM_Player.Play();
+        }
+    }
+
 
     void CheckChard(string tag)
     {
