@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Contraband/Level/Scene/Game/MainMenu.unity
     guid: c43a26c6fc3e0b949a35379cf73188c1
   - enabled: 1
+    path: Assets/Contraband/Level/Scene/Game/Coat Tuto.unity
+    guid: 0f8ac1200fce81649b563a2630d59f39
+  - enabled: 1
     path: Assets/Contraband/Level/Scene/Game/Tuto.unity
     guid: baee789dd71a1db459a79475b90ac366
   - enabled: 1

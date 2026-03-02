@@ -56,29 +56,48 @@ public class ArduinoCommunicator : MonoBehaviour
 
     void Start()
     {
-        for (int i = 1; i < 10; i++)
+        foreach (string portName in SerialPort.GetPortNames())
         {
-            string portName = portNamePrefix + i.ToString();
-            if (SerialPort.GetPortNames().Contains(portName))
+            try
             {
-                try
+
+                inputStream = new SerialPort(portName, baudRate);
+                inputStream.ReadTimeout = 1000;
+                inputStream.Open();
+                Debug.Log("[ArduinoCommunicator] Found communication port: " + inputStream.PortName);
+
+                // Handshake pour verif que le port est occupé par arduino
+                System.Threading.Thread.Sleep(100);
+                inputStream.WriteLine("CTRL_BAND_67");
+                Debug.Log("[ArduinoCommunicator] Try handshake..  " + inputStream.PortName);
+                string response = inputStream.ReadLine();
+                if (response.Contains("ARDUINO_READY"))
                 {
-                    inputStream = new SerialPort(portName, baudRate);
-                    inputStream.ReadTimeout = 100;
-                    inputStream.Open();
+                    Debug.Log("[ArduinoCommunicator] Handshake validated, communication started with " + inputStream.PortName);
                     isActive = true;
                     break;
                 }
-                catch (System.Exception e)
+                else
                 {
-                    Debug.LogWarning($"[ArduinoCommunicator] Erreur lors de l'ouverture du port {portName} : {e.Message}");
+                    Debug.Log("[ArduinoCommunicator] Handshake failed. Port " + inputStream.PortName + " doesnt run the ctrl + band software.");
+                    inputStream.Close();
                 }
+
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning($"[ArduinoCommunicator] Error while opening port {portName} : {e.Message}");
+                if (inputStream != null && inputStream.IsOpen)
+                    inputStream.Close();
             }
         }
 
         if (!isActive)
         {
-            Debug.LogWarning("[ArduinoCommunicator] Aucun port s�rie valide trouv�.");
+            Debug.LogWarning("[ArduinoCommunicator] No valid communication port found...");
+        } else
+        {
+            Debug.Log("[ArduinoCommunicator] Selected communication port: " + inputStream.PortName);
         }
     }
 
@@ -91,14 +110,10 @@ public class ArduinoCommunicator : MonoBehaviour
         {
             try
             {
-                if (inputStream.BytesToRead > 0)
+                receivedStream = inputStream.ReadLine();
+                if (!string.IsNullOrEmpty(receivedStream))
                 {
-                    receivedStream = inputStream.ReadLine();
-
-                    if (!string.IsNullOrEmpty(receivedStream))
-                    {
-                        InputManager.Instance.ReceiveNFCReader(receivedStream);
-                    }
+                    InputManager.Instance.ReceiveNFCReader(receivedStream);
                 }
             }
             catch (System.TimeoutException)
@@ -107,7 +122,7 @@ public class ArduinoCommunicator : MonoBehaviour
             }
             catch (System.Exception e)
             {
-                Debug.LogError($"[ArduinoCommunicator] Erreur de lecture s�rie : {e.Message}");
+                Debug.LogError($"[ArduinoCommunicator] Erreur de lecture série : {e.Message}");
             }
         }
         else

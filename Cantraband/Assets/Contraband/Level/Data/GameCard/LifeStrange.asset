@@ -17,6 +17,6 @@ MonoBehaviour:
   Name: 'Life Is Strange  '
   genres: 03000000
   hintImage:
-  - {fileID: 21300000, guid: 83bb7139f221b0844b351230a1472004, type: 3}
+  - {fileID: 4731978931953347632, guid: 7b5f18b2239e7c14f98eb1ea5028ab7b, type: 3}
   - {fileID: 21300000, guid: 4d0cf401a15eab6448950e447dd75bf6, type: 3}
   MeshPrefab: {fileID: 723989339743314472, guid: 19732c59111bc1148b863266ee080f2d, type: 3}
