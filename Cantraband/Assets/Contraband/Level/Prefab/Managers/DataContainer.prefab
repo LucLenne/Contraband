@@ -45,14 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DataContainer
   _gameCards:
-  - {fileID: 11400000, guid: 4447ebc57d37bb745a66a60036ec005c, type: 2}
   - {fileID: 11400000, guid: 55f7999b01bb3464f8335430e0d5fff7, type: 2}
   - {fileID: 11400000, guid: 1df5c7ca09ebed34e81ada5a6f2f7d66, type: 2}
   - {fileID: 11400000, guid: d2a1bffbc38a25c4881dd5ec3683e812, type: 2}
   - {fileID: 11400000, guid: 260ee8fa946b8ab49b27469529ac1fde, type: 2}
   - {fileID: 11400000, guid: a130e6dc439018745aef12bdc67305a8, type: 2}
   - {fileID: 11400000, guid: 767b38d542c498a47a518a3db76b17c4, type: 2}
-  - {fileID: 11400000, guid: 47b417742ad245e42af2cc2ba455b2b0, type: 2}
   - {fileID: 11400000, guid: 1c16f8bdee7b1cc4ea3e52ca5bf748e1, type: 2}
   - {fileID: 11400000, guid: 6cdcc5ffb8395fa4db21e7753bc3347a, type: 2}
   - {fileID: 11400000, guid: d83e13c1a6011404ea15b99adff0e400, type: 2}
