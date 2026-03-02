@@ -74,23 +74,21 @@ public class ClientBehaviour : MonoBehaviour
     public void SetupClient(List<Sprite> hintImages)
     {
         bool isFirstLaunched = false;
-        foreach (Sprite hintImage in hintImages)
-        {
-            GameObject hint = Instantiate(_hintImagePrefab, _hintImageParent);
-            Image image = hint.GetComponent<Image>();
-            image.sprite = hintImage;
+        GameObject hint = Instantiate(_hintImagePrefab, _hintImageParent);
+        hint.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 6, 20);
+        SlowRevealImage slowReveal = hint.GetComponent<SlowRevealImage>();
+        slowReveal.Setup(hintImages[0], hintImages[1]);
 
-            SlowRevealImage slowRevealImage = hint.GetComponent<SlowRevealImage>();
-            //Quick fix pour que le second reveal soit lancé differament
-            if(isFirstLaunched)
-            {
-                slowRevealImage.CallForReveal?.Invoke(currentPatientPatience, _gameHintRevealType);
-            }
-            else
-            {
-                isFirstLaunched = true;
-                slowRevealImage.CallForReveal?.Invoke(currentPatientPatience, _hintRevealType);
-            }
+        SlowRevealImage slowRevealImage = hint.GetComponent<SlowRevealImage>();
+        //Quick fix pour que le second reveal soit lancé differament
+        if (isFirstLaunched)
+        {
+            slowRevealImage.CallForReveal?.Invoke(currentPatientPatience, _gameHintRevealType);
+        }
+        else
+        {
+            isFirstLaunched = true;
+            slowRevealImage.CallForReveal?.Invoke(currentPatientPatience, _hintRevealType);
         }
     }
     private async void waitforSecondImage(SlowRevealImage slowRevealImage, int patientPatience)

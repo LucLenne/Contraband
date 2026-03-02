@@ -9,6 +9,7 @@ public class SlowRevealImage : MonoBehaviour
 
     // Fields
     [SerializeField] Image BaseImage;
+    [SerializeField] Image _gameImage;
     [SerializeField] RevealType _revealType;
     [Min(1.0f)]
     [SerializeField] public float baseDurationReveal;
@@ -37,6 +38,7 @@ public class SlowRevealImage : MonoBehaviour
         CallForReveal += StartReveal;
         savedColor = BaseImage.color;
         BaseImage.color = new Color(savedColor.r, savedColor.g, savedColor.b, 0);
+        _gameImage.color = new Color(savedColor.r, savedColor.g, savedColor.b, 0);
     }
 
 
@@ -44,6 +46,13 @@ public class SlowRevealImage : MonoBehaviour
     {
         CallForReveal -= StartReveal;
     }
+
+    public void Setup(Sprite genreImage, Sprite gameImage)
+    {
+        BaseImage.sprite = genreImage;
+        _gameImage.sprite = gameImage;
+    }
+
     public void StartReveal(float inDuration = -1, RevealType inRevealType = default)
     {
         if (inDuration == -1)
@@ -61,6 +70,7 @@ public class SlowRevealImage : MonoBehaviour
                 break;
             default:
                 BaseImage.color = new Color(1, 1, 1, 1);
+                _gameImage.color = new Color(1, 1, 1, 1);
                 break;
         }
     }
@@ -75,9 +85,11 @@ public class SlowRevealImage : MonoBehaviour
             float alpha = Mathf.Clamp01(elapsed / inDuration);
             float curvedAlpha = fadeCurve.Evaluate(alpha);
             BaseImage.color = new Color(savedColor.r, savedColor.g, savedColor.b, curvedAlpha);
+            _gameImage.color = new Color(savedColor.r, savedColor.g, savedColor.b, curvedAlpha);
             yield return null;
         }
         BaseImage.color = new Color(savedColor.r, savedColor.g, savedColor.b, 1);
+        _gameImage.color = new Color(savedColor.r, savedColor.g, savedColor.b, 1);
     }
 
     private IEnumerator FadeInOutReveal()
@@ -88,6 +100,7 @@ public class SlowRevealImage : MonoBehaviour
             elapsed += Time.deltaTime;
             float alpha = (Mathf.Sin(elapsed * _fadeInOutSpeed) * _fadeInOutAmplitude) + _fadeInOutOffset;
             BaseImage.color = new Color(savedColor.r, savedColor.g, savedColor.b, alpha);
+            _gameImage.color = new Color(savedColor.r, savedColor.g, savedColor.b, alpha);
             yield return null;
         }
     }
