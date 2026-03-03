@@ -1,40 +1,43 @@
 fileFormatVersion: 2
-guid: babd89639ccaff440af693308c2a967d
+guid: 8da8ac2e72ef76f499f30cfbcad25c83
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3086323347992444537
-    second: Thomas_0
+      213: -4384210764591520585
+    second: Audrey_0
   - first:
-      213: 5532951430170191860
-    second: Thomas_1
+      213: 4818715825454367136
+    second: Audrey_1
   - first:
-      213: 8828361577684113665
-    second: Thomas_2
+      213: 7313482444533892529
+    second: Audrey_2
   - first:
-      213: 7408569027212424925
-    second: Thomas_3
+      213: 8890667519636090943
+    second: Audrey_3
   - first:
-      213: 3121388508388668050
-    second: Thomas_4
+      213: 4420155870175431220
+    second: Audrey_4
   - first:
-      213: 6506347401165688457
-    second: Thomas_5
+      213: -4748180240934462968
+    second: Audrey_5
   - first:
-      213: -2526995092200475112
-    second: Thomas_6
+      213: 954624745402453412
+    second: Audrey_6
   - first:
-      213: 532184294117557361
-    second: Thomas_7
+      213: 9191738228681971315
+    second: Audrey_7
   - first:
-      213: -2283675886218975515
-    second: Thomas_8
+      213: -6839486038562328144
+    second: Audrey_8
   - first:
-      213: -5397596704167287313
-    second: Thomas_9
+      213: -8053879388094176134
+    second: Audrey_9
   - first:
-      213: -658936049041552021
-    second: Thomas_10
+      213: -7359603189706811176
+    second: Audrey_10
+  - first:
+      213: -6569981741752129662
+    second: Audrey_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,30 +142,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Thomas_0
+      name: Audrey_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 74
-        width: 38
-        height: 63
+        x: 60
+        y: 84
+        width: 21
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 97e7513abb2d4da20800000000000000
-      internalID: 3086323347992444537
+      spriteID: 7b42414c9872823c0800000000000000
+      internalID: -4384210764591520585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Thomas_1
+      name: Audrey_1
       rect:
         serializedVersion: 2
-        x: 43
-        y: 74
-        width: 38
-        height: 67
+        x: 81
+        y: 83
+        width: 20
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,20 +183,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4f7a8cac20ef8cc40800000000000000
-      internalID: 5532951430170191860
+      spriteID: 0a1c2c933848fd240800000000000000
+      internalID: 4818715825454367136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Thomas_2
+      name: Audrey_2
       rect:
         serializedVersion: 2
-        x: 82
-        y: 74
-        width: 38
-        height: 47
+        x: 101
+        y: 84
+        width: 20
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,64 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 109919a8414a48a70800000000000000
-      internalID: 8828361577684113665
+      spriteID: 1b58f79e885be7560800000000000000
+      internalID: 7313482444533892529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Thomas_3
+      name: Audrey_3
       rect:
         serializedVersion: 2
-        x: 121
-        y: 74
-        width: 61
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dd635f8274680d660800000000000000
-      internalID: 7408569027212424925
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Thomas_4
-      rect:
-        serializedVersion: 2
-        x: 183
-        y: 74
-        width: 38
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2923e708f46615b20800000000000000
-      internalID: 3121388508388668050
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Thomas_5
-      rect:
-        serializedVersion: 2
-        x: 222
-        y: 74
+        x: 120
+        y: 83
         width: 39
-        height: 47
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 98e44cf3d703b4a50800000000000000
-      internalID: 6506347401165688457
+      spriteID: f30330c110ff16b70800000000000000
+      internalID: 8890667519636090943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Thomas_6
+      name: Audrey_4
       rect:
         serializedVersion: 2
-        x: 280
-        y: 74
-        width: 76
-        height: 63
+        x: 159
+        y: 73
+        width: 20
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,20 +249,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8163c3c2a5f4eecd0800000000000000
-      internalID: -2526995092200475112
+      spriteID: 43a0aad485c875d30800000000000000
+      internalID: 4420155870175431220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Thomas_7
+      name: Audrey_5
       rect:
         serializedVersion: 2
-        x: 355
-        y: 74
-        width: 39
-        height: 63
+        x: 31
+        y: 25
+        width: 20
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1744bedbbc2b26700800000000000000
-      internalID: 532184294117557361
+      spriteID: 80a92915a331b1eb0800000000000000
+      internalID: -4748180240934462968
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Thomas_8
+      name: Audrey_6
       rect:
         serializedVersion: 2
-        x: 394
-        y: 74
-        width: 39
-        height: 63
+        x: 50
+        y: 25
+        width: 20
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,20 +293,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5e6eac381e0ce40e0800000000000000
-      internalID: -2283675886218975515
+      spriteID: 4adc28be5228f3d00800000000000000
+      internalID: 954624745402453412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Thomas_9
+      name: Audrey_7
       rect:
         serializedVersion: 2
-        x: 433
-        y: 74
-        width: 38
-        height: 63
+        x: 69
+        y: 25
+        width: 57
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -369,20 +315,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fe52a4f2562e715b0800000000000000
-      internalID: -5397596704167287313
+      spriteID: 37697f4183d9f8f70800000000000000
+      internalID: 9191738228681971315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Thomas_10
+      name: Audrey_8
       rect:
         serializedVersion: 2
-        x: 470
-        y: 74
-        width: 38
-        height: 63
+        x: 126
+        y: 25
+        width: 20
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -391,8 +337,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6dcd23972dfad6f0800000000000000
-      internalID: -658936049041552021
+      spriteID: 0b1bf316fa34511a0800000000000000
+      internalID: -6839486038562328144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Audrey_9
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 25
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a746ec82e5fda3090800000000000000
+      internalID: -8053879388094176134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Audrey_10
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 25
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d891bd44ef6dd990800000000000000
+      internalID: -7359603189706811176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Audrey_11
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 25
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 287ef064a6cb2d4a0800000000000000
+      internalID: -6569981741752129662
       vertices: []
       indices: 
       edges: []
@@ -411,17 +423,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Thomas_0: 3086323347992444537
-      Thomas_1: 5532951430170191860
-      Thomas_10: -658936049041552021
-      Thomas_2: 8828361577684113665
-      Thomas_3: 7408569027212424925
-      Thomas_4: 3121388508388668050
-      Thomas_5: 6506347401165688457
-      Thomas_6: -2526995092200475112
-      Thomas_7: 532184294117557361
-      Thomas_8: -2283675886218975515
-      Thomas_9: -5397596704167287313
+      Audrey_0: -4384210764591520585
+      Audrey_1: 4818715825454367136
+      Audrey_10: -7359603189706811176
+      Audrey_11: -6569981741752129662
+      Audrey_2: 7313482444533892529
+      Audrey_3: 8890667519636090943
+      Audrey_4: 4420155870175431220
+      Audrey_5: -4748180240934462968
+      Audrey_6: 954624745402453412
+      Audrey_7: 9191738228681971315
+      Audrey_8: -6839486038562328144
+      Audrey_9: -8053879388094176134
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
