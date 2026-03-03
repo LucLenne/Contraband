@@ -32,6 +32,8 @@ RFID rfid(10, 9);
 unsigned char status;
 unsigned char str[MAX_LEN];
 
+bool setupMode = true;
+
 void setup() {
   Serial.begin(9600);
   // rfid
@@ -146,9 +148,23 @@ void RNCPRead() {
 }
 
 void loop() {
-  // rncp
-  RNCPRead();
-  Serial.println("");
-  // led
-  ledCheck();
+  if(setupMode == true) 
+  {
+    if (Serial.available()) {
+      String msg = Serial.readStringUntil('\n');
+      msg.trim();
+      if (msg == "CTRL_BAND_67") {
+        Serial.println("ARDUINO_READY");
+        setupMode = false;
+      }
+    }
+
+  } else 
+  {
+    // rncp
+    RNCPRead();
+    Serial.println("");
+    // led
+    ledCheck();
+  }
 }

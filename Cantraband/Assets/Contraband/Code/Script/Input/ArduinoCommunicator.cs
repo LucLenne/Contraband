@@ -17,16 +17,18 @@ public class ArduinoCommunicator : MonoBehaviour
     private string receivedStream;
     private bool isActive = false;
 
-
-
-    private void Awake()
+    void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
         {
             Destroy(gameObject);
-            return;
         }
-        Instance = this;
+
     }
 
     // Setup
@@ -56,28 +58,54 @@ public class ArduinoCommunicator : MonoBehaviour
 
     void Start()
     {
+        if(isActive)
+        {
+            Debug.Log("[ArduinoCommunicator] Connection already existing, no need to search for a port");
+            return;
+        }
+
         foreach (string portName in SerialPort.GetPortNames())
         {
             try
             {
+
                 inputStream = new SerialPort(portName, baudRate);
-                inputStream.ReadTimeout = 100;
+                inputStream.ReadTimeout = 1000;
                 inputStream.Open();
-                isActive = true;
-                break;
+                Debug.Log("[ArduinoCommunicator] Found communication port: " + inputStream.PortName);
+
+                // Handshake pour verif que le port est occupé par arduino
+                System.Threading.Thread.Sleep(100);
+                inputStream.WriteLine("CTRL_BAND_67");
+                Debug.Log("[ArduinoCommunicator] Try handshake..  " + inputStream.PortName);
+                string response = inputStream.ReadLine();
+                if (response.Contains("ARDUINO_READY"))
+                {
+                    Debug.Log("[ArduinoCommunicator] Handshake validated, communication started with " + inputStream.PortName);
+                    isActive = true;
+                    break;
+                }
+                else
+                {
+                    Debug.Log("[ArduinoCommunicator] Handshake failed. Port " + inputStream.PortName + " doesnt run the ctrl + band software.");
+                    inputStream.Close();
+                }
+
             }
             catch (System.Exception e)
             {
-                Debug.LogWarning($"[ArduinoCommunicator] Erreur lors de l'ouverture du port {portName} : {e.Message}");
+                Debug.LogWarning($"[ArduinoCommunicator] Error while opening port {portName} : {e.Message}");
+                if (inputStream != null && inputStream.IsOpen)
+                    inputStream.Close();
             }
         }
 
         if (!isActive)
         {
-            Debug.LogWarning("[ArduinoCommunicator] Aucun port série valide trouvé.");
+            Debug.LogWarning("[ArduinoCommunicator] No valid communication port found...");
         } else
         {
-            Debug.Log("[ArduinoCommunicator] Found communication port: " + inputStream.PortName);
+            Debug.Log("[ArduinoCommunicator] Selected communication port: " + inputStream.PortName);
         }
     }
 
@@ -114,6 +142,12 @@ public class ArduinoCommunicator : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        if(isActive)
+            CloseSerialPort();
+    }
+
 
     // Quit app
     void OnApplicationQuit()
@@ -125,6 +159,8 @@ public class ArduinoCommunicator : MonoBehaviour
     {
         if (inputStream != null && inputStream.IsOpen)
         {
+            Debug.Log("[ArduinoCommunicator] Closing active port");
+            inputStream.WriteLine("CTRL_BAND_STOP");
             try
             {
                 inputStream.Close();
@@ -209,7 +245,6 @@ public class ArduinoCommunicator : MonoBehaviour
 
         }
     }
-
 
     private void DebugInputs()
     {

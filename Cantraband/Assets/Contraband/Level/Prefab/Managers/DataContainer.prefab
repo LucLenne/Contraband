@@ -45,14 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DataContainer
   _gameCards:
-  - {fileID: 11400000, guid: 4447ebc57d37bb745a66a60036ec005c, type: 2}
   - {fileID: 11400000, guid: 55f7999b01bb3464f8335430e0d5fff7, type: 2}
   - {fileID: 11400000, guid: 1df5c7ca09ebed34e81ada5a6f2f7d66, type: 2}
   - {fileID: 11400000, guid: d2a1bffbc38a25c4881dd5ec3683e812, type: 2}
   - {fileID: 11400000, guid: 260ee8fa946b8ab49b27469529ac1fde, type: 2}
   - {fileID: 11400000, guid: a130e6dc439018745aef12bdc67305a8, type: 2}
   - {fileID: 11400000, guid: 767b38d542c498a47a518a3db76b17c4, type: 2}
-  - {fileID: 11400000, guid: 47b417742ad245e42af2cc2ba455b2b0, type: 2}
   - {fileID: 11400000, guid: 1c16f8bdee7b1cc4ea3e52ca5bf748e1, type: 2}
   - {fileID: 11400000, guid: 6cdcc5ffb8395fa4db21e7753bc3347a, type: 2}
   - {fileID: 11400000, guid: d83e13c1a6011404ea15b99adff0e400, type: 2}
@@ -63,12 +61,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 82607456401217a478757a044bbf9686, type: 2}
   _clients:
   - {fileID: 11400000, guid: e2f5d6fd3e0da7b4c9d989e43978ca2e, type: 2}
-  - {fileID: 11400000, guid: b20a9a1653c3fb24c87875d55992ff59, type: 2}
   - {fileID: 11400000, guid: f73d1d6c86f31d1468ad62fbbf3b5be8, type: 2}
   - {fileID: 11400000, guid: a2100dff46b9a53439dd382892980a69, type: 2}
   - {fileID: 11400000, guid: 2baa99798271e894e8894f518c646287, type: 2}
   - {fileID: 11400000, guid: a4bd27759e2f0a547a9f769efbaa7837, type: 2}
-  - {fileID: 11400000, guid: 000675e382a34ed479d37e568e032933, type: 2}
   - {fileID: 11400000, guid: 11248c1158f70644e8031768b13be4f9, type: 2}
   - {fileID: 11400000, guid: aa1818c1266a535468b5eb2cd72db4d8, type: 2}
   - {fileID: 11400000, guid: 508070bbb9b06f6408004c46e6facb72, type: 2}
