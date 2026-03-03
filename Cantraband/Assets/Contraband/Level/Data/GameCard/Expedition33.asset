@@ -15,7 +15,7 @@ MonoBehaviour:
   tag: 5327BC18
   DebugKeyboardTag: 
   Name: Expedition 33
-  genres: 0000000004000000
+  genres: 0300000004000000
   hintImage:
   - {fileID: 4731978931953347632, guid: 7b5f18b2239e7c14f98eb1ea5028ab7b, type: 3}
   - {fileID: 21300000, guid: 2014f49dd50a28f4ea6c3e78317be456, type: 3}
