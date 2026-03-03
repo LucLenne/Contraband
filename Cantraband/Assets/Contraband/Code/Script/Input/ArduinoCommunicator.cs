@@ -17,16 +17,18 @@ public class ArduinoCommunicator : MonoBehaviour
     private string receivedStream;
     private bool isActive = false;
 
-
-
-    private void Awake()
+    void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
         {
             Destroy(gameObject);
-            return;
         }
-        Instance = this;
+
     }
 
     // Setup
@@ -56,6 +58,12 @@ public class ArduinoCommunicator : MonoBehaviour
 
     void Start()
     {
+        if(isActive)
+        {
+            Debug.Log("[ArduinoCommunicator] Connection already existing, no need to search for a port");
+            return;
+        }
+
         foreach (string portName in SerialPort.GetPortNames())
         {
             try
@@ -134,6 +142,12 @@ public class ArduinoCommunicator : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        if(isActive)
+            CloseSerialPort();
+    }
+
 
     // Quit app
     void OnApplicationQuit()
@@ -145,6 +159,8 @@ public class ArduinoCommunicator : MonoBehaviour
     {
         if (inputStream != null && inputStream.IsOpen)
         {
+            Debug.Log("[ArduinoCommunicator] Closing active port");
+            inputStream.WriteLine("CTRL_BAND_STOP");
             try
             {
                 inputStream.Close();
@@ -229,7 +245,6 @@ public class ArduinoCommunicator : MonoBehaviour
 
         }
     }
-
 
     private void DebugInputs()
     {

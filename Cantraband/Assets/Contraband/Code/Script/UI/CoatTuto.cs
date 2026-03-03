@@ -26,7 +26,8 @@ public class CoatTuto : MonoBehaviour
     private int _indexLed;
     private int _indexColor;
     private Transform _parentLedsTransf;
-    private const string SCENE_TO_LOAD = "Tuto";
+    private const string SCENE_TO_LOAD = "Game";
+
     private bool _once;
 
     private void Start()
