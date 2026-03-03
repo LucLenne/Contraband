@@ -15,7 +15,7 @@ MonoBehaviour:
   tag: 73936018
   DebugKeyboardTag: 
   Name: Halo
-  genres: 0400000001000000
+  genres: 0400000000000000
   hintImage:
   - {fileID: 2494905706287876217, guid: c3413ecae23a81b46899ee7c3ad00752, type: 3}
   - {fileID: 21300000, guid: 6ae8725205d22284fb642c118ccf050f, type: 3}
