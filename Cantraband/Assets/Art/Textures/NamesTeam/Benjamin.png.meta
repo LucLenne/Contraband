@@ -44,24 +44,6 @@ TextureImporter:
   - first:
       213: -6880740789944754262
     second: Benjamin_13
-  - first:
-      213: -8173498743372215350
-    second: Benjamin_14
-  - first:
-      213: 997107400006382515
-    second: Benjamin_15
-  - first:
-      213: 2574500195099588842
-    second: Benjamin_16
-  - first:
-      213: 6521145292313014399
-    second: Benjamin_17
-  - first:
-      213: 5784976899799037108
-    second: Benjamin_18
-  - first:
-      213: -5983766120155832807
-    second: Benjamin_19
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -166,19 +148,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -186,10 +155,10 @@ TextureImporter:
       name: Benjamin_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 133
-        width: 38
-        height: 64
+        x: 21
+        y: 56
+        width: 31
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,10 +177,10 @@ TextureImporter:
       name: Benjamin_1
       rect:
         serializedVersion: 2
-        x: 126
-        y: 183
-        width: 17
-        height: 17
+        x: 51
+        y: 57
+        width: 16
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,10 +199,10 @@ TextureImporter:
       name: Benjamin_2
       rect:
         serializedVersion: 2
-        x: 244
-        y: 183
-        width: 16
-        height: 17
+        x: 64
+        y: 49
+        width: 15
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +221,10 @@ TextureImporter:
       name: Benjamin_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 133
-        width: 39
-        height: 48
+        x: 72
+        y: 75
+        width: 7
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,10 +243,10 @@ TextureImporter:
       name: Benjamin_4
       rect:
         serializedVersion: 2
-        x: 87
-        y: 133
-        width: 38
-        height: 48
+        x: 78
+        y: 56
+        width: 16
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,10 +265,10 @@ TextureImporter:
       name: Benjamin_5
       rect:
         serializedVersion: 2
-        x: 104
-        y: 115
-        width: 39
-        height: 66
+        x: 93
+        y: 56
+        width: 24
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,10 +287,10 @@ TextureImporter:
       name: Benjamin_6
       rect:
         serializedVersion: 2
-        x: 143
-        y: 133
-        width: 39
-        height: 48
+        x: 116
+        y: 75
+        width: 7
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,10 +309,10 @@ TextureImporter:
       name: Benjamin_7
       rect:
         serializedVersion: 2
-        x: 183
-        y: 134
-        width: 59
-        height: 47
+        x: 116
+        y: 56
+        width: 23
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,10 +331,10 @@ TextureImporter:
       name: Benjamin_8
       rect:
         serializedVersion: 2
-        x: 244
-        y: 133
-        width: 16
-        height: 48
+        x: 22
+        y: 14
+        width: 30
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,10 +353,10 @@ TextureImporter:
       name: Benjamin_9
       rect:
         serializedVersion: 2
-        x: 260
-        y: 133
-        width: 38
-        height: 48
+        x: 52
+        y: 14
+        width: 15
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -406,10 +375,10 @@ TextureImporter:
       name: Benjamin_10
       rect:
         serializedVersion: 2
-        x: 12
-        y: 21
-        width: 38
-        height: 64
+        x: 66
+        y: 14
+        width: 8
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -428,10 +397,10 @@ TextureImporter:
       name: Benjamin_11
       rect:
         serializedVersion: 2
-        x: 130
-        y: 70
-        width: 17
-        height: 17
+        x: 73
+        y: 14
+        width: 27
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -450,10 +419,10 @@ TextureImporter:
       name: Benjamin_12
       rect:
         serializedVersion: 2
-        x: 147
-        y: 21
-        width: 16
-        height: 67
+        x: 100
+        y: 15
+        width: 15
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -472,10 +441,10 @@ TextureImporter:
       name: Benjamin_13
       rect:
         serializedVersion: 2
-        x: 163
-        y: 21
+        x: 114
+        y: 15
         width: 16
-        height: 67
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -486,138 +455,6 @@ TextureImporter:
       bones: []
       spriteID: aaf5dcf05b2b280a0800000000000000
       internalID: -6880740789944754262
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Benjamin_14
-      rect:
-        serializedVersion: 2
-        x: 257
-        y: 21
-        width: 40
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: acb823da236e19e80800000000000000
-      internalID: -8173498743372215350
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Benjamin_15
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 21
-        width: 39
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3b33b4cb5ef66dd00800000000000000
-      internalID: 997107400006382515
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Benjamin_16
-      rect:
-        serializedVersion: 2
-        x: 91
-        y: 21
-        width: 38
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ae8b51389467ab320800000000000000
-      internalID: 2574500195099588842
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Benjamin_17
-      rect:
-        serializedVersion: 2
-        x: 130
-        y: 21
-        width: 17
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f703705c713cf7a50800000000000000
-      internalID: 6521145292313014399
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Benjamin_18
-      rect:
-        serializedVersion: 2
-        x: 179
-        y: 21
-        width: 39
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4b4bc5a17dd584050800000000000000
-      internalID: 5784976899799037108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Benjamin_19
-      rect:
-        serializedVersion: 2
-        x: 219
-        y: 21
-        width: 38
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 91e1815ca6465fca0800000000000000
-      internalID: -5983766120155832807
       vertices: []
       indices: 
       edges: []
@@ -642,12 +479,6 @@ TextureImporter:
       Benjamin_11: 6566191498421247848
       Benjamin_12: -4083471159313322350
       Benjamin_13: -6880740789944754262
-      Benjamin_14: -8173498743372215350
-      Benjamin_15: 997107400006382515
-      Benjamin_16: 2574500195099588842
-      Benjamin_17: 6521145292313014399
-      Benjamin_18: 5784976899799037108
-      Benjamin_19: -5983766120155832807
       Benjamin_2: -4326763252638687610
       Benjamin_3: -7212655051510079977
       Benjamin_4: -1255104071575574083
