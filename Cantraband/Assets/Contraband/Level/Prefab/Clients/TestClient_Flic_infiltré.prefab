@@ -694,7 +694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4150052461573921674, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4210592980256365375, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
       propertyPath: m_IsActive
@@ -702,7 +702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4273691079147952861, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4933033957689970366, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
@@ -718,7 +718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6610874462176806595, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6678458860177851164, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
@@ -730,7 +730,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: bcbec1f80509b5d448aeb62b00bc38b3, type: 2}
     - target: {fileID: 7292903905858691548, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7503975834378991633, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
       propertyPath: m_IsActive
@@ -782,7 +782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8448311077058634048, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8671381101731421574, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
@@ -790,7 +790,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: bcbec1f80509b5d448aeb62b00bc38b3, type: 2}
     - target: {fileID: 9052225154644325875, guid: bc9523bc2a77ce144bac1e1f5c6dfd85, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
