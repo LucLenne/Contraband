@@ -1,67 +1,64 @@
 fileFormatVersion: 2
-guid: 2826a7ba8f31c72458cd1c625ceff347
+guid: e05e78e61ea40ad4dba970a737ba3255
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7355965790528212410
-    second: Lou 1_0
+      213: -2536988823791121784
+    second: Anne_0
   - first:
-      213: -8613250736456818416
-    second: Lou 1_1
+      213: -2367486475547805939
+    second: Anne_1
   - first:
-      213: -2103726797431352851
-    second: Lou 1_2
+      213: 7545343508992611032
+    second: Anne_2
   - first:
-      213: 4835927743450422187
-    second: Lou 1_3
+      213: 4111970974982358575
+    second: Anne_3
   - first:
-      213: 2090836536289504386
-    second: Lou 1_4
+      213: 8067997785114579810
+    second: Anne_4
   - first:
-      213: -6240859591362947716
-    second: Lou 1_5
+      213: -8196749546292380684
+    second: Anne_5
   - first:
-      213: 4927897079858323619
-    second: Lou 1_6
+      213: 256947756125713366
+    second: Anne_6
   - first:
-      213: -6125134009747342548
-    second: Lou 1_7
+      213: 5060814418724976992
+    second: Anne_7
   - first:
-      213: 1428700768772353658
-    second: Lou 1_8
+      213: 4081960483931298974
+    second: Anne_8
   - first:
-      213: -6609149268409547603
-    second: Lou 1_9
+      213: 3192472366752518968
+    second: Anne_9
   - first:
-      213: -4898047525594952434
-    second: Lou 1_10
+      213: -8234114746755723801
+    second: Anne_10
   - first:
-      213: -1912343902656731633
-    second: Lou 1_11
+      213: -6652084925584771525
+    second: Anne_11
   - first:
-      213: 7537771864942844072
-    second: Lou 1_12
+      213: -7379321290667523323
+    second: Anne_12
   - first:
-      213: 8600995594653870271
-    second: Lou 1_13
+      213: -5196322442817322488
+    second: Anne_13
   - first:
-      213: -8011496335363222092
-    second: Lou 1_14
+      213: -8280373353498179970
+    second: Anne_14
   - first:
-      213: -6701175820367003518
-    second: Lou 1_15
+      213: -3936485474421285377
+    second: Anne_15
   - first:
-      213: -6477814922991095635
-    second: Lou 1_16
+      213: 61147567682128062
+    second: Anne_16
   - first:
-      213: 1857761807779967156
-    second: Lou 1_17
+      213: -6447388945141187991
+    second: Anne_17
   - first:
-      213: 8560687327734803069
-    second: Lou 1_18
-  - first:
-      213: -5057398671848297088
-    second: Lou 1_19
+      213: -7316575857426305647
+    second: Anne_18
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -170,298 +167,78 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lou 1_0
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 59
-        width: 30
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: abd0c54b9e3a51660800000000000000
-      internalID: 7355965790528212410
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_1
-      rect:
-        serializedVersion: 2
-        x: 46
-        y: 59
-        width: 15
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 011ae141716977880800000000000000
-      internalID: -8613250736456818416
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_2
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 77
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: de152aeaf9f0ec2e0800000000000000
-      internalID: -2103726797431352851
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_3
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 59
-        width: 7
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bab91db29aaac1340800000000000000
-      internalID: 4835927743450422187
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_4
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 59
-        width: 15
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 28ca1f480c4240d10800000000000000
-      internalID: 2090836536289504386
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_5
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 59
-        width: 56
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c75d8b364430469a0800000000000000
-      internalID: -6240859591362947716
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_6
-      rect:
-        serializedVersion: 2
-        x: 151
-        y: 77
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3a0e3a6f848636440800000000000000
-      internalID: 4927897079858323619
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_7
-      rect:
-        serializedVersion: 2
-        x: 151
-        y: 59
-        width: 7
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c2b785b02172ffaa0800000000000000
-      internalID: -6125134009747342548
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_8
-      rect:
-        serializedVersion: 2
-        x: 157
-        y: 59
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a7ee00597c3c3d310800000000000000
-      internalID: 1428700768772353658
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_9
-      rect:
-        serializedVersion: 2
-        x: 172
-        y: 59
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da48ae4d1c59744a0800000000000000
-      internalID: -6609149268409547603
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_10
-      rect:
-        serializedVersion: 2
-        x: 187
-        y: 59
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e0d8ee7f9b3a60cb0800000000000000
-      internalID: -4898047525594952434
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_11
-      rect:
-        serializedVersion: 2
-        x: 202
-        y: 59
-        width: 15
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f06e2c14a5df575e0800000000000000
-      internalID: -1912343902656731633
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_12
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 66
-        width: 15
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a81ad7039b8b9860800000000000000
-      internalID: 7537771864942844072
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_13
+      name: Anne_0
       rect:
         serializedVersion: 2
         x: 41
-        y: 16
-        width: 29
+        y: 92
+        width: 21
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88a4bc63b1ecaccd0800000000000000
+      internalID: -2536988823791121784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anne_1
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 92
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d077e6e089ff42fd0800000000000000
+      internalID: -2367486475547805939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anne_2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 92
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d2ddc9c1f176b860800000000000000
+      internalID: 7545343508992611032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anne_3
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 91
+        width: 20
         height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -471,20 +248,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb82b0e5cefdc5770800000000000000
-      internalID: 8600995594653870271
+      spriteID: f264a8ac0d7a01930800000000000000
+      internalID: 4111970974982358575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_14
+      name: Anne_4
       rect:
         serializedVersion: 2
-        x: 69
-        y: 16
-        width: 43
-        height: 27
+        x: 134
+        y: 92
+        width: 28
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -493,20 +270,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4b5d45b978271d090800000000000000
-      internalID: -8011496335363222092
+      spriteID: 263946e4d3947ff60800000000000000
+      internalID: 8067997785114579810
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_15
+      name: Anne_5
       rect:
         serializedVersion: 2
-        x: 111
-        y: 16
-        width: 7
-        height: 27
+        x: 161
+        y: 91
+        width: 21
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -515,20 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 28086918814a003a0800000000000000
-      internalID: -6701175820367003518
+      spriteID: 4fbf56447bb4f3e80800000000000000
+      internalID: -8196749546292380684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_16
+      name: Anne_6
       rect:
         serializedVersion: 2
-        x: 117
-        y: 16
-        width: 16
-        height: 20
+        x: 182
+        y: 92
+        width: 20
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -537,20 +314,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da0346206ad2a16a0800000000000000
-      internalID: -6477814922991095635
+      spriteID: 6d3f4b17f9cd09300800000000000000
+      internalID: 256947756125713366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_17
+      name: Anne_7
       rect:
         serializedVersion: 2
-        x: 132
-        y: 16
-        width: 34
-        height: 24
+        x: 203
+        y: 91
+        width: 20
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -559,20 +336,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4b03306758818c910800000000000000
-      internalID: 1857761807779967156
+      spriteID: 069f64686ef9b3640800000000000000
+      internalID: 5060814418724976992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_18
+      name: Anne_8
       rect:
         serializedVersion: 2
-        x: 159
-        y: 35
-        width: 7
-        height: 8
+        x: 222
+        y: 91
+        width: 39
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -581,20 +358,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d7a22d2a4cbadc670800000000000000
-      internalID: 8560687327734803069
+      spriteID: e9c18e7de6906a830800000000000000
+      internalID: 4081960483931298974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_19
+      name: Anne_9
       rect:
         serializedVersion: 2
-        x: 165
-        y: 16
-        width: 30
-        height: 20
+        x: 281
+        y: 91
+        width: 9
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -603,8 +380,206 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 08d23f404b280d9b0800000000000000
-      internalID: -5057398671848297088
+      spriteID: 833d88ff3b0fd4c20800000000000000
+      internalID: 3192472366752518968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anne_10
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 117
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7edc1d7934c8abd80800000000000000
+      internalID: -8234114746755723801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anne_11
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 91
+        width: 8
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b36f9c2210c0fa3a0800000000000000
+      internalID: -6652084925584771525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anne_12
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 91
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 503094a2262679990800000000000000
+      internalID: -7379321290667523323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anne_13
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 101
+        width: 20
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 802cb710544f2e7b0800000000000000
+      internalID: -5196322442817322488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anne_14
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 32
+        width: 21
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7681296e44361d80800000000000000
+      internalID: -8280373353498179970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anne_15
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 33
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffd52a1415bce59c0800000000000000
+      internalID: -3936485474421285377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anne_16
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 23
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb8829a836d39d000800000000000000
+      internalID: 61147567682128062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anne_17
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 33
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96a34140ae54686a0800000000000000
+      internalID: -6447388945141187991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anne_18
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 33
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19de7e5c50d467a90800000000000000
+      internalID: -7316575857426305647
       vertices: []
       indices: 
       edges: []
@@ -623,26 +598,25 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Lou 1_0: 7355965790528212410
-      Lou 1_1: -8613250736456818416
-      Lou 1_10: -4898047525594952434
-      Lou 1_11: -1912343902656731633
-      Lou 1_12: 7537771864942844072
-      Lou 1_13: 8600995594653870271
-      Lou 1_14: -8011496335363222092
-      Lou 1_15: -6701175820367003518
-      Lou 1_16: -6477814922991095635
-      Lou 1_17: 1857761807779967156
-      Lou 1_18: 8560687327734803069
-      Lou 1_19: -5057398671848297088
-      Lou 1_2: -2103726797431352851
-      Lou 1_3: 4835927743450422187
-      Lou 1_4: 2090836536289504386
-      Lou 1_5: -6240859591362947716
-      Lou 1_6: 4927897079858323619
-      Lou 1_7: -6125134009747342548
-      Lou 1_8: 1428700768772353658
-      Lou 1_9: -6609149268409547603
+      Anne_0: -2536988823791121784
+      Anne_1: -2367486475547805939
+      Anne_10: -8234114746755723801
+      Anne_11: -6652084925584771525
+      Anne_12: -7379321290667523323
+      Anne_13: -5196322442817322488
+      Anne_14: -8280373353498179970
+      Anne_15: -3936485474421285377
+      Anne_16: 61147567682128062
+      Anne_17: -6447388945141187991
+      Anne_18: -7316575857426305647
+      Anne_2: 7545343508992611032
+      Anne_3: 4111970974982358575
+      Anne_4: 8067997785114579810
+      Anne_5: -8196749546292380684
+      Anne_6: 256947756125713366
+      Anne_7: 5060814418724976992
+      Anne_8: 4081960483931298974
+      Anne_9: 3192472366752518968
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

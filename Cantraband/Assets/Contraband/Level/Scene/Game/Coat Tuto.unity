@@ -706,7 +706,7 @@ MonoBehaviour:
   _textTuto: {fileID: 1083164587}
   _ledPrefab: {fileID: 2228705728377174140, guid: 078c89583e2cc8c4dacd835c4c8a46a0, type: 3}
   _nbLed: 3
-  _colorInactive: {r: 1, g: 1, b: 1, a: 1}
+  _colorInactive: {r: 1, g: 0, b: 0, a: 1}
   _colorClose: {r: 1, g: 0.473217, b: 0, a: 1}
   _colorOpen: {r: 0.1551745, g: 1, b: 0, a: 1}
   _textOpenCoat: <grow>Open Coat
