@@ -448,6 +448,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1994678580}
     m_Modifications:
+    - target: {fileID: 1722355188684907104, guid: 9053a7161ffc2f64095ed0b38b11883c, type: 3}
+      propertyPath: UVModule.sprites.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2826a7ba8f31c72458cd1c625ceff347, type: 3}
     - target: {fileID: 4294308135844520901, guid: 9053a7161ffc2f64095ed0b38b11883c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -987,7 +991,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1722355188684907104, guid: 8fc8b9b7440738845b2a7c895ee7ca96, type: 3}
       propertyPath: UVModule.sprites.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1722355188684907104, guid: 8fc8b9b7440738845b2a7c895ee7ca96, type: 3}
       propertyPath: UVModule.sprites.Array.data[0].sprite
@@ -997,6 +1001,10 @@ PrefabInstance:
       propertyPath: UVModule.sprites.Array.data[1].sprite
       value: 
       objectReference: {fileID: 21300000, guid: 8da8ac2e72ef76f499f30cfbcad25c83, type: 3}
+    - target: {fileID: 1722355188684907104, guid: 8fc8b9b7440738845b2a7c895ee7ca96, type: 3}
+      propertyPath: UVModule.sprites.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ddce6e632a83fe34f989dcdede51da9b, type: 3}
     - target: {fileID: 1722355188684907104, guid: 8fc8b9b7440738845b2a7c895ee7ca96, type: 3}
       propertyPath: SubModule.subEmitters.Array.data[0].emitter
       value: 

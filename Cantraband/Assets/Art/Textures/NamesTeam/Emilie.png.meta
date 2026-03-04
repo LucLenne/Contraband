@@ -1,67 +1,55 @@
 fileFormatVersion: 2
-guid: 2826a7ba8f31c72458cd1c625ceff347
+guid: ddce6e632a83fe34f989dcdede51da9b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7355965790528212410
-    second: Lou 1_0
+      213: -3734101988531694325
+    second: Emilie_0
   - first:
-      213: -8613250736456818416
-    second: Lou 1_1
+      213: -793605662618297341
+    second: Emilie_1
   - first:
-      213: -2103726797431352851
-    second: Lou 1_2
+      213: -2326679304212780054
+    second: Emilie_2
   - first:
-      213: 4835927743450422187
-    second: Lou 1_3
+      213: -261944034073362149
+    second: Emilie_3
   - first:
-      213: 2090836536289504386
-    second: Lou 1_4
+      213: 341217999551813382
+    second: Emilie_4
   - first:
-      213: -6240859591362947716
-    second: Lou 1_5
+      213: 1757575402849953453
+    second: Emilie_5
   - first:
-      213: 4927897079858323619
-    second: Lou 1_6
+      213: -4746828156080012933
+    second: Emilie_6
   - first:
-      213: -6125134009747342548
-    second: Lou 1_7
+      213: -2655103962851528341
+    second: Emilie_7
   - first:
-      213: 1428700768772353658
-    second: Lou 1_8
+      213: 1368808976954588861
+    second: Emilie_8
   - first:
-      213: -6609149268409547603
-    second: Lou 1_9
+      213: -3436725669113510212
+    second: Emilie_9
   - first:
-      213: -4898047525594952434
-    second: Lou 1_10
+      213: -3415610999367383391
+    second: Emilie_10
   - first:
-      213: -1912343902656731633
-    second: Lou 1_11
+      213: 3141673765342969693
+    second: Emilie_11
   - first:
-      213: 7537771864942844072
-    second: Lou 1_12
+      213: -2781739111043842863
+    second: Emilie_12
   - first:
-      213: 8600995594653870271
-    second: Lou 1_13
+      213: -8372940203255804437
+    second: Emilie_13
   - first:
-      213: -8011496335363222092
-    second: Lou 1_14
+      213: 3911437509769399119
+    second: Emilie_14
   - first:
-      213: -6701175820367003518
-    second: Lou 1_15
-  - first:
-      213: -6477814922991095635
-    second: Lou 1_16
-  - first:
-      213: 1857761807779967156
-    second: Lou 1_17
-  - first:
-      213: 8560687327734803069
-    second: Lou 1_18
-  - first:
-      213: -5057398671848297088
-    second: Lou 1_19
+      213: -4859672926645404309
+    second: Emilie_15
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -170,13 +158,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lou 1_0
+      name: Emilie_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 59
-        width: 30
-        height: 26
+        x: 60
+        y: 55
+        width: 15
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,19 +173,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: abd0c54b9e3a51660800000000000000
-      internalID: 7355965790528212410
+      spriteID: b051d7a860ecd2cc0800000000000000
+      internalID: -3734101988531694325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_1
+      name: Emilie_1
       rect:
         serializedVersion: 2
-        x: 46
-        y: 59
-        width: 15
+        x: 74
+        y: 55
+        width: 24
         height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -207,18 +195,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 011ae141716977880800000000000000
-      internalID: -8613250736456818416
+      spriteID: 30cd5e3cadb8cf4f0800000000000000
+      internalID: -793605662618297341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_2
+      name: Emilie_2
       rect:
         serializedVersion: 2
-        x: 61
-        y: 77
+        x: 97
+        y: 73
         width: 7
         height: 8
       alignment: 0
@@ -229,18 +217,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de152aeaf9f0ec2e0800000000000000
-      internalID: -2103726797431352851
+      spriteID: aebe4260089f5bfd0800000000000000
+      internalID: -2326679304212780054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_3
+      name: Emilie_3
       rect:
         serializedVersion: 2
-        x: 61
-        y: 59
+        x: 97
+        y: 55
         width: 7
         height: 19
       alignment: 0
@@ -251,20 +239,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bab91db29aaac1340800000000000000
-      internalID: 4835927743450422187
+      spriteID: b114602f9436d5cf0800000000000000
+      internalID: -261944034073362149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_4
+      name: Emilie_4
       rect:
         serializedVersion: 2
-        x: 67
-        y: 59
-        width: 15
-        height: 19
+        x: 103
+        y: 55
+        width: 7
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,40 +261,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 28ca1f480c4240d10800000000000000
-      internalID: 2090836536289504386
+      spriteID: 607514676ff3cb400800000000000000
+      internalID: 341217999551813382
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_5
+      name: Emilie_5
       rect:
         serializedVersion: 2
-        x: 96
-        y: 59
-        width: 56
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c75d8b364430469a0800000000000000
-      internalID: -6240859591362947716
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_6
-      rect:
-        serializedVersion: 2
-        x: 151
-        y: 77
+        x: 109
+        y: 73
         width: 7
         height: 8
       alignment: 0
@@ -317,18 +283,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a0e3a6f848636440800000000000000
-      internalID: 4927897079858323619
+      spriteID: da6e5d05489246810800000000000000
+      internalID: 1757575402849953453
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_7
+      name: Emilie_6
       rect:
         serializedVersion: 2
-        x: 151
-        y: 59
+        x: 109
+        y: 55
         width: 7
         height: 19
       alignment: 0
@@ -339,18 +305,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c2b785b02172ffaa0800000000000000
-      internalID: -6125134009747342548
+      spriteID: b71470b11f0ef1eb0800000000000000
+      internalID: -4746828156080012933
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_8
+      name: Emilie_7
       rect:
         serializedVersion: 2
-        x: 157
-        y: 59
+        x: 115
+        y: 55
         width: 16
         height: 19
       alignment: 0
@@ -361,63 +327,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a7ee00597c3c3d310800000000000000
-      internalID: 1428700768772353658
+      spriteID: b61b08c530d272bd0800000000000000
+      internalID: -2655103962851528341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_9
+      name: Emilie_8
       rect:
         serializedVersion: 2
-        x: 172
-        y: 59
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da48ae4d1c59744a0800000000000000
-      internalID: -6609149268409547603
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_10
-      rect:
-        serializedVersion: 2
-        x: 187
-        y: 59
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e0d8ee7f9b3a60cb0800000000000000
-      internalID: -4898047525594952434
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_11
-      rect:
-        serializedVersion: 2
-        x: 202
-        y: 59
-        width: 15
+        x: 27
+        y: 12
+        width: 43
         height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -427,64 +349,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f06e2c14a5df575e0800000000000000
-      internalID: -1912343902656731633
+      spriteID: dbe7eb4238cfef210800000000000000
+      internalID: 1368808976954588861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_12
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 66
-        width: 15
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a81ad7039b8b9860800000000000000
-      internalID: 7537771864942844072
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_13
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 16
-        width: 29
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fb82b0e5cefdc5770800000000000000
-      internalID: 8600995594653870271
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_14
+      name: Emilie_9
       rect:
         serializedVersion: 2
         x: 69
-        y: 16
-        width: 43
-        height: 27
+        y: 13
+        width: 15
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -493,18 +371,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4b5d45b978271d090800000000000000
-      internalID: -8011496335363222092
+      spriteID: cb6c506663c4e40d0800000000000000
+      internalID: -3436725669113510212
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_15
+      name: Emilie_10
       rect:
         serializedVersion: 2
-        x: 111
-        y: 16
+        x: 83
+        y: 12
         width: 7
         height: 27
       alignment: 0
@@ -515,18 +393,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 28086918814a003a0800000000000000
-      internalID: -6701175820367003518
+      spriteID: 1a64acb84ef4990d0800000000000000
+      internalID: -3415610999367383391
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_16
+      name: Emilie_11
       rect:
         serializedVersion: 2
-        x: 117
-        y: 16
+        x: 89
+        y: 12
         width: 16
         height: 20
       alignment: 0
@@ -537,19 +415,63 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da0346206ad2a16a0800000000000000
-      internalID: -6477814922991095635
+      spriteID: d5f7e6fe4a7799b20800000000000000
+      internalID: 3141673765342969693
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_17
+      name: Emilie_12
       rect:
         serializedVersion: 2
-        x: 132
-        y: 16
-        width: 34
+        x: 104
+        y: 13
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dcbb6c44074569d0800000000000000
+      internalID: -2781739111043842863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emilie_13
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 12
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bedc9533f375dcb80800000000000000
+      internalID: -8372940203255804437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emilie_14
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 12
+        width: 16
         height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -559,41 +481,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4b03306758818c910800000000000000
-      internalID: 1857761807779967156
+      spriteID: f4b81f201b7384630800000000000000
+      internalID: 3911437509769399119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lou 1_18
+      name: Emilie_15
       rect:
         serializedVersion: 2
-        x: 159
-        y: 35
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d7a22d2a4cbadc670800000000000000
-      internalID: 8560687327734803069
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lou 1_19
-      rect:
-        serializedVersion: 2
-        x: 165
-        y: 16
-        width: 30
+        x: 148
+        y: 12
+        width: 16
         height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -603,8 +503,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 08d23f404b280d9b0800000000000000
-      internalID: -5057398671848297088
+      spriteID: b6db7ba8839fe8cb0800000000000000
+      internalID: -4859672926645404309
       vertices: []
       indices: 
       edges: []
@@ -623,26 +523,22 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Lou 1_0: 7355965790528212410
-      Lou 1_1: -8613250736456818416
-      Lou 1_10: -4898047525594952434
-      Lou 1_11: -1912343902656731633
-      Lou 1_12: 7537771864942844072
-      Lou 1_13: 8600995594653870271
-      Lou 1_14: -8011496335363222092
-      Lou 1_15: -6701175820367003518
-      Lou 1_16: -6477814922991095635
-      Lou 1_17: 1857761807779967156
-      Lou 1_18: 8560687327734803069
-      Lou 1_19: -5057398671848297088
-      Lou 1_2: -2103726797431352851
-      Lou 1_3: 4835927743450422187
-      Lou 1_4: 2090836536289504386
-      Lou 1_5: -6240859591362947716
-      Lou 1_6: 4927897079858323619
-      Lou 1_7: -6125134009747342548
-      Lou 1_8: 1428700768772353658
-      Lou 1_9: -6609149268409547603
+      Emilie_0: -3734101988531694325
+      Emilie_1: -793605662618297341
+      Emilie_10: -3415610999367383391
+      Emilie_11: 3141673765342969693
+      Emilie_12: -2781739111043842863
+      Emilie_13: -8372940203255804437
+      Emilie_14: 3911437509769399119
+      Emilie_15: -4859672926645404309
+      Emilie_2: -2326679304212780054
+      Emilie_3: -261944034073362149
+      Emilie_4: 341217999551813382
+      Emilie_5: 1757575402849953453
+      Emilie_6: -4746828156080012933
+      Emilie_7: -2655103962851528341
+      Emilie_8: 1368808976954588861
+      Emilie_9: -3436725669113510212
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
