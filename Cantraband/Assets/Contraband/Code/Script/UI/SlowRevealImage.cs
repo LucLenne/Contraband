@@ -85,7 +85,9 @@ public class SlowRevealImage : MonoBehaviour
             float alpha = Mathf.Clamp01(elapsed / inDuration);
             float curvedAlpha = fadeCurve.Evaluate(alpha);
             BaseImage.color = new Color(savedColor.r, savedColor.g, savedColor.b, curvedAlpha);
-            _gameImage.color = new Color(savedColor.r, savedColor.g, savedColor.b, curvedAlpha);
+
+            float gameAlpha = (Mathf.Sin(elapsed * _fadeInOutSpeed) * _fadeInOutAmplitude) + _fadeInOutOffset;
+            _gameImage.color = new Color(savedColor.r, savedColor.g, savedColor.b, gameAlpha);
             yield return null;
         }
         BaseImage.color = new Color(savedColor.r, savedColor.g, savedColor.b, 1);
