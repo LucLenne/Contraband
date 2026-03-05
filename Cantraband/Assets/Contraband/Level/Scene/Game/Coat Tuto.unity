@@ -532,7 +532,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 109.7
+  m_fontSize: 181.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -709,9 +709,9 @@ MonoBehaviour:
   _colorInactive: {r: 1, g: 0, b: 0, a: 1}
   _colorClose: {r: 1, g: 0.473217, b: 0, a: 1}
   _colorOpen: {r: 0.1551745, g: 1, b: 0, a: 1}
-  _textOpenCoat: <grow>Open Coat
-  _textCloseCoat: <grow>Close Coat
-  _textEndTuto: <+fade><grow>Congrats !
+  _textOpenCoat: <grow>Open the coat
+  _textCloseCoat: <grow>Close the coat
+  _textEndTuto: <+fade><grow>Good job, now get out there recruit
   _timeBeforeLeavingTuto: 2
 --- !u!1 &1341721621
 GameObject:

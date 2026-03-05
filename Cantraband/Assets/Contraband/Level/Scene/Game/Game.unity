@@ -2003,6 +2003,14 @@ PrefabInstance:
       propertyPath: _onGameEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 411912751972200838, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -200
+      objectReference: {fileID: 0}
+    - target: {fileID: 932462190831435032, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
+      propertyPath: _objectToAnimate.Array.data[0].BeginPosition.y
+      value: -200
+      objectReference: {fileID: 0}
     - target: {fileID: 973333961925075548, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0

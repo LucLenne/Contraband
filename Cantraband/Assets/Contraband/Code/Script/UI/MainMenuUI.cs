@@ -21,7 +21,7 @@ public class MainMenuUI : MonoBehaviour
     private const string NAME_CREDITS_LEVEL = "Credits";
 
     [SerializeField] AudioSource BGM_Player;
-
+    [SerializeField] float delayPlayBGM = 3.0f;
     private void OnEnable()
     {
         InputManager.Instance.OnReadCard += CheckChard;
@@ -35,7 +35,7 @@ public class MainMenuUI : MonoBehaviour
     private void Start()
     {
         AudioManager.AudioManager.Instance.PlaySound(MAIN_MENU_START_SOUND);
-        Invoke("StartBGM", 2);
+        Invoke("StartBGM", delayPlayBGM);
     }
 
    private void StartBGM()

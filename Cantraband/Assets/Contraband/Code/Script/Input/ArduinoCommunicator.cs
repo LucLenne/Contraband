@@ -2,6 +2,9 @@ using System.IO.Ports;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Threading;
+using System.Collections.Generic;
+using System;
 
 public class ArduinoCommunicator : MonoBehaviour
 {
@@ -16,6 +19,11 @@ public class ArduinoCommunicator : MonoBehaviour
 
     private string receivedStream;
     private bool isActive = false;
+
+    private Thread _serialThread;
+    private readonly Queue<string> _messageQueue = new Queue<string>();
+    private readonly object _queueLock = new object();
+
 
     void Awake()
     {
@@ -52,7 +60,7 @@ public class ArduinoCommunicator : MonoBehaviour
             LevelManager.Instance.OnFailedByCop -= Failed;
             LevelManager.Instance.OutOfPatience -= Failed;
         }
-
+        isActive = false;
         CloseSerialPort();
     }
 
@@ -106,38 +114,49 @@ public class ArduinoCommunicator : MonoBehaviour
         } else
         {
             Debug.Log("[ArduinoCommunicator] Selected communication port: " + inputStream.PortName);
+            _serialThread = new Thread(SerialReadLoop);
+            _serialThread.IsBackground = true;
+            _serialThread.Start();
         }
     }
+    private void SerialReadLoop()
+    {
+        while (isActive && inputStream != null && inputStream.IsOpen)
+        {
+            try
+            {
+                string line = inputStream.ReadLine();
+                if (!string.IsNullOrWhiteSpace(line))
+                {
+                    lock (_queueLock)
+                    {
+                        _messageQueue.Enqueue(line);
+                    }
+                }
+            }
+            catch (TimeoutException) { /* expected */ }
+            catch (Exception e)
+            {
+                Debug.LogError($"[Serial Thread] {e.Message}");
+                break;
+            }
+        }
+    }
+
 
     // RFID Reading
     void Update()
     {
         if(DebugLED)
             DebugInputs();
-        if (isActive && inputStream != null && inputStream.IsOpen)
+
+        // Process messages from background thread (non-blocking)
+        lock (_queueLock)
         {
-            try
+            while (_messageQueue.Count > 0)
             {
-                receivedStream = inputStream.ReadLine();
-                if (!string.IsNullOrEmpty(receivedStream))
-                {
-                    InputManager.Instance.ReceiveNFCReader(receivedStream);
-                }
-            }
-            catch (System.TimeoutException)
-            {
-                // Ignorer, lecture non bloquante
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError($"[ArduinoCommunicator] Erreur de lecture série : {e.Message}");
-            }
-        }
-        else
-        {
-            if (!isActive)
-            {
-                isActive = false; // Ne plus logguer � chaque frame
+                string msg = _messageQueue.Dequeue();
+                InputManager.Instance.ReceiveNFCReader(msg);
             }
         }
     }
@@ -157,6 +176,8 @@ public class ArduinoCommunicator : MonoBehaviour
 
     private void CloseSerialPort()
     {
+        if (_serialThread != null && _serialThread.IsAlive)
+            _serialThread.Join(500);
         if (inputStream != null && inputStream.IsOpen)
         {
             Debug.Log("[ArduinoCommunicator] Closing active port");
