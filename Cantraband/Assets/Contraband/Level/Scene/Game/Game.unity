@@ -1973,7 +1973,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 219256051658611303, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: _gameTimer
-      value: 300
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 219256051658611303, guid: eeb9c2204abf51a429cc0f8da8a16ae2, type: 3}
       propertyPath: _onGameEnded.m_PersistentCalls.m_Calls.Array.size
