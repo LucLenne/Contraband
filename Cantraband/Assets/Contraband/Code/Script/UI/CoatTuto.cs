@@ -9,6 +9,7 @@ public class CoatTuto : MonoBehaviour
 {
 
     [SerializeField] private TextMeshProUGUI _textTuto;
+    [SerializeField] private TextMeshProUGUI _textCoatTuto;
     [SerializeField] private GameObject _ledPrefab;
     [SerializeField] private int _nbLed;
     [Space]
@@ -19,7 +20,7 @@ public class CoatTuto : MonoBehaviour
     [SerializeField] private string _textOpenCoat;
     [SerializeField] private string _textCloseCoat;
     [SerializeField] private string _textEndTuto;
-    [Space]
+    [Space] [SerializeField] private int _timeBeforeStartingTuto; 
     [SerializeField] private int _timeBeforeLeavingTuto;
 
 
@@ -32,13 +33,7 @@ public class CoatTuto : MonoBehaviour
 
     private void Start()
     {
-        _parentLedsTransf = transform.parent.GetChild(2).transform;
-        for (int i = 0; i < _nbLed; i++)
-        {
-            GameObject led = Instantiate(_ledPrefab, _parentLedsTransf);
-            led.GetComponent<Image>().color = _colorInactive;
-        }
-        _textTuto.text = _textCloseCoat;
+        StartCoroutine(StartCoatTuto());
     }
 
     private void Update()
@@ -81,6 +76,20 @@ public class CoatTuto : MonoBehaviour
         _parentLedsTransf.GetChild(_indexLed).GetComponent<Image>().color = color;
     }
 
+
+    IEnumerator StartCoatTuto()
+    {
+        yield return new WaitForSeconds(_timeBeforeStartingTuto);
+        _parentLedsTransf = transform.parent.GetChild(2).transform;
+        for (int i = 0; i < _nbLed; i++)
+        {
+            GameObject led = Instantiate(_ledPrefab, _parentLedsTransf);
+            led.GetComponent<Image>().color = _colorInactive;
+        }
+
+        _textCoatTuto.text = "";
+        _textTuto.text =  _textCloseCoat;
+    }
     IEnumerator ValidCoatTuto()
     {
         _once = true;
